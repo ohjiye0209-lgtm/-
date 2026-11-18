@@ -488,6 +488,95 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
 .drawer-item .ic svg{width:16px;height:16px}
 .drawer-item.on{border-color:var(--accent)}
 
+/* ============ profile & lock ============ */
+.profile-card{
+  display:flex;align-items:center;gap:9px;width:100%;padding:9px 10px;border-radius:16px;
+  border:1px solid var(--line);background:#fff;box-shadow:var(--shadow-sm);text-align:left;transition:.16s;
+}
+.profile-card:hover{border-color:var(--line-2);box-shadow:var(--shadow)}
+.profile-card .av{width:38px;height:38px;flex:0 0 38px;border-radius:99px;background:#fff}
+.pc-txt{min-width:0;flex:1;line-height:1.3}
+.pc-txt b{display:block;font-size:13.5px;letter-spacing:-.02em}
+.pc-txt span{display:block;font-size:10px;font-weight:700;color:var(--accent-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-go{color:var(--faint);display:grid;place-items:center;flex:0 0 14px}
+.pc-go svg{width:14px;height:14px}
+.pc-state{display:none;align-items:center;gap:3px;font-size:10px;font-weight:800;color:var(--butter-ink);background:var(--butter);border-radius:99px;padding:2px 6px}
+.pc-state.on{display:inline-flex}
+.pc-state svg{width:10px;height:10px}
+
+.profile-pill{width:auto;padding:3px 8px 3px 3px;border-radius:99px;gap:6px;border:1px solid var(--line);background:#fff;flex:0 0 auto;display:flex;align-items:center}
+.profile-pill .av{width:26px;height:26px;flex:0 0 26px;border-radius:99px}
+.profile-pill .pp-name{font-size:11.5px;font-weight:800;white-space:nowrap}
+.profile-pill svg{width:12px;height:12px}
+.profile-pill .pp-lock{display:grid;place-items:center;color:var(--butter-ink)}
+
+.locknote{
+  display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:15px;margin:0 0 14px;
+  background:linear-gradient(100deg,#FFF7E2,#FFFDF7);border:1px solid #F2E5C6;flex-wrap:wrap;
+}
+.locknote .ln-ic{width:30px;height:30px;flex:0 0 30px;border-radius:10px;display:grid;place-items:center;background:#FDEBC8;font-size:15px}
+.locknote .ln-txt{flex:1;min-width:150px;line-height:1.4}
+.locknote .ln-txt b{display:block;font-size:12.5px;font-weight:800;color:#7A5A16}
+.locknote .ln-txt span{font-size:11.5px;color:#9C8355;font-weight:600}
+.locknote .btn{margin-left:auto}
+.check.view{opacity:.45;border-style:dashed;cursor:default}
+.check.view:hover{border-color:var(--line-2)}
+
+.pf-now{display:flex;align-items:center;gap:11px;background:var(--cream-2);border-radius:16px;padding:10px 12px}
+.modal.modal-wide{max-width:664px}
+.pf-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pf-col{min-width:0}
+.pf-pin .spacer{margin-left:auto}
+@media(max-width:620px){.pf-cols{grid-template-columns:1fr;gap:0}.pf-pin .spacer{margin-left:auto}}
+.pf-now .av{width:46px;height:46px;flex:0 0 46px;border-radius:99px;background:#fff}
+.pf-now b{display:block;font-size:14px}
+.pf-now div>span{display:block;font-size:11.5px;color:var(--accent-ink);font-weight:700}
+.pf-now .chip{margin-left:auto}
+.pf-list{display:flex;flex-direction:column;gap:6px}
+.pf-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:13px;background:var(--cream-2);border:1px solid transparent}
+.pf-row.on{border-color:var(--line-2);background:#fff}
+.pf-row .av{width:36px;height:36px;flex:0 0 36px;border-radius:99px;background:#fff}
+.pf-txt{flex:1;min-width:0;line-height:1.35}
+.pf-txt b{display:block;font-size:13px}
+.pf-txt b .faint{font-size:10.5px;font-weight:700}
+.pf-txt span{display:block;font-size:11px;color:var(--faint);font-weight:600}
+.pf-pins{display:flex;flex-direction:column;gap:2px}
+.pf-pin{display:flex;align-items:center;gap:8px;padding:6px 2px;border-bottom:1px dashed var(--line)}
+.pf-pin:last-child{border-bottom:0}
+.pin-name{font-size:12.5px;font-weight:700;min-width:40px}
+.pin-dots{font-size:12px;font-weight:800;color:var(--faint);letter-spacing:.14em}
+.pin-dots.on{color:var(--butter-ink)}
+.pf-pin .chip{font-size:10px}
+.pf-links{display:flex;flex-direction:column;gap:9px}
+.pf-link{background:var(--cream-2);border-radius:14px;padding:9px 11px}
+.pf-link-head{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-size:12.5px}
+.pf-link-head .faint{font-size:10.5px;font-weight:700}
+.pf-link-head .chip{margin-left:auto;font-size:10px}
+.linkrow{display:flex;gap:8px;align-items:center}
+.link-inp{flex:1;min-width:0;font-size:11px;padding:7px 9px;color:var(--muted);background:#fff}
+.link-text{flex:1;min-width:0;font-size:10.5px;line-height:1.45;color:var(--muted);word-break:break-all;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:-.01em}
+.pf-link .btn.sm{flex:0 0 auto}
+
+.pf-pin .btn.danger{color:var(--bad)}
+
+.pin-gate{position:fixed;inset:0;z-index:200;background:var(--cream);display:grid;place-items:center;padding:22px;animation:fade .2s both}
+.pin-gate-card{width:100%;max-width:344px;text-align:center;background:#fff;border-radius:26px;padding:26px 22px;box-shadow:var(--shadow-lift);border:1px solid var(--line)}
+.pin-gate-card .av{display:inline-block;width:76px;height:76px;border-radius:99px;background:#fff;margin-bottom:12px}
+.pin-gate-card h3{font-size:17px}
+.pin-gate-card .modal-sub{margin:6px 0 16px}
+.pin-input{text-align:center;font-size:22px;font-weight:800;letter-spacing:.42em;padding:11px 6px 11px 16px;height:54px}
+.pin-err{min-height:17px;font-size:11.5px;font-weight:700;color:var(--bad);margin-top:6px}
+
+.mbtn.locked{cursor:default;opacity:.62;border-style:dashed}
+.mbtn.locked:hover{border-color:var(--line-2);background:rgba(255,255,255,.7)}
+.mbtn.locked .av{opacity:.55}
+.mbtn.locked.on{border-style:solid}
+
+.chat-me{display:inline-flex;align-items:center;gap:7px;background:var(--cream-2);border-radius:99px;padding:3px 10px 3px 3px;font-size:12px;font-weight:800}
+.chat-me .av{width:26px;height:26px;flex:0 0 26px;border-radius:99px;background:#fff}
+.chat-me em{font-style:normal;color:var(--faint);font-weight:600;font-size:11.5px}
+
 /* ============ responsive ============ */
 @media (max-width:1180px){
   .col-3{grid-column:span 6}.col-4{grid-column:span 6}.col-5{grid-column:span 12}
@@ -527,6 +616,10 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
   .chat-shell{height:calc(100dvh - 210px);min-height:380px}
   .msg{max-width:88%}
   .modal{max-width:100%;border-radius:22px;padding:18px}
+  .pf-now .chip{margin-left:0}
+  .pin-gate-card{padding:22px 16px}
+  .locknote .btn{margin-left:0}
+  .profile-pill .pp-name{font-size:11px}
   .toast-wrap{bottom:calc(86px + env(safe-area-inset-bottom))}
   .cal{gap:4px}
   .cal-day{border-radius:9px;font-size:11.5px}
@@ -573,6 +666,7 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
       <span class="tb-sub" id="tbSub">우리 가족 대시보드</span>
     </div>
   </div>
+  <button class="icon-btn profile-pill" id="profilePill" data-action="open-profile" aria-label="프로필 전환"></button>
   <button class="icon-btn" data-action="open-drawer" aria-label="전체 메뉴 열기">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
@@ -592,6 +686,7 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
         <span>통합 대시보드</span>
       </div>
     </div>
+    <button class="profile-card" id="profileCard" data-action="open-profile" aria-label="내 프로필 · 프로필 전환"></button>
     <nav class="nav" id="sideNav" aria-label="주 메뉴"></nav>
     <div class="sidebar-foot">
       <div class="side-day" id="sideDay"></div>
@@ -699,6 +794,8 @@ var ICONS = {
   chevR:'<path d="M9.5 6.5 15.5 12l-6 5.5"/>',
   chevD:'<path d="M6 9.5 12 15.5 18 9.5"/>',
   pin:'<path d="M12 21s7-5.7 7-11A7 7 0 0 0 5 10c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>',
+  lock:'<rect x="4.4" y="10.4" width="15.2" height="10.4" rx="2.8"/><path d="M8 10.4V7.8a4 4 0 0 1 8 0v2.6"/><circle cx="12" cy="15.6" r="1.2"/>',
+  link:'<path d="M10.2 13.8a3.6 3.6 0 0 0 5.1 0l2.9-2.9a3.6 3.6 0 0 0-5.1-5.1l-1.5 1.5"/><path d="M13.8 10.2a3.6 3.6 0 0 0-5.1 0l-2.9 2.9a3.6 3.6 0 0 0 5.1 5.1l1.5-1.5"/>',
   drop:'<path d="M12 3.4c3.4 4 5.6 6.6 5.6 9.4a5.6 5.6 0 0 1-11.2 0c0-2.8 2.2-5.4 5.6-9.4Z"/>',
   wind:'<path d="M3.5 8.5h11a2.5 2.5 0 1 0-2.5-2.5"/><path d="M3.5 12.5h15a2.5 2.5 0 1 1-2.5 2.5"/><path d="M3.5 16.5h7"/>',
   thermometer:'<path d="M14 14.3V5.2a2 2 0 1 0-4 0v9.1a4 4 0 1 0 4 0Z"/>',
@@ -838,6 +935,8 @@ function seed(){
     createdAt: Date.now(),
     city: '서울',
     lastTab: 'home',
+    activeUser: 'jiye',
+    pins: {jiye:'', seungeon:'', ain:'', bom:''},
     todos: {
       jiye: [
         {id:uid('td'), text:'아인·봄 등원 준비 챙기기', recurring:true, assigned:t, done:false, doneOn:null, dates:{}, createdAt:Date.now()},
@@ -959,11 +1058,18 @@ function loadState(){
 function normalize(p){
   var base = seed(); // shape reference (and starter items are discarded unless absent)
   var s = p && typeof p === 'object' ? p : {};
+  var pins = {};
+  MEMBERS.forEach(function(m){
+    var raw = s.pins && s.pins[m.id] != null ? String(s.pins[m.id]) : '';
+    pins[m.id] = /^\d{4}$/.test(raw) ? raw : '';
+  });
   var out = {
     v: 1,
     createdAt: s.createdAt || Date.now(),
     city: CITIES[s.city] ? s.city : '서울',
     lastTab: s.lastTab || 'home',
+    activeUser: M[s.activeUser] ? s.activeUser : 'jiye',
+    pins: pins,
     todos: {},
     study: {},
     allowance: {},
@@ -1118,6 +1224,8 @@ function rewardProgress(kid, goal){
 /* ------------------------- UI shell ------------------------- */
 var ui = {
   tab: 'home',
+  meLocked: false,      // true while the page was opened through a ?me= fixed link
+  gate: null,           // member id waiting for its PIN before the app may be used
   todoMember: 'jiye',
   studyKid: 'ain',
   allowKid: 'ain',
@@ -1184,6 +1292,7 @@ function renderNav(){
   }
   var m = $('#main');
   if(m) m.setAttribute('data-theme', ui.tab === 'health' ? 'pink' : ui.tab === 'study' || ui.tab === 'allowance' || ui.tab === 'stamps' ? 'butter' : 'mint');
+  renderProfile();
 }
 
 /* ------------------------- toast / modal ------------------------- */
@@ -1206,6 +1315,7 @@ function toast(msg, opts){
   setTimeout(function(){ el.style.transition = 'opacity .3s'; el.style.opacity = '0'; setTimeout(function(){ el.remove(); }, 320); }, opts.ms || (opts.undo ? 6000 : 2200));
 }
 function closeModal(){
+  if(ui.gate) return;   // PIN gate cannot be dismissed until the right code is entered
   var r = $('#modalRoot');
   if(r) r.innerHTML = '';
   var d = $('#drawerRoot');
@@ -1214,7 +1324,7 @@ function closeModal(){
 function openModal(html, opts){
   opts = opts || {};
   var r = $('#modalRoot');
-  r.innerHTML = '<div class="modal-back" data-action="modal-backdrop"><div class="modal" role="dialog" aria-modal="true">'+html+'</div></div>';
+  r.innerHTML = '<div class="modal-back" data-action="modal-backdrop"><div class="modal'+(opts.cls ? ' ' + opts.cls : '')+'" role="dialog" aria-modal="true">'+html+'</div></div>';
   var first = r.querySelector('input,select,textarea,button');
   if(first && opts.focus !== false) setTimeout(function(){ try{ first.focus(); }catch(e){} }, 60);
 }
@@ -1245,6 +1355,250 @@ function celebrate(){
   setTimeout(function(){ root.remove(); }, 4200);
 }
 
+/* =========================================================
+   프로필 · 권한 (누가 무엇을 고칠 수 있는가)
+   ========================================================= */
+var ME_ALIAS = {
+  'jiye':'jiye', '지예':'jiye', '엄마':'jiye', 'mom':'jiye',
+  'seungeon':'seungeon', '승언':'seungeon', '아빠':'seungeon', 'dad':'seungeon',
+  'ain':'ain', '아인':'ain',
+  'bom':'bom', '봄':'bom'
+};
+function currentUser(){ return (state && M[state.activeUser]) ? state.activeUser : 'jiye'; }
+function isAdmin(){ return currentUser() === 'jiye'; }
+function isMe(id){ return currentUser() === id; }
+function canEditTodos(mid){ return isAdmin() || isMe(mid); }
+function canEditStudy(kid){ return isAdmin() || isMe(kid); }
+function canEditAllowance(kid){ return isAdmin(); }
+function canRecordSpend(kid){ return isAdmin() || isMe(kid); }
+function canEditStamps(kid){ return isAdmin(); }
+function canEditHealth(){ return isAdmin(); }
+function canToggleMission(mid){ return isAdmin() || isMe(mid); }
+function canDeleteMessage(sender){ return isAdmin() || isMe(sender); }
+function canManageSettings(){ return isAdmin(); }
+function roleBadge(id, short){
+  if(id === 'jiye') return '엄마 · 전체관리';
+  return (M[id] ? M[id].role : '') + (short ? ' · 본인만 수정' : ' · 본인만 수정 가능');
+}
+function pinOf(id){ return (state && state.pins && state.pins[id]) ? String(state.pins[id]) : ''; }
+function hasPin(id){ return /^\d{4}$/.test(pinOf(id)); }
+var PIN_SESSION_KEY = 'familyDashboard.pinUnlock.v1';
+function pinSession(){
+  try{ return JSON.parse(sessionStorage.getItem(PIN_SESSION_KEY) || '{}') || {}; }catch(e){ return {}; }
+}
+function pinUnlockedRecently(id){
+  var t = pinSession()[id] || 0;
+  return !!t && (Date.now() - t) < 10 * 60 * 1000;
+}
+function markPinUnlocked(id){
+  try{
+    var s = pinSession();
+    s[id] = Date.now();
+    sessionStorage.setItem(PIN_SESSION_KEY, JSON.stringify(s));
+  }catch(e){}
+}
+function applyActive(id, locked){
+  if(!M[id]) return;
+  state.activeUser = id;
+  ui.chatSender = id;
+  ui.todoMember = id;
+  if(KIDS.indexOf(id) >= 0){ ui.studyKid = id; ui.allowKid = id; ui.stampKid = id; }
+  ui.meLocked = !!locked;
+  ui.gate = null;
+  persist();
+}
+function resolveMe(v){
+  if(v == null) return null;
+  var s = String(v).replace(/^\s+|\s+$/g, '');
+  if(ME_ALIAS[s]) return ME_ALIAS[s];
+  var lower = s.toLowerCase();
+  if(ME_ALIAS[lower]) return ME_ALIAS[lower];
+  var byName = MEMBERS.filter(function(m){ return m.name === s; })[0];
+  return byName ? byName.id : null;
+}
+function baseUrl(){ return String(location.href).split('#')[0].split('?')[0]; }
+function fixedLink(id){ return baseUrl() + '?me=' + id; }
+function copyText(text, okMsg){
+  var done = function(){ if(okMsg) toast(okMsg); };
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text); done(); });
+      return;
+    }
+  }catch(e){}
+  fallbackCopy(text); done();
+}
+
+function renderProfile(){
+  var id = currentUser(), m = M[id];
+  if(!m) return;
+  var card = $('#profileCard');
+  if(card){
+    card.setAttribute('data-theme', m.theme);
+    card.innerHTML = avBox(id, 38)
+      + '<div class="pc-txt"><b>'+esc(m.name)+'</b><span>'+esc(roleBadge(id, true))+'</span></div>'
+      + (ui.meLocked ? '<span class="pc-state on">'+ic('lock')+'고정</span>' : '<span class="pc-go">'+ic('chevR')+'</span>');
+  }
+  var pill = $('#profilePill');
+  if(pill){
+    pill.innerHTML = avBox(id, 26) + '<span class="pp-name">'+esc(m.name)+'</span>'
+      + (ui.meLocked ? '<span class="pp-lock">'+ic('lock')+'</span>' : ic('chevD'));
+    pill.setAttribute('aria-label', m.name + ' 프로필 · 프로필 전환');
+  }
+}
+
+function openProfileModal(){
+  var id = currentUser(), m = M[id];
+  var admin = isAdmin();
+  var rows = MEMBERS.map(function(mm){
+    var on = mm.id === id;
+    var locked = hasPin(mm.id);
+    return '<div class="pf-row'+(on?' on':'')+'" data-theme="'+mm.theme+'">'
+      + avBox(mm.id, 36)
+      + '<div class="pf-txt"><b>'+esc(mm.name)+' <span class="faint">'+esc(mm.role)+'</span></b>'
+        + '<span>'+(on ? '지금 이 기기에서 접속 중' : (locked ? 'PIN으로 잠겨 있어요' : 'PIN 없이 바로 들어갈 수 있어요'))+'</span></div>'
+      + (on ? '<span class="chip mint">접속 중</span>'
+            : '<button class="btn sm" data-action="switch-profile" data-id="'+mm.id+'">전환</button>')
+      + '</div>';
+  }).join('');
+
+  var pinRows = MEMBERS.map(function(mm){
+    var locked = hasPin(mm.id);
+    return '<div class="pf-pin">'
+      + '<span class="pin-name">'+esc(mm.name)+'</span>'
+      + '<span class="pin-dots'+(locked?' on':'')+'">'+(locked?'••••':'PIN 없음')+'</span>'
+      + '<span class="spacer"></span>'
+      + (admin
+          ? '<button class="btn sm ghost" data-action="set-pin" data-id="'+mm.id+'">'+(locked?'변경':'설정')+'</button>'
+            + (locked ? '<button class="btn sm ghost danger" data-action="clear-pin" data-id="'+mm.id+'">해제</button>' : '')
+          : '<span class="chip gray">엄마만 변경</span>')
+      + '</div>';
+  }).join('');
+
+  var links = MEMBERS.map(function(mm){
+    return '<div class="pf-link">'
+      + '<div class="pf-link-head"><b>'+esc(mm.name)+'</b><span class="faint">'+esc(mm.role)+'</span>'
+        + (hasPin(mm.id) ? '<span class="chip butter">'+ic('lock')+'PIN</span>' : '') + '</div>'
+      + '<div class="linkrow"><span class="link-text" data-link="'+esc(fixedLink(mm.id))+'" title="'+esc(fixedLink(mm.id))+'" aria-label="'+esc(mm.name)+' 고정 링크">'+esc(fixedLink(mm.id))+'</span>'
+        + '<button class="btn sm" data-action="copy-link" data-id="'+mm.id+'">'+ic('link')+'복사</button></div>'
+      + '</div>';
+  }).join('');
+
+  openModal(
+    '<h3>프로필 잠금 · 고정 링크</h3>'
+    + '<p class="modal-sub">이 기기에서 누구로 접속할지 정하고, 가족마다 고정 링크로 바로 열 수 있어요.</p>'
+    + '<div class="pf-now" data-theme="'+m.theme+'">'+avBox(id, 46)
+      + '<div><b>'+esc(m.name)+'</b><span>'+esc(roleBadge(id))+'</span></div>'
+      + (ui.meLocked ? '<span class="chip butter">'+ic('lock')+'고정 링크로 접속</span>' : '')
+    + '</div>'
+    + '<div class="pf-cols">'
+      + '<div class="pf-col">'
+        + '<div class="sec-title" style="margin:14px 0 8px;font-size:13px">프로필 전환</div>'
+        + '<div class="pf-list">'+rows+'</div>'
+        + '<div class="sec-title" style="margin:16px 0 6px;font-size:13px">PIN 잠금</div>'
+        + '<div class="hint" style="margin-bottom:8px">'
+          + (admin ? 'PIN을 정한 프로필은 그 번호를 아는 사람만 들어갈 수 있어요. 아이들이 엄마·아빠 프로필로 바꾸지 못하게 막아줘요.'
+                   : 'PIN은 엄마 지예님만 정할 수 있어요.') + '</div>'
+        + '<div class="pf-pins">'+pinRows+'</div>'
+      + '</div>'
+      + '<div class="pf-col">'
+        + '<div class="sec-title" style="margin:14px 0 6px;font-size:13px">고정 링크</div>'
+        + '<div class="hint" style="margin-bottom:8px">각자 쓰는 기기에서 자기 링크를 즐겨찾기 해두면 늘 자기 프로필로 열려요.</div>'
+        + '<div class="pf-links">'+links+'</div>'
+      + '</div>'
+    + '</div>'
+    + '<div class="modal-actions"><span class="spacer"></span><button class="btn primary" data-action="close-modal">닫기</button></div>',
+    {focus:false, cls:'modal-wide'}
+  );
+}
+
+function pinForm(owner, opts){
+  opts = opts || {};
+  var t = M[owner] || {};
+  var title = opts.title || (t.name + ' 프로필 잠금');
+  var sub = opts.sub || (t.name + '님 프로필은 PIN 4자리로 잠겨 있어요.');
+  return '<h3>'+esc(title)+'</h3><p class="modal-sub">'+esc(sub)+'</p>'
+    + '<form data-form="pin-check" data-id="'+owner+'" data-mode="'+(opts.mode||'switch')+'"'
+      + (opts.switchTo ? ' data-switch="'+opts.switchTo+'"' : '') + '>'
+    + '<input class="inp pin-input" id="pinInput" name="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="4" pattern="[0-9]{4}" placeholder="••••" aria-label="PIN 4자리" required>'
+    + '<div class="pin-err" id="pinErr"></div>'
+    + '<div class="modal-actions"><button type="button" class="btn ghost" data-action="close-modal">취소</button>'
+    + '<button class="btn primary" type="submit">확인</button></div></form>';
+}
+
+function showPinGate(target){
+  var r = $('#modalRoot');
+  if(!r) return;
+  ui.gate = target;
+  r.innerHTML = '<div class="pin-gate"><div class="pin-gate-card">'
+    + avBox(target, 76)
+    + '<h3>'+esc(M[target].name)+'님 프로필</h3>'
+    + '<p class="modal-sub">PIN 4자리를 입력하면 이어서 사용할 수 있어요.</p>'
+    + '<form data-form="pin-check" data-id="'+target+'" data-mode="gate">'
+      + '<input class="inp pin-input" id="pinInput" name="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="4" pattern="[0-9]{4}" placeholder="••••" aria-label="PIN 4자리" required>'
+      + '<div class="pin-err" id="pinErr"></div>'
+      + '<button class="btn primary block" type="submit" style="margin-top:10px">들어가기</button>'
+    + '</form>'
+    + '<div class="hint" style="margin-top:12px">내 고정 링크로 열면 PIN 없이 바로 들어갈 수 있어요.</div>'
+    + '</div></div>';
+  var inp = $('#pinInput');
+  if(inp) setTimeout(function(){ try{ inp.focus(); }catch(e){} }, 80);
+}
+
+function requestSwitch(target){
+  if(!M[target] || target === currentUser()) return;
+  if(hasPin(target)){
+    openModal(pinForm(target, {switchTo: target}));
+    return;
+  }
+  if(ui.meLocked && !isAdmin() && hasPin('jiye')){
+    openModal(pinForm('jiye', {
+      switchTo: target,
+      title: '프로필 전환 잠금',
+      sub: '고정 링크로 접속 중이에요. 프로필을 바꾸려면 엄마 지예님의 PIN이 필요해요.'
+    }));
+    return;
+  }
+  doSwitch(target);
+}
+
+function doSwitch(target){
+  if(!M[target]) return;
+  applyActive(target, false);
+  try{
+    var p = new URLSearchParams(location.search);
+    p.delete('me');
+    var qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }catch(e){}
+  closeModal();
+  render({top:true});
+  toast(M[target].name + ' 프로필로 바꿨어요');
+}
+
+function setPinModal(id){
+  if(!isAdmin()){ toast('PIN은 엄마만 정할 수 있어요'); return; }
+  var has = hasPin(id);
+  openModal(
+    '<h3>'+esc(M[id].name)+' PIN '+(has ? '변경' : '설정')+'</h3>'
+    + '<p class="modal-sub">숫자 4자리로 정해 주세요. 이 번호를 아는 사람만 '+esc(M[id].name)+' 프로필로 들어갈 수 있어요.</p>'
+    + '<form data-form="save-pin" data-id="'+id+'">'
+      + '<input class="inp pin-input" id="pinInput" name="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="4" pattern="[0-9]{4}" placeholder="••••" aria-label="새 PIN 4자리" required>'
+      + '<div class="pin-err" id="pinErr"></div>'
+      + '<div class="modal-actions"><button type="button" class="btn ghost" data-action="back-profile">뒤로</button>'
+        + '<button class="btn primary" type="submit">저장</button></div></form>'
+  );
+}
+
+function clearPin(id){
+  if(!isAdmin()){ toast('PIN은 엄마만 바꿀 수 있어요'); return; }
+  state.pins[id] = '';
+  persist();
+  openProfileModal();
+  toast(M[id].name + ' PIN을 해제했어요');
+}
+
+
 
 /* ------------------------- shared bits ------------------------- */
 function ring(p, color, size, stroke){
@@ -1272,6 +1626,27 @@ function memberTabs(active, action, ids){
 }
 function emptyBox(emoji, html){
   return '<div class="list-empty"><span class="em">'+emoji+'</span>'+html+'</div>';
+}
+function lockNote(title, sub){
+  var m = M[currentUser()] || {};
+  var t = title || (m.name + '님으로 접속 중이라 본인 것만 수정할 수 있어요');
+  var s = sub || '다른 가족의 기록은 보기만 할 수 있어요.';
+  return '<div class="locknote">'
+    + '<span class="ln-ic">🔒</span>'
+    + '<div class="ln-txt"><b>'+esc(t)+'</b><span>'+esc(s)+'</span></div>'
+    + '<button class="btn sm" data-action="open-profile">'+ic('users')+'내 프로필</button>'
+    + '</div>';
+}
+function missionButton(mm, size, withHint){
+  var on = !!state.mission.done[mm.id];
+  var allowed = canToggleMission(mm.id);
+  var cls = 'mbtn' + (on?' on':'') + (allowed?'':' locked');
+  var inner = avBox(mm.id, size || 42) + '<span class="nm">'+esc(mm.name)+'</span>'
+    + (withHint ? '<span class="hint" style="font-size:10px">'+(on ? '완료' : (allowed ? '눌러서 체크' : '내 것만 체크'))+'</span>' : '');
+  if(!allowed){
+    return '<div class="'+cls+'" data-theme="'+mm.theme+'" aria-disabled="true" title="본인 미션만 체크할 수 있어요">'+inner+'</div>';
+  }
+  return '<button class="'+cls+'" data-action="mission-toggle" data-member="'+mm.id+'" data-theme="'+mm.theme+'" aria-pressed="'+on+'">'+inner+'</button>';
 }
 function wmo(code){
   if(code === 0) return {label:'맑음', icon:'sun'};
@@ -1431,11 +1806,7 @@ function viewHome(){
           + '<span class="spacer"></span><button class="btn sm ghost" data-action="tab" data-tab="mission">미션 보기</button></div>'
         + '<div class="mission-q">'+esc(state.mission.text)+'</div>'
         + '<div class="mission-members compact" style="margin-top:12px">'
-          + MEMBERS.map(function(mm){
-              var on = !!state.mission.done[mm.id];
-              return '<button class="mbtn'+(on?' on':'')+'" data-action="mission-toggle" data-member="'+mm.id+'" data-theme="'+mm.theme+'" aria-pressed="'+on+'">'
-                + avBox(mm.id, 34) + '<span class="nm">'+mm.name+'</span></button>';
-            }).join('')
+          + MEMBERS.map(function(mm){ return missionButton(mm, 34, false); }).join('')
         + '</div>'
         + '<div class="bar thin" style="margin-top:12px"><i style="width:'+(md/4*100)+'%;background:'+(md===4?'#86EFAC':'#FDE68A')+'"></i></div>'
         + '<div class="hstack" style="margin-top:8px">'
@@ -1481,6 +1852,7 @@ function viewTodos(){
   var m = M[mid];
   var r = todoRate(mid);
   var list = todayTodos(mid);
+  var editable = canEditTodos(mid);
 
   var week = [];
   for(var i=6;i>=0;i--){
@@ -1494,15 +1866,19 @@ function viewTodos(){
     var dn = isTodoDoneToday(t);
     var carried = !t.recurring && t.assigned < today() && !t.done;
     return '<div class="row'+(dn?' done':'')+'" data-theme="'+m.theme+'">'
-      + '<button class="check'+(dn?' on':'')+'" data-action="toggle-todo" data-id="'+t.id+'" data-member="'+mid+'" aria-label="완료 표시" aria-pressed="'+dn+'">'+ic('check')+'</button>'
+      + (editable
+          ? '<button class="check'+(dn?' on':'')+'" data-action="toggle-todo" data-id="'+t.id+'" data-member="'+mid+'" aria-label="완료 표시" aria-pressed="'+dn+'">'+ic('check')+'</button>'
+          : '<span class="check view'+(dn?' on':'')+'" aria-hidden="true">'+ic('check')+'</span>')
       + '<div class="grow"><div class="t1">'+esc(t.text)+'</div>'
       + '<div class="t2">'
         + (t.recurring ? '<span class="tag-recur">'+ic('refresh')+' 매일</span>' : '')
         + (carried ? '<span class="chip gray">이월</span>' : '')
         + '<span>'+(t.recurring ? '오늘 완료 '+(dn?'✓':'—') : (dn ? '오늘 완료' : '한 번만'))+'</span>'
       + '</div></div>'
-      + '<button class="icon-btn" data-action="edit-todo" data-id="'+t.id+'" data-member="'+mid+'" aria-label="수정">'+ic('edit')+'</button>'
-      + '<button class="icon-btn danger" data-action="del-todo" data-id="'+t.id+'" data-member="'+mid+'" aria-label="삭제">'+ic('trash')+'</button>'
+      + (editable
+          ? '<button class="icon-btn" data-action="edit-todo" data-id="'+t.id+'" data-member="'+mid+'" aria-label="수정">'+ic('edit')+'</button>'
+            + '<button class="icon-btn danger" data-action="del-todo" data-id="'+t.id+'" data-member="'+mid+'" aria-label="삭제">'+ic('trash')+'</button>'
+          : '')
     + '</div>';
   }).join('') : emptyBox('🌤️','오늘 할 일이 아직 없어요.<br>아래에 첫 할 일을 적어보세요.');
 
@@ -1512,6 +1888,7 @@ function viewTodos(){
         + '<span class="hint" style="margin-left:auto">오늘 '+r.done+'/'+r.total+' 완료 · '+state.todos[mid].filter(function(t){return t.recurring;}).length+'개 반복 항목</span>'
       + '</div>'
     + '</div>'
+    + (!editable ? lockNote(M[currentUser()].name + '님으로 접속 중이라 본인 할 일만 수정할 수 있어요', M[mid].name + '님의 할 일은 '+M[mid].name+'님이 직접 고쳐요. 다른 가족 기록은 보기만 할 수 있어요.') : '')
     + '<div class="grid">'
       + '<section class="card col-8" data-theme="'+m.theme+'">'
         + '<div class="card-head">'+avBox(mid,38)+'<div><h2>'+m.name+'의 오늘 할 일</h2>'
@@ -1519,12 +1896,14 @@ function viewTodos(){
           + '<span class="spacer"></span><div class="ring-wrap" style="width:46px;height:46px">'+ring(r.pct, THEME_COLOR[m.theme], 46, 5)+'<span class="pct" style="font-size:11.5px">'+r.pct+'%</span></div></div>'
         + '<div class="bar" style="margin-bottom:14px"><i style="width:'+r.pct+'%"></i></div>'
         + '<div class="list">'+rows+'</div>'
-        + '<form class="addrow" data-form="add-todo" data-member="'+mid+'">'
-          + '<input class="inp" type="text" name="text" placeholder="할 일을 입력하고 Enter" maxlength="80" autocomplete="off" required style="flex:1;min-width:160px">'
-          + '<label class="switch" title="매일 반복"><input type="checkbox" name="recurring" checked><span class="track"></span>매일</label>'
-          + '<button class="btn primary" type="submit">'+ic('plus')+'추가</button>'
-        + '</form>'
-        + '<div class="hint" style="margin-top:10px">‘매일’을 켜면 날마다 새로 체크할 수 있어요. 지난 날짜의 완료 기록은 그대로 보관돼요.</div>'
+        + (editable
+            ? '<form class="addrow" data-form="add-todo" data-member="'+mid+'">'
+                + '<input class="inp" type="text" name="text" placeholder="할 일을 입력하고 Enter" maxlength="80" autocomplete="off" required style="flex:1;min-width:160px">'
+                + '<label class="switch" title="매일 반복"><input type="checkbox" name="recurring" checked><span class="track"></span>매일</label>'
+                + '<button class="btn primary" type="submit">'+ic('plus')+'추가</button>'
+              + '</form>'
+              + '<div class="hint" style="margin-top:10px">‘매일’을 켜면 날마다 새로 체크할 수 있어요. 지난 날짜의 완료 기록은 그대로 보관돼요.</div>'
+            : '<div class="hint" style="margin-top:10px">'+esc(m.name)+'님의 할 일은 '+esc(m.name)+'님이 직접 고쳐요. 이 화면에서는 보기만 할 수 있어요.</div>')
       + '</section>'
       + '<section class="card col-4" data-theme="'+m.theme+'">'
         + '<div class="card-head"><span class="ic-badge">'+ic('chart')+'</span><h2>최근 7일 완료율</h2></div>'
@@ -1567,6 +1946,7 @@ function viewStudy(){
   var m = M[kid];
   var r = studyRate(kid);
   var list = todayStudy(kid);
+  var editable = canEditStudy(kid);
   var hist = studyHistory(kid).slice(0, 14);
   var cum = sum((state.study[kid]||[]).map(function(x){
     if(x.recurring) return sum(Object.keys(x.dates).filter(function(k){ return x.dates[k]; }).map(function(){ return x.reward; }));
@@ -1578,13 +1958,17 @@ function viewStudy(){
   var rows = list.length ? list.map(function(t){
     var dn = studyDoneToday(t);
     return '<div class="row study-row'+(dn?' done':'')+'" data-theme="'+m.theme+'">'
-      + '<button class="check'+(dn?' on':'')+'" data-action="toggle-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="공부 완료" aria-pressed="'+dn+'">'+ic('check')+'</button>'
+      + (editable
+          ? '<button class="check'+(dn?' on':'')+'" data-action="toggle-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="공부 완료" aria-pressed="'+dn+'">'+ic('check')+'</button>'
+          : '<span class="check view'+(dn?' on':'')+'" aria-hidden="true">'+ic('check')+'</span>')
       + '<span class="study-subj subj-'+t.subject+'">'+esc(t.subject)+'</span>'
       + '<div class="grow"><div class="t1">'+esc(t.title)+'</div>'
       + '<div class="t2">'+(t.recurring?'<span class="tag-recur">'+ic('refresh')+' 매일</span>':'<span>한 번만</span>')+'<span class="reward-note">완료하면 용돈 '+won(t.reward)+' 적립</span></div></div>'
       + '<span class="amt" style="color:'+(dn?'var(--ok)':'var(--muted)')+'">'+won(t.reward)+'</span>'
-      + '<button class="icon-btn" data-action="edit-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="수정">'+ic('edit')+'</button>'
-      + '<button class="icon-btn danger" data-action="del-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="삭제">'+ic('trash')+'</button>'
+      + (editable
+          ? '<button class="icon-btn" data-action="edit-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="수정">'+ic('edit')+'</button>'
+            + '<button class="icon-btn danger" data-action="del-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="삭제">'+ic('trash')+'</button>'
+          : '')
     + '</div>';
   }).join('') : emptyBox('📚','오늘의 공부 항목이 없어요.<br>아래에서 과목과 보상을 정해 추가해 보세요.');
 
@@ -1593,6 +1977,10 @@ function viewStudy(){
       + memberTabs(kid, 'pick-study-kid', KIDS)
       + '<button class="btn sm soft" data-action="tab" data-tab="allowance" data-kid="'+kid+'">'+ic('wallet')+'용돈 관리</button>'
     + '</div></div>'
+    + (!editable ? lockNote(
+        M[currentUser()].name + '님으로 접속 중이라 ' + (currentUser() === 'seungeon' ? '공부 기록은 보기만 할 수 있어요' : '본인 공부만 수정할 수 있어요'),
+        M[kid].name + '님의 공부는 '+M[kid].name+'님이 직접 체크해요.'
+      ) : '')
     + '<div class="grid">'
       + '<section class="card col-8" data-theme="'+m.theme+'">'
         + '<div class="card-head">'+avBox(kid,38)+'<div><h2>'+m.name+'의 오늘 공부</h2>'
@@ -1600,14 +1988,16 @@ function viewStudy(){
           + '<span class="spacer"></span><div class="ring-wrap" style="width:46px;height:46px">'+ring(r.pct, THEME_COLOR[m.theme], 46, 5)+'<span class="pct" style="font-size:11.5px">'+r.pct+'%</span></div></div>'
         + '<div class="bar" style="margin-bottom:14px"><i style="width:'+r.pct+'%"></i></div>'
         + '<div class="list">'+rows+'</div>'
-        + '<form class="addrow" data-form="add-study" data-kid="'+kid+'">'
-          + '<select class="inp" name="subject" aria-label="과목" style="flex:0 0 92px">'+SUBJECTS.map(function(s){ return '<option value="'+s+'">'+s+'</option>'; }).join('')+'</select>'
-          + '<input class="inp" type="text" name="title" placeholder="공부 내용 (예: 수학 문제집 2장)" maxlength="60" required style="flex:1;min-width:140px">'
-          + '<input class="inp" type="number" name="reward" placeholder="보상" min="0" step="1" value="500" aria-label="보상 금액" style="flex:0 0 96px">'
-          + '<label class="switch" title="매일 반복"><input type="checkbox" name="recurring" checked><span class="track"></span>매일</label>'
-          + '<button class="btn primary" type="submit">'+ic('plus')+'추가</button>'
-        + '</form>'
-        + '<div class="hint" style="margin-top:10px">체크를 풀면 그 항목의 적립만 정확히 취소돼요. 다른 입금·사용 내역은 그대로 남아요.</div>'
+        + (editable
+            ? '<form class="addrow" data-form="add-study" data-kid="'+kid+'">'
+                + '<select class="inp" name="subject" aria-label="과목" style="flex:0 0 92px">'+SUBJECTS.map(function(s){ return '<option value="'+s+'">'+s+'</option>'; }).join('')+'</select>'
+                + '<input class="inp" type="text" name="title" placeholder="공부 내용 (예: 수학 문제집 2장)" maxlength="60" required style="flex:1;min-width:140px">'
+                + '<input class="inp" type="number" name="reward" placeholder="보상" min="0" step="1" value="500" aria-label="보상 금액" style="flex:0 0 96px">'
+                + '<label class="switch" title="매일 반복"><input type="checkbox" name="recurring" checked><span class="track"></span>매일</label>'
+                + '<button class="btn primary" type="submit">'+ic('plus')+'추가</button>'
+              + '</form>'
+              + '<div class="hint" style="margin-top:10px">체크를 풀면 그 항목의 적립만 정확히 취소돼요. 다른 입금·사용 내역은 그대로 남아요.</div>'
+            : '<div class="hint" style="margin-top:10px">공부 항목은 '+esc(m.name)+'님과 엄마가 함께 정해요. 이 화면에서는 보기만 할 수 있어요.</div>')
       + '</section>'
       + '<section class="card col-4" data-theme="'+m.theme+'">'
         + '<div class="card-head"><span class="ic-badge">'+ic('coin')+'</span><h2>공부 적립 현황</h2></div>'
@@ -1665,10 +2055,14 @@ function txSorted(kid){
 function viewAllowance(){
   var kid = ui.allowKid, m = M[kid], b = balance(kid);
   var tx = txSorted(kid);
+  var admin = canEditAllowance(kid);
+  var own = isMe(kid);
+  var canSpend = canRecordSpend(kid);
   var rows = tx.length ? tx.map(function(t){
     var isEarn = t.type === 'earn';
     var label = t.type === 'deposit' ? '입금' : t.type === 'spend' ? '사용' : '공부 적립';
     var cls = t.type === 'deposit' ? 'blue' : t.type === 'spend' ? 'pink' : 'mint';
+    var canDel = admin || (own && t.type === 'spend');
     return '<div class="row" data-theme="'+m.theme+'">'
       + '<span class="chip '+cls+'">'+label+'</span>'
       + '<div class="grow"><div class="t1">'+esc(t.memo || (isEarn ? '공부 완료 적립' : '내역'))+'</div>'
@@ -1676,8 +2070,8 @@ function viewAllowance(){
       + '<span class="amt" style="color:'+(t.type==='spend'?'var(--bad)':isEarn?'var(--ok)':'var(--ink)')+'">'
         + (t.type === 'spend' ? '−' : '+') + num(t.amount) + '원</span>'
       + (isEarn
-          ? '<button class="icon-btn" data-action="goto-study-from-tx" data-kid="'+kid+'" title="공부 탭에서 체크 해제로 취소" aria-label="공부 탭으로">'+ic('book')+'</button>'
-          : '<button class="icon-btn danger" data-action="del-tx" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="삭제">'+ic('trash')+'</button>')
+          ? (admin ? '<button class="icon-btn" data-action="goto-study-from-tx" data-kid="'+kid+'" title="공부 탭에서 체크 해제로 취소" aria-label="공부 탭으로">'+ic('book')+'</button>' : '')
+          : (canDel ? '<button class="icon-btn danger" data-action="del-tx" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="삭제">'+ic('trash')+'</button>' : ''))
     + '</div>';
   }).join('') : emptyBox('🧾','아직 내역이 없어요.<br>아래에서 입금이나 사용 내역을 기록해 보세요.');
 
@@ -1686,6 +2080,7 @@ function viewAllowance(){
       + memberTabs(kid, 'pick-allow-kid', KIDS)
       + '<button class="btn sm soft" data-action="tab" data-tab="study" data-kid="'+kid+'">'+ic('book')+'공부 관리</button>'
     + '</div></div>'
+    + (!admin && !own ? lockNote(M[currentUser()].name + '님으로 접속 중이라 용돈 기록은 보기만 할 수 있어요', '시작 금액과 입금·사용 내역은 엄마 지예님이 관리해요.') : '')
     + '<div class="grid">'
       + '<section class="card col-5" data-theme="'+m.theme+'" style="background:linear-gradient(160deg,'+THEME_SOFT[m.theme]+' 0%,#fff 66%)">'
         + '<div class="card-head">'+avBox(kid,38)+'<div><h2>'+m.name+'의 용돈</h2><div class="card-sub">현재 잔액</div></div></div>'
@@ -1693,7 +2088,8 @@ function viewAllowance(){
         + '<div class="money-sub">시작 '+num(b.start)+'원 + 입금 '+num(b.dep)+'원 + 공부 적립 '+num(b.earn)+'원 − 사용 '+num(b.spend)+'원</div>'
         + '<div class="stats" style="margin-top:16px">'
           + '<div class="stat hl"><div class="k">시작 금액</div><div class="v">'+num(b.start)+'<small>원</small></div>'
-            + '<button class="pill-btn" style="margin-top:7px" data-action="edit-start" data-kid="'+kid+'">'+ic('edit')+' 수정</button></div>'
+            + (admin ? '<button class="pill-btn" style="margin-top:7px" data-action="edit-start" data-kid="'+kid+'">'+ic('edit')+' 수정</button>' : '')
+          + '</div>'
           + '<div class="stat"><div class="k">공부 적립</div><div class="v" style="color:var(--ok)">+'+num(b.earn)+'<small>원</small></div></div>'
           + '<div class="stat"><div class="k">추가 입금</div><div class="v">+'+num(b.dep)+'<small>원</small></div></div>'
           + '<div class="stat"><div class="k">사용</div><div class="v" style="color:var(--bad)">−'+num(b.spend)+'<small>원</small></div></div>'
@@ -1702,13 +2098,24 @@ function viewAllowance(){
       + '</section>'
       + '<section class="card col-7" data-theme="'+m.theme+'">'
         + '<div class="card-head"><span class="ic-badge">'+ic('wallet')+'</span><h2>입금 · 사용 기록</h2><span class="spacer"></span><span class="hint">'+tx.length+'건</span></div>'
-        + '<form class="addrow" data-form="add-tx" data-kid="'+kid+'" style="margin:0 0 14px">'
-          + '<select class="inp" name="type" aria-label="종류" style="flex:0 0 92px"><option value="deposit">입금</option><option value="spend">사용</option></select>'
-          + '<input class="inp" type="number" name="amount" placeholder="금액" min="0" step="1" required aria-label="금액" style="flex:0 0 110px">'
-          + '<input class="inp" type="text" name="memo" placeholder="메모 (예: 문구점)" maxlength="40" aria-label="메모" style="flex:1;min-width:120px">'
-          + '<input class="inp" type="date" name="date" value="'+today()+'" aria-label="날짜" style="flex:0 0 140px">'
-          + '<button class="btn primary" type="submit">'+ic('plus')+'기록</button>'
-        + '</form>'
+        + (admin
+            ? '<form class="addrow" data-form="add-tx" data-kid="'+kid+'" style="margin:0 0 14px">'
+                + '<select class="inp" name="type" aria-label="종류" style="flex:0 0 92px"><option value="deposit">입금</option><option value="spend">사용</option></select>'
+                + '<input class="inp" type="number" name="amount" placeholder="금액" min="0" step="1" required aria-label="금액" style="flex:0 0 110px">'
+                + '<input class="inp" type="text" name="memo" placeholder="메모 (예: 문구점)" maxlength="40" aria-label="메모" style="flex:1;min-width:120px">'
+                + '<input class="inp" type="date" name="date" value="'+today()+'" aria-label="날짜" style="flex:0 0 140px">'
+                + '<button class="btn primary" type="submit">'+ic('plus')+'기록</button>'
+              + '</form>'
+            : own
+            ? '<form class="addrow" data-form="add-tx" data-kid="'+kid+'" style="margin:0 0 6px">'
+                + '<input type="hidden" name="type" value="spend"><span class="chip pink">사용</span>'
+                + '<input class="inp" type="number" name="amount" placeholder="금액" min="0" step="1" required aria-label="금액" style="flex:0 0 110px">'
+                + '<input class="inp" type="text" name="memo" placeholder="메모 (예: 문구점)" maxlength="40" aria-label="메모" style="flex:1;min-width:120px">'
+                + '<input class="inp" type="date" name="date" value="'+today()+'" aria-label="날짜" style="flex:0 0 140px">'
+                + '<button class="btn primary" type="submit">'+ic('plus')+'기록</button>'
+              + '</form>'
+              + '<div class="hint" style="margin:0 0 12px">사용 내역만 직접 기록할 수 있어요. 입금과 시작 금액은 엄마가 관리해요.</div>'
+            : '<div class="hint" style="margin:0 0 12px">'+esc(m.name)+'님의 용돈 기록은 보기만 할 수 있어요.</div>')
         + '<div class="list">'+rows+'</div>'
       + '</section>'
     + '</div>';
@@ -1717,6 +2124,8 @@ function viewAllowance(){
 /* ------------------------- STAMPS ------------------------- */
 function viewStamps(){
   var kid = ui.stampKid, m = M[kid];
+  var admin = canEditStamps(kid);
+  var own = isMe(kid);
   var list = state.stamps[kid].slice().sort(function(a,b){ return a.date < b.date ? 1 : -1; });
   var set = stampDates(kid);
   var st = streak(kid);
@@ -1753,8 +2162,9 @@ function viewStamps(){
       + '<div class="hstack" style="justify-content:space-between">'
         + '<span class="hint">'+(g.claimed ? '보상 받음 · '+fmtMD((g.claimedAt||today()).slice(0,10)) : p.reached ? '목표 달성! 받을 수 있어요' : (g.count - p.total)+'개 더 모으면 받을 수 있어요')+'</span>'
         + (g.claimed ? '<span class="done-badge">완료</span>'
-          : p.reached ? '<button class="btn sm accent" data-action="claim-reward" data-id="'+g.id+'" data-kid="'+kid+'">'+ic('gift')+'받기</button>' : '')
-        + '<button class="icon-btn danger" data-action="del-reward" data-id="'+g.id+'" data-kid="'+kid+'" aria-label="목표 삭제">'+ic('trash')+'</button>'
+          : p.reached ? ((admin || own) ? '<button class="btn sm accent" data-action="claim-reward" data-id="'+g.id+'" data-kid="'+kid+'">'+ic('gift')+'받기</button>' : '')
+          : '')
+        + (admin ? '<button class="icon-btn danger" data-action="del-reward" data-id="'+g.id+'" data-kid="'+kid+'" aria-label="목표 삭제">'+ic('trash')+'</button>' : '')
       + '</div>'
     + '</div>';
   }).join('') : '<div class="hint">보상 목표를 정해보세요. 도장이 쌓이면 받을 수 있어요.</div>';
@@ -1764,6 +2174,7 @@ function viewStamps(){
       + memberTabs(kid, 'pick-stamp-kid', KIDS)
       + '<span class="chip butter">'+ic('stamp')+' 전체 도장 '+total+'개 · 연속 '+st+'일</span>'
     + '</div></div>'
+    + (!admin && !own ? lockNote(M[currentUser()].name + '님으로 접속 중이라 '+m.name+'님의 도장판은 보기만 할 수 있어요', '도장과 보상은 엄마 지예님이 정해줘요.') : '')
     + '<div class="grid">'
       + '<section class="card col-4" data-theme="'+m.theme+'">'
         + '<div class="streak" style="margin-bottom:14px"><span class="flame">'+(st>0?'🔥':'🌱')+'</span>'
@@ -1778,11 +2189,13 @@ function viewStamps(){
         + '<div class="divider"></div>'
         + '<div class="sec-title" style="margin:0 0 10px;font-size:13.5px">🎁 보상 목표</div>'
         + '<div class="vstack">'+goalHTML+'</div>'
-        + '<form class="addrow" data-form="add-reward" data-kid="'+kid+'">'
-          + '<input class="inp" type="number" name="count" min="1" max="200" value="'+(total+10)+'" aria-label="목표 도장 수" style="flex:0 0 84px">'
-          + '<input class="inp" type="text" name="reward" placeholder="보상 내용 (예: 영화 보기)" maxlength="40" required style="flex:1;min-width:110px">'
-          + '<button class="btn primary" type="submit">'+ic('plus')+'</button>'
-        + '</form>'
+        + (admin
+            ? '<form class="addrow" data-form="add-reward" data-kid="'+kid+'">'
+                + '<input class="inp" type="number" name="count" min="1" max="200" value="'+(total+10)+'" aria-label="목표 도장 수" style="flex:0 0 84px">'
+                + '<input class="inp" type="text" name="reward" placeholder="보상 내용 (예: 영화 보기)" maxlength="40" required style="flex:1;min-width:110px">'
+                + '<button class="btn primary" type="submit">'+ic('plus')+'</button>'
+              + '</form>'
+            : '<div class="hint" style="margin-top:4px">보상 목표는 엄마 지예님이 정해줘요.</div>')
       + '</section>'
       + '<section class="card col-8" data-theme="'+m.theme+'">'
         + '<div class="stamp-layout">'
@@ -1808,15 +2221,17 @@ function viewStamps(){
                   return '<div class="row" style="padding:9px 12px">'
                     + '<span style="font-size:17px">'+(x.type==='habit'?'🌿':'⭐')+'</span>'
                     + '<div class="grow"><div class="t1">'+esc(x.label)+'</div><div class="t2"><span>'+(x.type==='habit'?'생활습관':'공부')+'</span></div></div>'
-                    + '<button class="icon-btn danger" data-action="del-stamp" data-id="'+x.id+'" data-kid="'+kid+'" aria-label="도장 삭제">'+ic('trash')+'</button>'
+                    + (admin ? '<button class="icon-btn danger" data-action="del-stamp" data-id="'+x.id+'" data-kid="'+kid+'" aria-label="도장 삭제">'+ic('trash')+'</button>' : '')
                   + '</div>';
                 }).join('') : '<div class="hint" style="padding:14px 2px">이 날은 아직 도장이 없어요.<br>아래에서 칭찬 도장을 찍어주세요.</div>')
             + '</div>'
-            + '<form class="addrow" data-form="add-stamp" data-kid="'+kid+'" data-date="'+ui.stampSel+'">'
-              + '<input class="inp" type="text" name="label" placeholder="칭찬 내용 (예: 스스로 양치했어요)" maxlength="50" required style="flex:1;min-width:130px">'
-              + '<select class="inp" name="type" aria-label="종류" style="flex:0 0 104px"><option value="study">공부</option><option value="habit">생활습관</option></select>'
-              + '<button class="btn primary" type="submit">'+ic('stamp')+'도장 찍기</button>'
-            + '</form>'
+            + (admin
+                ? '<form class="addrow" data-form="add-stamp" data-kid="'+kid+'" data-date="'+ui.stampSel+'">'
+                    + '<input class="inp" type="text" name="label" placeholder="칭찬 내용 (예: 스스로 양치했어요)" maxlength="50" required style="flex:1;min-width:130px">'
+                    + '<select class="inp" name="type" aria-label="종류" style="flex:0 0 104px"><option value="study">공부</option><option value="habit">생활습관</option></select>'
+                    + '<button class="btn primary" type="submit">'+ic('stamp')+'도장 찍기</button>'
+                  + '</form>'
+                : '<div class="hint" style="margin-top:10px">도장은 엄마 지예님이 찍어줄 수 있어요.</div>')
           + '</div>'
         + '</div>'
       + '</section>'
@@ -1835,6 +2250,7 @@ function chatGroups(){
   return groups;
 }
 function viewChat(){
+  var sender = isAdmin() ? (ui.chatSender || currentUser()) : currentUser();
   var groups = chatGroups();
   var body = groups.length ? groups.map(function(g){
     return '<div class="day-div">'+fmtLongK(g.date)+'</div>' + g.msgs.map(function(msg){
@@ -1845,23 +2261,25 @@ function viewChat(){
         + '<div class="msg-main"><div class="msg-name">'+m.name+'</div>'
           + '<div class="msg-bubble">'+esc(msg.text)+'</div></div>'
         + '<span class="msg-time">'+fmtHM(msg.ts)+'</span>'
-        + '<button class="icon-btn del" data-action="del-msg" data-id="'+msg.id+'" aria-label="메시지 삭제">'+ic('x')+'</button>'
+        + (canDeleteMessage(msg.sender) ? '<button class="icon-btn del" data-action="del-msg" data-id="'+msg.id+'" aria-label="메시지 삭제">'+ic('x')+'</button>' : '')
       + '</div>';
     }).join('');
   }).join('') : emptyBox('💌','첫 메시지를 남겨보세요.<br>오늘의 안부를 가족에게 전해볼까요?');
 
   return pageHead('가족 채팅', '네 사람이 함께 쓰는 작은 이야기방')
+    + (!isAdmin() ? lockNote(M[currentUser()].name + '님으로 접속 중이라 '+M[currentUser()].name+'님 이름으로만 보낼 수 있어요', '다른 가족 이름으로는 보낼 수 없고, 내가 쓴 메시지만 지울 수 있어요.') : '')
     + '<section class="card chat-shell" id="chatShell">'
       + '<div class="chat-head">'
-        + '<span style="font-size:12.5px;font-weight:700;color:var(--muted)">보내는 사람</span>'
-        + memberTabs(ui.chatSender || 'jiye', 'pick-sender')
+        + (isAdmin()
+            ? '<span style="font-size:12.5px;font-weight:700;color:var(--muted)">보내는 사람</span>' + memberTabs(sender, 'pick-sender')
+            : '<span class="chat-me">'+avBox(sender, 26)+'<b>'+esc(M[sender].name)+'</b><em>으로 보내기</em></span>')
         + '<span class="spacer" style="margin-left:auto"></span><span class="hint">'+state.chat.length+'개 메시지</span>'
       + '</div>'
       + '<div class="chat-body" id="chatBody">'+body+'</div>'
       + '<div class="chat-foot">'
         + '<div class="sticker-row">'+STICKERS.map(function(s){ return '<button class="sticker-btn" data-action="sticker" data-s="'+s+'" aria-label="'+s+' 이모티콘">'+s+'</button>'; }).join('')+'</div>'
         + '<form class="chat-input" data-form="send-chat">'
-          + '<textarea class="inp" name="text" id="chatInput" placeholder="'+(M[ui.chatSender||'jiye'].name)+'(으)로서 메시지 보내기" maxlength="300" rows="1"></textarea>'
+          + '<textarea class="inp" name="text" id="chatInput" placeholder="'+esc(M[sender].name)+'(으)로서 메시지 보내기" maxlength="300" rows="1"></textarea>'
           + '<button class="btn primary" type="submit" style="height:42px">보내기</button>'
         + '</form>'
       + '</div>'
@@ -1882,23 +2300,18 @@ function viewMission(){
         + '<div class="mission-q">'+esc(state.mission.text)+'</div>'
         + '<div class="bar thin"><i style="width:'+(md/4*100)+'%;background:'+(all?'#86EFAC':'#FDE68A')+'"></i></div>'
         + '<div class="mission-members">'
-          + MEMBERS.map(function(m){
-              var on = !!state.mission.done[m.id];
-              return '<button class="mbtn'+(on?' on':'')+'" data-action="mission-toggle" data-member="'+m.id+'" data-theme="'+m.theme+'" aria-pressed="'+on+'">'
-                + avBox(m.id, 42)
-                + '<span class="nm">'+m.name+'</span>'
-                + '<span class="hint" style="font-size:10px">'+(on?'완료':'눌러서 체크')+'</span>'
-              + '</button>';
-            }).join('')
+          + MEMBERS.map(function(mm){ return missionButton(mm, 42, true); }).join('')
         + '</div>'
         + (all ? '<div class="success"><span class="big">🎉</span><div><b>미션 성공!</b><span>온 가족이 함께 해냈어요. 가족 기록에 저장됐어요.</span></div></div>'
           : '<div class="hint" style="margin-top:12px">네 사람이 모두 체크하면 미션 성공으로 기록돼요. '+(4-md)+'명 남았어요!</div>')
-        + '<div class="hstack" style="margin-top:16px">'
-          + '<button class="btn primary" data-action="draw-mission">'+ic('refresh')+'새 미션 뽑기</button>'
-          + '<button class="btn" data-action="custom-mission">'+ic('edit')+'직접 정하기</button>'
-          + '<span class="spacer"></span>'
-          + (md>0 ? '<button class="btn ghost sm" data-action="reset-mission">체크 초기화</button>' : '')
-        + '</div>'
+        + (isAdmin()
+            ? '<div class="hstack" style="margin-top:16px">'
+                + '<button class="btn primary" data-action="draw-mission">'+ic('refresh')+'새 미션 뽑기</button>'
+                + '<button class="btn" data-action="custom-mission">'+ic('edit')+'직접 정하기</button>'
+                + '<span class="spacer"></span>'
+                + (md>0 ? '<button class="btn ghost sm" data-action="reset-mission">체크 초기화</button>' : '')
+              + '</div>'
+            : '<div class="hint" style="margin-top:14px">미션은 엄마 지예님이 정해요. 내 칸만 직접 체크할 수 있어요.</div>')
       + '</section>'
       + '<section class="card col-4">'
         + '<div class="card-head"><span class="ic-badge" style="background:var(--mint);color:var(--mint-ink)">'+ic('gift')+'</span><h2>함께 이룬 기록</h2>'
@@ -1974,6 +2387,7 @@ function weightChart(){
     + '</svg></div>';
 }
 function viewHealth(){
+  var admin = canEditHealth();
   var list = weightSeries();
   var ws = weekWorkouts();
   var cur = list.length ? list[list.length-1] : null;
@@ -1992,6 +2406,7 @@ function viewHealth(){
   var workouts = state.health.workouts.slice().sort(function(a,b){ return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
 
   return pageHead('엄마 건강 관리', '지예님의 운동과 체중을 조용히 쌓아두는 공간이에요')
+    + (!admin ? lockNote(M[currentUser()].name + '님으로 접속 중이라 건강 기록은 보기만 할 수 있어요', '운동과 체중 기록은 엄마 지예님만 고칠 수 있어요.') : '')
     + '<div class="grid">'
       + '<section class="card col-12">'
         + '<div class="stats" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr))">'
@@ -2005,12 +2420,14 @@ function viewHealth(){
         + '<div class="card-head"><span class="ic-badge">'+ic('chart')+'</span><h2>체중 변화</h2>'
           + '<span class="spacer"></span><span class="hint">최저 '+minW.toFixed(1)+'kg · 최고 '+maxW.toFixed(1)+'kg</span></div>'
         + weightChart()
-        + '<form class="addrow" data-form="add-weight" style="margin-top:10px">'
-          + '<input class="inp" type="number" name="kg" step="0.1" min="20" max="200" placeholder="체중 (kg)" required aria-label="체중" style="flex:0 0 130px">'
-          + '<input class="inp" type="date" name="date" value="'+today()+'" aria-label="날짜" style="flex:0 0 150px">'
-          + '<button class="btn primary" type="submit">'+ic('plus')+'체중 기록</button>'
-        + '</form>'
-        + '<div class="hint" style="margin-top:8px">같은 날짜에 다시 기록하면 그날 값이 새로 저장돼요.</div>'
+        + (admin
+            ? '<form class="addrow" data-form="add-weight" style="margin-top:10px">'
+                + '<input class="inp" type="number" name="kg" step="0.1" min="20" max="200" placeholder="체중 (kg)" required aria-label="체중" style="flex:0 0 130px">'
+                + '<input class="inp" type="date" name="date" value="'+today()+'" aria-label="날짜" style="flex:0 0 150px">'
+                + '<button class="btn primary" type="submit">'+ic('plus')+'체중 기록</button>'
+              + '</form>'
+              + '<div class="hint" style="margin-top:8px">같은 날짜에 다시 기록하면 그날 값이 새로 저장돼요.</div>'
+            : '<div class="hint" style="margin-top:10px">체중 기록은 엄마만 남길 수 있어요.</div>')
       + '</section>'
       + '<section class="card col-4">'
         + '<div class="card-head"><span class="ic-badge">'+ic('dumbbell')+'</span><h2>운동 종류별</h2></div>'
@@ -2028,21 +2445,23 @@ function viewHealth(){
       + '</section>'
       + '<section class="card col-7">'
         + '<div class="card-head"><span class="ic-badge">'+ic('dumbbell')+'</span><h2>운동 기록</h2><span class="spacer"></span><span class="hint">'+workouts.length+'회</span></div>'
-        + '<form class="addrow" data-form="add-workout" style="margin:0 0 14px">'
-          + '<select class="inp" name="type" aria-label="운동 종류" style="flex:0 0 104px">'+EXERCISES.map(function(e){ return '<option>'+e+'</option>'; }).join('')+'</select>'
-          + '<input class="inp" type="number" name="minutes" min="1" max="600" placeholder="분" required aria-label="운동 시간" style="flex:0 0 80px">'
-          + '<input class="inp" type="date" name="date" value="'+today()+'" aria-label="날짜" style="flex:0 0 146px">'
-          + '<input class="inp" type="text" name="note" placeholder="메모 (선택)" maxlength="60" aria-label="메모" style="flex:1;min-width:110px">'
-          + '<button class="btn primary" type="submit">'+ic('plus')+'추가</button>'
-        + '</form>'
+        + (admin
+            ? '<form class="addrow" data-form="add-workout" style="margin:0 0 14px">'
+                + '<select class="inp" name="type" aria-label="운동 종류" style="flex:0 0 104px">'+EXERCISES.map(function(e){ return '<option>'+e+'</option>'; }).join('')+'</select>'
+                + '<input class="inp" type="number" name="minutes" min="1" max="600" placeholder="분" required aria-label="운동 시간" style="flex:0 0 80px">'
+                + '<input class="inp" type="date" name="date" value="'+today()+'" aria-label="날짜" style="flex:0 0 146px">'
+                + '<input class="inp" type="text" name="note" placeholder="메모 (선택)" maxlength="60" aria-label="메모" style="flex:1;min-width:110px">'
+                + '<button class="btn primary" type="submit">'+ic('plus')+'추가</button>'
+              + '</form>'
+            : '')
         + '<div class="list">'
           + (workouts.length ? workouts.map(function(w){
               return '<div class="row">'
                 + '<span class="chip blue" style="min-width:52px;justify-content:center">'+esc(w.type)+'</span>'
                 + '<div class="grow"><div class="t1">'+w.minutes+'분'+(w.note?' <span class="faint" style="font-weight:600">· '+esc(w.note)+'</span>':'')+'</div>'
                   + '<div class="t2"><span>'+fmtMD(w.date)+(relTag(w.date)?' · '+relTag(w.date):'')+'</span></div></div>'
-                + '<button class="icon-btn" data-action="edit-workout" data-id="'+w.id+'" aria-label="수정">'+ic('edit')+'</button>'
-                + '<button class="icon-btn danger" data-action="del-workout" data-id="'+w.id+'" aria-label="삭제">'+ic('trash')+'</button>'
+                + (admin ? '<button class="icon-btn" data-action="edit-workout" data-id="'+w.id+'" aria-label="수정">'+ic('edit')+'</button>'
+                  + '<button class="icon-btn danger" data-action="del-workout" data-id="'+w.id+'" aria-label="삭제">'+ic('trash')+'</button>' : '')
               + '</div>';
             }).join('') : emptyBox('🧘','운동을 기록해 보세요.<br>오늘 한 30분도 충분해요.'))
         + '</div>'
@@ -2053,7 +2472,7 @@ function viewHealth(){
           + (list.length ? list.slice().reverse().slice(0, 10).map(function(w){
               return '<div class="row" style="padding:9px 12px">'
                 + '<div class="grow"><div class="t1">'+Number(w.kg).toFixed(1)+' kg</div><div class="t2"><span>'+fmtMD(w.date)+(relTag(w.date)?' · '+relTag(w.date):'')+'</span></div></div>'
-                + '<button class="icon-btn danger" data-action="del-weight" data-id="'+w.id+'" aria-label="삭제">'+ic('trash')+'</button>'
+                + (admin ? '<button class="icon-btn danger" data-action="del-weight" data-id="'+w.id+'" aria-label="삭제">'+ic('trash')+'</button>' : '')
               + '</div>';
             }).join('') : '<div class="hint">기록이 없어요.</div>')
         + '</div>'
@@ -2100,7 +2519,7 @@ function setTab(tab, extra){
   state.lastTab = tab;
   persist();
   var dr = $('#drawerRoot'); if(dr) dr.innerHTML = '';
-  var mr = $('#modalRoot'); if(mr) mr.innerHTML = '';
+  var mr = $('#modalRoot'); if(mr && !ui.gate) mr.innerHTML = '';
   if(tab === 'stamps'){
     ui.stampMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
     ui.stampSel = today();
@@ -2122,6 +2541,7 @@ function openDrawer(){
         return '<button class="drawer-item'+(ui.tab===t.id?' on':'')+'" data-action="tab" data-tab="'+t.id+'">'
           + '<span class="ic">'+ic(t.icon)+'</span>'+t.label+'</button>';
       }).join('')
+    + '<button class="drawer-item" data-action="open-profile"><span class="ic">'+ic('lock')+'</span>프로필 · 잠금</button>'
     + '<button class="drawer-item" data-action="open-settings"><span class="ic">'+ic('settings')+'</span>설정 · 백업</button>'
     + '</div></div>';
 }
@@ -2136,8 +2556,14 @@ function openSettings(){
     chat: state.chat.length,
     workouts: state.health.workouts.length
   };
+  var admin = canManageSettings();
+  var uid = currentUser();
   openModal(
     '<h3>설정 · 백업</h3><p class="modal-sub">모든 기록은 이 브라우저(로컬 저장소)에만 저장돼요. 기기를 옮길 때는 백업 파일을 이용해 주세요.</p>'
+    + '<div class="pf-now" style="margin-bottom:14px" data-theme="'+M[uid].theme+'">'+avBox(uid, 42)
+      + '<div><b>'+esc(M[uid].name)+'</b><span>'+esc(roleBadge(uid))+'</span></div>'
+      + '<button class="btn sm" data-action="open-profile">'+ic('lock')+'프로필 · 잠금</button>'
+    + '</div>'
     + '<label class="fld"><span>날씨 도시</span><select class="inp" id="setCity">'
       + Object.keys(CITIES).map(function(n){ return '<option value="'+n+'"'+(state.city===n?' selected':'')+'>'+n+'</option>'; }).join('')
     + '</select></label>'
@@ -2146,12 +2572,14 @@ function openSettings(){
     + '<div class="hstack">'
       + '<button class="btn" data-action="export-json">'+ic('download')+'JSON 내보내기</button>'
       + '<button class="btn" data-action="copy-json">'+ic('upload')+'클립보드 복사</button>'
-      + '<label class="btn" style="cursor:pointer">'+ic('upload')+'파일 가져오기'
-        + '<input type="file" accept="application/json,.json" id="importFile" style="display:none"></label>'
+      + (admin ? '<label class="btn" style="cursor:pointer">'+ic('upload')+'파일 가져오기'
+        + '<input type="file" accept="application/json,.json" id="importFile" style="display:none"></label>' : '')
     + '</div>'
-    + '<label class="fld" style="margin-top:12px"><span>백업 JSON 붙여넣기</span>'
-      + '<textarea class="inp" id="importArea" placeholder="여기에 백업 내용을 붙여넣고 아래 ‘가져오기’를 눌러주세요" style="min-height:80px;font-size:12px"></textarea></label>'
-    + '<button class="btn block" data-action="import-text">붙여넣은 내용 가져오기</button>'
+    + (admin
+        ? '<label class="fld" style="margin-top:12px"><span>백업 JSON 붙여넣기</span>'
+            + '<textarea class="inp" id="importArea" placeholder="여기에 백업 내용을 붙여넣고 아래 ‘가져오기’를 눌러주세요" style="min-height:80px;font-size:12px"></textarea></label>'
+          + '<button class="btn block" data-action="import-text">붙여넣은 내용 가져오기</button>'
+        : '<div class="hint" style="margin-top:10px">가져오기는 엄마 지예님만 할 수 있어요. 내보내기·클립보드 복사는 누구나 쓸 수 있어요.</div>')
     + '<div class="divider"></div>'
     + '<div class="sec-title" style="margin:0 0 8px;font-size:13px">저장된 기록</div>'
     + '<div class="hstack" style="gap:6px">'
@@ -2159,8 +2587,9 @@ function openSettings(){
       + '<span class="chip gray">용돈 내역 '+counts.tx+'</span><span class="chip gray">도장 '+counts.stamps+'</span>'
       + '<span class="chip gray">채팅 '+counts.chat+'</span><span class="chip gray">운동 '+counts.workouts+'</span>'
     + '</div>'
-    + '<div class="divider"></div>'
-    + '<button class="btn danger block" data-action="reset-all">'+ic('trash')+'모든 데이터 초기화</button>'
+    + (admin
+        ? '<div class="divider"></div><button class="btn danger block" data-action="reset-all">'+ic('trash')+'모든 데이터 초기화</button>'
+        : '')
     + '<div class="modal-actions"><span class="spacer"></span><button class="btn primary" data-action="close-modal">닫기</button></div>',
     {focus:false}
   );
@@ -2204,6 +2633,7 @@ function fallbackCopy(text){
   ta.remove();
 }
 function doImport(text){
+  if(!canManageSettings()){ toast('가져오기는 엄마만 할 수 있어요'); return; }
   var obj;
   try{ obj = JSON.parse(text); }catch(e){ toast('JSON 형식이 아니에요'); return; }
   if(!obj || typeof obj !== 'object' || (!obj.todos && !obj.chat && !obj.health)){ toast('가족 대시보드 백업 파일이 아니에요'); return; }
@@ -2217,6 +2647,7 @@ function doImport(text){
   });
 }
 function resetAll(){
+  if(!canManageSettings()){ toast('초기화는 엄마만 할 수 있어요'); return; }
   confirmModal('모든 데이터 초기화', '할 일, 공부, 용돈, 도장, 채팅, 건강 기록이 모두 지워지고 처음 상태로 돌아갑니다. 되돌릴 수 없어요.', '초기화', function(){
     try{ localStorage.removeItem(STORE_KEY); localStorage.removeItem(WEATHER_KEY); }catch(e){}
     state = seed();
@@ -2299,6 +2730,9 @@ function loadWeather(){
 /* ------------------------- actions ------------------------- */
 function findTodo(mid, id){ return (state.todos[mid]||[]).filter(function(x){ return x.id === id; })[0]; }
 function findStudy(kid, id){ return (state.study[kid]||[]).filter(function(x){ return x.id === id; })[0]; }
+function denyPerm(msg){
+  toast(msg || '본인 것만 수정할 수 있어요', {ms:2600});
+}
 
 function toggleTodo(mid, id){
   var t = findTodo(mid, id); if(!t) return;
@@ -2424,19 +2858,25 @@ document.addEventListener('click', function(e){
     case 'pick-study-kid': ui.studyKid = ds.id; render(); break;
     case 'pick-allow-kid': ui.allowKid = ds.id; render(); break;
     case 'pick-stamp-kid': ui.stampKid = ds.id; ui.stampSel = today(); render(); break;
-    case 'pick-sender': ui.chatSender = ds.id; render(); break;
-    case 'toggle-todo': toggleTodo(ds.member, id); break;
-    case 'edit-todo': editTodoModal(ds.member, id); break;
+    case 'pick-sender': if(!isAdmin()){ denyPerm('보내는 사람은 내 이름으로 고정돼 있어요'); break; } ui.chatSender = ds.id; render(); break;
+    case 'toggle-todo':
+      if(!canEditTodos(ds.member)){ denyPerm(M[ds.member].name+'님의 할 일은 '+M[ds.member].name+'님이 직접 체크해요'); break; }
+      toggleTodo(ds.member, id); break;
+    case 'edit-todo': if(!canEditTodos(ds.member)){ denyPerm(); break; } editTodoModal(ds.member, id); break;
     case 'del-todo': (function(){
+        if(!canEditTodos(ds.member)){ denyPerm(); return; }
         var mid = ds.member, t = findTodo(mid, id); if(!t) return;
         var arr = state.todos[mid], idx = arr.indexOf(t);
         arr.splice(idx, 1);
         persist(); closeModal(); render();
         toast('할 일을 삭제했어요', {undo:function(){ arr.splice(idx, 0, t); persist(); render(); }});
       })(); break;
-    case 'toggle-study': toggleStudy(ds.kid, id); break;
-    case 'edit-study': editStudyModal(ds.kid, id); break;
+    case 'toggle-study':
+      if(!canEditStudy(ds.kid)){ denyPerm(M[ds.kid].name+'님의 공부는 보기만 할 수 있어요'); break; }
+      toggleStudy(ds.kid, id); break;
+    case 'edit-study': if(!canEditStudy(ds.kid)){ denyPerm(); break; } editStudyModal(ds.kid, id); break;
     case 'del-study': (function(){
+        if(!canEditStudy(ds.kid)){ denyPerm(); return; }
         var kid = ds.kid, arr = state.study[kid];
         var item = findStudy(kid, id); if(!item) return;
         var idx = arr.indexOf(item);
@@ -2455,12 +2895,13 @@ document.addEventListener('click', function(e){
         var i = arr.findIndex(function(t){ return t.id === id; });
         if(i < 0) return;
         var item = arr[i];
+        if(!canEditAllowance(kid) && !(isMe(kid) && item.type === 'spend')){ denyPerm('내가 쓴 내역만 지울 수 있어요'); return; }
         arr.splice(i, 1);
         persist(); render();
         toast('내역을 삭제했어요', {undo:function(){ arr.splice(i, 0, item); persist(); render(); }});
       })(); break;
     case 'goto-study-from-tx': setTab('study', {kid: ds.kid}); break;
-    case 'edit-start': editStartModal(ds.kid); break;
+    case 'edit-start': if(!canEditAllowance(ds.kid)){ denyPerm('시작 금액은 엄마만 바꿀 수 있어요'); break; } editStartModal(ds.kid); break;
     case 'stamp-month': (function(){
         var d = parseInt(ds.delta, 10) || 0;
         var cur = ui.stampMonth || new Date();
@@ -2470,6 +2911,7 @@ document.addEventListener('click', function(e){
     case 'stamp-day': ui.stampSel = ds.date; render(); break;
     case 'stamp-today': ui.stampSel = today(); ui.stampMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1); render(); break;
     case 'del-stamp': (function(){
+        if(!canEditStamps(ds.kid)){ denyPerm('도장은 엄마만 지울 수 있어요'); return; }
         var kid = ds.kid, arr = state.stamps[kid];
         var i = arr.findIndex(function(s){ return s.id === id; });
         if(i < 0) return;
@@ -2482,6 +2924,7 @@ document.addEventListener('click', function(e){
         var kid = ds.kid, arr = state.rewards[kid];
         var g = arr.filter(function(x){ return x.id === id; })[0];
         if(!g || g.claimed) return;
+        if(!isAdmin() && !isMe(kid)){ denyPerm('내 보상만 받을 수 있어요'); return; }
         confirmModal('보상 받기', '‘'+g.reward+'’ 목표를 달성했어요. 받은 것으로 표시할까요?', '받았어요!', function(){
           g.claimed = true;
           g.claimedAt = today();
@@ -2491,6 +2934,7 @@ document.addEventListener('click', function(e){
         });
       })(); break;
     case 'del-reward': (function(){
+        if(!canEditStamps(ds.kid)){ denyPerm('보상 목표는 엄마만 지울 수 있어요'); return; }
         var kid = ds.kid, arr = state.rewards[kid];
         var i = arr.findIndex(function(x){ return x.id === id; });
         if(i < 0) return;
@@ -2504,6 +2948,7 @@ document.addEventListener('click', function(e){
         var i = arr.findIndex(function(m){ return m.id === id; });
         if(i < 0) return;
         var item = arr[i];
+        if(!canDeleteMessage(item.sender)){ denyPerm('내가 쓴 메시지만 지울 수 있어요'); return; }
         arr.splice(i, 1);
         persist(); render();
         toast('메시지를 삭제했어요', {undo:function(){ arr.splice(i, 0, item); persist(); render(); }});
@@ -2513,8 +2958,11 @@ document.addEventListener('click', function(e){
         var inp = $('#chatInput');
         if(inp){ inp.value = ui.chatDraft; inp.focus(); }
       })(); break;
-    case 'mission-toggle': toggleMission(ds.member); break;
+    case 'mission-toggle':
+      if(!canToggleMission(ds.member)){ denyPerm('내 미션 칸만 체크할 수 있어요'); break; }
+      toggleMission(ds.member); break;
     case 'draw-mission': (function(){
+        if(!isAdmin()){ denyPerm('미션은 엄마만 정할 수 있어요'); return; }
         var cur = state.mission.text;
         var pick = cur;
         for(var i=0;i<12 && pick === cur;i++) pick = MISSIONS[Math.floor(Math.random() * MISSIONS.length)];
@@ -2525,10 +2973,13 @@ document.addEventListener('click', function(e){
         persist(); render();
         toast('새 미션을 뽑았어요 🎲');
       })(); break;
-    case 'custom-mission': customMissionModal(); break;
-    case 'reset-mission': state.mission.done = {}; persist(); render(); toast('체크를 초기화했어요'); break;
-    case 'edit-workout': editWorkoutModal(id); break;
+    case 'custom-mission': if(!isAdmin()){ denyPerm('미션은 엄마만 정할 수 있어요'); break; } customMissionModal(); break;
+    case 'reset-mission':
+      if(!isAdmin()){ denyPerm('미션은 엄마만 정할 수 있어요'); break; }
+      state.mission.done = {}; persist(); render(); toast('체크를 초기화했어요'); break;
+    case 'edit-workout': if(!canEditHealth()){ denyPerm('건강 기록은 엄마만 고칠 수 있어요'); break; } editWorkoutModal(id); break;
     case 'del-workout': (function(){
+        if(!canEditHealth()){ denyPerm('건강 기록은 엄마만 고칠 수 있어요'); return; }
         var arr = state.health.workouts;
         var i = arr.findIndex(function(x){ return x.id === id; });
         if(i < 0) return;
@@ -2538,6 +2989,7 @@ document.addEventListener('click', function(e){
         toast('운동 기록을 삭제했어요', {undo:function(){ arr.splice(i, 0, item); persist(); render(); }});
       })(); break;
     case 'del-weight': (function(){
+        if(!canEditHealth()){ denyPerm('건강 기록은 엄마만 고칠 수 있어요'); return; }
         var arr = state.health.weights;
         var i = arr.findIndex(function(x){ return x.id === id; });
         if(i < 0) return;
@@ -2547,6 +2999,14 @@ document.addEventListener('click', function(e){
         toast('체중 기록을 삭제했어요', {undo:function(){ arr.splice(i, 0, item); persist(); render(); }});
       })(); break;
     case 'refresh-weather': loadWeather(); break;
+    case 'open-profile': openProfileModal(); break;
+    case 'switch-profile': requestSwitch(ds.id); break;
+    case 'set-pin': setPinModal(ds.id); break;
+    case 'clear-pin': clearPin(ds.id); break;
+    case 'back-profile': openProfileModal(); break;
+    case 'copy-link':
+      copyText(fixedLink(ds.id), (M[ds.id] ? M[ds.id].name : '') + ' 고정 링크를 복사했어요');
+      break;
     case 'open-settings': openSettings(); break;
     case 'close-modal': closeModal(); break;
     case 'modal-backdrop': if(e.target === el) closeModal(); break;
@@ -2588,6 +3048,7 @@ document.addEventListener('submit', function(e){
 
   if(kind === 'add-todo'){
     var mid = f.getAttribute('data-member');
+    if(!canEditTodos(mid)){ denyPerm(); return; }
     var text = String(d.text || '').trim();
     if(!text) return;
     state.todos[mid].push({id:uid('td'), text:text, recurring:!!d.recurring, assigned:t, done:false, doneOn:null, dates:{}, createdAt:Date.now()});
@@ -2598,6 +3059,7 @@ document.addEventListener('submit', function(e){
   }
   else if(kind === 'save-todo'){
     var m2 = f.getAttribute('data-member');
+    if(!canEditTodos(m2)){ denyPerm(); return; }
     var t2 = findTodo(m2, f.getAttribute('data-id'));
     if(t2){
       t2.text = String(d.text || '').trim() || t2.text;
@@ -2608,6 +3070,7 @@ document.addEventListener('submit', function(e){
   }
   else if(kind === 'add-study'){
     var kid = f.getAttribute('data-kid');
+    if(!canEditStudy(kid)){ denyPerm(); return; }
     var title = String(d.title || '').trim();
     if(!title) return;
     state.study[kid].push({id:uid('st'), subject:d.subject || '기타', title:title, text:title, reward: Math.max(0, Number(d.reward) || 0), recurring:!!d.recurring, assigned:t, done:false, doneOn:null, dates:{}, createdAt:Date.now()});
@@ -2618,6 +3081,7 @@ document.addEventListener('submit', function(e){
   }
   else if(kind === 'save-study'){
     var k2 = f.getAttribute('data-kid');
+    if(!canEditStudy(k2)){ denyPerm(); return; }
     var s2 = findStudy(k2, f.getAttribute('data-id'));
     if(s2){
       s2.subject = d.subject || s2.subject;
@@ -2631,15 +3095,17 @@ document.addEventListener('submit', function(e){
   }
   else if(kind === 'add-tx'){
     var kid3 = f.getAttribute('data-kid');
+    if(!canRecordSpend(kid3)){ denyPerm('용돈 기록은 엄마만 남길 수 있어요'); return; }
     var amt = Math.round(Number(d.amount) || 0);
     if(amt <= 0){ toast('금액을 1원 이상 입력해 주세요'); return; }
-    var type = (d.type === 'spend') ? 'spend' : 'deposit';
+    var type = (!isAdmin() || d.type !== 'deposit') ? 'spend' : 'deposit';
     state.allowance[kid3].tx.push({id:uid('tx'), type:type, amount:amt, memo:String(d.memo || '').trim(), date:d.date || t, source:null, itemId:null, ts:Date.now()});
     persist(); render();
     toast(type === 'spend' ? won(amt)+' 사용을 기록했어요' : won(amt)+' 입금을 기록했어요');
   }
   else if(kind === 'add-stamp'){
     var kid4 = f.getAttribute('data-kid');
+    if(!canEditStamps(kid4)){ denyPerm('도장은 엄마만 찍어줄 수 있어요'); return; }
     var date = f.getAttribute('data-date') || ui.stampSel || t;
     var label = String(d.label || '').trim();
     if(!label) return;
@@ -2649,6 +3115,7 @@ document.addEventListener('submit', function(e){
   }
   else if(kind === 'add-reward'){
     var kid5 = f.getAttribute('data-kid');
+    if(!canEditStamps(kid5)){ denyPerm('보상 목표는 엄마만 정할 수 있어요'); return; }
     var count = Math.max(1, Math.round(Number(d.count) || 10));
     var reward = String(d.reward || '').trim();
     if(!reward) return;
@@ -2658,12 +3125,13 @@ document.addEventListener('submit', function(e){
   else if(kind === 'send-chat'){
     var text3 = String(d.text || '').trim();
     if(!text3) return;
-    var sender = ui.chatSender || 'jiye';
+    var sender = isAdmin() ? (ui.chatSender || currentUser()) : currentUser();
     state.chat.push({id:uid('ms'), sender:sender, text:text3, ts:Date.now()});
     ui.chatDraft = '';
     persist(); render({focusChat:true});
   }
   else if(kind === 'save-mission'){
+    if(!isAdmin()){ denyPerm('미션은 엄마만 정할 수 있어요'); return; }
     var txt = String(d.text || '').trim();
     if(!txt) return;
     state.mission.text = txt;
@@ -2674,6 +3142,7 @@ document.addEventListener('submit', function(e){
     toast('오늘의 미션을 정했어요');
   }
   else if(kind === 'add-weight'){
+    if(!canEditHealth()){ denyPerm('건강 기록은 엄마만 고칠 수 있어요'); return; }
     var kg = Number(d.kg);
     if(!kg || kg <= 0) return;
     var date2 = d.date || t;
@@ -2683,6 +3152,7 @@ document.addEventListener('submit', function(e){
     persist(); render();
   }
   else if(kind === 'add-workout'){
+    if(!canEditHealth()){ denyPerm('건강 기록은 엄마만 고칠 수 있어요'); return; }
     var mins = Math.round(Number(d.minutes) || 0);
     if(mins <= 0) return;
     state.health.workouts.push({id:uid('wk'), type:d.type || '기타', minutes:mins, date:d.date || t, note:String(d.note || '').trim()});
@@ -2690,6 +3160,7 @@ document.addEventListener('submit', function(e){
     toast(mins+'분 운동을 기록했어요');
   }
   else if(kind === 'save-workout'){
+    if(!canEditHealth()){ denyPerm('건강 기록은 엄마만 고칠 수 있어요'); return; }
     var w2 = state.health.workouts.filter(function(x){ return x.id === f.getAttribute('data-id'); })[0];
     if(w2){
       w2.type = d.type || w2.type;
@@ -2702,19 +3173,66 @@ document.addEventListener('submit', function(e){
   }
   else if(kind === 'save-start'){
     var kid6 = f.getAttribute('data-kid');
+    if(!canEditAllowance(kid6)){ denyPerm('시작 금액은 엄마만 바꿀 수 있어요'); return; }
     var st = Math.round(Number(d.start) || 0);
     if(st < 0) st = 0;
     state.allowance[kid6].start = st;
     persist(); closeModal(); render();
     toast('시작 금액을 '+won(st)+'으로 바꿨어요');
   }
+  else if(kind === 'pin-check'){
+    var owner = f.getAttribute('data-id');
+    var mode = f.getAttribute('data-mode') || 'switch';
+    var pin = String(d.pin || '').replace(/\D/g, '');
+    var errEl = $('#pinErr');
+    var inpEl = $('#pinInput');
+    if(pin.length !== 4){
+      if(errEl) errEl.textContent = '숫자 4자리를 입력해 주세요';
+      if(inpEl){ inpEl.value = ''; try{ inpEl.focus(); }catch(e){} }
+      return;
+    }
+    if(pin !== pinOf(owner)){
+      if(errEl) errEl.textContent = 'PIN이 맞지 않아요. 다시 확인해 주세요.';
+      if(inpEl){ inpEl.value = ''; try{ inpEl.focus(); }catch(e){} }
+      return;
+    }
+    markPinUnlocked(owner);
+    if(mode === 'gate'){
+      applyActive(owner, true);
+      closeModal();
+      render({top:true});
+      toast(M[owner].name + ' 프로필로 들어왔어요');
+      return;
+    }
+    doSwitch(f.getAttribute('data-switch') || owner);
+  }
+  else if(kind === 'save-pin'){
+    if(!isAdmin()){ denyPerm('PIN은 엄마만 정할 수 있어요'); return; }
+    var pid = f.getAttribute('data-id');
+    var np = String(d.pin || '').replace(/\D/g, '');
+    var e1 = $('#pinErr');
+    if(np.length !== 4){ if(e1) e1.textContent = '숫자 4자리를 입력해 주세요'; return; }
+    state.pins[pid] = np;
+    persist();
+    openProfileModal();
+    toast(M[pid].name + ' PIN을 정했어요');
+  }
 });
 
 document.addEventListener('input', function(e){
   if(e.target && e.target.id === 'chatInput') ui.chatDraft = e.target.value;
+  if(e.target && e.target.id === 'pinInput'){
+    var v = String(e.target.value || '').replace(/\D/g, '');
+    if(v !== e.target.value) e.target.value = v;
+    var fm = e.target.closest ? e.target.closest('form') : null;
+    if(fm && fm.getAttribute('data-form') === 'pin-check' && v.length === 4){
+      fm.dispatchEvent(new Event('submit', {cancelable:true, bubbles:true}));
+    }
+  }
 });
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape'){
+    if(ui.gate) return;
     if($('#modalRoot') && $('#modalRoot').innerHTML) closeModal();
     else { var dr = $('#drawerRoot'); if(dr && dr.innerHTML) dr.innerHTML = ''; }
   }
@@ -2729,16 +3247,29 @@ document.addEventListener('keydown', function(e){
 function boot(){
   loadState();
   ensureMissionToday();
+  var wanted = null;
+  try{
+    wanted = resolveMe(new URLSearchParams(location.search).get('me'));
+  }catch(e){ wanted = null; }
+  if(wanted){
+    if(hasPin(wanted) && !pinUnlockedRecently(wanted)){
+      /* fixed link to a PIN-protected profile: ask before anything is shown */
+      ui.gate = wanted;
+    } else {
+      applyActive(wanted, true);
+    }
+  }
   ui.tab = (state.lastTab && TAB_MAP[state.lastTab]) ? state.lastTab : 'home';
   if(location.hash){
     var h = location.hash.slice(1);
     if(TAB_MAP[h]) ui.tab = h;
   }
-  ui.chatSender = ui.chatSender || 'jiye';
+  ui.chatSender = ui.chatSender || currentUser();
   ui.stampMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
   ui.stampSel = today();
   render({top:true});
   loadWeather();
+  if(ui.gate) showPinGate(ui.gate);
   // keep date-sensitive views fresh past midnight
   setInterval(function(){
     if(state.mission.date !== today()){ ensureMissionToday(); render(); }
