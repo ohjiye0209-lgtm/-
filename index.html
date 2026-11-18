@@ -1499,6 +1499,7 @@ function openProfileModal(){
         + '<div class="hint" style="margin-bottom:8px">'
           + (admin ? 'PIN을 정한 프로필은 그 번호를 아는 사람만 들어갈 수 있어요. 아이들이 엄마·아빠 프로필로 바꾸지 못하게 막아줘요.'
                    : 'PIN은 엄마 지예님만 정할 수 있어요.') + '</div>'
+        + (admin ? '<div class="hint" style="margin:-4px 0 8px">PIN을 잊으면 이 기기에서 그 프로필로는 들어갈 수 없으니 꼭 기억되는 번호로 정해 주세요.</div>' : '')
         + '<div class="pf-pins">'+pinRows+'</div>'
       + '</div>'
       + '<div class="pf-col">'
