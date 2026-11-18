@@ -398,7 +398,7 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
 .mission-members{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
 .mbtn{
   display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 6px;border-radius:16px;
-  border:1.5px dashed var(--line-2);background:rgba(255,255,255,.7);transition:.18s;
+  border:1.5px dashed var(--line-2);background:rgba(255,255,255,.7);transition:.18s;position:relative;
 }
 .mbtn:hover{border-color:var(--accent);background:#fff}
 .mbtn .av{width:42px;height:42px;border-radius:99px;background:#fff;opacity:.72;transition:.2s;position:relative}
@@ -572,6 +572,10 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
 .mbtn.locked:hover{border-color:var(--line-2);background:rgba(255,255,255,.7)}
 .mbtn.locked .av{opacity:.55}
 .mbtn.locked.on{border-style:solid}
+.mbtn .mbtn-lock{position:absolute;top:2px;right:4px;font-size:11px;line-height:1;opacity:.85}
+.mbtn.mine{border-style:solid;border-color:var(--line-2);background:#fff;box-shadow:var(--shadow-sm)}
+.mbtn.mine:hover{border-color:var(--accent);background:#fff}
+.mbtn.mine .nm{color:var(--ink)}
 
 .chat-me{display:inline-flex;align-items:center;gap:7px;background:var(--cream-2);border-radius:99px;padding:3px 10px 3px 3px;font-size:12px;font-weight:800}
 .chat-me .av{width:26px;height:26px;flex:0 0 26px;border-radius:99px;background:#fff}
@@ -1641,13 +1645,16 @@ function lockNote(title, sub){
 function missionButton(mm, size, withHint){
   var on = !!state.mission.done[mm.id];
   var allowed = canToggleMission(mm.id);
-  var cls = 'mbtn' + (on?' on':'') + (allowed?'':' locked');
+  var mine = allowed && !isAdmin();
+  var cls = 'mbtn' + (on?' on':'') + (mine?' mine':'') + (allowed?'':' locked');
   var inner = avBox(mm.id, size || 42) + '<span class="nm">'+esc(mm.name)+'</span>'
-    + (withHint ? '<span class="hint" style="font-size:10px">'+(on ? '완료' : (allowed ? '눌러서 체크' : '내 것만 체크'))+'</span>' : '');
+    + (withHint ? '<span class="hint" style="font-size:10px">'+(on ? '완료' : (allowed ? '눌러서 체크' : '내 칸만 체크'))+'</span>' : '');
   if(!allowed){
-    return '<div class="'+cls+'" data-theme="'+mm.theme+'" aria-disabled="true" title="본인 미션만 체크할 수 있어요">'+inner+'</div>';
+    return '<div class="'+cls+'" data-theme="'+mm.theme+'" aria-disabled="true" title="내 칸만 체크할 수 있어요">'+inner
+      + '<span class="mbtn-lock" aria-hidden="true">🔒</span></div>';
   }
-  return '<button class="'+cls+'" data-action="mission-toggle" data-member="'+mm.id+'" data-theme="'+mm.theme+'" aria-pressed="'+on+'">'+inner+'</button>';
+  return '<button class="'+cls+'" data-action="mission-toggle" data-member="'+mm.id+'" data-theme="'+mm.theme+'" aria-pressed="'+on+'"'
+    + (mine ? ' title="내 칸이에요"' : '') + '>'+inner+'</button>';
 }
 function wmo(code){
   if(code === 0) return {label:'맑음', icon:'sun'};
@@ -2268,7 +2275,7 @@ function viewChat(){
   }).join('') : emptyBox('💌','첫 메시지를 남겨보세요.<br>오늘의 안부를 가족에게 전해볼까요?');
 
   return pageHead('가족 채팅', '네 사람이 함께 쓰는 작은 이야기방')
-    + (!isAdmin() ? lockNote(M[currentUser()].name + '님으로 접속 중이라 '+M[currentUser()].name+'님 이름으로만 보낼 수 있어요', '다른 가족 이름으로는 보낼 수 없고, 내가 쓴 메시지만 지울 수 있어요.') : '')
+    + (!isAdmin() ? lockNote(M[currentUser()].name + ' 이름으로만 보낼 수 있어요', '다른 가족 이름으로는 보내지 못하고, 내가 쓴 메시지만 지울 수 있어요.') : '')
     + '<section class="card chat-shell" id="chatShell">'
       + '<div class="chat-head">'
         + (isAdmin()
