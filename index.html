@@ -38,7 +38,7 @@ html{-webkit-text-size-adjust:100%}
 body{
   margin:0; color:var(--ink); background:var(--cream);
   font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',system-ui,'Segoe UI',Roboto,sans-serif;
-  font-size:15px; line-height:1.5; letter-spacing:-.01em;
+  font-size:15px; line-height:1.5; letter-spacing:-.01em; word-break:keep-all; overflow-wrap:break-word;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
 body::before{
@@ -124,7 +124,8 @@ a{color:inherit}
 .card.flat{box-shadow:var(--shadow-sm)}
 .card.tint{background:linear-gradient(165deg,var(--accent-soft) 0%,#fff 68%)}
 .card-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.card-head h2,.card-head h3{font-size:15.5px;letter-spacing:-.02em}
+.card-head h2,.card-head h3{font-size:15.5px;letter-spacing:-.02em;white-space:nowrap}
+.card-head{flex-wrap:wrap;row-gap:6px}
 .card-head .spacer{margin-left:auto}
 .card-sub{font-size:12.5px;color:var(--muted)}
 .sec-title{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;margin:26px 0 12px;letter-spacing:-.02em}
@@ -223,7 +224,7 @@ a{color:inherit}
 }
 .row:hover{background:#fff;border-color:var(--line);box-shadow:var(--shadow-sm)}
 .row .grow{flex:1;min-width:0}
-.row .t1{font-size:13.8px;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.row .t1{font-size:13.8px;font-weight:600;overflow-wrap:break-word}
 .row.done .t1{color:var(--faint);text-decoration:line-through}
 .row .t2{font-size:11.5px;color:var(--faint);margin-top:2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .row .amt{font-size:13px;font-weight:700;white-space:nowrap}
@@ -533,6 +534,11 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
   .stats{grid-template-columns:repeat(2,1fr)}
   .ex-row{grid-template-columns:54px 1fr auto}
   .member-card{padding:16px}
+  .study-row .reward-note{display:none}
+  .study-row .study-subj{width:34px;height:34px;flex:0 0 34px;font-size:11px}
+  .study-row .amt{font-size:12.5px}
+  .study-row .icon-btn{width:26px;flex:0 0 26px}
+  .row .t2 span{white-space:nowrap}
 }
 @media (min-width:600px) and (max-width:860px){
   .grid{grid-template-columns:repeat(2,1fr)}
@@ -1593,11 +1599,11 @@ function viewStudy(){
 
   var rows = list.length ? list.map(function(t){
     var dn = studyDoneToday(t);
-    return '<div class="row'+(dn?' done':'')+'" data-theme="'+m.theme+'">'
+    return '<div class="row study-row'+(dn?' done':'')+'" data-theme="'+m.theme+'">'
       + '<button class="check'+(dn?' on':'')+'" data-action="toggle-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="공부 완료" aria-pressed="'+dn+'">'+ic('check')+'</button>'
       + '<span class="study-subj subj-'+t.subject+'">'+esc(t.subject)+'</span>'
       + '<div class="grow"><div class="t1">'+esc(t.title)+'</div>'
-      + '<div class="t2">'+(t.recurring?'<span class="tag-recur">'+ic('refresh')+' 매일</span>':'<span>한 번만</span>')+'<span>완료하면 용돈 '+won(t.reward)+' 적립</span></div></div>'
+      + '<div class="t2">'+(t.recurring?'<span class="tag-recur">'+ic('refresh')+' 매일</span>':'<span>한 번만</span>')+'<span class="reward-note">완료하면 용돈 '+won(t.reward)+' 적립</span></div></div>'
       + '<span class="amt" style="color:'+(dn?'var(--ok)':'var(--muted)')+'">'+won(t.reward)+'</span>'
       + '<button class="icon-btn" data-action="edit-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="수정">'+ic('edit')+'</button>'
       + '<button class="icon-btn danger" data-action="del-study" data-id="'+t.id+'" data-kid="'+kid+'" aria-label="삭제">'+ic('trash')+'</button>'
@@ -1929,7 +1935,7 @@ function viewMission(){
         + '</div>'
       + '</section>'
       + '<section class="card col-12">'
-        + '<div class="card-head"><span class="ic-badge">'+ic('sparkle')+'</span><h2>미션 아이디어</h2><span class="spacer"></span><span class="hint">마음에 들면 직접 정하기에 붙여넣어 보세요</span></div>'
+        + '<div class="card-head"><span class="ic-badge">'+ic('sparkle')+'</span><h2>미션 아이디어</h2><span class="spacer"></span><span class="hint">마음에 들면 직접 정하기에 붙여보세요</span></div>'
         + '<div class="hstack" style="gap:8px">'
           + MISSIONS.slice(0, 8).map(function(t){ return '<span class="chip butter" style="white-space:normal;text-align:left;border-radius:12px;padding:8px 11px;line-height:1.4">'+esc(t)+'</span>'; }).join('')
         + '</div>'
