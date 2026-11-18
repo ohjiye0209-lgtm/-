@@ -1947,7 +1947,7 @@ function weightChart(){
     return '<div class="list-empty" style="padding:34px 10px"><span class="em">📈</span>체중을 기록하면 변화가 그래프로 그려져요.</div>';
   }
   var narrow = (typeof window !== 'undefined' ? window.innerWidth : 1200) < 700;
-  var W = narrow ? 340 : 640, H = narrow ? 205 : 230, pl = narrow ? 32 : 42, pr = narrow ? 12 : 16, ptp = narrow ? 14 : 18, pb = narrow ? 26 : 30;
+  var W = narrow ? 340 : 640, H = narrow ? 205 : 230, pl = narrow ? 32 : 42, pr = narrow ? 16 : 22, ptp = narrow ? 14 : 18, pb = narrow ? 26 : 30;
   var kgs = list.map(function(x){ return Number(x.kg); });
   var lo = Math.min.apply(null, kgs) - 0.8, hi = Math.max.apply(null, kgs) + 0.8;
   if(hi - lo < 2){ var mid = (hi+lo)/2; lo = mid-1; hi = mid+1; }
@@ -1967,17 +1967,19 @@ function weightChart(){
   var dots = pts.map(function(p, i){
     return '<circle class="pt'+(i===pts.length-1?' last':'')+'" cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="'+(i===pts.length-1?5:3.6)+'"><title>'+fmtMD(p.d)+' · '+p.kg+'kg</title></circle>';
   }).join('');
-  // x labels: up to 5
-  var step = Math.max(1, Math.ceil(n/(narrow ? 3 : 5)));
-  var xlab = '';
-  for(var i=0;i<n;i+=step){
-    var anchor = i === 0 ? 'start' : 'middle';
-    xlab += '<text class="axis" x="'+pts[i].x.toFixed(1)+'" y="'+(H-10)+'" text-anchor="'+anchor+'">'+fmtMD(pts[i].d)+'</text>';
+  // x labels: evenly spaced, first and last anchored to the edges
+  var idxs = [];
+  if(n === 1){ idxs = [0]; }
+  else if(narrow){ idxs = [0, n-1]; }
+  else {
+    var step = Math.max(1, Math.ceil(n/5));
+    for(var i=0;i<n-1;i+=step) idxs.push(i);
+    idxs.push(n-1);
   }
-  if((n-1) % step !== 0){
-    var last = pts[n-1];
-    xlab += '<text class="axis" x="'+last.x.toFixed(1)+'" y="'+(H-10)+'" text-anchor="end">'+fmtMD(last.d)+'</text>';
-  }
+  var xlab = idxs.map(function(i){
+    var anchor = i === 0 ? 'start' : (i === n-1 ? 'end' : 'middle');
+    return '<text class="axis" x="'+pts[i].x.toFixed(1)+'" y="'+(H-10)+'" text-anchor="'+anchor+'">'+fmtMD(pts[i].d)+'</text>';
+  }).join('');
   return '<div class="chart-wrap"><svg class="chart'+(narrow?' narrow':'')+'" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="체중 변화 그래프">'
     + '<defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1">'
     + '<stop offset="0%" stop-color="#F9A8D4" stop-opacity=".30"/><stop offset="100%" stop-color="#F9A8D4" stop-opacity="0"/></linearGradient></defs>'
