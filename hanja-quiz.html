@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="theme-color" content="#FFFDF7">
-<meta name="description" content="아인의 2단계 한자 경시대회 모의고사 1·2 정리 노트와 객관식 카드 테스트.">
+<meta name="description" content="아인의 2단계 한자 경시대회 모의고사 1·2 정리 노트·객관식 카드 테스트·큰 낱말카드.">
 <title>아인 한자 카드 · 2단계 모의고사 정리</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='25' x='3' font-size='24'%3E%F0%9F%90%A3%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -233,6 +233,122 @@ button{font:inherit; color:inherit; cursor:pointer; border:0; background:none}
 .row .pin{flex:none; font-size:11px; font-weight:800; color:#B4552F; background:#FFE8DE; padding:2px 7px; border-radius:999px; margin-top:4px}
 .footnote{text-align:center; font-size:11.5px; color:var(--faint); margin:18px 0 4px}
 
+/* ================= 큰 낱말카드 ================= */
+.wrap{transition:max-width .22s ease}
+body.flash .wrap{max-width:1200px}
+body.flash .tabs{max-width:600px; margin-left:auto; margin-right:auto}
+.fchead{margin:0 2px 11px}
+.fchead h2{margin:0 0 3px; font-size:17px; letter-spacing:-.02em}
+.fchead p{margin:0; font-size:12.5px; color:var(--muted)}
+
+.fc-switch{display:grid; grid-template-columns:1fr 1fr; gap:7px; background:#F2EADA; padding:6px; border-radius:22px; margin-bottom:11px; box-shadow:inset 0 1px 3px rgba(122,102,80,.09)}
+.fc-tab{position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; padding:13px 6px; border-radius:17px; font-size:15px; font-weight:800; color:#6B6673; line-height:1.2; letter-spacing:-.02em; transition:.18s; min-height:68px; background:rgba(255,255,255,.45)}
+.fc-tab .n{font-size:11.5px; font-weight:800; color:var(--faint); font-variant-numeric:tabular-nums}
+.fc-tab.on{background:#fff; color:var(--ink); box-shadow:0 8px 18px -10px rgba(122,102,80,.45)}
+.fc-tab[data-set="tricky"].on{background:linear-gradient(165deg,#FFF8FB,#FFE5EF); color:#A23B67; box-shadow:0 10px 20px -12px rgba(249,168,212,.95)}
+.fc-tab[data-set="all"].on{background:linear-gradient(165deg,#F4FCF7,#DBF6E5); color:#2F6B45; box-shadow:0 10px 20px -12px rgba(134,239,172,.95)}
+.fc-tab[data-set="tricky"].on .n{color:#A23B67}
+.fc-tab[data-set="all"].on .n{color:#2F6B45}
+.fc-tab.on::after{content:""; position:absolute; inset:0; border-radius:17px; border:2px solid #FFD3E4; pointer-events:none}
+.fc-tab[data-set="all"].on::after{border-color:#B9EDCB}
+
+.fc-prog{background:#fff; border-radius:20px; padding:12px 14px; box-shadow:var(--shadow-sm); margin-bottom:11px; display:flex; flex-direction:column; gap:9px}
+.fc-prow{display:flex; align-items:center; gap:7px; font-size:12.5px; font-weight:800; color:var(--muted)}
+.fc-prow b{color:var(--ink); font-size:13px}
+.fc-prow .pt{margin-left:auto; font-variant-numeric:tabular-nums; color:var(--ink)}
+.fc-prow .pc{font-variant-numeric:tabular-nums; color:var(--ok); min-width:38px; text-align:right}
+.fc-bar{height:15px; border-radius:999px; background:#EDF3EC; overflow:hidden; box-shadow:inset 0 1px 3px rgba(80,110,90,.14)}
+.fc-bar i{display:block; height:100%; width:0; border-radius:999px; background:repeating-linear-gradient(45deg,#8AD7A5 0 9px,#6FCB91 9px 18px); transition:width .45s cubic-bezier(.4,0,.2,1)}
+.fc-ctl{display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:12px; font-weight:700; color:var(--muted)}
+.fc-ctl label{display:inline-flex; align-items:center; gap:6px; cursor:pointer; padding:2px 0}
+.fc-ctl input{width:17px; height:17px; accent-color:#4E9A6A; margin:0}
+.fc-reset{margin-left:auto; font-size:11.5px; font-weight:800; color:#8A8391; background:#F6F0E6; padding:6px 10px; border-radius:999px}
+
+.fc-cats{display:flex; gap:6px; overflow-x:auto; padding:0 2px 11px; scrollbar-width:none}
+.fc-cats::-webkit-scrollbar{display:none}
+.fc-cats button{flex:none; padding:7px 11px; border-radius:999px; background:#fff; border:1px solid var(--line-2); font-size:12px; font-weight:700; color:var(--muted); white-space:nowrap; box-shadow:var(--shadow-sm)}
+.fc-cats button.on{background:var(--ink); border-color:var(--ink); color:#fff}
+
+.fcgrid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; padding-bottom:34px; align-items:stretch}
+.fc{position:relative; display:flex; border-radius:24px; border:2px solid rgba(255,255,255,.9); background:linear-gradient(168deg,#FFF9EA,#FBEED0); color:#8A6A12; box-shadow:0 12px 24px -18px rgba(122,102,80,.6), inset 0 1px 0 rgba(255,255,255,.75); min-height:clamp(190px,44vw,232px); transition:transform .16s ease, box-shadow .16s ease}
+.fc.c1{background:linear-gradient(168deg,#FFF9EA,#FBEED0); color:#8A6A12}
+.fc.c2{background:linear-gradient(168deg,#E6F8EC,#D2F0DE); color:#2F6B45}
+.fc.c3{background:linear-gradient(168deg,#FFE8F0,#FFD8E6); color:#A23B67}
+.fc.c4{background:linear-gradient(168deg,#FFF8CB,#FFEFAE); color:#8A6A12}
+.fc:hover{transform:translateY(-2px); box-shadow:0 18px 30px -20px rgba(122,102,80,.65)}
+.fc.open{box-shadow:0 20px 34px -20px rgba(122,102,80,.7)}
+.fc-front{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:space-between; gap:6px; width:100%; padding:10px 9px 9px; border-radius:22px; text-align:center; -webkit-tap-highlight-color:transparent}
+.fc-num{position:absolute; top:8px; left:8px; width:23px; height:23px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:800; background:rgba(255,255,255,.82); color:inherit; box-shadow:0 1px 3px rgba(0,0,0,.07); font-variant-numeric:tabular-nums}
+.fc-hot{position:absolute; top:7px; right:8px; font-size:12px; line-height:1; opacity:.85}
+.fc-mark{position:absolute; top:7px; right:8px; width:21px; height:21px; border-radius:50%; display:none; place-items:center; font-size:11px; font-weight:900; color:#fff; background:#4E9A6A; box-shadow:0 1px 3px rgba(78,154,106,.4)}
+.fc.done{box-shadow:0 10px 22px -18px rgba(78,154,106,.55), inset 0 0 0 2px rgba(126,201,150,.55)}
+.fc.done .fc-hot{display:none}
+.fc.done .fc-mark{display:grid}
+.fc.done .fc-num{background:rgba(78,154,106,.16); color:#2F6B45}
+.fc-hj{font-family:'Noto Serif KR','Nanum Myeongjo',serif; font-weight:900; font-size:clamp(40px,12vw,58px); line-height:1.06; letter-spacing:.02em; color:#3B3446; margin:auto 0; padding:6px 0}
+.fc-hj.l3{font-size:clamp(28px,8.6vw,44px)}
+.fc-hj.l4{font-size:clamp(21px,6.6vw,34px); letter-spacing:0}
+.fc-hj.l5,.fc-hj.l6{font-size:clamp(17px,5.4vw,28px); letter-spacing:0}
+.fc-foot{width:100%; display:flex; flex-direction:column; align-items:center; gap:1px; background:rgba(255,255,255,.72); border-radius:14px; padding:6px 7px}
+.fc-foot b{font-size:11.5px; font-weight:800; color:#4A4450; letter-spacing:-.01em}
+.fc-foot small{font-size:10.5px; font-weight:700; color:#8A8391}
+.fc-back{position:absolute; inset:0; display:none; flex-direction:column; gap:7px; padding:14px 12px 12px; border-radius:22px; background:rgba(255,255,255,.88); backdrop-filter:blur(5px); text-align:center; overflow:auto; animation:fcIn .18s ease}
+.fc.open .fc-back{display:flex}
+@keyframes fcIn{from{opacity:0; transform:scale(.97)}to{opacity:1; transform:none}}
+.fc-close{position:absolute; top:6px; right:7px; width:24px; height:24px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:800; color:#8A8391; background:#F4EEE4}
+.fc-bhj{font-family:'Noto Serif KR',serif; font-weight:900; font-size:26px; line-height:1.15; color:#3B3446; letter-spacing:.02em; margin-top:2px}
+.fc-bhm{font-size:16.5px; font-weight:800; color:#2D2A32; letter-spacing:-.01em; line-height:1.3}
+.fc-bmean{font-size:12.5px; color:var(--muted); line-height:1.45; margin:0}
+.fc-btip{font-size:11.5px; color:#4A4450; line-height:1.55; margin:0; padding:8px 9px; border-radius:11px; background:#FAF7F0; text-align:left}
+.fc-btip .tk{display:inline-block; font-size:9.5px; font-weight:800; color:#8A6A12; background:#FFF0C9; border-radius:6px; padding:1px 5px; margin-right:4px; vertical-align:1px; letter-spacing:-.01em}
+.fc-check{margin-top:auto; width:100%; padding:10px; border-radius:12px; font-size:12.5px; font-weight:800; color:#2F6B45; background:#EAF7EE; border:1px solid #CDEBD7; transition:.15s}
+.fc-check.on{background:#4E9A6A; border-color:#4E9A6A; color:#fff}
+.fc-empty{grid-column:1/-1; background:#fff; border-radius:22px; padding:28px 18px; text-align:center; font-size:14px; font-weight:800; color:var(--muted); line-height:1.7; box-shadow:var(--shadow-sm)}
+.fc-empty span{font-size:12px; font-weight:600; color:var(--faint)}
+.hero-go{margin-top:11px; padding:9px 14px; border-radius:13px; background:#fff; font-size:12.5px; font-weight:800; box-shadow:var(--shadow-sm); border:1px solid rgba(255,255,255,.9); position:relative; z-index:1}
+
+@media (min-width:520px){
+  .fcgrid{gap:13px}
+  .fc-switch,.fc-prog{max-width:620px; margin-left:auto; margin-right:auto}
+}
+@media (min-width:760px){
+  .fcgrid{grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+  .fc{min-height:252px}
+  .fc-switch,.fc-prog{max-width:640px}
+  .fc-tab{font-size:15px; min-height:66px}
+  .fc-hj{font-size:60px}
+  .fc-hj.l3{font-size:46px}
+  .fc-hj.l4{font-size:36px}
+  .fc-hj.l5,.fc-hj.l6{font-size:29px}
+  .fc-foot b{font-size:12px}
+  .fc-foot small{font-size:11px}
+  .fc-bhm{font-size:18px}
+  .fc-bmean{font-size:13px}
+  .fc-btip{font-size:12px}
+}
+@media (min-width:1000px){
+  .fcgrid{grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px}
+  .fc{min-height:272px}
+  .fc-hj{font-size:66px}
+  .fc-hj.l4{font-size:38px}
+  .fchead h2{font-size:19px}
+}
+@media (max-width:659px){
+  .fc.open{grid-column:1/-1}
+  .fc.open .fc-front{display:none}
+  .fc.open .fc-back{position:relative; inset:auto; background:transparent; backdrop-filter:none; padding:14px 14px 12px; overflow:visible; border-radius:22px}
+  .fc.open .fc-bhj{font-size:42px}
+  .fc.open .fc-bhm{font-size:25px}
+  .fc.open .fc-bmean{font-size:15px}
+  .fc.open .fc-btip{font-size:14px; padding:12px 13px; background:rgba(255,255,255,.75)}
+  .fc.open .fc-check{padding:14px; font-size:15px; border-radius:14px}
+  .fc.open .fc-back{padding:20px 16px 16px}
+  .fc-close{position:absolute; top:9px; right:10px; width:28px; height:28px}
+}
+@media (max-width:520px){
+  .tabs button{font-size:11.5px; padding:10px 3px; letter-spacing:-.03em}
+}
+
 @media (min-width:760px){
   .wrap{padding-top:34px}
   .brand h1{font-size:22px}
@@ -265,10 +381,12 @@ button{font:inherit; color:inherit; cursor:pointer; border:0; background:none}
   <div class="hero">
     <b>카드를 넘기며 한 문제씩 풀어 보자!</b>
     <span>정답을 누르면 바로 O·X와 설명이 나와요. 틀린 문제는 자동으로 모아 두었다가 다시 풀 수 있어요.</span>
+    <button class="hero-go" id="heroCards" type="button">🃏 큰 낱말카드로 보기 →</button>
   </div>
 
   <nav class="tabs" role="tablist">
     <button id="tabQuiz" class="on" role="tab" aria-selected="true">🃏 카드 퀴즈</button>
+    <button id="tabCard" role="tab" aria-selected="false">🃏 큰 낱말카드</button>
     <button id="tabNote" role="tab" aria-selected="false">📒 정리 노트</button>
   </nav>
 
@@ -300,6 +418,31 @@ button{font:inherit; color:inherit; cursor:pointer; border:0; background:none}
       <div class="fb" id="fb"></div>
     </article>
     <div id="under"></div>
+  </section>
+
+  <!-- ===== big flashcards ===== -->
+  <section id="cardView" hidden>
+    <div class="fchead">
+      <h2>🃏 큰 낱말카드</h2>
+      <p>카드를 누르면 뜻이 나와요. 외운 카드는 체크해 두면 위에 차곡차곡 쌓여요.</p>
+    </div>
+
+    <div class="fc-switch" role="tablist" aria-label="낱말카드 범위">
+      <button class="fc-tab on" data-set="tricky" role="tab" aria-selected="true">🔥 틀린·헷갈린 것 <span class="n" id="fcNTricky">0</span></button>
+      <button class="fc-tab" data-set="all" role="tab" aria-selected="false">📚 전체 한자·단어 <span class="n" id="fcNAll">0</span></button>
+    </div>
+
+    <div class="fc-prog">
+      <div class="fc-prow"><b>🐣 외운 카드</b><span class="pt" id="fcProgText">0 / 0</span><span class="pc" id="fcPct">0%</span></div>
+      <div class="fc-bar"><i id="fcBarFill"></i></div>
+      <div class="fc-ctl">
+        <label><input type="checkbox" id="fcHide"> 외운 카드 숨기기</label>
+        <button class="fc-reset" id="fcReset" type="button">체크 초기화</button>
+      </div>
+    </div>
+
+    <div class="fc-cats" id="fcCats" hidden></div>
+    <div class="fcgrid" id="fcgrid"></div>
   </section>
 
   <!-- ===== note ===== -->
@@ -815,18 +958,25 @@ document.addEventListener('keydown',e=>{
 
 /* 탭 */
 function showTab(which){
-  const quiz=which==='quiz';
+  const quiz=which==='quiz', note=which==='note', cards=which==='cards';
   $('#quizView').hidden=!quiz;
-  $('#noteView').hidden=quiz;
+  $('#noteView').hidden=!note;
+  $('#cardView').hidden=!cards;
   $('#tabQuiz').classList.toggle('on',quiz);
-  $('#tabNote').classList.toggle('on',!quiz);
+  $('#tabNote').classList.toggle('on',note);
+  $('#tabCard').classList.toggle('on',cards);
   $('#tabQuiz').setAttribute('aria-selected',quiz?'true':'false');
-  $('#tabNote').setAttribute('aria-selected',quiz?'false':'true');
+  $('#tabNote').setAttribute('aria-selected',note?'true':'false');
+  $('#tabCard').setAttribute('aria-selected',cards?'true':'false');
+  document.body.classList.toggle('flash',cards);
   document.querySelector('.hero').style.display=quiz?'':'none';
+  if(cards) renderCards();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 $('#tabQuiz').addEventListener('click',()=>showTab('quiz'));
 $('#tabNote').addEventListener('click',()=>showTab('note'));
+$('#tabCard').addEventListener('click',()=>showTab('cards'));
+$('#heroCards').addEventListener('click',()=>showTab('cards'));
 
 /* 노트 렌더 */
 function renderNotes(){
@@ -848,6 +998,194 @@ function renderNotes(){
   $('#noteTotal').textContent=n;
 }
 
+/* =========================================================
+   큰 낱말카드
+   ========================================================= */
+const FCKEY='hanjaCardsDone_v1';
+const stripTags=s=>String(s||'').replace(/<[^>]+>/g,'');
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+/* 퀴즈 해설을 카드 설명으로 그대로 쓰기 */
+const FC_QCARD={};
+Q.forEach(q=>String(q.big).split(/\s*\/\s*/).forEach(t=>{ t=t.trim(); if(t&&!FC_QCARD[t]) FC_QCARD[t]=q.e; }));
+
+const TRICKY=[
+  {hj:'後',hm:'뒤 후',mean:'뒤 · 前後(전후)',tip:'“배”로 읽는 글자는 北이에요. 後는 언제나 “뒤 후”!'},
+  {hj:'北',hm:'북녘 북 / 달아날 배',mean:'북쪽 · 달아나다',tip:'한 글자에 두 가지 읽기가 있어요. 東北은 동북, 등을 돌려 달아날 때는 배.'},
+  {hj:'花',hm:'꽃 화',mean:'꽃 · 花草(화초)',tip:'풀 초(艹) 위에 化가 붙어 꽃이 피는 모양이에요.'},
+  {hj:'赤',hm:'붉을 적',mean:'붉다 · 빨강',tip:'불(火) 위에 사람이 올라가 얼굴이 빨개진 모양!'},
+  {hj:'間',hm:'사이 간',mean:'사이 · 山間(산간)',tip:'문(門) 틈으로 해(日)가 보이는 “사이”예요.'},
+  {hj:'名',hm:'이름 명',mean:'이름',tip:'저녁(夕)에 입(口)으로 부르는 것이 이름!'},
+  {hj:'外',hm:'바깥 외',mean:'바깥 · 校外(교외)',tip:'저녁(夕)에 점(卜)을 쳐서 바깥일을 알아봐요.'},
+  {hj:'本',hm:'근본 본',mean:'근본 · 本色(본색)',tip:'나무(木) 아래쪽에 표시를 한 모양 = 뿌리, 근본.'},
+  {hj:'左',hm:'왼 좌',mean:'왼쪽 · 右(오른쪽 우)와 짝',tip:'공손한 손과 장인(工). 右는 오른쪽 우!'},
+  {hj:'全',hm:'온전할 전',mean:'온전하다 · 全部(전부)',tip:'소리는 前(앞 전)과 같아요. 뜻은 “온전할”!'},
+  {hj:'靑果',hm:'청과',mean:'신선한 과일과 채소',tip:'푸른색이 아니라 “싱싱한” 과일·채소예요.'},
+  {hj:'九牛一毛',hm:'구우일모',mean:'많은 것 중에 극히 적은 것',tip:'아홉 소(九牛)의 털 하나(一毛)만큼 작다는 뜻.'},
+  {hj:'前後',hm:'전후',mean:'앞과 뒤',tip:'前(앞 전) + 後(뒤 후). 全(온전할 전)과 헷갈리지 않기!'},
+  {hj:'夏季',hm:'하계',mean:'여름철',tip:'夏(여름 하) + 季(계절 계) = 여름철. 冬季는 동계!'},
+  {hj:'秋色',hm:'추색',mean:'가을빛',tip:'秋(가을 추) + 色(빛 색). 色은 언제나 “색”.'},
+  {hj:'生育',hm:'생육',mean:'낳아서 기름',tip:'育 = 기를 육. 畜(짐승 축)과 꼭 구분!'},
+  {hj:'兩手',hm:'양수',mean:'두 손',tip:'兩 = 두 량, 手 = 손 수. 두 손이에요.'},
+  {hj:'生畜',hm:'생축',mean:'가축',tip:'畜 = 짐승 축 → 생축. 生育(생육)과 소리가 달라요.'},
+  {hj:'地方',hm:'지방',mean:'서울 밖의 시골, 어느 한 곳',tip:'方은 여기서 “방”. 地方은 언제나 지방!'},
+  {hj:'兄夫',hm:'형부',mean:'언니의 남편',tip:'兄弟(형제)와 헷갈리지 않기. 夫 = 지아비 부.'},
+  {hj:'祖上',hm:'조상',mean:'자기 위의 어른들',tip:'早霜(일찍 내리는 서리)도 “조상”이지만 한자가 달라요!'}
+];
+
+const ALLCARDS=[];
+NOTES.forEach(sec=>sec.items.forEach(it=>{
+  const [hj,hm,mn,flag]=it;
+  ALLCARDS.push({hj,hm,mean:mn||'',cat:sec.t,hot:!!flag,key:hj+'|'+hm,secTip:sec.tip||''});
+}));
+const TRICKYCARDS=TRICKY.map(t=>({hj:t.hj,hm:t.hm,mean:t.mean,cat:'다시 볼 것',hot:true,key:t.hj+'|'+t.hm,tip:t.tip,secTip:''}));
+
+function fcTip(c){ return c.tip || stripTags(FC_QCARD[c.hj]) || c.secTip || '훈과 음을 소리 내어 세 번 읽어 봐요.'; }
+
+let fcDone=new Set((()=>{try{const v=JSON.parse(localStorage.getItem(FCKEY)||'[]');return Array.isArray(v)?v:[]}catch(e){return[]}})());
+function fcSaveDone(){ try{ localStorage.setItem(FCKEY,JSON.stringify([...fcDone])); }catch(e){} }
+
+const fcState={set:'tricky',cat:'all',hide:false};
+
+function fcMissCards(){
+  const out=[];
+  const add=t=>{
+    t=t.trim(); if(!t) return;
+    if(TRICKYCARDS.some(c=>c.hj===t)) return;
+    if(out.some(c=>c.hj===t)) return;
+    const c=ALLCARDS.find(x=>x.hj===t);
+    if(c){ out.push(Object.assign({},c,{cat:'퀴즈에서 틀림'})); return; }
+    /* 낱말이 노트에 없으면 글자 하나씩 */
+    if(Array.from(t).length>1) Array.from(t).forEach(add);
+  };
+  [...missSet].forEach(id=>{
+    const q=byId(id); if(!q) return;
+    String(q.big).split(/\s*\/\s*/).forEach(add);
+  });
+  return out;
+}
+function fcBase(){
+  let list = fcState.set==='tricky' ? TRICKYCARDS.concat(fcMissCards()) : ALLCARDS.slice();
+  if(fcState.set==='all' && fcState.cat!=='all') list=list.filter(c=>c.cat===fcState.cat);
+  return list;
+}
+
+function fcCardHTML(c,i){
+  const len=Array.from(c.hj).length;
+  const lc = len<=2 ? '' : (len===3?'l3':len===4?'l4':len===5?'l5':'l6');
+  const done=fcDone.has(c.key);
+  const hot=(fcState.set==='all'&&c.hot);
+  return ''+
+  '<article class="fc c'+(i%4+1)+(done?' done':'')+'" data-k="'+esc(c.key)+'">'+
+    '<button class="fc-front" type="button" aria-expanded="false" aria-label="'+esc(c.hj)+' 카드 뜻 보기">'+
+      '<span class="fc-num">'+(i+1)+'</span>'+
+      (hot?'<span class="fc-hot" aria-hidden="true">🔥</span>':'')+
+      '<span class="fc-mark" aria-hidden="true">✓</span>'+
+      '<span class="fc-hj '+lc+'">'+esc(c.hj)+'</span>'+
+      '<span class="fc-foot"><b>👆 눌러서 뜻 보기</b><small>'+esc(c.cat==='다시 볼 것'?'틀린·헷갈린 한자':c.cat)+'</small></span>'+
+    '</button>'+
+    '<div class="fc-back">'+
+      '<button class="fc-close" type="button" aria-label="카드 닫기">✕</button>'+
+      '<span class="fc-bhj">'+esc(c.hj)+'</span>'+
+      '<span class="fc-bhm">'+esc(c.hm)+'</span>'+
+      (c.mean?'<p class="fc-bmean">'+esc(c.mean)+'</p>':'')+
+      '<p class="fc-btip"><span class="tk">쉽게 외우기</span>'+esc(fcTip(c))+'</p>'+
+      '<button class="fc-check'+(done?' on':'')+'" type="button" data-k="'+esc(c.key)+'">'+(done?'외웠어요 ✓':'외웠어요!')+'</button>'+
+    '</div>'+
+  '</article>';
+}
+
+function fcCatsHTML(){
+  const cats=['all'].concat(NOTES.map(s=>s.t));
+  return cats.map(t=>{
+    const sec=NOTES.find(s=>s.t===t);
+    const label = t==='all' ? '전체' : (sec.emoji+' '+t);
+    const n = t==='all' ? ALLCARDS.length : ALLCARDS.filter(c=>c.cat===t).length;
+    return '<button type="button" data-cat="'+esc(t)+'"'+(fcState.cat===t?' class="on"':'')+'>'+label+
+      ' <span style="opacity:.55; font-weight:800">'+n+'</span></button>';
+  }).join('');
+}
+
+function fcProgress(){
+  const base=fcBase();
+  const doneN=base.filter(c=>fcDone.has(c.key)).length;
+  const pct=base.length?Math.round(doneN/base.length*100):0;
+  $('#fcProgText').textContent=doneN+' / '+base.length;
+  $('#fcPct').textContent=pct+'%';
+  $('#fcBarFill').style.width=pct+'%';
+  return base;
+}
+
+function renderCards(){
+  $('#fcNTricky').textContent=TRICKYCARDS.length+fcMissCards().length;
+  $('#fcNAll').textContent=ALLCARDS.length;
+  document.querySelectorAll('.fc-tab').forEach(b=>{
+    const on=b.dataset.set===fcState.set;
+    b.classList.toggle('on',on); b.setAttribute('aria-selected',on?'true':'false');
+  });
+  const catsEl=$('#fcCats');
+  if(fcState.set==='all'){ catsEl.hidden=false; catsEl.innerHTML=fcCatsHTML(); }
+  else { catsEl.hidden=true; catsEl.innerHTML=''; }
+
+  const base=fcProgress();
+  const list = fcState.hide ? base.filter(c=>!fcDone.has(c.key)) : base;
+  const grid=$('#fcgrid');
+  if(!list.length){
+    grid.innerHTML='<div class="fc-empty">'+(fcState.hide
+      ? '🎉 외운 카드를 다 숨겼어요!<br><span>“외운 카드 숨기기”를 끄면 다시 볼 수 있어요.</span>'
+      : '보여 줄 카드가 없어요.')+'</div>';
+  } else {
+    grid.innerHTML=list.map((c,i)=>fcCardHTML(c,i)).join('');
+  }
+}
+
+function fcOpen(el,open){
+  document.querySelectorAll('.fc.open').forEach(x=>{
+    if(x===el) return;
+    x.classList.remove('open');
+    const f=x.querySelector('.fc-front'); if(f) f.setAttribute('aria-expanded','false');
+  });
+  el.classList.toggle('open',open);
+  const f=el.querySelector('.fc-front'); if(f) f.setAttribute('aria-expanded',open?'true':'false');
+  if(open) el.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+
+function fcToggleDone(k){
+  const on=!fcDone.has(k);
+  if(on) fcDone.add(k); else fcDone.delete(k);
+  fcSaveDone();
+  document.querySelectorAll('.fc').forEach(el=>{
+    if(el.dataset.k!==k) return;
+    el.classList.toggle('done',on);
+    const b=el.querySelector('.fc-check');
+    if(b){ b.classList.toggle('on',on); b.textContent=on?'외웠어요 ✓':'외웠어요!'; }
+  });
+  fcProgress();
+  if(fcState.hide && on) setTimeout(renderCards, 520);
+}
+
+$('#fcgrid').addEventListener('click',e=>{
+  const close=e.target.closest('.fc-close');
+  if(close){ fcOpen(close.closest('.fc'),false); return; }
+  const ck=e.target.closest('.fc-check');
+  if(ck){ e.preventDefault(); fcToggleDone(ck.dataset.k); return; }
+  const fr=e.target.closest('.fc-front');
+  if(fr){ const el=fr.closest('.fc'); fcOpen(el,!el.classList.contains('open')); }
+});
+
+document.querySelectorAll('.fc-tab').forEach(b=>{
+  b.addEventListener('click',()=>{ fcState.set=b.dataset.set; fcState.cat='all'; renderCards(); });
+});
+$('#fcHide').addEventListener('change',e=>{ fcState.hide=e.target.checked; renderCards(); });
+$('#fcReset').addEventListener('click',()=>{
+  if(!fcDone.size) return;
+  if(confirm('체크한 “외웠어요”를 모두 지울까요?')){ fcDone=new Set(); fcSaveDone(); renderCards(); }
+});
+$('#fcCats').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-cat]'); if(!b) return;
+  fcState.cat=b.dataset.cat; renderCards();
+});
+
 /* 모드 칩 */
 document.querySelectorAll('.chip[data-mode]').forEach(c=>{
   c.addEventListener('click',()=>{ if(c.disabled) return; setMode(c.dataset.mode); });
@@ -860,7 +1198,7 @@ $('#shuffleBtn').addEventListener('click',e=>{
 });
 
 /* 시작 */
-counts(); buildQueue(); renderCard(); renderNotes();
+counts(); buildQueue(); renderCard(); renderNotes(); renderCards();
 </script>
 </body>
 </html>
