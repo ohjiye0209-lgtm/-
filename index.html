@@ -87,6 +87,9 @@ a{color:inherit}
 .nav-btn .ic svg{width:18px;height:18px}
 .nav-btn.active .ic{color:var(--accent)}
 .nav-btn .badge{margin-left:auto;font-size:11px;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--accent-soft);color:var(--accent-ink)}
+a.nav-btn{text-decoration:none}
+.nav-btn .nav-out{margin-left:auto;display:grid;place-items:center;color:var(--faint)}
+.nav-btn .nav-out svg{width:14px;height:14px}
 .sidebar-foot{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:0 4px}
 .side-btn{display:flex;align-items:center;gap:9px;width:100%;padding:9px 10px;border:0;border-radius:12px;background:transparent;color:var(--muted);font-size:13px;font-weight:600}
 .side-btn:hover{background:rgba(45,42,50,.045);color:var(--ink)}
@@ -322,6 +325,49 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
 .subj-한자{background:#EDE9FE;color:#5B4B9E}
 .subj-기타{background:#F1EDE5;color:#7A7480}
 
+/* hanja quiz entry */
+.hanja-hero{
+  display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:18px;
+  padding:16px 18px;border-radius:20px;text-decoration:none;
+  background:linear-gradient(118deg,#FFF7DE 0%,#FFE9F2 54%,#EEF6FF 100%);
+  border:1px solid #F2E3D5;box-shadow:var(--shadow);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.hanja-hero:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);border-color:#F0CFDE}
+.hanja-hero:active{transform:translateY(0)}
+.hanja-hero .hz-glyph{
+  width:52px;height:52px;flex:0 0 52px;border-radius:17px;display:grid;place-items:center;
+  background:#fff;border:1px solid rgba(255,255,255,.9);color:#A2567C;
+  font-family:'Noto Serif KR','Apple SD Gothic Neo',serif;font-weight:900;font-size:25px;line-height:1;
+  box-shadow:0 6px 16px -10px rgba(162,86,124,.5);
+}
+.hanja-hero .hz-txt{flex:1;min-width:150px;display:block}
+.hanja-hero .hz-title{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:15.5px;font-weight:800;letter-spacing:-.02em}
+.hanja-hero .hz-title .em{font-size:16px}
+.hanja-hero .hz-title .new{font-size:10px;font-weight:800;letter-spacing:.02em;padding:2px 7px;border-radius:99px;background:#fff;color:#A2567C;box-shadow:inset 0 0 0 1px rgba(162,86,124,.18)}
+.hanja-hero .hz-sub{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.hanja-hero .hz-go{
+  display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;padding:9px 14px;border-radius:12px;
+  background:var(--ink);color:#fff;font-size:13px;font-weight:700;white-space:nowrap;transition:background .16s;
+}
+.hanja-hero .hz-go svg{width:14px;height:14px}
+.hanja-hero:hover .hz-go{background:#403B49}
+
+/* home quick links */
+.quick-strip{
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:18px;padding:10px 12px;
+  background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:16px;
+}
+.quick-strip .qs-label{font-size:10.5px;font-weight:800;color:var(--faint);letter-spacing:.07em;padding:0 3px}
+.quick-pill{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:99px;text-decoration:none;
+  background:linear-gradient(135deg,#FFF6D8,#FFEAF2);border:1px solid #F2E1C9;color:#8A5A2B;
+  font-size:12.5px;font-weight:700;transition:transform .16s,box-shadow .16s,background .16s;
+}
+.quick-pill:hover{transform:translateY(-1.5px);box-shadow:var(--shadow-sm);background:linear-gradient(135deg,#FFF2C6,#FFE2EE)}
+.quick-pill .em{font-size:13.5px}
+.quick-pill svg{width:12px;height:12px;opacity:.6}
+
 /* calendar */
 .cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px}
 .cal-title{font-size:14px;font-weight:800}
@@ -487,6 +533,8 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
 .drawer-item .ic{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);flex:0 0 30px}
 .drawer-item .ic svg{width:16px;height:16px}
 .drawer-item.on{border-color:var(--accent)}
+a.drawer-item{text-decoration:none}
+.drawer-item.wide{grid-column:1/-1;background:linear-gradient(120deg,#FFF7DE,#FFEAF2);border-color:#F2E1C9}
 
 /* ============ profile & lock ============ */
 .profile-card{
@@ -636,6 +684,13 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
   .study-row .amt{font-size:12.5px}
   .study-row .icon-btn{width:26px;flex:0 0 26px}
   .row .t2 span{white-space:nowrap}
+  .hanja-hero{display:grid;grid-template-columns:auto 1fr;gap:10px 12px;align-items:center;padding:14px;border-radius:18px;margin-bottom:14px}
+  .hanja-hero .hz-glyph{width:46px;height:46px;flex-basis:46px;border-radius:15px;font-size:22px}
+  .hanja-hero .hz-txt{min-width:0}
+  .hanja-hero .hz-title{font-size:14.5px}
+  .hanja-hero .hz-sub{font-size:11.5px;margin-top:3px}
+  .hanja-hero .hz-go{grid-column:1/-1;width:100%;justify-content:center;padding:10px 11px;font-size:12.5px;border-radius:12px}
+  .quick-strip{margin-bottom:14px;padding:8px 10px;border-radius:14px}
 }
 @media (min-width:600px) and (max-width:860px){
   .grid{grid-template-columns:repeat(2,1fr)}
@@ -816,7 +871,8 @@ var ICONS = {
   users:'<circle cx="9" cy="8.4" r="3.4"/><path d="M2.8 19.4c.6-3.1 3.1-5 6.2-5s5.6 1.9 6.2 5"/><path d="M16 5.4a3.4 3.4 0 0 1 0 6.4"/><path d="M17.4 14.9c2 .5 3.4 2 3.8 4.5"/>',
   gift:'<rect x="3.6" y="8.6" width="16.8" height="4.6" rx="1.4"/><path d="M5.4 13.2v6.4a1.8 1.8 0 0 0 1.8 1.8h9.6a1.8 1.8 0 0 0 1.8-1.8v-6.4"/><path d="M12 8.6V21"/><path d="M12 8.6C10.6 4.9 9 4 7.8 4a2.3 2.3 0 0 0 0 4.6zM12 8.6C13.4 4.9 15 4 16.2 4a2.3 2.3 0 0 1 0 4.6z"/>',
   sun:'<circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.4 19.6L6 18M18 6l1.6-1.6"/>',
-  wallet:'<rect x="3.4" y="6.4" width="17.2" height="13.2" rx="3.4"/><path d="M3.4 10.6h17.2"/><circle cx="16.6" cy="15.4" r="1.1"/>'
+  wallet:'<rect x="3.4" y="6.4" width="17.2" height="13.2" rx="3.4"/><path d="M3.4 10.6h17.2"/><circle cx="16.6" cy="15.4" r="1.1"/>',
+  quiz:'<rect x="3.2" y="7" width="12.4" height="13.4" rx="3.2"/><path d="M6.9 4.4h9.2a2.7 2.7 0 0 1 2.7 2.7v8.9"/><path d="M6.4 12.2h6.2M6.4 16h4"/>'
 };
 function ic(name){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">'+(ICONS[name]||'')+'</svg>'; }
 
@@ -1266,7 +1322,9 @@ function renderNav(){
         + (t.id === 'mission' && missionDoneCount() === 4 ? '<span class="badge">완료</span>' : '')
         + '</button>';
     }).join('') + '<div class="nav-label">도구</div>'
-      + '<button class="nav-btn" data-action="open-settings"><span class="ic">'+ic('settings')+'</span><span>설정 · 백업</span></button>';
+      + '<button class="nav-btn" data-action="open-settings"><span class="ic">'+ic('settings')+'</span><span>설정 · 백업</span></button>'
+      + '<div class="nav-label">바로가기</div>'
+      + '<a class="nav-btn" href="hanja-quiz.html"><span class="ic">'+ic('quiz')+'</span><span>아인 한자 퀴즈</span><span class="nav-out">'+ic('chevR')+'</span></a>';
   }
   var bn = $('#bottomNav');
   if(bn){
@@ -1807,6 +1865,10 @@ function viewHome(){
       + '</div>'
       + '<div class="weather" id="weatherCard">'+weatherHTML()+'</div>'
     + '</section>'
+    + '<div class="quick-strip">'
+      + '<span class="qs-label">바로가기</span>'
+      + '<a class="quick-pill" href="hanja-quiz.html"><span class="em">📝</span>아인 한자 퀴즈'+ic('chevR')+'</a>'
+    + '</div>'
     + '<div class="grid">'+members+'</div>'
     + '<div class="grid" style="margin-top:18px">'
       + '<section class="card mission-card col-7" data-theme="butter">'
@@ -1985,6 +2047,14 @@ function viewStudy(){
       + memberTabs(kid, 'pick-study-kid', KIDS)
       + '<button class="btn sm soft" data-action="tab" data-tab="allowance" data-kid="'+kid+'">'+ic('wallet')+'용돈 관리</button>'
     + '</div></div>'
+    + '<a class="hanja-hero" href="hanja-quiz.html">'
+      + '<span class="hz-glyph" aria-hidden="true">漢</span>'
+      + '<span class="hz-txt">'
+        + '<span class="hz-title">아인 한자 퀴즈<span class="new">2단계 모의고사</span></span>'
+        + '<span class="hz-sub">정리 노트로 중요 한자를 훑고, OX 없이 객관식 카드로 바로 확인해요</span>'
+      + '</span>'
+      + '<span class="hz-go">퀴즈 열기'+ic('chevR')+'</span>'
+    + '</a>'
     + (!editable ? lockNote(
         M[currentUser()].name + '님으로 접속 중이라 ' + (currentUser() === 'seungeon' ? '공부 기록은 보기만 할 수 있어요' : '본인 공부만 수정할 수 있어요'),
         M[kid].name + '님의 공부는 '+M[kid].name+'님이 직접 체크해요.'
@@ -2549,6 +2619,7 @@ function openDrawer(){
         return '<button class="drawer-item'+(ui.tab===t.id?' on':'')+'" data-action="tab" data-tab="'+t.id+'">'
           + '<span class="ic">'+ic(t.icon)+'</span>'+t.label+'</button>';
       }).join('')
+    + '<a class="drawer-item wide" href="hanja-quiz.html"><span class="ic">'+ic('quiz')+'</span>아인 한자 퀴즈 열기</a>'
     + '<button class="drawer-item" data-action="open-profile"><span class="ic">'+ic('lock')+'</span>프로필 · 잠금</button>'
     + '<button class="drawer-item" data-action="open-settings"><span class="ic">'+ic('settings')+'</span>설정 · 백업</button>'
     + '</div></div>';
