@@ -241,6 +241,12 @@ body.flash .tabs{max-width:600px; margin-left:auto; margin-right:auto}
 .fchead h2{margin:0 0 3px; font-size:17px; letter-spacing:-.02em}
 .fchead p{margin:0; font-size:12.5px; color:var(--muted)}
 
+.fc-mode{display:grid; grid-template-columns:1fr 1fr; gap:6px; background:#F2EADA; padding:6px; border-radius:999px; margin:0 auto 10px; max-width:640px; box-shadow:inset 0 1px 3px rgba(122,102,80,.1)}
+.fc-mode-btn{display:flex; align-items:center; justify-content:center; gap:5px; padding:11px 4px; border-radius:999px; font-size:14.5px; font-weight:800; color:#6B6673; letter-spacing:-.03em; min-height:48px; transition:.18s; -webkit-tap-highlight-color:transparent}
+.fc-mode-btn .em{font-size:17px; line-height:1}
+.fc-mode-btn.on{background:#fff; color:#2F6B45; box-shadow:0 7px 16px -9px rgba(122,102,80,.55), inset 0 0 0 1.5px #CDEBD7}
+.fc-mode-btn[data-fcmode="hide"].on{color:#A23B67; box-shadow:0 7px 16px -9px rgba(122,102,80,.55), inset 0 0 0 1.5px #FFD3E4}
+
 .fc-switch{display:grid; grid-template-columns:1fr 1fr; gap:7px; background:#F2EADA; padding:6px; border-radius:22px; margin-bottom:11px; box-shadow:inset 0 1px 3px rgba(122,102,80,.09)}
 .fc-tab{position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; padding:13px 6px; border-radius:17px; font-size:15px; font-weight:800; color:#6B6673; line-height:1.2; letter-spacing:-.02em; transition:.18s; min-height:68px; background:rgba(255,255,255,.45)}
 .fc-tab .n{font-size:11.5px; font-weight:800; color:var(--faint); font-variant-numeric:tabular-nums}
@@ -271,41 +277,62 @@ body.flash .tabs{max-width:600px; margin-left:auto; margin-right:auto}
 .fc-cats button.on{background:var(--ink); border-color:var(--ink); color:#fff}
 
 .fcgrid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; padding-bottom:34px; align-items:stretch}
-.fc{position:relative; display:flex; border-radius:24px; border:2px solid rgba(255,255,255,.9); background:linear-gradient(168deg,#FFF9EA,#FBEED0); color:#8A6A12; box-shadow:0 12px 24px -18px rgba(122,102,80,.6), inset 0 1px 0 rgba(255,255,255,.75); min-height:clamp(190px,44vw,232px); transition:transform .16s ease, box-shadow .16s ease}
+.fc{position:relative; display:flex; border-radius:24px; border:2px solid rgba(255,255,255,.9); background:linear-gradient(168deg,#FFF9EA,#FBEED0); color:#8A6A12; box-shadow:0 12px 24px -18px rgba(122,102,80,.6), inset 0 1px 0 rgba(255,255,255,.75); min-height:clamp(198px,50vw,244px); transition:transform .16s ease, box-shadow .16s ease}
 .fc.c1{background:linear-gradient(168deg,#FFF9EA,#FBEED0); color:#8A6A12}
 .fc.c2{background:linear-gradient(168deg,#E6F8EC,#D2F0DE); color:#2F6B45}
 .fc.c3{background:linear-gradient(168deg,#FFE8F0,#FFD8E6); color:#A23B67}
 .fc.c4{background:linear-gradient(168deg,#FFF8CB,#FFEFAE); color:#8A6A12}
 .fc:hover{transform:translateY(-2px); box-shadow:0 18px 30px -20px rgba(122,102,80,.65)}
-.fc.open{box-shadow:0 20px 34px -20px rgba(122,102,80,.7)}
-.fc-front{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:space-between; gap:6px; width:100%; padding:10px 9px 9px; border-radius:22px; text-align:center; -webkit-tap-highlight-color:transparent}
-.fc-num{position:absolute; top:8px; left:8px; width:23px; height:23px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:800; background:rgba(255,255,255,.82); color:inherit; box-shadow:0 1px 3px rgba(0,0,0,.07); font-variant-numeric:tabular-nums}
-.fc-hot{position:absolute; top:7px; right:8px; font-size:12px; line-height:1; opacity:.85}
-.fc-mark{position:absolute; top:7px; right:8px; width:21px; height:21px; border-radius:50%; display:none; place-items:center; font-size:11px; font-weight:900; color:#fff; background:#4E9A6A; box-shadow:0 1px 3px rgba(78,154,106,.4)}
+.fc:focus-within{box-shadow:0 18px 30px -20px rgba(122,102,80,.65), 0 0 0 3px rgba(147,197,253,.5)}
+.fc-front{flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; width:100%; padding:9px 8px 8px; border-radius:22px; text-align:center; -webkit-tap-highlight-color:transparent}
+.fc-top{width:100%; display:flex; align-items:center; gap:5px; min-height:26px; padding-right:34px}
+.fc-num{width:23px; height:23px; flex:none; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:800; background:rgba(255,255,255,.85); color:inherit; box-shadow:0 1px 3px rgba(0,0,0,.07); font-variant-numeric:tabular-nums}
+.fc-hot{font-size:12px; line-height:1; opacity:.85}
 .fc.done{box-shadow:0 10px 22px -18px rgba(78,154,106,.55), inset 0 0 0 2px rgba(126,201,150,.55)}
-.fc.done .fc-hot{display:none}
-.fc.done .fc-mark{display:grid}
 .fc.done .fc-num{background:rgba(78,154,106,.16); color:#2F6B45}
-.fc-hj{font-family:'Noto Serif KR','Nanum Myeongjo',serif; font-weight:900; font-size:clamp(40px,12vw,58px); line-height:1.06; letter-spacing:.02em; color:#3B3446; margin:auto 0; padding:6px 0}
+.fc.done .fc-hot{display:none}
+.fc-check{position:absolute; top:7px; right:7px; z-index:3; width:32px; height:32px; border-radius:50%; display:grid; place-items:center; font-size:14px; font-weight:900; color:#ADA6B2; background:rgba(255,255,255,.82); box-shadow:0 1px 4px rgba(0,0,0,.1), inset 0 0 0 1.5px rgba(122,102,80,.18); transition:.15s; -webkit-tap-highlight-color:transparent}
+.fc-check:hover{color:#4E9A6A; box-shadow:0 2px 7px rgba(0,0,0,.12), inset 0 0 0 1.5px rgba(78,154,106,.45)}
+.fc-check.on{color:#fff; background:#4E9A6A; box-shadow:0 2px 7px rgba(78,154,106,.4), inset 0 0 0 1.5px #4E9A6A}
+.fc-hj{font-family:'Noto Serif KR','Nanum Myeongjo',serif; font-weight:900; font-size:clamp(40px,12vw,58px); line-height:1.06; letter-spacing:.02em; color:#3B3446; margin:auto 0; padding:5px 0 7px}
 .fc-hj.l3{font-size:clamp(28px,8.6vw,44px)}
 .fc-hj.l4{font-size:clamp(21px,6.6vw,34px); letter-spacing:0}
 .fc-hj.l5,.fc-hj.l6{font-size:clamp(17px,5.4vw,28px); letter-spacing:0}
-.fc-foot{width:100%; display:flex; flex-direction:column; align-items:center; gap:1px; background:rgba(255,255,255,.72); border-radius:14px; padding:6px 7px}
-.fc-foot b{font-size:11.5px; font-weight:800; color:#4A4450; letter-spacing:-.01em}
-.fc-foot small{font-size:10.5px; font-weight:700; color:#8A8391}
-.fc-back{position:absolute; inset:0; display:none; flex-direction:column; gap:7px; padding:14px 12px 12px; border-radius:22px; background:rgba(255,255,255,.88); -webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px); text-align:center; overflow:auto; animation:fcIn .18s ease}
-.fc.open .fc-back{display:flex}
-@keyframes fcIn{from{opacity:0; transform:scale(.97)}to{opacity:1; transform:none}}
-.fc-close{position:absolute; top:6px; right:7px; width:24px; height:24px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:800; color:#8A8391; background:#F4EEE4}
-.fc-bhj{font-family:'Noto Serif KR',serif; font-weight:900; font-size:26px; line-height:1.15; color:#3B3446; letter-spacing:.02em; margin-top:2px}
-.fc-bhm{font-size:16.5px; font-weight:800; color:#2D2A32; letter-spacing:-.01em; line-height:1.3}
-.fc-bmean{font-size:12.5px; color:var(--muted); line-height:1.45; margin:0}
-.fc-btip{font-size:11.5px; color:#4A4450; line-height:1.55; margin:0; padding:8px 9px; border-radius:11px; background:#FAF7F0; text-align:left}
-.fc-btip .tk{display:inline-block; font-size:9.5px; font-weight:800; color:#8A6A12; background:#FFF0C9; border-radius:6px; padding:1px 5px; margin-right:4px; vertical-align:1px; letter-spacing:-.01em}
-.fc-check{margin-top:auto; width:100%; padding:10px; border-radius:12px; font-size:12.5px; font-weight:800; color:#2F6B45; background:#EAF7EE; border:1px solid #CDEBD7; transition:.15s}
-.fc-check.on{background:#4E9A6A; border-color:#4E9A6A; color:#fff}
+.fc-band{width:100%; display:flex; flex-direction:column; align-items:center; gap:0; background:#fff; border-radius:15px; padding:8px 9px 7px; box-shadow:0 4px 12px -8px rgba(90,70,50,.5), inset 0 0 0 1px rgba(255,255,255,.9)}
+.fc-hm{font-size:clamp(20px,5vw,22px); font-weight:800; color:#1e1b18; line-height:1.22; letter-spacing:-.035em; word-break:keep-all}
+.fc-mn{display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; margin-top:1px; font-size:12px; font-weight:700; color:#6B6673; line-height:1.3; letter-spacing:-.02em}
+.fc-tap{display:none; font-size:12.5px; font-weight:800; color:#8A8391; padding:2px 0; letter-spacing:-.02em}
+.fcgrid.mask .fc-hm,.fcgrid.mask .fc-mn{display:none}
+.fcgrid.mask .fc-tap{display:block}
+.fcgrid.mask .fc-band{padding:12px 9px 11px}
 .fc-empty{grid-column:1/-1; background:#fff; border-radius:22px; padding:28px 18px; text-align:center; font-size:14px; font-weight:800; color:var(--muted); line-height:1.7; box-shadow:var(--shadow-sm)}
 .fc-empty span{font-size:12px; font-weight:600; color:var(--faint)}
+
+/* 큰 보기 (낱말카드 한 장 크게) */
+.spot{position:fixed; inset:0; z-index:90; display:grid; place-items:center; padding:12px; background:rgba(48,36,26,.5); -webkit-backdrop-filter:blur(7px); backdrop-filter:blur(7px); animation:spotFade .16s ease}
+.spot[hidden]{display:none}
+.spot-card{position:relative; width:100%; max-width:560px; max-height:min(94vh,780px); overflow:auto; -webkit-overflow-scrolling:touch; background:linear-gradient(172deg,#FFFDF7 0%,#FFF6E2 100%); border-radius:30px; padding:22px 18px 14px; text-align:center; box-shadow:0 34px 70px -30px rgba(50,35,20,.75), 0 0 0 1px rgba(255,255,255,.9); animation:spotPop .2s cubic-bezier(.2,.9,.3,1.2)}
+.spot-x{position:absolute; top:11px; right:11px; width:38px; height:38px; border-radius:50%; display:grid; place-items:center; font-size:15px; font-weight:800; color:#8A8391; background:#F4EEE4; box-shadow:inset 0 0 0 1px rgba(122,102,80,.12); z-index:2}
+.spot-meta{display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:7px; padding:0 40px; min-height:24px}
+.spot-cat{font-size:11.5px; font-weight:800; color:#8A6A12; background:#FFF0C9; border-radius:999px; padding:3px 10px; letter-spacing:-.02em}
+.spot-idx{font-size:11.5px; font-weight:800; color:#9A94A0; font-variant-numeric:tabular-nums}
+.spot-hj{font-family:'Noto Serif KR',serif; font-weight:900; font-size:clamp(66px,17vw,126px); line-height:1.04; color:#2D2A32; letter-spacing:.02em; margin:6px 0 2px}
+.spot-hj.l3{font-size:clamp(52px,13vw,96px)}
+.spot-hj.l4{font-size:clamp(34px,9.4vw,70px); letter-spacing:0}
+.spot-hj.l5,.spot-hj.l6{font-size:clamp(26px,7.4vw,52px); letter-spacing:0}
+.spot-hm{font-size:clamp(26px,6.6vw,40px); font-weight:900; color:#1e1b18; letter-spacing:-.035em; line-height:1.22; margin:2px 0 0; word-break:keep-all}
+.spot-mn{font-size:clamp(15px,4vw,19px); font-weight:700; color:#5A5460; margin:9px 0 0; letter-spacing:-.02em; line-height:1.45; word-break:keep-all}
+.spot-tip{margin:15px 0 0; text-align:left; font-size:clamp(14px,3.8vw,16.5px); font-weight:600; line-height:1.62; color:#3B3446; background:#fff; border-radius:16px; padding:13px 14px; box-shadow:0 4px 14px -10px rgba(90,70,50,.65), inset 0 0 0 1px rgba(122,102,80,.08); letter-spacing:-.02em; word-break:keep-all}
+.spot-tip .tk{display:inline-block; font-size:11px; font-weight:800; color:#8A6A12; background:#FFF0C9; border-radius:7px; padding:2px 7px; margin-right:6px; vertical-align:2px; letter-spacing:-.01em}
+.spot-acts{display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:8px; margin-top:14px}
+.spot-nav{padding:13px 11px; border-radius:15px; font-size:14px; font-weight:800; color:#6B6673; background:#fff; box-shadow:var(--shadow-sm), inset 0 0 0 1px rgba(122,102,80,.1); white-space:nowrap}
+.spot-nav[disabled]{opacity:.35}
+.spot-done{padding:13px 8px; border-radius:15px; font-size:15.5px; font-weight:900; color:#2F6B45; background:#EAF7EE; box-shadow:inset 0 0 0 1.5px #CDEBD7; letter-spacing:-.03em}
+.spot-done.on{background:#4E9A6A; color:#fff; box-shadow:0 10px 22px -12px rgba(78,154,106,.95), inset 0 0 0 1.5px #4E9A6A}
+.spot-close{width:100%; margin-top:7px; padding:11px; border-radius:14px; font-size:13px; font-weight:800; color:#8A8391; letter-spacing:-.02em}
+@keyframes spotFade{from{opacity:0}to{opacity:1}}
+@keyframes spotPop{from{opacity:0; transform:translateY(10px) scale(.96)}to{opacity:1; transform:none}}
+body.spot-open{overflow:hidden}
 .hero-go{margin-top:11px; padding:9px 14px; border-radius:13px; background:#fff; font-size:12.5px; font-weight:800; box-shadow:var(--shadow-sm); border:1px solid rgba(255,255,255,.9); position:relative; z-index:1}
 
 @media (min-width:520px){
@@ -314,37 +341,31 @@ body.flash .tabs{max-width:600px; margin-left:auto; margin-right:auto}
 }
 @media (min-width:760px){
   .fcgrid{grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
-  .fc{min-height:252px}
-  .fc-switch,.fc-prog{max-width:640px}
+  .fc{min-height:254px}
+  .fc-switch,.fc-prog,.fc-mode{max-width:640px}
   .fc-tab{font-size:15px; min-height:66px}
+  .fc-mode-btn{font-size:15px; min-height:50px}
   .fc-hj{font-size:60px}
   .fc-hj.l3{font-size:46px}
   .fc-hj.l4{font-size:36px}
   .fc-hj.l5,.fc-hj.l6{font-size:29px}
-  .fc-foot b{font-size:12px}
-  .fc-foot small{font-size:11px}
-  .fc-bhm{font-size:18px}
-  .fc-bmean{font-size:13px}
-  .fc-btip{font-size:12px}
+  .fc-check{width:34px; height:34px; font-size:15px}
+  .fc-hm{font-size:22px}
+  .fc-mn{font-size:13px}
+  .fc-band{padding:9px 10px 8px}
+  .spot-card{padding:28px 26px 18px}
+  .spot-acts{gap:10px}
+  .spot-nav{font-size:15px; padding:14px 14px}
+  .spot-done{font-size:16.5px; padding:14px 10px}
 }
 @media (min-width:1000px){
   .fcgrid{grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px}
   .fc{min-height:272px}
   .fc-hj{font-size:66px}
   .fc-hj.l4{font-size:38px}
+  .fc-hm{font-size:23px}
   .fchead h2{font-size:19px}
-}
-@media (max-width:659px){
-  .fc.open{grid-column:1/-1}
-  .fc.open .fc-front{display:none}
-  .fc.open .fc-back{position:relative; inset:auto; background:transparent; backdrop-filter:none; padding:14px 14px 12px; overflow:visible; border-radius:22px}
-  .fc.open .fc-bhj{font-size:42px}
-  .fc.open .fc-bhm{font-size:25px}
-  .fc.open .fc-bmean{font-size:15px}
-  .fc.open .fc-btip{font-size:14px; padding:12px 13px; background:rgba(255,255,255,.75)}
-  .fc.open .fc-check{padding:14px; font-size:15px; border-radius:14px}
-  .fc.open .fc-back{padding:20px 16px 16px}
-  .fc-close{position:absolute; top:9px; right:10px; width:28px; height:28px}
+  .spot-hj{font-size:clamp(96px,12vw,140px)}
 }
 @media (max-width:520px){
   .tabs button{font-size:11.5px; padding:10px 3px; letter-spacing:-.03em}
@@ -425,7 +446,12 @@ body.flash .tabs{max-width:600px; margin-left:auto; margin-right:auto}
   <section id="cardView" hidden>
     <div class="fchead">
       <h2>🃏 큰 낱말카드</h2>
-      <p>카드를 누르면 뜻이 나와요. 외운 카드는 체크해 두면 위에 차곡차곡 쌓여요.</p>
+      <p>뜻이 카드마다 크게 보여요. 카드를 누르면 한 장씩 크게 넘겨 볼 수 있어요.</p>
+    </div>
+
+    <div class="fc-mode" role="group" aria-label="뜻 표시 방식">
+      <button class="fc-mode-btn on" data-fcmode="show" type="button" aria-pressed="true"><span class="em">👀</span> 뜻 바로 보기</button>
+      <button class="fc-mode-btn" data-fcmode="hide" type="button" aria-pressed="false"><span class="em">🙈</span> 가리고 외우기</button>
     </div>
 
     <div class="fc-switch" role="tablist" aria-label="낱말카드 범위">
@@ -456,6 +482,24 @@ body.flash .tabs{max-width:600px; margin-left:auto; margin-right:auto}
     <p class="footnote">모의고사 1·2 (2단계) · 총 <span id="noteTotal">0</span>자 정리</p>
   </section>
 
+</div>
+
+<!-- ===== 카드 한 장 크게 ===== -->
+<div class="spot" id="spot" hidden>
+  <div class="spot-card" role="dialog" aria-modal="true" aria-labelledby="spotHj">
+    <button class="spot-x" id="spotX" type="button" aria-label="닫기">✕</button>
+    <div class="spot-meta"><span class="spot-cat" id="spotCat"></span><span class="spot-idx" id="spotIdx"></span></div>
+    <div class="spot-hj" id="spotHj"></div>
+    <div class="spot-hm" id="spotHm"></div>
+    <p class="spot-mn" id="spotMn"></p>
+    <p class="spot-tip"><span class="tk">쉽게 외우기</span><span id="spotTip"></span></p>
+    <div class="spot-acts">
+      <button class="spot-nav" id="spotPrev" type="button">‹ 이전</button>
+      <button class="spot-done" id="spotDone" type="button">외웠어요!</button>
+      <button class="spot-nav" id="spotNext" type="button">다음 ›</button>
+    </div>
+    <button class="spot-close" id="spotClose" type="button">닫기</button>
+  </div>
 </div>
 
 <script>
@@ -1046,7 +1090,7 @@ function fcTip(c){ return c.tip || stripTags(FC_QCARD[c.hj]) || c.secTip || '훈
 let fcDone=new Set((()=>{try{const v=JSON.parse(localStorage.getItem(FCKEY)||'[]');return Array.isArray(v)?v:[]}catch(e){return[]}})());
 function fcSaveDone(){ try{ localStorage.setItem(FCKEY,JSON.stringify([...fcDone])); }catch(e){} }
 
-const fcState={set:'tricky',cat:'all',hide:false};
+const fcState={set:'tricky',cat:'all',hide:false,mode:(()=>{try{return localStorage.getItem('hanjaCardsMode_v1')==='hide'?'hide':'show'}catch(e){return 'show'}})()};
 
 function fcMissCards(){
   const out=[];
@@ -1077,22 +1121,17 @@ function fcCardHTML(c,i){
   const done=fcDone.has(c.key);
   const hot=(fcState.set==='all'&&c.hot);
   return ''+
-  '<article class="fc c'+(i%4+1)+(done?' done':'')+'" data-k="'+esc(c.key)+'">'+
-    '<button class="fc-front" type="button" aria-expanded="false" aria-label="'+esc(c.hj)+' 카드 뜻 보기">'+
-      '<span class="fc-num">'+(i+1)+'</span>'+
-      (hot?'<span class="fc-hot" aria-hidden="true">🔥</span>':'')+
-      '<span class="fc-mark" aria-hidden="true">✓</span>'+
+  '<article class="fc c'+(i%4+1)+(done?' done':'')+'" data-k="'+esc(c.key)+'" data-i="'+i+'">'+
+    '<button class="fc-front" type="button" aria-label="'+esc(c.hj)+' 크게 보기">'+
+      '<span class="fc-top"><span class="fc-num">'+(i+1)+'</span>'+(hot?'<span class="fc-hot" aria-hidden="true">🔥</span>':'')+'</span>'+
       '<span class="fc-hj '+lc+'">'+esc(c.hj)+'</span>'+
-      '<span class="fc-foot"><b>👆 눌러서 뜻 보기</b><small>'+esc(c.cat==='다시 볼 것'?'틀린·헷갈린 한자':c.cat)+'</small></span>'+
+      '<span class="fc-band">'+
+        '<span class="fc-hm">'+esc(c.hm)+'</span>'+
+        (c.mean?'<span class="fc-mn">'+esc(c.mean)+'</span>':'')+
+        '<span class="fc-tap">👆 눌러서 뜻 보기</span>'+
+      '</span>'+
     '</button>'+
-    '<div class="fc-back">'+
-      '<button class="fc-close" type="button" aria-label="카드 닫기">✕</button>'+
-      '<span class="fc-bhj">'+esc(c.hj)+'</span>'+
-      '<span class="fc-bhm">'+esc(c.hm)+'</span>'+
-      (c.mean?'<p class="fc-bmean">'+esc(c.mean)+'</p>':'')+
-      '<p class="fc-btip"><span class="tk">쉽게 외우기</span>'+esc(fcTip(c))+'</p>'+
-      '<button class="fc-check'+(done?' on':'')+'" type="button" data-k="'+esc(c.key)+'">'+(done?'외웠어요 ✓':'외웠어요!')+'</button>'+
-    '</div>'+
+    '<button class="fc-check'+(done?' on':'')+'" type="button" data-k="'+esc(c.key)+'" aria-pressed="'+(done?'true':'false')+'" aria-label="'+esc(c.hj)+' 외웠어요 표시">✓</button>'+
   '</article>';
 }
 
@@ -1130,7 +1169,13 @@ function renderCards(){
 
   const base=fcProgress();
   const list = fcState.hide ? base.filter(c=>!fcDone.has(c.key)) : base;
+  fcVisible=list;
   const grid=$('#fcgrid');
+  grid.classList.toggle('mask', fcState.mode==='hide');
+  document.querySelectorAll('.fc-mode-btn').forEach(b=>{
+    const on=b.dataset.fcmode===fcState.mode;
+    b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false');
+  });
   if(!list.length){
     grid.innerHTML='<div class="fc-empty">'+(fcState.hide
       ? '🎉 외운 카드를 다 숨겼어요!<br><span>“외운 카드 숨기기”를 끄면 다시 볼 수 있어요.</span>'
@@ -1140,16 +1185,65 @@ function renderCards(){
   }
 }
 
-function fcOpen(el,open){
-  document.querySelectorAll('.fc.open').forEach(x=>{
-    if(x===el) return;
-    x.classList.remove('open');
-    const f=x.querySelector('.fc-front'); if(f) f.setAttribute('aria-expanded','false');
-  });
-  el.classList.toggle('open',open);
-  const f=el.querySelector('.fc-front'); if(f) f.setAttribute('aria-expanded',open?'true':'false');
-  if(open) el.scrollIntoView({block:'nearest',behavior:'smooth'});
+/* ---- 카드 한 장 크게 보기 ---- */
+let fcVisible=[], spotI=0, spotDirty=false;
+const spotEl=$('#spot');
+
+function spotDoneBtn(){
+  const c=fcVisible[spotI]; if(!c) return;
+  const done=fcDone.has(c.key);
+  const b=$('#spotDone');
+  b.classList.toggle('on',done);
+  b.textContent=done?'외웠어요 ✓':'외웠어요!';
+  b.setAttribute('aria-pressed',done?'true':'false');
 }
+function spotShow(i){
+  if(!fcVisible.length) return;
+  spotI=Math.max(0,Math.min(fcVisible.length-1,i));
+  const c=fcVisible[spotI];
+  const len=Array.from(c.hj).length;
+  const hj=$('#spotHj');
+  hj.textContent=c.hj;
+  hj.className='spot-hj '+(len<=2?'':(len===3?'l3':len===4?'l4':'l5'));
+  $('#spotHm').textContent=c.hm;
+  const mn=$('#spotMn'); mn.textContent=c.mean||''; mn.hidden=!c.mean;
+  $('#spotTip').textContent=fcTip(c);
+  $('#spotCat').textContent=(c.cat==='다시 볼 것'?'틀린·헷갈린 한자':c.cat);
+  $('#spotIdx').textContent=(spotI+1)+' / '+fcVisible.length;
+  spotDoneBtn();
+  $('#spotPrev').disabled=spotI===0;
+  $('#spotNext').disabled=spotI===fcVisible.length-1;
+  const sc=document.querySelector('.spot-card'); if(sc) sc.scrollTop=0;
+}
+function openSpot(i){
+  spotShow(i);
+  spotEl.hidden=false;
+  document.body.classList.add('spot-open');
+  $('#spotX').focus({preventScroll:true});
+}
+function closeSpot(){
+  if(spotEl.hidden) return;
+  spotEl.hidden=true;
+  document.body.classList.remove('spot-open');
+  if(spotDirty){ spotDirty=false; renderCards(); return; }
+  const f=document.querySelector('#fcgrid .fc[data-i="'+spotI+'"] .fc-front');
+  if(f) f.focus({preventScroll:true});
+}
+$('#spotX').addEventListener('click',closeSpot);
+$('#spotClose').addEventListener('click',closeSpot);
+spotEl.addEventListener('click',e=>{ if(e.target===spotEl) closeSpot(); });
+$('#spotPrev').addEventListener('click',()=>spotShow(spotI-1));
+$('#spotNext').addEventListener('click',()=>spotShow(spotI+1));
+$('#spotDone').addEventListener('click',()=>{
+  const c=fcVisible[spotI]; if(!c) return;
+  fcToggleDone(c.key);
+});
+document.addEventListener('keydown',e=>{
+  if(spotEl.hidden) return;
+  if(e.key==='Escape'){ e.preventDefault(); closeSpot(); }
+  else if(e.key==='ArrowLeft'){ e.preventDefault(); spotShow(spotI-1); }
+  else if(e.key==='ArrowRight'){ e.preventDefault(); spotShow(spotI+1); }
+});
 
 function fcToggleDone(k){
   const on=!fcDone.has(k);
@@ -1159,19 +1253,29 @@ function fcToggleDone(k){
     if(el.dataset.k!==k) return;
     el.classList.toggle('done',on);
     const b=el.querySelector('.fc-check');
-    if(b){ b.classList.toggle('on',on); b.textContent=on?'외웠어요 ✓':'외웠어요!'; }
+    if(b){ b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); }
   });
   fcProgress();
-  if(fcState.hide && on) setTimeout(renderCards, 520);
+  spotDoneBtn();
+  if(fcState.hide && on){
+    if(!spotEl.hidden){ spotDirty=true; } else { setTimeout(renderCards,520); }
+  }
 }
 
 $('#fcgrid').addEventListener('click',e=>{
-  const close=e.target.closest('.fc-close');
-  if(close){ fcOpen(close.closest('.fc'),false); return; }
   const ck=e.target.closest('.fc-check');
   if(ck){ e.preventDefault(); fcToggleDone(ck.dataset.k); return; }
   const fr=e.target.closest('.fc-front');
-  if(fr){ const el=fr.closest('.fc'); fcOpen(el,!el.classList.contains('open')); }
+  if(fr){ openSpot(+fr.closest('.fc').dataset.i); }
+});
+
+function setFcMode(m){
+  fcState.mode=(m==='hide')?'hide':'show';
+  try{ localStorage.setItem('hanjaCardsMode_v1',fcState.mode); }catch(e){}
+  renderCards();
+}
+document.querySelectorAll('.fc-mode-btn').forEach(b=>{
+  b.addEventListener('click',()=>setFcMode(b.dataset.fcmode));
 });
 
 document.querySelectorAll('.fc-tab').forEach(b=>{
