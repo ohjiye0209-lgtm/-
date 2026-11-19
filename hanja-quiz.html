@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFDF7">
+<meta name="description" content="아인의 2단계 한자 경시대회 모의고사 1·2 정리 노트와 객관식 카드 테스트.">
+<title>아인 한자 카드 · 2단계 모의고사 정리</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='25' x='3' font-size='24'%3E%F0%9F%80%A3%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&display=swap">
+<style>
+/* ================= tokens ================= */
+:root{
+  --cream:#FFFDF7; --cream-2:#FAF5EB; --cream-3:#F4EDDF;
+  --butter:#FFF2B2; --butter-deep:#FDE68A; --butter-ink:#8A6A12;
+  --pink:#FFE2EC; --pink-deep:#F9A8D4; --pink-ink:#A23B67;
+  --blue:#E0F2FE; --blue-deep:#93C5FD; --blue-ink:#2C5F8A;
+  --mint:#DCFCE7; --mint-deep:#86EFAC; --mint-ink:#2F6B45;
+  --lilac:#EDE9FE; --lilac-deep:#C4B5FD; --lilac-ink:#5B4B9A;
+  --ink:#2D2A32; --muted:#6B6673; --faint:#9A94A0;
+  --line:rgba(45,42,50,.085); --line-2:rgba(45,42,50,.14);
+  --card:#FFFFFF; --radius:26px; --radius-sm:16px;
+  --shadow-sm:0 2px 8px rgba(122,102,80,.06);
+  --shadow:0 12px 32px -16px rgba(122,102,80,.28), 0 2px 6px rgba(122,102,80,.05);
+  --shadow-lift:0 18px 42px -18px rgba(122,102,80,.35), 0 3px 10px rgba(122,102,80,.06);
+  --ok:#4E9A6A; --ok-soft:#EAF7EE; --bad:#C0554A; --bad-soft:#FDECEA;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; color:var(--ink); background:var(--cream);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',system-ui,'Segoe UI',Roboto,sans-serif;
+  font-size:15px; line-height:1.5; letter-spacing:-.01em; word-break:keep-all; overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  min-height:100vh; padding-bottom:40px;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(900px 520px at 8% -6%, #FFF4D6 0%, rgba(255,244,214,0) 62%),
+    radial-gradient(760px 480px at 102% 4%, #FFEAF1 0%, rgba(255,234,241,0) 60%),
+    radial-gradient(800px 600px at 50% 108%, #E9F8EE 0%, rgba(233,248,238,0) 62%),
+    var(--cream);
+}
+button{font:inherit; color:inherit; cursor:pointer; border:0; background:none}
+.wrap{max-width:720px; margin:0 auto; padding:20px 16px 0}
+
+/* ================= header ================= */
+.brand{display:flex; align-items:center; gap:10px; margin-bottom:14px}
+.logo{
+  width:42px; height:42px; border-radius:14px; flex:none; display:grid; place-items:center; font-size:22px;
+  background:linear-gradient(160deg,#FFF7DC,#FFE7F0); border:1px solid rgba(255,255,255,.9);
+  box-shadow:var(--shadow-sm);
+}
+.brand h1{margin:0; font-size:19px; letter-spacing:-.02em; font-weight:800}
+.brand p{margin:2px 0 0; font-size:12.5px; color:var(--muted)}
+
+.hero{
+  background:linear-gradient(135deg,#FFF8E4 0%,#FFEFF5 55%,#EFF9F3 100%);
+  border:1px solid rgba(255,255,255,.9); border-radius:var(--radius); padding:15px 16px;
+  box-shadow:var(--shadow); margin-bottom:14px; position:relative; overflow:hidden;
+}
+.hero::after{content:"🐣"; position:absolute; right:-4px; bottom:-14px; font-size:70px; opacity:.22; transform:rotate(-8deg)}
+.hero b{display:block; font-size:15px; letter-spacing:-.02em}
+.hero span{display:block; margin-top:4px; font-size:13px; color:var(--muted); max-width:78%}
+
+/* ================= tabs ================= */
+.tabs{display:flex; gap:6px; background:#F5EEE1; padding:5px; border-radius:18px; margin-bottom:14px; box-shadow:inset 0 1px 2px rgba(122,102,80,.06)}
+.tabs button{flex:1; padding:10px 8px; border-radius:14px; font-size:13.5px; font-weight:700; color:var(--muted); transition:.18s}
+.tabs button.on{background:#fff; color:var(--ink); box-shadow:var(--shadow-sm)}
+
+/* ================= mode chips ================= */
+.modes{display:flex; flex-wrap:wrap; gap:7px; padding:2px 2px 10px}
+.modes::-webkit-scrollbar{display:none}
+.chip{
+  flex:none; display:inline-flex; align-items:center; gap:6px; padding:8px 12px; border-radius:999px;
+  background:#fff; border:1px solid var(--line-2); font-size:12.5px; font-weight:700; color:var(--muted);
+  box-shadow:var(--shadow-sm); transition:.16s; white-space:nowrap;
+}
+.chip .n{font-size:11px; font-weight:800; color:var(--faint)}
+.chip.on{background:var(--ink); border-color:var(--ink); color:#fff}
+.chip.on .n{color:rgba(255,255,255,.7)}
+.chip:disabled{opacity:.45; cursor:default}
+.chip.miss.on{background:var(--pink-ink); border-color:var(--pink-ink)}
+
+/* ================= progress ================= */
+.prog{display:flex; align-items:center; gap:10px; margin:2px 2px 12px}
+.bar{flex:1; height:9px; border-radius:999px; background:#F0E8DA; overflow:hidden; box-shadow:inset 0 1px 2px rgba(122,102,80,.08)}
+.bar i{display:block; height:100%; width:0; border-radius:999px; background:linear-gradient(90deg,#FFD9E6,#F9A8D4,#C4B5FD); transition:width .35s cubic-bezier(.4,0,.2,1)}
+.pnum{font-size:12px; font-weight:800; color:var(--muted); font-variant-numeric:tabular-nums; min-width:58px; text-align:right}
+
+/* ================= card ================= */
+.card{
+  background:var(--card); border:1px solid rgba(255,255,255,.9); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:16px 16px 18px; position:relative;
+  animation:pop .32s cubic-bezier(.2,.9,.3,1.2);
+}
+@keyframes pop{from{opacity:0; transform:translateY(10px) scale(.985)}to{opacity:1; transform:none}}
+.cardhead{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px}
+.badge{
+  display:inline-flex; align-items:center; gap:5px; padding:5px 11px; border-radius:999px;
+  font-size:11.5px; font-weight:800; letter-spacing:-.01em;
+  background:var(--blue); color:var(--blue-ink);
+}
+.badge[data-g="훈음"]{background:var(--butter); color:var(--butter-ink)}
+.badge[data-g="문장"]{background:var(--mint); color:var(--mint-ink)}
+.badge[data-g="사자성어"]{background:var(--lilac); color:var(--lilac-ink)}
+.badge[data-g="뜻"]{background:var(--pink); color:var(--pink-ink)}
+.badge[data-g="헷갈림"]{background:#FFE0D9; color:#A6452F}
+.star{font-size:12px; color:#E59A2A; font-weight:800}
+
+.stage{
+  border-radius:20px; padding:15px 12px; margin-bottom:12px; text-align:center;
+  background:linear-gradient(160deg,#FFFDF3,#FFF6E7 70%,#FFF0F6);
+  border:1px solid rgba(253,230,138,.55); position:relative;
+}
+.stage.wide{background:linear-gradient(160deg,#FFFBF4,#FFF1F6); border-color:rgba(249,168,212,.45)}
+.hanja{
+  font-family:'Noto Serif KR','Nanum Myeongjo','Apple SD Gothic Neo',serif;
+  font-weight:900; font-size:clamp(46px,15.5vw,88px); line-height:1.18; letter-spacing:.06em;
+  color:#3B3446; margin:0;
+}
+.hanja.small{font-size:clamp(28px,9vw,46px); letter-spacing:.04em}
+.qtext{margin:0 0 4px; font-size:15.5px; font-weight:700; letter-spacing:-.02em; line-height:1.55}
+.qtext .hl{background:linear-gradient(transparent 62%, #FFE9A8 62%); padding:0 2px}
+.qsub{margin:6px 0 0; font-size:12.5px; color:var(--muted)}
+
+.choices{display:flex; flex-direction:column; gap:8px}
+.choice{
+  display:flex; align-items:center; gap:10px; width:100%; text-align:left;
+  padding:12px 14px; border-radius:16px; background:#FFFDF9; border:1.5px solid var(--line-2);
+  font-size:14.5px; font-weight:600; line-height:1.45; transition:.14s;
+}
+.choice:hover:not(:disabled){border-color:var(--pink-deep); background:#FFFAFC; transform:translateY(-1px); box-shadow:var(--shadow-sm)}
+.choice:disabled{cursor:default}
+.choice .k{
+  flex:none; width:24px; height:24px; border-radius:9px; display:grid; place-items:center;
+  font-size:12px; font-weight:800; color:var(--muted); background:#F6F0E6;
+}
+.choice .t{flex:1}
+.choice .mk{flex:none; font-size:15px; font-weight:900; width:18px; text-align:center}
+.choice.correct{border-color:var(--ok); background:var(--ok-soft)}
+.choice.correct .k{background:#CDEBD7; color:var(--ok)}
+.choice.wrong{border-color:#E8A79F; background:var(--bad-soft)}
+.choice.wrong .k{background:#F8D5CF; color:var(--bad)}
+.choice.dim{opacity:.5}
+
+.fb{margin-top:14px; border-radius:18px; padding:14px 15px; display:none; animation:pop .26s ease}
+.fb.show{display:block}
+.fb.ok{background:linear-gradient(160deg,#EFFAF2,#E6F6EC); border:1px solid #CDEBD7}
+.fb.no{background:linear-gradient(160deg,#FFF3F0,#FFECEA); border:1px solid #F6D5CF}
+.fb h4{margin:0 0 6px; font-size:14.5px; font-weight:800; display:flex; align-items:center; gap:6px}
+.fb.ok h4{color:#2F6B45}
+.fb.no h4{color:#A6452F}
+.fb p{margin:0; font-size:13.5px; line-height:1.62; color:#4A4450}
+.fb p .h{font-family:'Noto Serif KR',serif; font-weight:700}
+.next{
+  margin-top:12px; width:100%; padding:14px; border-radius:16px; font-size:15px; font-weight:800;
+  background:var(--ink); color:#fff; box-shadow:var(--shadow); transition:.16s;
+  display:flex; align-items:center; justify-content:center; gap:7px;
+}
+.next:hover{transform:translateY(-1px); box-shadow:var(--shadow-lift)}
+.ghost{
+  width:100%; padding:12px; border-radius:16px; font-size:13.5px; font-weight:800;
+  background:#F7F1E7; color:var(--muted); margin-top:8px;
+}
+
+/* ================= result ================= */
+.result{
+  background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:22px 18px;
+  text-align:center; animation:pop .3s ease;
+}
+.ring{
+  width:132px; height:132px; margin:0 auto 14px; border-radius:50%; display:grid; place-items:center;
+  background:conic-gradient(#F9A8D4 var(--deg,0deg), #F3EBDD 0); position:relative;
+}
+.ring::before{content:""; position:absolute; inset:11px; border-radius:50%; background:#fff; box-shadow:inset 0 2px 8px rgba(122,102,80,.08)}
+.ring div{position:relative; text-align:center}
+.ring b{display:block; font-size:30px; font-weight:900; letter-spacing:-.03em; line-height:1.1}
+.ring span{font-size:11.5px; color:var(--muted); font-weight:700}
+.result h3{margin:0 0 4px; font-size:18px; letter-spacing:-.02em}
+.result .msg{margin:0 0 16px; font-size:13.5px; color:var(--muted)}
+.gbars{text-align:left; display:flex; flex-direction:column; gap:9px; margin:0 0 18px}
+.gbar{display:flex; align-items:center; gap:9px; font-size:12.5px}
+.gbar .name{width:64px; flex:none; font-weight:800; color:var(--muted)}
+.gbar .track{flex:1; height:8px; border-radius:999px; background:#F3EBDD; overflow:hidden}
+.gbar .track i{display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,#A7E3BC,#86EFAC)}
+.gbar .val{width:42px; text-align:right; font-weight:800; font-variant-numeric:tabular-nums; color:var(--muted)}
+.wronglist{text-align:left; display:flex; flex-direction:column; gap:8px; margin-bottom:16px; max-height:320px; overflow:auto}
+.wcard{border:1px solid var(--line-2); border-radius:16px; padding:11px 13px; background:#FFFDF9}
+.wcard .wtop{display:flex; align-items:center; gap:9px}
+.wcard .wh{font-family:'Noto Serif KR',serif; font-weight:900; font-size:22px; letter-spacing:.04em}
+.wcard .wa{font-size:12.5px; font-weight:800; color:var(--ok)}
+.wcard .we{margin:5px 0 0; font-size:12px; color:var(--muted); line-height:1.5}
+.sectitle{text-align:left; margin:0 0 9px; font-size:13px; font-weight:800; color:var(--muted); letter-spacing:-.01em}
+
+/* ================= note ================= */
+.note-head{margin:0 2px 12px}
+.note-head h2{margin:0 0 4px; font-size:17px; letter-spacing:-.02em}
+.note-head p{margin:0; font-size:12.5px; color:var(--muted)}
+.note{
+  background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:15px 15px 8px;
+  margin-bottom:12px; border:1px solid rgba(255,255,255,.9);
+}
+.note.hot{background:linear-gradient(170deg,#FFF6F2,#FFFDF9 60%); border:1px solid #FBDCD3}
+.note h3{margin:0 0 3px; font-size:14.5px; font-weight:800; display:flex; align-items:center; gap:7px}
+.note h3 .cnt{font-size:11px; font-weight:800; color:var(--faint); background:#F6F0E6; padding:2px 7px; border-radius:999px}
+.note .tip{margin:0 0 10px; font-size:12px; color:var(--muted); line-height:1.5}
+.row{display:flex; align-items:flex-start; gap:11px; padding:9px 2px; border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.row .hj{
+  flex:none; min-width:52px; font-family:'Noto Serif KR',serif; font-weight:900; font-size:23px;
+  letter-spacing:.02em; color:#3B3446; line-height:1.3;
+}
+.row .sm{flex:1; min-width:0}
+.row .hm{font-size:13.5px; font-weight:800; letter-spacing:-.01em}
+.row .hm em{font-style:normal; color:var(--pink-ink)}
+.row .mn{font-size:12px; color:var(--muted); margin-top:1px; line-height:1.45}
+.row.flag{background:linear-gradient(90deg,#FFF7EE,#FFFDF9); border-radius:12px; border-top-color:transparent}
+.row.flag .hj{color:#B4552F}
+.row .pin{flex:none; font-size:11px; font-weight:800; color:#B4552F; background:#FFE8DE; padding:2px 7px; border-radius:999px; margin-top:4px}
+.footnote{text-align:center; font-size:11.5px; color:var(--faint); margin:18px 0 4px}
+
+@media (min-width:760px){
+  .wrap{padding-top:34px}
+  .brand h1{font-size:22px}
+  .hero{padding:20px 24px}
+  .hero::after{font-size:96px; bottom:-22px}
+  .card{padding:22px 24px 24px}
+  .stage{padding:26px 18px; margin-bottom:18px}
+  .qtext{font-size:17px}
+  .choice{padding:15px 17px; font-size:15.5px}
+  .result{padding:28px 30px}
+  .note{padding:20px 20px 10px}
+  .row{padding:11px 2px}
+  .row .hj{font-size:26px; min-width:64px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="brand">
+    <div class="logo">🐣</div>
+    <div>
+      <h1>아인 한자 카드</h1>
+      <p>2단계 한자 경시대회 · 모의고사 1·2 정리</p>
+    </div>
+  </header>
+
+  <div class="hero">
+    <b>카드를 넘기며 한 문제씩 풀어 보자!</b>
+    <span>정답을 누르면 바로 O·X와 설명이 나와요. 틀린 문제는 자동으로 모아 두었다가 다시 풀 수 있어요.</span>
+  </div>
+
+  <nav class="tabs" role="tablist">
+    <button id="tabQuiz" class="on" role="tab" aria-selected="true">🃏 카드 퀴즈</button>
+    <button id="tabNote" role="tab" aria-selected="false">📒 정리 노트</button>
+  </nav>
+
+  <!-- ===== quiz ===== -->
+  <section id="quizView">
+    <div class="modes">
+      <button class="chip on" data-mode="all">🎯 전체 모드 <span class="n" id="nAll"></span></button>
+      <button class="chip" data-mode="weak">🔥 약점 집중 <span class="n" id="nWeak"></span></button>
+      <button class="chip miss" data-mode="miss">📌 틀린 문제만 <span class="n" id="nMiss"></span></button>
+      <button class="chip" id="shuffleBtn" aria-pressed="false">🔀 순서 섞기</button>
+    </div>
+
+    <div class="prog">
+      <div class="bar"><i id="barFill"></i></div>
+      <span class="pnum" id="pnum">0 / 0</span>
+    </div>
+
+    <article class="card" id="card">
+      <div class="cardhead">
+        <span class="badge" id="badge">독음</span>
+        <span class="star" id="star"></span>
+      </div>
+      <div class="stage" id="stage">
+        <p class="hanja" id="hanja">多少</p>
+      </div>
+      <p class="qtext" id="qtext"></p>
+      <p class="qsub" id="qsub"></p>
+      <div class="choices" id="choices"></div>
+      <div class="fb" id="fb"></div>
+    </article>
+    <div id="under"></div>
+  </section>
+
+  <!-- ===== note ===== -->
+  <section id="noteView" hidden>
+    <div class="note-head">
+      <h2>📒 한자 정리 노트</h2>
+      <p>모의고사 1·2에 나온 한자를 뜻끼리 모았어요. 색이 있는 줄은 아인이 시험지에서 다시 본 부분이에요.</p>
+    </div>
+    <div id="notes"></div>
+    <p class="footnote">모의고사 1·2 (2단계) · 총 <span id="noteTotal">0</span>자 정리</p>
+  </section>
+
+</div>
+
+<script>
+/* =========================================================
+   데이터
+   ========================================================= */
+const Q = [
+/* ---- 독음 (한자어 읽기) ---- */
+{id:'d01',g:'독음',big:'多少',q:'다음 한자어의 독음으로 알맞은 것은?',c:['다행','다소','대소','동서','도서'],a:1,weak:false,
+ e:'<span class="h">多</span>(많을 다) + <span class="h">少</span>(적을 소) → <b>다소</b>. "조금", "약간"이라는 뜻이에요.'},
+{id:'d02',g:'독음',big:'山間',q:'다음 한자어의 독음으로 알맞은 것은?',c:['산문','산수','산간','출간','산지'],a:2,weak:false,
+ e:'<span class="h">山</span>(뫼 산) + <span class="h">間</span>(사이 간) → <b>산간</b>. 산과 산 사이, 산이 많은 곳이에요.'},
+{id:'d03',g:'독음',big:'地方',q:'다음 한자어의 독음으로 알맞은 것은?',c:['토지','토방','지역','지지','지방'],a:4,weak:true,
+ e:'<span class="h">地</span>(땅 지) + <span class="h">方</span>(모 방) → <b>지방</b>. "서울 밖의 시골"이나 "어느 한 곳"을 말해요. 地方은 언제나 <b>지방</b>으로 읽어요!'},
+{id:'d04',g:'독음',big:'長短',q:'다음 한자어의 독음으로 알맞은 것은?',c:['장소','시단','장안','장단','단문'],a:3,weak:true,
+ e:'<span class="h">長</span>(길 장) + <span class="h">短</span>(짧을 단) → <b>장단</b>. 길고 짧음, 또 소리의 길고 짧음이에요.'},
+{id:'d05',g:'독음',big:'右向',q:'다음 한자어의 독음으로 알맞은 것은?',c:['우향','좌우','좌항','우왕','우면'],a:0,weak:false,
+ e:'<span class="h">右</span>(오른쪽 우) + <span class="h">向</span>(향할 향) → <b>우향</b>. 오른쪽을 향함이에요.'},
+{id:'d06',g:'독음',big:'學年',q:'다음 한자어의 독음으로 알맞은 것은?',c:['학교','학생','학년','학자','학사'],a:2,weak:false,
+ e:'<span class="h">學</span>(배울 학) + <span class="h">年</span>(해 년) → <b>학년</b>.'},
+{id:'d07',g:'독음',big:'白鳥',q:'다음 한자어의 독음으로 알맞은 것은?',c:['백년','백하','명백','백도','백조'],a:4,weak:false,
+ e:'<span class="h">白</span>(흰 백) + <span class="h">鳥</span>(새 조) → <b>백조</b>. 흰 새, 고니예요.'},
+{id:'d08',g:'독음',big:'兄夫',q:'다음 한자어의 독음으로 알맞은 것은?',c:['매형','형부','형제','형수','제부'],a:1,weak:true,
+ e:'<span class="h">兄</span>(형 형) + <span class="h">夫</span>(지아비 부) → <b>형부</b>. 언니의 남편이에요. 兄弟(형제)와 헷갈리지 않기!'},
+{id:'d09',g:'독음',big:'四寸',q:'다음 한자어의 독음으로 알맞은 것은?',c:['사제','사부','사촌','삼촌','필촌'],a:2,weak:false,
+ e:'<span class="h">四</span>(넉 사) + <span class="h">寸</span>(마디 촌) → <b>사촌</b>. 寸은 가족 사이의 촌수를 세는 글자예요.'},
+{id:'d10',g:'독음',big:'兒童',q:'다음 한자어의 독음으로 알맞은 것은?',c:['소아','아명','형동','아동','아부'],a:3,weak:false,
+ e:'<span class="h">兒</span>(아이 아) + <span class="h">童</span>(아이 동) → <b>아동</b>. 두 글자 모두 "아이"라는 뜻이에요.'},
+{id:'d11',g:'독음',big:'靑天',q:'다음 한자어의 독음으로 알맞은 것은?',c:['청년','청천','정오','청대','청전'],a:1,weak:false,
+ e:'<span class="h">靑</span>(푸를 청) + <span class="h">天</span>(하늘 천) → <b>청천</b>. 맑게 갠 푸른 하늘이에요.'},
+{id:'d12',g:'독음',big:'本色',q:'다음 한자어의 독음으로 알맞은 것은?',c:['본명','본음','본달','본성','본색'],a:4,weak:false,
+ e:'<span class="h">本</span>(근본 본) + <span class="h">色</span>(빛 색) → <b>본색</b>. 본디 타고난 빛깔이나 모습이에요.'},
+{id:'d13',g:'독음',big:'東北',q:'다음 한자어의 독음으로 알맞은 것은?',c:['동남','동북','남북','동대','원북'],a:1,weak:false,
+ e:'<span class="h">東</span>(동녘 동) + <span class="h">北</span>(북녘 북) → <b>동북</b>.'},
+{id:'d14',g:'독음',big:'河海',q:'다음 한자어의 독음으로 알맞은 것은?',c:['수해','하매','가해','하해','수매'],a:3,weak:false,
+ e:'<span class="h">河</span>(물 하) + <span class="h">海</span>(바다 해) → <b>하해</b>. 강과 바다예요.'},
+{id:'d15',g:'독음',big:'校外',q:'다음 한자어의 독음으로 알맞은 것은?',c:['교외','독외','교재','교식','교복'],a:0,weak:false,
+ e:'<span class="h">校</span>(학교 교) + <span class="h">外</span>(바깥 외) → <b>교외</b>. 학교 바깥이에요.'},
+{id:'d16',g:'독음',big:'花草',q:'다음 한자어의 독음으로 알맞은 것은?',c:['화분','화색','화초','수초','화단'],a:2,weak:true,
+ e:'<span class="h">花</span>(꽃 화) + <span class="h">草</span>(풀 초) → <b>화초</b>. 꽃과 풀, 또 심어 기르는 풀이에요.'},
+{id:'d17',g:'독음',big:'兄弟',q:'다음 한자어의 독음으로 알맞은 것은?',c:['자제','형수','형기','형제','인내'],a:3,weak:false,
+ e:'<span class="h">兄</span>(형 형) + <span class="h">弟</span>(아우 제) → <b>형제</b>.'},
+{id:'d18',g:'독음',big:'前後',q:'다음 한자어의 독음으로 알맞은 것은?',c:['도후','전행','전후','해후','정도'],a:2,weak:true,
+ e:'<span class="h">前</span>(앞 전) + <span class="h">後</span>(뒤 후) → <b>전후</b>. 앞과 뒤, 또는 "그 무렵"이라는 뜻이에요.'},
+{id:'d19',g:'독음',big:'方向',q:'다음 한자어의 독음으로 알맞은 것은?',c:['방항','반도','방법','모향','방위'],a:0,weak:false,
+ e:'<span class="h">方</span>(모 방) + <span class="h">向</span>(향할 향) → <b>방향</b>. 향하는 쪽이에요.'},
+{id:'d20',g:'독음',big:'短身',q:'다음 한자어의 독음으로 알맞은 것은?',c:['직후','장신','직방','좌우','단신'],a:4,weak:false,
+ e:'<span class="h">短</span>(짧을 단) + <span class="h">身</span>(몸 신) → <b>단신</b>. 키가 작은 몸이에요.'},
+{id:'d21',g:'독음',big:'高手',q:'다음 한자어의 독음으로 알맞은 것은?',c:['다소','청어','명백','고수','육아'],a:3,weak:false,
+ e:'<span class="h">高</span>(높을 고) + <span class="h">手</span>(손 수) → <b>고수</b>. 어떤 일에 뛰어난 사람이에요.'},
+{id:'d22',g:'독음',big:'明白',q:'다음 한자어의 독음으로 알맞은 것은?',c:['명백','명백히','명배','백명','명폐'],a:0,weak:false,
+ e:'<span class="h">明</span>(밝을 명) + <span class="h">白</span>(흰 백) → <b>명백</b>. 아주 분명하다는 뜻이에요.'},
+{id:'d23',g:'독음',big:'育兒',q:'다음 한자어의 독음으로 알맞은 것은?',c:['교육','육아','육이','양육','보육'],a:1,weak:false,
+ e:'<span class="h">育</span>(기를 육) + <span class="h">兒</span>(아이 아) → <b>육아</b>. 아이를 기르는 일이에요.'},
+{id:'d24',g:'독음',big:'靑魚',q:'다음 한자어의 독음으로 알맞은 것은?',c:['청어','청유','정어','청오','청해'],a:0,weak:false,
+ e:'<span class="h">靑</span>(푸를 청) + <span class="h">魚</span>(물고기 어) → <b>청어</b>. 등이 푸른 바닷물고기예요.'},
+{id:'d25',g:'독음',big:'童心',q:'다음 한자어의 독음으로 알맞은 것은?',c:['동화','동심','충심','정신','동시'],a:1,weak:false,
+ e:'<span class="h">童</span>(아이 동) + <span class="h">心</span>(마음 심) → <b>동심</b>. 아이 같은 순수한 마음이에요.'},
+{id:'d26',g:'독음',big:'育林',q:'다음 한자어의 독음으로 알맞은 것은?',c:['육림','교육','삼림','조림','육사'],a:0,weak:false,
+ e:'<span class="h">育</span>(기를 육) + <span class="h">林</span>(수풀 림) → <b>육림</b>. 숲을 가꾸는 일이에요.'},
+{id:'d27',g:'독음',big:'南北',q:'다음 한자어의 독음으로 알맞은 것은?',c:['동북','서남','남북','남방','남녘'],a:2,weak:false,
+ e:'<span class="h">南</span>(남녘 남) + <span class="h">北</span>(북녘 북) → <b>남북</b>.'},
+{id:'d28',g:'독음',big:'地位',q:'다음 한자어의 독음으로 알맞은 것은?',c:['지방','고저','지위','지가','지대'],a:2,weak:true,
+ e:'<span class="h">地</span>(땅 지) + <span class="h">位</span>(자리 위) → <b>지위</b>. 사회에서의 자리나 높낮이예요.'},
+{id:'d29',g:'독음',big:'高低',q:'다음 한자어의 독음으로 알맞은 것은?',c:['음성','고저','가락','고성','고음'],a:1,weak:false,
+ e:'<span class="h">高</span>(높을 고) + <span class="h">低</span>(낮을 저) → <b>고저</b>. 높고 낮음이에요.'},
+{id:'d30',g:'독음',big:'巨人',q:'다음 한자어의 독음으로 알맞은 것은?',c:['거인','거신','대인','군인','거민'],a:0,weak:false,
+ e:'<span class="h">巨</span>(클 거) + <span class="h">人</span>(사람 인) → <b>거인</b>. 아주 큰 사람이에요.'},
+{id:'d31',g:'독음',big:'四季',q:'다음 한자어의 독음으로 알맞은 것은?',c:['사계','사기','사제','사례','사시'],a:0,weak:false,
+ e:'<span class="h">四</span>(넉 사) + <span class="h">季</span>(계절 계) → <b>사계</b>. 봄·여름·가을·겨울 네 계절이에요.'},
+{id:'d32',g:'독음',big:'春秋',q:'다음 한자어의 독음으로 알맞은 것은?',c:['춘추','춘하','추계','춘계','추수'],a:0,weak:false,
+ e:'<span class="h">春</span>(봄 춘) + <span class="h">秋</span>(가을 추) → <b>춘추</b>. "춘추가 70이시다"는 나이를 뜻해요.'},
+{id:'d33',g:'독음',big:'弟子',q:'다음 한자어의 독음으로 알맞은 것은?',c:['자제','제자','제녀','제형','제생'],a:1,weak:false,
+ e:'<span class="h">弟</span>(아우 제) + <span class="h">子</span>(아들 자) → <b>제자</b>. 스승에게 배우는 사람이에요.'},
+{id:'d34',g:'독음',big:'靑春',q:'다음 한자어의 독음으로 알맞은 것은?',c:['청춘','청년','청림','청산','청음'],a:0,weak:false,
+ e:'<span class="h">靑</span>(푸를 청) + <span class="h">春</span>(봄 춘) → <b>청춘</b>. 젊은 시절이에요.'},
+{id:'d35',g:'독음',big:'生育',q:'다음 한자어의 독음으로 알맞은 것은?',c:['생축','생육','생유','상육','양육'],a:1,weak:true,
+ e:'<span class="h">生</span>(날 생) + <span class="h">育</span>(기를 육) → <b>생육</b>. 낳아서 기름이에요. <span class="h">畜</span>(짐승 축)은 生畜 = <b>생축</b>! 畜(축)과 育(육)을 꼭 구분해요.'},
+{id:'d36',g:'독음',big:'兩手',q:'다음 한자어의 독음으로 알맞은 것은?',c:['양수','양두','량수','양주','양손'],a:0,weak:true,
+ e:'<span class="h">兩</span>(두 량) + <span class="h">手</span>(손 수) → <b>양수</b>. 두 손이에요.'},
+{id:'d37',g:'독음',big:'夏季',q:'다음 한자어의 독음으로 알맞은 것은?',c:['하계','하게','하경','하서','동계'],a:0,weak:true,
+ e:'<span class="h">夏</span>(여름 하) + <span class="h">季</span>(계절 계) → <b>하계</b>. 여름철이에요. 冬季는 <b>동계</b>!'},
+{id:'d38',g:'독음',big:'秋色',q:'다음 한자어의 독음으로 알맞은 것은?',c:['추색','추새','추석','추상','추세'],a:0,weak:true,
+ e:'<span class="h">秋</span>(가을 추) + <span class="h">色</span>(빛 색) → <b>추색</b>. 가을의 빛깔이에요. 色은 언제나 "색".'},
+{id:'d39',g:'독음',big:'長男',q:'다음 한자어의 독음으로 알맞은 것은?',c:['장남','장안','어른남','긴남','장손'],a:0,weak:false,
+ e:'<span class="h">長</span>(어른 장) + <span class="h">男</span>(사내 남) → <b>장남</b>. 맏아들이에요.'},
+{id:'d40',g:'독음',big:'生畜',q:'다음 한자어의 독음으로 알맞은 것은?',c:['생축','생육','생속','생추','생수'],a:0,weak:true,
+ e:'<span class="h">畜</span>(짐승 축) → <b>생축</b>(가축). 育(기를 육)이면 生育(생육)이에요. 畜=축, 育=육!'},
+
+/* ---- 훈·음 ---- */
+{id:'h01',g:'훈음',big:'後',q:'後의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['뒤 후','달아난 배','마칠 졸','클 거'],a:0,weak:true,
+ e:'<span class="h">後</span>는 <b>뒤 후</b> 하나예요. "배"로 읽는 글자는 <span class="h">北</span>(달아날 배)이지 後가 아니에요.'},
+{id:'h02',g:'훈음',big:'北',q:'北은 "북녘 북" 말고도 다른 훈·음이 있어요. 무엇일까요?',c:['달아날 배','봄 춘','물 하','마칠 졸'],a:0,weak:true,
+ e:'<span class="h">北</span> = <b>북녘 북</b>, 그리고 <b>달아날 배</b>. 두 가지로 읽어요. "등을 돌려 달아나다"에서 北(배)이 나왔어요.'},
+{id:'h03',g:'훈음',big:'花',q:'花의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['꽃 화','빛 색','풀 초','열매 과'],a:0,weak:true,
+ e:'<span class="h">花</span>는 <b>꽃 화</b>. 花草(화초), 花田(화전)처럼 써요.'},
+{id:'h04',g:'훈음',big:'赤',q:'赤의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['붉을 적','빛 색','푸를 청','흰 백'],a:0,weak:true,
+ e:'<span class="h">赤</span>은 <b>붉을 적</b>. 빨강을 뜻하는 글자예요.'},
+{id:'h05',g:'훈음',big:'間',q:'間의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['사이 간','마칠 졸','바깥 외','자리 위'],a:0,weak:true,
+ e:'<span class="h">間</span>은 <b>사이 간</b>. 山間(산간), 時間(시간)처럼 써요.'},
+{id:'h06',g:'훈음',big:'名',q:'名의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['이름 명','밝을 명','마칠 졸','해 년'],a:0,weak:true,
+ e:'<span class="h">名</span>은 <b>이름 명</b>.'},
+{id:'h07',g:'훈음',big:'外',q:'外의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['바깥 외','사이 간','앞 전','물 하'],a:0,weak:true,
+ e:'<span class="h">外</span>는 <b>바깥 외</b>. 校外(교외)처럼 써요.'},
+{id:'h08',g:'훈음',big:'本',q:'本의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['근본 본','온전할 전','해 년','무거울 중'],a:0,weak:true,
+ e:'<span class="h">本</span>은 <b>근본 본</b>. 나무 아래쪽에 표시를 한 모양이에요.'},
+{id:'h09',g:'훈음',big:'左',q:'左의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['왼 좌','오른쪽 우','앞 전','자리 위'],a:0,weak:true,
+ e:'<span class="h">左</span>는 <b>왼 좌</b>. 右(오른쪽 우)와 짝이에요.'},
+{id:'h10',g:'훈음',big:'全',q:'全의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['온전할 전','앞 전','마칠 졸','근본 본'],a:0,weak:true,
+ e:'<span class="h">全</span>은 <b>온전할 전</b>. 前(앞 전)과 소리가 같아서 헷갈려요. 뜻이 다르죠!'},
+{id:'h11',g:'훈음',big:'重',q:'重의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['무거울 중','온전할 전','이름 명','붉을 적'],a:0,weak:true,
+ e:'<span class="h">重</span>은 <b>무거울 중</b>.'},
+{id:'h12',g:'훈음',big:'毛',q:'毛의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['터럭 모','손 수','넉 사','마디 촌'],a:0,weak:true,
+ e:'<span class="h">毛</span>는 <b>터럭 모</b>. 털, 또는 아주 작은 것을 말해요. 九牛一毛(구우일모)에 나와요.'},
+{id:'h13',g:'훈음',big:'位',q:'位의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['자리 위','바깥 외','앞 전','모 방'],a:0,weak:true,
+ e:'<span class="h">位</span>는 <b>자리 위</b>. 地位(지위)처럼 써요.'},
+{id:'h14',g:'훈음',big:'色',q:'色의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['빛 색','꽃 화','해 년','풀 초'],a:0,weak:true,
+ e:'<span class="h">色</span>은 <b>빛 색</b>. 本色(본색), 秋色(추색)처럼 써요.'},
+{id:'h15',g:'훈음',big:'年',q:'年의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['해 년','빛 색','뒤 후','마칠 졸'],a:0,weak:false,
+ e:'<span class="h">年</span>은 <b>해 년</b>. 한 해, 나이를 뜻해요.'},
+{id:'h16',g:'훈음',big:'海',q:'海의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['바다 해','물 하','강 강','터럭 모'],a:0,weak:false,
+ e:'<span class="h">海</span>는 <b>바다 해</b>. 河(물 하)와 짝이에요.'},
+{id:'h17',g:'훈음',big:'河',q:'河의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['물 하','바다 해','푸를 청','흰 백'],a:0,weak:true,
+ e:'<span class="h">河</span>는 <b>물 하</b>. 강을 뜻하기도 해요.'},
+{id:'h18',g:'훈음',big:'果',q:'果의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['열매 과','푸를 청','클 거','기를 육'],a:0,weak:true,
+ e:'<span class="h">果</span>는 <b>열매 과</b>. 靑果(청과)처럼 써요.'},
+{id:'h19',g:'훈음',big:'祖',q:'祖의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['할아버지 조','아비 부','아우 제','앞 전'],a:0,weak:false,
+ e:'<span class="h">祖</span>는 <b>할아버지 조</b>. 祖上(조상)에 나와요.'},
+{id:'h20',g:'훈음',big:'卒',q:'卒의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['마칠 졸','아이 동','마디 촌','기를 육'],a:0,weak:true,
+ e:'<span class="h">卒</span>은 <b>마칠 졸</b>. "마치다"라는 뜻이에요.'},
+{id:'h21',g:'훈음',big:'育',q:'育의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['기를 육','날 생','아이 동','클 거'],a:0,weak:true,
+ e:'<span class="h">育</span>은 <b>기를 육</b>. 育兒(육아), 育林(육림), 生育(생육).'},
+{id:'h22',g:'훈음',big:'夏',q:'夏의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['여름 하','봄 춘','가을 추','겨울 동'],a:0,weak:false,
+ e:'<span class="h">夏</span>는 <b>여름 하</b>. 春夏秋冬(춘하추동)!'},
+{id:'h23',g:'훈음',big:'秋',q:'秋의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['가을 추','봄 춘','여름 하','해 년'],a:0,weak:false,
+ e:'<span class="h">秋</span>는 <b>가을 추</b>. 秋色(추색), 春秋(춘추).'},
+{id:'h24',g:'훈음',big:'白',q:'白의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['흰 백','빛 색','붉을 적','푸를 청'],a:0,weak:false,
+ e:'<span class="h">白</span>은 <b>흰 백</b>.'},
+
+/* ---- 뜻·음 → 한자 ---- */
+{id:'r01',g:'훈음',big:'뒤 후',wide:true,q:'"뒤 후"에 알맞은 한자는?',c:['後','候','北','全'],a:0,weak:true,
+ e:'<span class="h">後</span>가 "뒤 후"예요. 前後(전후).'},
+{id:'r02',g:'훈음',big:'꽃 화',wide:true,q:'"꽃 화"에 알맞은 한자는?',c:['花','華','草','果'],a:0,weak:false,
+ e:'<span class="h">花</span>가 "꽃 화". 花草(화초).'},
+{id:'r03',g:'훈음',big:'마칠 졸',wide:true,q:'"마칠 졸"에 알맞은 한자는?',c:['卒','率','全','重'],a:0,weak:false,
+ e:'<span class="h">卒</span>이 "마칠 졸".'},
+{id:'r04',g:'훈음',big:'기를 육',wide:true,q:'"기를 육"에 알맞은 한자는?',c:['育','畜','生','林'],a:0,weak:false,
+ e:'<span class="h">育</span>이 "기를 육". 育兒(육아), 育林(육림).'},
+{id:'r05',g:'훈음',big:'온전할 전',wide:true,q:'"온전할 전"에 알맞은 한자는?',c:['全','前','卒','本'],a:0,weak:true,
+ e:'<span class="h">全</span>이 "온전할 전". 前(앞 전)은 소리만 같아요.'},
+{id:'r06',g:'훈음',big:'터럭 모',wide:true,q:'"터럭 모"에 알맞은 한자는?',c:['毛','手','寸','末'],a:0,weak:false,
+ e:'<span class="h">毛</span>가 "터럭 모". 九牛一毛(구우일모).'},
+
+/* ---- 문장 속 독음 ---- */
+{id:'s01',g:'문장',big:'童心',q:'좋은 책은 <span class="hl">童心</span>을 아름답게 키웁니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['동화','동심','충심','정신','동시'],a:1,weak:false,
+ e:'<span class="h">童</span>(아이 동) + <span class="h">心</span>(마음 심) → <b>동심</b>.'},
+{id:'s02',g:'문장',big:'學校',q:'<span class="hl">學校</span>에서 수련회를 갑니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['교실','학원','학생','학교','사교'],a:3,weak:false,
+ e:'<span class="h">學</span>(배울 학) + <span class="h">校</span>(학교 교) → <b>학교</b>.'},
+{id:'s03',g:'문장',big:'育林',q:'11월 첫 주 토요일은 <span class="hl">育林</span>의 날입니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['육림','교육','삼림','조림','육사'],a:0,weak:false,
+ e:'<span class="h">育</span>(기를 육) + <span class="h">林</span>(수풀 림) → <b>육림</b>.'},
+{id:'s04',g:'문장',big:'南北',q:'<span class="hl">南北</span>으로 시원하게 길이 생겼습니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['동북','서남','남북','남방','남녘'],a:2,weak:false,
+ e:'<span class="h">南</span>(남녘 남) + <span class="h">北</span>(북녘 북) → <b>남북</b>.'},
+{id:'s05',g:'문장',big:'地位',q:'그분은 <span class="hl">地位</span>가 높은 분입니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['지방','고저','지위','지가','지대'],a:2,weak:true,
+ e:'<span class="h">位</span>는 "자리 위" → <b>지위</b>.'},
+{id:'s06',g:'문장',big:'高低',q:'음의 <span class="hl">高低</span> 장단에 따라 노래를 불렀습니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['음성','고저','가락','고성','고음'],a:1,weak:false,
+ e:'<span class="h">高</span>(높을 고) + <span class="h">低</span>(낮을 저) → <b>고저</b>.'},
+{id:'s07',g:'문장',big:'巨人',q:'난장이 나라에 <span class="hl">巨人</span>이 나타났습니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['청춘','제자','거인','사계','춘추'],a:2,weak:false,
+ e:'<span class="h">巨</span>(클 거) + <span class="h">人</span>(사람 인) → <b>거인</b>.'},
+{id:'s08',g:'문장',big:'四季',q:'봄, 여름, 가을, 겨울을 <span class="hl">四季</span>라고 합니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['청춘','제자','거인','사계','춘추'],a:3,weak:false,
+ e:'<span class="h">季</span>(계절 계) → <b>사계</b>.'},
+{id:'s09',g:'문장',big:'春秋',q:'할아버지의 <span class="hl">春秋</span>는 70이십니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['청춘','제자','거인','사계','춘추'],a:4,weak:false,
+ e:'<span class="h">春</span>(봄 춘) + <span class="h">秋</span>(가을 추) → <b>춘추</b>. 여기서는 "나이"라는 뜻이에요.'},
+{id:'s10',g:'문장',big:'弟子',q:'스승과 <span class="hl">弟子</span>는 서로를 위해 줍니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['청춘','제자','거인','사계','춘추'],a:1,weak:false,
+ e:'<span class="h">弟</span>(아우 제) + <span class="h">子</span>(아들 자) → <b>제자</b>.'},
+{id:'s11',g:'문장',big:'靑春',q:'젊은 나이를 <span class="hl">靑春</span>이라고 합니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['청춘','청년','청림','청산','청음'],a:0,weak:false,
+ e:'<span class="h">靑</span>(푸를 청) + <span class="h">春</span>(봄 춘) → <b>청춘</b>.'},
+{id:'s12',g:'문장',big:'短身',q:'다윗은 매우 <span class="hl">短身</span>이었습니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['직후','장신','직방','좌우','단신'],a:4,weak:false,
+ e:'<span class="h">短</span>(짧을 단) + <span class="h">身</span>(몸 신) → <b>단신</b>.'},
+{id:'s13',g:'문장',big:'學校',q:'동생은 내년부터 <span class="hl">學校</span>에 갑니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['학교','고생','학문','자교','학원'],a:0,weak:false,
+ e:'<span class="h">學</span>(배울 학) + <span class="h">校</span>(학교 교) → <b>학교</b>.'},
+{id:'s14',g:'문장',big:'白鳥',q:'호수 위에서 <span class="hl">白鳥</span>가 헤엄을 치고 있습니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['입조','백수','백도','백조','방조'],a:3,weak:false,
+ e:'<span class="h">白</span>(흰 백) + <span class="h">鳥</span>(새 조) → <b>백조</b>.'},
+{id:'s15',g:'문장',big:'高手',q:'바둑의 <span class="hl">高手</span>인 이창호는 9단입니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['다소','청어','명백','고수','육아'],a:3,weak:false,
+ e:'<span class="h">高</span>(높을 고) + <span class="h">手</span>(손 수) → <b>고수</b>.'},
+{id:'s16',g:'문장',big:'多少',q:'우리의 정성이 <span class="hl">多少</span> 도움이 될 것입니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['다소','청어','명백','고수','육아'],a:0,weak:false,
+ e:'<span class="h">多</span>(많을 다) + <span class="h">少</span>(적을 소) → <b>다소</b>.'},
+{id:'s17',g:'문장',big:'明白',q:'이 일은 제 잘못이 <span class="hl">明白</span>합니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['다소','청어','명백','고수','육아'],a:2,weak:false,
+ e:'<span class="h">明</span>(밝을 명) + <span class="h">白</span>(흰 백) → <b>명백</b>.'},
+{id:'s18',g:'문장',big:'育兒',q:'<span class="hl">育兒</span>를 책임지는 기관이 있어야 합니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['다소','청어','명백','고수','육아'],a:4,weak:false,
+ e:'<span class="h">育</span>(기를 육) + <span class="h">兒</span>(아이 아) → <b>육아</b>.'},
+{id:'s19',g:'문장',big:'靑魚',q:'<span class="hl">靑魚</span>는 맛있는 생선입니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['다소','청어','명백','고수','육아'],a:1,weak:false,
+ e:'<span class="h">靑</span>(푸를 청) + <span class="h">魚</span>(물고기 어) → <b>청어</b>.'},
+
+/* ---- 문장 속 뜻 ---- */
+{id:'m01',g:'뜻',big:'靑果',q:'<span class="hl">靑果</span>가 뜻하는 것으로 가장 알맞은 것은?',sub:'"어머니와 농산물 시장에 갔습니다. 가게마다 靑果가 가득하였습니다."',
+ c:['나무 열매','온갖 채소','잘 익은 과일','푸른빛의 채소','신선한 과일과 채소'],a:4,weak:true,
+ e:'<span class="h">靑果</span>는 파랗다는 靑이 아니라 <b>"신선한" 과일과 채소</b>라는 뜻이에요. 글자만 보고 푸른색으로 고르면 틀려요!'},
+{id:'m02',g:'뜻',big:'耳目',q:'<span class="hl">耳目</span>이 뜻하는 것으로 가장 알맞은 것은?',sub:'"2020년 11월 미국 대통령 선거에 세계의 耳目이 집중되었습니다."',
+ c:['주의와 관심','눈과 코','이목구비','귀와 입','키와 몸무게'],a:0,weak:false,
+ e:'<span class="h">耳目</span>은 원래 "귀와 눈"이지만, 문장에서는 <b>주의와 관심</b>이라는 뜻으로 써요.'},
+{id:'m03',g:'뜻',big:'小心',q:'小心의 뜻으로 <b>알맞지 않은</b> 것은?',c:['어린 마음','속이 좁음','대담하지 못함','조심성이 많음','겁이 많음'],a:0,weak:true,
+ e:'<span class="h">小心</span>은 "조심성 많고 겁이 많은 것". <b>어린 마음</b>은 童心(동심)이에요.'},
+{id:'m04',g:'뜻',big:'祖上',q:'祖上의 뜻으로 <b>알맞지 않은</b> 것은?',c:['일찍 내리는 서리','자기 위로 대대의 어른','아버지, 할아버지 위의 어른','자기 세대 이전의 모든 세대','후에 오는 것이 발전하는데 기초가 되는 것'],a:0,weak:true,
+ e:'<span class="h">祖上</span>은 자기 위의 어른들, 곧 조상이에요. <b>일찍 내리는 서리</b>는 早霜(조상)으로 한자가 달라요.'},
+
+/* ---- 사자성어 ---- */
+{id:'i01',g:'사자성어',big:'不老長生',q:'늙지 않고 오래 사는 것을 뜻하는 말은?',c:['不老長生','十人十色','一石二鳥','九牛一毛'],a:0,weak:false,
+ e:'<span class="h">不老長生</span> = 늙지(不老) 않고 오래 삶(長生).'},
+{id:'i02',g:'사자성어',big:'十人十色',q:'"사람마다 생각과 특징이 다름"을 뜻하는 말은?',c:['一石二鳥','十人十色','東西南北','靑天白日'],a:1,weak:false,
+ e:'<span class="h">十人十色</span> = 열 사람이면 열 가지 색, 곧 사람마다 다름.'},
+{id:'i03',g:'사자성어',big:'十中八九',q:'"열 가운데 여덟이나 아홉으로 거의 그러함"을 뜻하는 말은?',c:['身土不二','十中八九','四方八方','一長一短'],a:1,weak:false,
+ e:'<span class="h">十中八九</span> = 십중팔구. 거의 틀림없이 그렇다는 뜻.'},
+{id:'i04',g:'사자성어',big:'九牛一毛',q:'"많은 것 가운데 극히 적은 수"를 뜻하는 말은?',c:['三三五五','一口二言','九牛一毛','父母兄弟'],a:2,weak:true,
+ e:'<span class="h">九牛一毛</span> = 아홉 소(九牛)의 털 하나(一毛). 아주 많은 것 중의 티끌만 한 것.'},
+{id:'i05',g:'사자성어',big:'一石二鳥',q:'"한 가지 일로 두 가지 이익을 얻음"을 뜻하는 말은?',c:['靑天白日','十中八九','四方八方','一石二鳥'],a:3,weak:true,
+ e:'<span class="h">一石二鳥</span> = 돌 하나(一石)로 새 두 마리(二鳥).'},
+{id:'i06',g:'사자성어',big:'三三五五',q:'"셋씩 다섯씩 흩어져 있음"을 뜻하는 말은?',c:['三三五五','十人十色','一石二鳥','人山人海'],a:0,weak:false,
+ e:'<span class="h">三三五五</span> = 셋 다섯씩 무리 지어 흩어져 있는 모양.'},
+{id:'i07',g:'사자성어',big:'一口二言',q:'"한 입으로 두 가지 말을 함"을 뜻하는 말은?',c:['一口二言','一石二鳥','十中八九','一長一短'],a:0,weak:false,
+ e:'<span class="h">一口二言</span> = 한 입(一口)으로 두 말(二言). 말을 자주 바꾸는 것.'},
+{id:'i08',g:'사자성어',big:'靑天白日',q:'"맑게 갠 푸른 하늘에 밝은 해"를 뜻하는 말은?',c:['靑天白日','天地江山','睛天白日','靑春白日'],a:0,weak:false,
+ e:'<span class="h">靑天白日</span> = 푸른 하늘(靑天)과 밝은 해(白日).'},
+{id:'i09',g:'사자성어',big:'四方八方',q:'"여러 방향, 사방"을 뜻하는 말은?',c:['東西南北','四方八方','人山人海','十中八九'],a:1,weak:false,
+ e:'<span class="h">四方八方</span> = 사방팔방. 여러 방향.'},
+{id:'i10',g:'사자성어',big:'人山人海',q:'"사람이 아주 많음"을 뜻하는 말은?',c:['人山人海','十人十色','三三五五','四方八方'],a:0,weak:false,
+ e:'<span class="h">人山人海</span> = 사람이 산(人山)이고 바다(人海).'},
+{id:'i11',g:'사자성어',big:'一長一短',q:'"한 가지 장점과 한 가지 단점"을 뜻하는 말은?',c:['一長一短','一石二鳥','十中八九','不老長生'],a:0,weak:false,
+ e:'<span class="h">一長一短</span> = 한 가지 긴 점(長)과 한 가지 짧은 점(短).'},
+{id:'i12',g:'사자성어',big:'身土不二',q:'"내 땅에서 난 것이 내 몸에 맞음"을 뜻하는 말은?',c:['身土不二','四方八方','不老長生','十人十色'],a:0,weak:false,
+ e:'<span class="h">身土不二</span> = 몸(身)과 땅(土)은 둘이 아니다(不二).'},
+{id:'i13',g:'사자성어',big:'天地江山',q:'"하늘과 땅, 강과 산"을 뜻하는 말은?',c:['天地江山','靑天白日','一石二鳥','父母兄弟'],a:0,weak:false,
+ e:'<span class="h">天地江山</span> = 하늘(天) 땅(地) 강(江) 산(山).'},
+{id:'i14',g:'사자성어',big:'東西南北',q:'"동서남북, 사방"을 뜻하는 말은?',c:['東西南北','四方八方','人山人海','三三五五'],a:0,weak:false,
+ e:'<span class="h">東西南北</span> = 동녘·서녘·남녘·북녘.'},
+
+/* ---- 헷갈리는 짝 ---- */
+{id:'p01',g:'헷갈림',big:'生畜 / 生育',wide:true,q:'"가축"을 뜻하는 한자어는?',c:['生畜(생축)','生育(생육)','生畜(생육)','生育(생축)'],a:0,weak:true,
+ e:'<span class="h">畜</span> = 짐승 축 → 生畜(생축, 가축). <span class="h">育</span> = 기를 육 → 生育(생육, 낳아 기름).'},
+{id:'p02',g:'헷갈림',big:'夏季 / 冬季',wide:true,q:'"여름철"을 뜻하는 한자어의 독음은?',c:['하계','하게','동계','추계'],a:0,weak:true,
+ e:'<span class="h">夏季</span> = <b>하계</b>. 冬季 = 동계, 秋季 = 추계, 春季 = 춘계.'},
+{id:'p03',g:'헷갈림',big:'靑天 / 靑春 / 靑魚',wide:true,q:'"푸른 하늘"을 뜻하는 한자어는?',c:['靑天(청천)','靑春(청춘)','靑魚(청어)','靑果(청과)'],a:0,weak:false,
+ e:'天(하늘 천) → 靑天(청천). 春 → 청춘, 魚 → 청어, 果 → 청과.'},
+{id:'p04',g:'헷갈림',big:'長短 / 長男',wide:true,q:'"길고 짧음"을 뜻하는 한자어의 독음은?',c:['장단','장남','장안','단장'],a:0,weak:true,
+ e:'<span class="h">長短</span> = 장단(길 장 + 짧을 단). 長男 = 장남(어른 장).'},
+{id:'p05',g:'헷갈림',big:'後 / 北 / 全 / 前',wide:true,q:'"달아날 배"로 읽는 글자는?',c:['北','後','全','前'],a:0,weak:true,
+ e:'<span class="h">北</span> = 북녘 북 / 달아날 배. 後는 뒤 후 하나만 있어요.'}
+];
+
+/* =========================================================
+   정리 노트 데이터
+   ========================================================= */
+const NOTES = [
+  {t:'아인이 다시 볼 것', emoji:'🔥', hot:true,
+   tip:'시험지에서 표시한 부분이에요. 훈·음과 독음을 한 번 더 소리 내어 읽어 봐요.',
+   items:[
+     ['後','뒤 후','前後 전후 · "배"로 읽지 않아요','1'],
+     ['北','북녘 북 / 달아날 배','두 가지 훈이 있어요 · 東北 동북','1'],
+     ['花','꽃 화','花草 화초','1'],
+     ['赤','붉을 적','빨강을 뜻해요','1'],
+     ['間','사이 간','山間 산간','1'],
+     ['名','이름 명','','1'],
+     ['外','바깥 외','校外 교외','1'],
+     ['本','근본 본','','1'],
+     ['左','왼 좌','右 오른쪽 우와 짝','1'],
+     ['靑果','청과','신선한 과일과 채소 (푸른색 아님!)','1'],
+     ['九牛一毛','구우일모','아홉 소의 털 하나 = 많은 중에 극히 적음','1'],
+     ['前後','전후','前 앞 전 + 後 뒤 후','1'],
+     ['夏季','하계','夏 여름 하 + 季 계절 계','1'],
+     ['秋色','추색','秋 가을 추 + 色 빛 색','1'],
+     ['生育','생육','生 날 생 + 育 기를 육','1'],
+     ['兩手','양수','兩 두 량 + 手 손 수','1']
+   ]},
+  {t:'방향·위치', emoji:'🧭',
+   tip:'시험에 자주 나오는 짝이에요. 左=왼, 右=오른쪽!',
+   items:[
+     ['東','동녘 동','동쪽'], ['西','서녘 서','서쪽'], ['南','남녘 남','남쪽'],
+     ['北','북녘 북','북쪽 (달아날 배)','1'], ['左','왼 좌','왼쪽','1'], ['右','오른쪽 우','오른쪽'],
+     ['前','앞 전','앞'], ['後','뒤 후','뒤','1'],
+     ['間','사이 간','사이','1'], ['外','바깥 외','바깥','1'], ['位','자리 위','자리','1'],
+     ['方','모 방','방향·곳'], ['向','향할 향','향하다']
+   ]},
+  {t:'자연·계절', emoji:'🌿',
+   tip:'글자 하나가 자연을 통째로 담고 있어요.',
+   items:[
+     ['山','뫼 산','산'], ['河','물 하','물, 강','1'], ['海','바다 해','바다'], ['江','강 강','강'],
+     ['林','수풀 림','숲'], ['天','하늘 천','하늘'], ['靑','푸를 청','푸르다'], ['白','흰 백','희다'],
+     ['赤','붉을 적','붉다','1'], ['色','빛 색','빛깔'], ['花','꽃 화','꽃','1'], ['草','풀 초','풀'],
+     ['果','열매 과','열매'], ['春','봄 춘','봄'], ['夏','여름 하','여름'], ['秋','가을 추','가을'],
+     ['冬','겨울 동','겨울'], ['季','계절 계','계절'], ['年','해 년','해, 나이']
+   ]},
+  {t:'사람·가족·몸', emoji:'👨‍👩‍👧',
+   tip:'兄夫(형부), 兄弟(형제)처럼 붙어서 다른 뜻이 되니 조심!',
+   items:[
+     ['父','아비 부','아버지'], ['母','어미 모','어머니'], ['兄','형 형','형, 언니(兄夫 형부)'],
+     ['弟','아우 제','아우'], ['夫','지아비 부','남편'], ['祖','할아버지 조','조상'],
+     ['子','아들 자','아들, 사람'], ['男','사내 남','남자'], ['兒','아이 아','아이'],
+     ['童','아이 동','아이'], ['人','사람 인','사람'], ['巨','클 거','크다'],
+     ['心','마음 심','마음'], ['身','몸 신','몸'], ['手','손 수','손'], ['毛','터럭 모','털','1'],
+     ['耳','귀 이','귀'], ['目','눈 목','눈'], ['名','이름 명','이름','1']
+   ]},
+  {t:'숫자·크기·정도', emoji:'🔢',
+   tip:'숫자 한자만 알아도 절반은 읽을 수 있어요.',
+   items:[
+     ['一','한 일','하나'], ['二','두 이','둘'], ['三','석 삼','셋'], ['四','넉 사','넷'],
+     ['五','다섯 오','다섯'], ['八','여덟 팔','여덟'], ['九','아홉 구','아홉'], ['十','열 십','열'],
+     ['寸','마디 촌','촌수 (四寸 사촌)'], ['多','많을 다','많다'], ['少','적을 소','적다'],
+     ['長','길 장 / 어른 장','길다, 어른'], ['短','짧을 단','짧다'], ['高','높을 고','높다'],
+     ['低','낮을 저','낮다'], ['重','무거울 중','무겁다','1'], ['全','온전할 전','온전하다','1']
+   ]},
+  {t:'배움·생활', emoji:'✏️',
+   tip:'育(기를 육)과 畜(짐승 축)은 소리가 달라요. 生育 = 생육, 生畜 = 생축!',
+   items:[
+     ['學','배울 학','배우다'], ['校','학교 교','학교'], ['育','기를 육','기르다','1'],
+     ['生','날 생','나다, 살다'], ['畜','짐승 축','가축'], ['卒','마칠 졸','마치다','1'],
+     ['本','근본 본','근본','1'], ['不','아닐 불','아니다'], ['老','늙을 로','늙다'],
+     ['明','밝을 명','밝다'], ['魚','물고기 어','물고기'], ['在','있을 재','있다']
+   ]},
+  {t:'사자성어·속뜻', emoji:'🎋',
+   tip:'뜻을 우리말 한 줄로 외워 두면 문장 문제도 쉬워져요.',
+   items:[
+     ['不老長生','불로장생','늙지 않고 오래 삶'], ['十人十色','십인십색','사람마다 다름'],
+     ['十中八九','십중팔구','거의 그러함'], ['九牛一毛','구우일모','많은 중에 극히 적음','1'],
+     ['一石二鳥','일석이조','한 일로 두 이익','1'], ['三三五五','삼삼오오','셋 다섯씩 흩어짐'],
+     ['一口二言','일구이언','한 입으로 두 말'], ['靑天白日','청천백일','푸른 하늘의 밝은 해'],
+     ['四方八方','사방팔방','여러 방향'], ['人山人海','인산인해','사람이 아주 많음'],
+     ['一長一短','일장일단','한 장점 한 단점'], ['身土不二','신토불이','내 땅 것이 내 몸에 맞음'],
+     ['天地江山','천지강산','하늘 땅 강 산'], ['東西南北','동서남북','사방'],
+     ['耳目','이목','(문장에서) 주의와 관심'], ['靑果','청과','신선한 과일과 채소','1'],
+     ['祖上','조상','자기 위의 어른들'], ['春秋','춘추','나이']
+   ]},
+  {t:'헷갈리는 짝', emoji:'⚡',
+   tip:'같은 글자가 들어가도 뒤 글자에 따라 소리가 달라져요.',
+   items:[
+     ['生畜','생축','축 = 짐승'], ['生育','생육','육 = 기르다'],
+     ['夏季','하계','여름철'], ['冬季','동계','겨울철'],
+     ['長短','장단','길고 짧음'], ['長男','장남','맏아들'],
+     ['靑天','청천','푸른 하늘'], ['靑魚','청어','물고기'],
+     ['前','앞 전','前後 전후'], ['全','온전할 전','소리만 같아요','1']
+   ]}
+];
+
+/* =========================================================
+   퀴즈 로직
+   ========================================================= */
+const LSKEY='hanjaQuizWrong_v1';
+const $=s=>document.querySelector(s);
+const state={mode:'all',queue:[],idx:0,answered:false,ok:0,wrongNow:[],stats:{},shuffle:false};
+
+function loadMiss(){ try{ const v=JSON.parse(localStorage.getItem(LSKEY)||'[]'); return Array.isArray(v)?v:[]; }catch(e){ return []; } }
+function saveMiss(a){ try{ localStorage.setItem(LSKEY, JSON.stringify([...new Set(a)])); }catch(e){} }
+let missSet=new Set(loadMiss());
+
+const byId=id=>Q.find(q=>q.id===id);
+
+function counts(){
+  $('#nAll').textContent=Q.length;
+  $('#nWeak').textContent=Q.filter(q=>q.weak).length;
+  const n=[...missSet].filter(id=>byId(id)).length;
+  $('#nMiss').textContent=n;
+  document.querySelector('[data-mode="miss"]').disabled=n===0;
+}
+
+function buildQueue(){
+  let list;
+  if(state.mode==='weak') list=Q.filter(q=>q.weak);
+  else if(state.mode==='miss') list=[...missSet].map(byId).filter(Boolean);
+  else list=Q.slice();
+  if(state.shuffle) list=shuffle(list);
+  state.queue=list;
+  state.idx=0; state.ok=0; state.wrongNow=[]; state.stats={};
+  state.answered=false;
+}
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
+
+function setMode(m){
+  state.mode=m;
+  document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode===m));
+  buildQueue(); renderCard();
+}
+
+function renderCard(){
+  const q=state.queue[state.idx];
+  const card=$('#card');
+  if(!q){ renderResult(); return; }
+  state.answered=false;
+  card.style.display='';
+  $('#under').innerHTML='';
+  $('#badge').textContent=q.g;
+  $('#badge').dataset.g=q.g;
+  $('#star').textContent=q.weak?'⭐ 다시 볼 문제':'';
+  const stage=$('#stage');
+  const big=$('#hanja');
+  stage.classList.toggle('wide',!!q.wide);
+  big.classList.toggle('small',!!q.wide);
+  big.textContent=q.big;
+  $('#qtext').innerHTML=q.q;
+  $('#qsub').textContent=q.sub||'';
+  $('#qsub').style.display=q.sub?'':'none';
+
+  const keys=['①','②','③','④','⑤','⑥'];
+  const box=$('#choices'); box.innerHTML='';
+  q.c.forEach((txt,i)=>{
+    const b=document.createElement('button');
+    b.className='choice'; b.type='button';
+    b.innerHTML='<span class="k">'+keys[i]+'</span><span class="t">'+txt+'</span><span class="mk"></span>';
+    b.addEventListener('click',()=>answer(i));
+    box.appendChild(b);
+  });
+  const fb=$('#fb'); fb.className='fb'; fb.innerHTML='';
+  const p=$('#barFill'); p.style.width=Math.round(state.idx/state.queue.length*100)+'%';
+  $('#pnum').textContent=(state.idx+1)+' / '+state.queue.length;
+  counts();
+  document.querySelectorAll('.chip[data-mode]').forEach(c=>{
+    if(c.dataset.mode==='miss'){ const n=[...missSet].filter(id=>byId(id)).length; c.disabled=n===0; $('#nMiss').textContent=n; }
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function answer(i){
+  if(state.answered) return;
+  state.answered=true;
+  const q=state.queue[state.idx];
+  const ok=i===q.a;
+  const btns=[...document.querySelectorAll('.choice')];
+  btns.forEach((b,n)=>{
+    b.disabled=true;
+    if(n===q.a){ b.classList.add('correct'); b.querySelector('.mk').textContent='O'; }
+    else if(n===i){ b.classList.add('wrong'); b.querySelector('.mk').textContent='X'; }
+    else b.classList.add('dim');
+  });
+  if(!state.stats[q.g]) state.stats[q.g]={n:0,ok:0};
+  state.stats[q.g].n++;
+  if(ok){ state.ok++; state.stats[q.g].ok++; }
+  else{
+    state.wrongNow.push(q);
+    if(!missSet.has(q.id)){ missSet.add(q.id); saveMiss([...missSet]); }
+  }
+  const fb=$('#fb');
+  fb.className='fb show '+(ok?'ok':'no');
+  fb.innerHTML='<h4>'+(ok?'⭕ 정답이에요!':'❌ 아쉬워요!')+'</h4>'+
+    (ok?'':'<p style="margin-bottom:8px">정답은 <b>'+q.c[q.a]+'</b> 이에요.</p>')+
+    '<p>'+q.e+'</p>';
+  const next=document.createElement('button');
+  next.className='next'; next.type='button';
+  next.innerHTML=(state.idx+1>=state.queue.length)?'결과 보기 ✨':'다음 문제 →';
+  next.addEventListener('click',()=>{ state.idx++; if(state.idx>=state.queue.length) renderResult(); else renderCard(); });
+  $('#under').innerHTML=''; $('#under').appendChild(next);
+  next.focus({preventScroll:true});
+  const r=fb.getBoundingClientRect();
+  if(r.bottom>window.innerHeight-16) fb.scrollIntoView({behavior:'smooth', block:'center'});
+  $('#barFill').style.width=Math.round((state.idx+1)/state.queue.length*100)+'%';
+}
+
+function renderResult(){
+  const total=state.queue.length;
+  const ok=state.ok;
+  const pct=total?Math.round(ok/total*100):0;
+  $('#card').style.display='none';
+  const groups=Object.keys(state.stats);
+  const ghtml=groups.map(g=>{
+    const s=state.stats[g]; const p=Math.round(s.ok/s.n*100);
+    return '<div class="gbar"><span class="name">'+g+'</span><span class="track"><i style="width:'+p+'%"></i></span><span class="val">'+s.ok+'/'+s.n+'</span></div>';
+  }).join('');
+  const wrongHtml=state.wrongNow.map(q=>{
+    return '<div class="wcard"><div class="wtop"><span class="wh">'+q.big+'</span><span class="wa">'+q.c[q.a]+'</span></div><p class="we">'+q.e.replace(/<[^>]+>/g,'')+'</p></div>';
+  }).join('');
+  const msg = pct>=90?'거의 다 맞았어요! 이제 실제 시험도 문제없어요 🎉'
+            : pct>=70?'좋아요! 틀린 문제만 한 번 더 풀면 완벽해요 💪'
+            : pct>=40?'절반 넘게 왔어요. 약점 집중 모드로 반복해 봐요 🌱'
+            : '괜찮아요, 정리 노트부터 다시 보고 천천히 해 봐요 🐣';
+  const box=$('#under');
+  box.innerHTML=''+
+    '<div class="result">'+
+      '<div class="ring" style="--deg:'+(pct*3.6)+'deg"><div><b>'+ok+'<span style="font-size:15px;color:#9A94A0">/'+total+'</span></b><span>'+pct+'점</span></div></div>'+
+      '<h3>'+msg+'</h3>'+
+      '<p class="msg">'+(state.wrongNow.length?('틀린 문제 '+state.wrongNow.length+'개는 자동으로 저장했어요.'):'틀린 문제가 없어요!')+'</p>'+
+      (ghtml?'<p class="sectitle">영역별</p><div class="gbars">'+ghtml+'</div>':'')+
+      (state.wrongNow.length?'<p class="sectitle">📌 다시 볼 카드</p><div class="wronglist">'+wrongHtml+'</div>':'')+
+      (state.wrongNow.length?'<button class="next" id="retryWrong" type="button">틀린 문제만 다시 풀기 🔁</button>':'')+
+      '<button class="next" id="again" type="button" style="margin-top:8px;background:#F7F1E7;color:#2D2A32;box-shadow:none">전체 모드 처음부터</button>'+
+      '<button class="ghost" id="toNote" type="button">📒 정리 노트 보기</button>'+
+    '</div>';
+  $('#barFill').style.width='100%';
+  $('#pnum').textContent=total+' / '+total;
+  const rw=$('#retryWrong');
+  if(rw) rw.addEventListener('click',()=>{ state.mode='miss'; document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode==='miss')); buildQueue(); if(!state.queue.length){ renderResult(); return;} renderCard(); });
+  $('#again').addEventListener('click',()=>{ state.mode='all'; document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode==='all')); buildQueue(); renderCard(); });
+  $('#toNote').addEventListener('click',()=>showTab('note'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* 키보드: 1~6 선택, Enter 다음 */
+document.addEventListener('keydown',e=>{
+  if($('#quizView').hidden) return;
+  if(/^[1-6]$/.test(e.key)){
+    const n=+e.key-1; const btns=document.querySelectorAll('.choice');
+    if(btns[n] && !state.answered) btns[n].click();
+  }
+  if(e.key==='Enter'){ const b=$('#under .next'); if(b){ e.preventDefault(); b.click(); } }
+});
+
+/* 탭 */
+function showTab(which){
+  const quiz=which==='quiz';
+  $('#quizView').hidden=!quiz;
+  $('#noteView').hidden=quiz;
+  $('#tabQuiz').classList.toggle('on',quiz);
+  $('#tabNote').classList.toggle('on',!quiz);
+  $('#tabQuiz').setAttribute('aria-selected',quiz?'true':'false');
+  $('#tabNote').setAttribute('aria-selected',quiz?'false':'true');
+  document.querySelector('.hero').style.display=quiz?'':'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('#tabQuiz').addEventListener('click',()=>showTab('quiz'));
+$('#tabNote').addEventListener('click',()=>showTab('note'));
+
+/* 노트 렌더 */
+function renderNotes(){
+  const wrap=$('#notes'); let n=0;
+  wrap.innerHTML=NOTES.map(sec=>{
+    const rows=sec.items.map(it=>{
+      const [hj,hm,mn,flag]=it;
+      n++;
+      return '<div class="row'+(flag?' flag':'')+'">'+
+        '<div class="hj">'+hj+'</div>'+
+        '<div class="sm"><div class="hm">'+hm+'</div>'+(mn?'<div class="mn">'+mn+'</div>':'')+'</div>'+
+        (flag&&!sec.hot?'<span class="pin">다시</span>':'')+
+      '</div>';
+    }).join('');
+    return '<section class="note'+(sec.hot?' hot':'')+'">'+
+      '<h3><span>'+sec.emoji+'</span> '+sec.t+' <span class="cnt">'+sec.items.length+'</span></h3>'+
+      (sec.tip?'<p class="tip">'+sec.tip+'</p>':'')+rows+'</section>';
+  }).join('');
+  $('#noteTotal').textContent=n;
+}
+
+/* 모드 칩 */
+document.querySelectorAll('.chip[data-mode]').forEach(c=>{
+  c.addEventListener('click',()=>{ if(c.disabled) return; setMode(c.dataset.mode); });
+});
+$('#shuffleBtn').addEventListener('click',e=>{
+  state.shuffle=!state.shuffle;
+  e.currentTarget.classList.toggle('on',state.shuffle);
+  e.currentTarget.setAttribute('aria-pressed',state.shuffle?'true':'false');
+  buildQueue(); renderCard();
+});
+
+/* 시작 */
+counts(); buildQueue(); renderCard(); renderNotes();
+</script>
+</body>
+</html>
