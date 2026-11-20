@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFDF7">
+<meta name="description" content="봄이의 1학년 2학기 국어 1~4단원·수학 1~3단원 학습 문제와 개념 카드.">
+<title>봄이 국어·수학 학습 · 2학기 단원평가</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='25' x='3' font-size='24'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>
+:root{
+  --cream:#FFFDF7; --cream-2:#FAF7EF; --cream-3:#F1ECE0;
+  --mint:#DCFCE7; --mint-soft:#EFFBF3; --mint-deep:#86EFAC; --mint-ink:#2F6B45;
+  --pink:#FFE2EC; --pink-deep:#F9A8D4; --pink-ink:#A23B67;
+  --butter:#FFF2B2; --butter-ink:#8A6A12;
+  --blue:#E0F2FE; --blue-ink:#2C5F8A;
+  --ink:#2D2A32; --muted:#6B6673; --faint:#9A94A0;
+  --line:rgba(45,42,50,.09); --line-2:rgba(45,42,50,.16);
+  --card:#FFFFFF; --radius:24px; --radius-sm:15px;
+  --shadow-sm:0 2px 8px rgba(122,102,80,.07);
+  --shadow:0 12px 30px -16px rgba(122,102,80,.30), 0 2px 6px rgba(122,102,80,.05);
+  --ok:#3F8F5F; --ok-soft:#EAF7EE; --bad:#BC5145; --bad-soft:#FDECEA;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; color:var(--ink); background:var(--cream);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',system-ui,sans-serif;
+  font-size:15.5px; line-height:1.55; letter-spacing:-.01em; word-break:keep-all; overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased; min-height:100vh; padding-bottom:44px;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(880px 500px at 6% -8%, #E7FBEE 0%, rgba(231,251,238,0) 62%),
+    radial-gradient(760px 460px at 104% 2%, #FFEDF3 0%, rgba(255,237,243,0) 60%),
+    radial-gradient(780px 560px at 50% 108%, #FFF6D9 0%, rgba(255,246,217,0) 62%),
+    var(--cream);
+}
+button{font:inherit; color:inherit; cursor:pointer; border:0; background:none}
+.wrap{max-width:720px; margin:0 auto; padding:18px 15px 0}
+
+/* header */
+.brand{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap}
+.logo{width:44px;height:44px;border-radius:15px;flex:none;display:grid;place-items:center;font-size:23px;
+  background:linear-gradient(160deg,#EAFBF1,#FFF0F5); border:1px solid rgba(255,255,255,.9); box-shadow:var(--shadow-sm)}
+.brand h1{margin:0;font-size:19px;font-weight:800;letter-spacing:-.02em}
+.brand p{margin:2px 0 0;font-size:12px;color:var(--muted)}
+.home-link{margin-left:auto;display:inline-flex;align-items:center;gap:5px;padding:7px 12px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);color:var(--muted);font-size:12px;font-weight:700;text-decoration:none;
+  white-space:nowrap;box-shadow:var(--shadow-sm);transition:.16s}
+.home-link:hover{color:var(--ink);border-color:var(--line-2);transform:translateY(-1px)}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#EFFBF3 0%,#FFF7E8 52%,#FFEFF5 100%);
+  border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow);margin-bottom:13px}
+.hero::after{content:"🌸";position:absolute;right:-2px;bottom:-16px;font-size:74px;opacity:.20;transform:rotate(-8deg)}
+.hero b{display:block;font-size:15.5px;letter-spacing:-.02em}
+.hero span{display:block;margin-top:5px;font-size:13px;color:var(--muted);max-width:80%}
+
+/* tabs */
+.tabs{display:flex;gap:5px;background:#F2EEE2;padding:5px;border-radius:17px;margin-bottom:13px;box-shadow:inset 0 1px 2px rgba(122,102,80,.06)}
+.tabs button{flex:1;padding:10px 6px;border-radius:13px;font-size:13px;font-weight:800;color:var(--muted);transition:.18s;white-space:nowrap}
+.tabs button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+
+/* subject switch */
+.subj{display:flex;gap:8px;margin-bottom:11px}
+.subj button{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 10px;border-radius:16px;
+  background:#fff;border:2px solid transparent;box-shadow:var(--shadow-sm);font-size:15px;font-weight:800;color:var(--muted);transition:.16s}
+.subj button .em{font-size:17px}
+.subj button.on[data-subj="kor"]{background:var(--mint-soft);border-color:var(--mint-deep);color:var(--mint-ink)}
+.subj button.on[data-subj="math"]{background:#FFF3F8;border-color:var(--pink-deep);color:var(--pink-ink)}
+
+.note{font-size:12px;color:#8A7A3E;background:#FFF9DF;border:1px solid #F4E9BC;border-radius:13px;padding:9px 12px;margin-bottom:11px;line-height:1.5}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding:1px 1px 9px}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:9px 13px;border-radius:999px;background:#fff;
+  border:1px solid var(--line-2);font-size:13px;font-weight:800;color:var(--muted);box-shadow:var(--shadow-sm);transition:.16s;white-space:nowrap}
+.chip .n{font-size:11px;font-weight:800;color:var(--faint)}
+.chip.on{background:var(--mint-ink);border-color:var(--mint-ink);color:#fff}
+.chip.on .n{color:rgba(255,255,255,.75)}
+.chip.miss.on{background:var(--bad);border-color:var(--bad)}
+.chip:disabled{opacity:.42;cursor:not-allowed}
+
+/* progress */
+.prog{display:flex;align-items:center;gap:10px;margin:4px 2px 12px}
+.bar{flex:1;height:10px;border-radius:999px;background:#EFE8D8;overflow:hidden;box-shadow:inset 0 1px 2px rgba(122,102,80,.08)}
+.bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#86EFAC,#A7F3D0,#F9A8D4);transition:width .35s cubic-bezier(.4,0,.2,1)}
+.pnum{font-size:12.5px;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums;min-width:62px;text-align:right}
+
+/* card */
+.card{background:var(--card);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:16px 16px 18px;animation:pop .3s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
+.cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:800;
+  background:var(--mint);color:var(--mint-ink)}
+.badge.math{background:var(--pink);color:var(--pink-ink)}
+.qno{font-size:12px;font-weight:800;color:var(--faint);font-variant-numeric:tabular-nums}
+.qtext{font-size:17px;font-weight:700;line-height:1.6;margin:0 0 12px;letter-spacing:-.01em}
+.hintline{font-size:12.5px;color:var(--faint);background:#F7F5EE;border:1px dashed var(--line-2);border-radius:11px;padding:8px 11px;margin:-4px 0 12px;line-height:1.5}
+.qtext u{text-decoration:underline;text-underline-offset:3px}
+.passage{background:var(--cream-2);border:1px solid var(--line);border-radius:15px;padding:12px 13px;font-size:14.5px;
+  line-height:1.75;white-space:pre-line;margin-bottom:12px;color:#3B3742}
+.ex{background:#FFF9E8;border:1px solid #F2E6C4;border-radius:14px;padding:11px 13px;font-size:14px;line-height:1.7;
+  white-space:pre-line;margin-bottom:12px;color:#5A502C}
+.bank{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px}
+.bank span{padding:5px 11px;border-radius:999px;background:#F4F7F4;border:1px dashed #BFD8C8;font-size:13.5px;font-weight:700;color:var(--mint-ink)}
+figure.qimg{margin:0 0 12px;text-align:center}
+figure.qimg img{max-width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-sm);cursor:zoom-in;background:#fff}
+figure.qimg figcaption{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.5}
+.qsvg{margin:0 0 12px;text-align:center}
+.svgcap{margin-top:6px;font-size:12px;color:var(--muted);font-weight:700}
+.qsvg svg{max-width:100%;height:auto}
+
+.options{display:flex;flex-direction:column;gap:8px}
+.options.compact{flex-direction:row;flex-wrap:wrap}
+.options.compact .choice{flex:1 1 84px;min-width:84px;justify-content:center;align-items:center;padding:14px 10px;font-size:17px;font-weight:800}
+.options.compact .choice .idx{width:auto;height:auto;background:none;color:inherit;font-size:17px;margin-right:2px}
+.options.compact .choice .idx:empty{display:none}
+.choice{display:flex;align-items:flex-start;gap:9px;width:100%;text-align:left;padding:13px 14px;border-radius:15px;
+  background:#FCFCFA;border:1.5px solid var(--line-2);font-size:15.5px;font-weight:600;line-height:1.5;transition:.15s}
+.choice:hover{border-color:var(--mint-deep);background:#F7FDF9}
+.choice .idx{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;
+  background:#EFEADF;color:var(--muted)}
+.choice.sel{border-color:var(--mint-deep);background:var(--mint-soft)}
+.choice.ok{border-color:var(--ok);background:var(--ok-soft)}
+.choice.ok .idx{background:var(--ok);color:#fff}
+.choice.no{border-color:var(--bad);background:var(--bad-soft)}
+.choice.no .idx{background:var(--bad);color:#fff}
+.choice[disabled]{cursor:default}
+
+.field{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;font-size:15px;font-weight:700}
+.field .lab{min-width:0}
+.field input[type=text]{flex:1;min-width:120px;max-width:360px;padding:11px 13px;border-radius:13px;border:1.5px solid var(--line-2);
+  background:#FCFCFA;font-size:16px;font-weight:700;color:var(--ink)}
+.field input[type=text]:focus{outline:none;border-color:var(--mint-deep);background:#fff}
+.field.vert{display:block}
+.field.vert .lab{display:block;margin-bottom:6px;font-weight:800}
+.field.vert .partimg{margin:2px 0 8px}
+.field.vert input{width:100%}
+.field .after{color:var(--muted);font-weight:600;font-size:14px}
+.field .after em{font-style:normal;color:var(--muted)}
+textarea{width:100%;min-height:76px;padding:12px 13px;border-radius:14px;border:1.5px solid var(--line-2);
+  background:#FCFCFA;font:inherit;font-size:15.5px;line-height:1.6;resize:vertical;color:var(--ink)}
+textarea:focus{outline:none;border-color:var(--mint-deep);background:#fff}
+.matchrow{display:flex;align-items:center;gap:8px;margin-bottom:9px;flex-wrap:wrap}
+.matchrow .l{flex:1 1 45%;min-width:130px;font-size:15px;font-weight:700;padding:11px 13px;border-radius:13px;background:#F7FAF7;border:1px solid var(--line)}
+.matchrow select{flex:1 1 45%;min-width:150px;padding:11px 12px;border-radius:13px;border:1.5px solid var(--line-2);
+  background:#fff;font:inherit;font-size:14.5px;font-weight:600;color:var(--ink)}
+.partimg{display:block;margin:4px 0 8px}
+.partimg img{max-width:104px;border-radius:12px;border:1px solid var(--line);cursor:zoom-in}
+
+.actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:13px 18px;border-radius:14px;
+  font-size:15px;font-weight:800;transition:.16s;border:1.5px solid transparent}
+.btn.primary{background:var(--mint-ink);color:#fff;flex:1;min-width:150px}
+.btn.primary:hover{background:#255637}
+.btn.soft{background:#F4F1E7;color:var(--ink);border-color:var(--line-2)}
+.btn.soft:hover{background:#EFEADB}
+.btn:disabled{opacity:.5;cursor:default}
+
+.fb{margin-top:13px;border-radius:15px;padding:12px 14px;font-size:14.5px;line-height:1.65;display:none}
+.fb.show{display:block;animation:pop .25s ease}
+.fb.ok{background:var(--ok-soft);border:1px solid #CDE8D6}
+.fb.no{background:var(--bad-soft);border:1px solid #F3D2CD}
+.fb .head{display:flex;align-items:center;gap:6px;font-weight:900;font-size:14.5px;margin-bottom:6px}
+.fb.ok .head{color:var(--ok)}
+.fb.no .head{color:var(--bad)}
+.fb .body{color:#3B3742}
+.fb .model{margin-top:8px;padding:9px 11px;border-radius:11px;background:#fff;border:1px dashed #CBBFA4;font-size:14px;line-height:1.6}
+.fb .model b{font-size:12.5px;color:var(--muted);display:block;margin-bottom:2px}
+
+/* result */
+.result{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;text-align:center;animation:pop .3s ease}
+.ring{width:132px;height:132px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(#86EFAC var(--deg), #F1ECE0 0);position:relative}
+.ring::before{content:"";position:absolute;inset:11px;background:#fff;border-radius:50%}
+.ring>div{position:relative;text-align:center}
+.ring b{display:block;font-size:29px;font-weight:900;letter-spacing:-.02em;line-height:1.1}
+.ring span{display:block;font-size:12px;color:var(--muted);font-weight:700;margin-top:2px}
+.result h3{font-size:16.5px;margin:0 0 6px;letter-spacing:-.02em}
+.result .msg{font-size:13px;color:var(--muted);margin:0 0 12px}
+.sectitle{font-size:12px;font-weight:800;color:var(--faint);letter-spacing:.06em;margin:14px 0 8px;text-align:left}
+.gbars{display:flex;flex-direction:column;gap:7px}
+.gbar{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700}
+.gbar .name{flex:0 0 104px;text-align:left;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gbar .track{flex:1;height:8px;border-radius:99px;background:#F1ECE0;overflow:hidden}
+.gbar .track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#86EFAC,#F9A8D4)}
+.gbar .val{flex:0 0 44px;text-align:right;color:var(--faint);font-variant-numeric:tabular-nums}
+
+/* concept cards */
+.csec{margin-bottom:18px}
+.csec h2{font-size:14px;font-weight:900;color:var(--muted);margin:0 0 9px;letter-spacing:.02em}
+.cgrid{display:grid;grid-template-columns:1fr;gap:10px}
+.ccard{background:#fff;border-radius:19px;box-shadow:var(--shadow);padding:14px 15px;border:1px solid rgba(255,255,255,.9);
+  cursor:pointer;transition:.16s}
+.ccard:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift,0 18px 40px -18px rgba(122,102,80,.35))}
+.ccard .top{display:flex;align-items:center;gap:9px}
+.ccard .em{width:38px;height:38px;flex:none;border-radius:13px;display:grid;place-items:center;font-size:19px;background:var(--mint-soft)}
+.ccard[data-s="math"] .em{background:#FFF3F8}
+.ccard .t{font-size:15px;font-weight:800;letter-spacing:-.01em}
+.ccard .k{font-size:12.5px;color:var(--mint-ink);font-weight:800;margin-top:1px}
+.ccard[data-s="math"] .k{color:var(--pink-ink)}
+.ccard .big{font-size:20px;font-weight:900;margin:10px 0 2px;letter-spacing:-.02em;line-height:1.35}
+.ccard .more{display:none;margin-top:8px}
+.ccard.open .more{display:block}
+.ccard ul{margin:6px 0 0;padding-left:18px;font-size:14px;line-height:1.7;color:#4A4551}
+.ccard li{margin-bottom:3px}
+.ccard .tip{margin-top:9px;padding:9px 11px;border-radius:12px;background:#FFF9E8;border:1px dashed #EBD9A9;font-size:13px;color:#6B5C2B}
+.ccard .tap{font-size:11.5px;color:var(--faint);font-weight:700;margin-top:6px}
+
+/* miss list */
+.wcard{background:#fff;border-radius:17px;box-shadow:var(--shadow-sm);padding:13px 14px;margin-bottom:9px;border:1px solid var(--line)}
+.wcard .wtop{display:flex;align-items:flex-start;gap:8px;font-size:14.5px;font-weight:700}
+.wcard .wq{flex:1}
+.wcard .wb{font-size:11px;font-weight:800;padding:3px 9px;border-radius:99px;background:var(--pink);color:var(--pink-ink);white-space:nowrap}
+.wcard .wa{margin-top:7px;font-size:13.5px;color:var(--ok);font-weight:800}
+.wcard .we{margin-top:5px;font-size:12.5px;color:var(--muted);line-height:1.55}
+.empty{text-align:center;padding:40px 18px;color:var(--muted);font-size:14px;line-height:1.7}
+.empty .big{font-size:34px;display:block;margin-bottom:8px}
+
+.footnote{text-align:center;font-size:11.5px;color:var(--faint);margin:20px 0 0;line-height:1.6}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(30,27,34,.82);display:none;place-items:center;padding:18px}
+.lb.on{display:grid}
+.lb img{max-width:100%;max-height:86vh;border-radius:14px;background:#fff}
+.lb .x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);
+  font-size:18px;font-weight:900;display:grid;place-items:center}
+
+@media (min-width:640px){
+  .wrap{padding-top:22px}
+  .field.vert input[type=text],.field.vert .after{max-width:320px}
+  .field.vert .after{display:block;margin-top:5px}
+  .cgrid{grid-template-columns:1fr 1fr}
+  .qtext{font-size:18px}
+}
+@media (max-width:420px){
+  body{font-size:15px}
+  .qtext{font-size:16.5px}
+  .choice{font-size:15px;padding:12px 12px}
+  .brand h1{font-size:17px}
+  .hero span{max-width:100%}
+  .tabs button{font-size:12px;padding:9px 4px}
+  .subj button{font-size:14px;padding:11px 8px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="brand">
+    <div class="logo" aria-hidden="true">🌸</div>
+    <div>
+      <h1>봄이 국어·수학 학습</h1>
+      <p>1학년 2학기 · 국어 1~4단원 · 수학 1~3단원</p>
+    </div>
+    <a class="home-link" href="index.html?me=bom">← 대시보드</a>
+  </header>
+
+  <div class="hero">
+    <b>봄아, 오늘은 어떤 공부를 해 볼까? 🌱</b>
+    <span>단원을 골라서 한 문제씩 풀어 보세요. 틀린 문제는 ‘다시 볼 문제’에 모아 두었어요!</span>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="화면 선택">
+    <button id="tabQuiz" class="on" role="tab" aria-selected="true" type="button">📝 문제 풀기</button>
+    <button id="tabCard" role="tab" aria-selected="false" type="button">🃏 개념 카드</button>
+    <button id="tabMiss" role="tab" aria-selected="false" type="button">📒 다시 볼 문제 <span id="missCnt">0</span></button>
+  </div>
+
+  <!-- ===== 퀴즈 ===== -->
+  <section id="quizView">
+    <div class="subj" role="tablist" aria-label="과목 선택">
+      <button class="on" data-subj="kor" role="tab" aria-selected="true" type="button"><span class="em">📚</span>국어</button>
+      <button data-subj="math" role="tab" aria-selected="false" type="button"><span class="em">🔢</span>수학</button>
+    </div>
+    <p class="note" id="subjNote" hidden></p>
+    <div class="chips" id="unitChips"></div>
+    <div class="chips" id="modeChips">
+      <button class="chip on" data-mode="all" type="button">🌟 처음부터 차례로</button>
+      <button class="chip miss" data-mode="miss" type="button">🔁 틀린 문제만</button>
+      <button class="chip" data-mode="shuffle" type="button">🎲 섞어서 풀기</button>
+    </div>
+    <div class="prog">
+      <div class="bar"><i id="barFill"></i></div>
+      <span class="pnum" id="pnum">0 / 0</span>
+    </div>
+    <article class="card" id="card"></article>
+    <div id="under"></div>
+  </section>
+
+  <!-- ===== 개념 카드 ===== -->
+  <section id="cardView" hidden>
+    <div class="hero" style="margin-bottom:12px">
+      <b>🃏 개념 카드</b>
+      <span>카드를 누르면 설명이 펼쳐져요. 시험 보기 전에 한 번씩 읽어 보세요.</span>
+    </div>
+    <div id="cardsWrap"></div>
+  </section>
+
+  <!-- ===== 다시 볼 문제 ===== -->
+  <section id="missView" hidden>
+    <div class="hero" style="margin-bottom:12px">
+      <b>📒 다시 볼 문제</b>
+      <span>틀렸거나 헷갈렸던 문제를 모아 두었어요. 여기서 바로 다시 풀 수 있어요.</span>
+    </div>
+    <div id="missWrap"></div>
+  </section>
+
+  <p class="footnote">
+    국어는 학습지 1~4단원 복습문제 80개, 수학은 정답지의 1~3단원 개념에 맞춘 연습문제 45개예요.<br>
+    점수는 이 기기(브라우저)에만 저장돼요 · 검색 노출 비공개 페이지예요.
+  </p>
+</div>
+
+<div class="lb" id="lb"><button class="x" id="lbX" type="button" aria-label="닫기">✕</button><img id="lbImg" alt=""></div>
+
+<script>
+const KOR = {"subject":"국어","units":[{"u":1,"title":"1단원 기분을 말해요","emoji":"😊","items":[{"id":"k1-1","u":1,"n":"1","type":"multi","p":"가을 하늘에 구름이 둥실둥실 떠 있습니다. 단풍나무의 잎이 가을바람에 살랑살랑 움직입니다. 귀여운 고양이들이 야옹 소리를 내며 반겨 줍니다. 아이가 자전거를 타고 ( ㉠ ) 지나갑니다.","q":"이 글에서 찾은 낱말 가운데 흉내 내는 말을 모두 고르세요.","opts":["야옹","귀여운","둥실둥실","가을바람","살랑살랑"],"a":[0,2,4],"fb":"흉내 내는 말은 소리나 모양을 흉내 낸 말이에요. <b>야옹</b>은 소리, <b>둥실둥실</b>·<b>살랑살랑</b>은 모양을 흉내 냈어요. ‘귀여운’은 모양을 꾸며 주는 말이지만 흉내 내는 말은 아니에요."},{"id":"k1-2","u":1,"n":"2","type":"choice","q":"( ㉠ )에 들어갈 말로, 자전거가 지나가는 모습을 더 실감 나게 표현할 수 있는 말을 고르세요.","opts":["방긋","씽씽","까르르","뒤뚱뒤뚱"],"a":1,"fb":"자전거는 <b>씽씽</b> 지나가요. 방긋은 웃는 모양, 까르르는 웃는 소리, 뒤뚱뒤뚱은 오리가 걷는 모양이에요."},{"id":"k1-3","u":1,"n":"3","type":"short","q":"그림에 어울리는 흉내 내는 말을 &lt;보기&gt;에서 찾아 문장을 완성하세요.","bank":["방긋","씽씽","까르르","뒤뚱뒤뚱","깔깔","활짝","째깍째깍","사뿐사뿐"],"parts":[{"label":"(1)","img":"img/bom/kor/1-q3a.png","before":"시곗바늘이","after":"소리를 냅니다.","ans":["째깍째깍"]},{"label":"(2)","img":"img/bom/kor/1-q3b.png","before":"꽃이","after":"피었습니다.","ans":["활짝"]}],"fb":"시계는 <b>째깍째깍</b>, 꽃이 피는 모습은 <b>활짝</b>이에요."},{"id":"k1-4","u":1,"n":"4","type":"choice","p":"(가) 블록으로 멋진 성을 만드는데, 민호가 달려들어 깜짝 놀랐어. 내 마음이 찌지직, 번개처럼 찌지직!","q":"글 (가)에서 ‘나’가 깜짝 놀란 까닭은 무엇입니까?","opts":["민호가 달려들어서","갑자기 번개가 쳐서","‘나’가 만든 성이 멋있어서","민호가 멋진 성을 만들어서","성을 만들 때 민호가 도와주어서"],"a":0,"fb":"“민호가 달려들어 깜짝 놀랐어.”라고 했어요. 놀란 까닭이 글에 그대로 나와 있어요."},{"id":"k1-5","u":1,"n":"5","type":"choice","p":"(나) 내가 만든 성이 와장창 무너졌어. 민호한테 너무 화가 나. 내 마음이 우르릉 쾅쾅, 화산처럼 우르릉 쾅쾅!","q":"글 (나)에 나타난 ‘나’의 기분을 알맞은 표정과 몸짓으로 표현한 친구를 고르세요.","img":"img/bom/kor/1-q5.png","imgCap":"(1) 활짝 웃는 친구 · (2) 시무룩한 친구 · (3) 화가 난 친구","opts":["(1) 신나서 활짝 웃는 친구","(2) 시무룩해진 친구","(3) 화가 나서 씩씩거리는 친구"],"a":2,"fb":"“너무 화가 나”라고 했으니 <b>(3) 화가 난 표정과 몸짓</b>이 알맞아요."},{"id":"k1-6","u":1,"n":"6","type":"short","p":"(나) 내가 만든 성이 와장창 무너졌어. 민호한테 너무 화가 나. 내 마음이 우르릉 쾅쾅, 화산처럼 우르릉 쾅쾅!","q":"글 (나)에서 흉내 내는 말을 한 가지 찾아 쓰고, 그 말을 넣어 문장을 만드세요.","parts":[{"label":"(1) 흉내 내는 말","ans":["와장창","우르릉 쾅쾅","우르릉쾅쾅","쾅쾅","우르릉"]},{"label":"(2) 만든 문장","open":true,"model":"내가 든 블록 탑이 와장창 무너졌어요."}],"fb":"글 (나)의 흉내 내는 말은 <b>와장창</b>, <b>우르릉 쾅쾅</b>이에요. 만든 문장은 엄마나 선생님과 함께 확인해 봐요."},{"id":"k1-7","u":1,"n":"7","type":"short","q":"자신의 기분을 다른 사람에게 말할 때에는 ( ㉠ )라는 말로 시작하고 ( ㉡ ) 일과 자신의 기분을 말합니다.","ex":"“나는 동생이 내 장난감을 망가뜨려서 속상했어요.”","parts":[{"label":"( ㉠ )","ans":["나는"]},{"label":"( ㉡ )","ans":["있었던","있던","겪은"]}],"fb":"<b>‘나는’</b>으로 시작해서, <b>있었던 일</b>과 자신의 기분을 차례대로 말해요."},{"id":"k1-8","u":1,"n":"8","type":"multi","p":"(가) 그러던 어느 날, 도치 머리 위에 손바닥만 한 구름이 생겼어요.\n(나) “내가 먼저 탈 거야!” 도치는 친구 치치에게도 화를 냈어요. 치치가 도치보다 먼저 왔는데도 말이에요. 그러자 구름이 그림책만 하게 커졌어요.\n(다) “구름 때문에 친구들이랑 놀 수가 없잖아.” 도치는 슬퍼서 펑펑 울었어요.\n(라) “나쁜 말 구름을 없애려면 말이다······.” 할머니는 도치에게 소곤소곤 이야기해 주었어요.\n(마) “얘들아, 난 너희들이랑 함께 놀면 좋겠어.” 친구들은 깜짝 놀라 도치를 쳐다보았어요. 도치는 친구들과 사이좋게 놀 수 있어서 무척 기뻤어요.","q":"(가)~(마) 가운데 도치의 기분을 나타내는 말이 잘 드러나 있는 글의 기호를 모두 고르세요.","opts":["(가)","(나)","(다)","(라)","(마)"],"a":[1,2,4],"fb":"<b>화를 냈어요</b>(나), <b>슬퍼서</b>(다), <b>기뻤어요</b>(마)처럼 기분을 나타내는 말이 들어 있어요. (가)와 (라)에는 기분을 나타내는 말이 없어요."},{"id":"k1-9","u":1,"n":"9","type":"choice","q":"글 (마)에서 도치의 머리 위에 있던 나쁜 말 구름을 없앤 방법은 무엇인지 고르세요.","opts":["도치가 예쁘게 말해서","할머니에게 부탁을 해서","친구들이 함께 도와주어서"],"a":0,"fb":"도치가 “얘들아, 난 너희들이랑 함께 놀면 좋겠어.”라고 <b>예쁘게 말하자</b> 구름이 감쪽같이 사라졌어요.","p":"(가) 어느 날, 도치 머리 위에 손바닥만 한 구름이 생겼어요.\n(나) “내가 먼저 탈 거야!” 도치는 친구에게 화를 냈고, 구름이 커졌어요.\n(다) 도치는 슬퍼서 펑펑 울었어요.\n(라) 할머니는 도치에게 소곤소곤 이야기해 주었어요.\n(마) “얘들아, 난 너희들이랑 함께 놀면 좋겠어.” 도치는 무척 기뻤어요. 구름은 감쪽같이 사라졌어요."},{"id":"k1-10","u":1,"n":"10","type":"choice","q":"이 글의 낱말 가운데 ‘작은 목소리로 가만가만 이야기하는 소리 또는 모양’을 뜻하는 낱말은?","opts":["펑펑","깜짝","소곤소곤","사이좋게","감쪽같이"],"a":2,"fb":"<b>소곤소곤</b>이에요. 펑펑은 크게 우는 모양, 깜짝은 놀라는 모양, 감쪽같이는 흔적 없이 사라진 모양이에요.","p":"(가) 어느 날, 도치 머리 위에 손바닥만 한 구름이 생겼어요.\n(나) “내가 먼저 탈 거야!” 도치는 친구에게 화를 냈고, 구름이 커졌어요.\n(다) 도치는 슬퍼서 펑펑 울었어요.\n(라) 할머니는 도치에게 소곤소곤 이야기해 주었어요.\n(마) “얘들아, 난 너희들이랑 함께 놀면 좋겠어.” 도치는 무척 기뻤어요. 구름은 감쪽같이 사라졌어요.\n* ‘소곤소곤’은 작은 목소리로 가만가만 이야기하는 소리나 모양을 나타내요."},{"id":"k1-11","u":1,"n":"11","type":"multi","q":"다음 장면에 나타난 여자아이의 기분에 어울리는 말을 두 가지 고르세요.","img":"img/bom/kor/1-q11.png","imgCap":"공원에서 신나게 뛰어노는 여자아이","opts":["신나.","심심해.","속상해.","즐거워.","화가 나."],"a":[0,3],"fb":"환하게 웃으며 신나게 놀고 있으니 <b>신나</b>, <b>즐거워</b>가 어울려요. 심심해·속상해·화가 나는 반대되는 기분이에요."},{"id":"k1-12","u":1,"n":"12","type":"short","q":"밑줄 친 말이 소리를 흉내 내는 말이면 ‘소리’, 모양을 흉내 내는 말이면 ‘모양’이라고 쓰세요.","parts":[{"label":"(1) 토끼가 <u>깡충깡충</u> 뛴다.","ans":["모양"]},{"label":"(2) 동생이 <u>깔깔</u> 웃는다.","ans":["소리"]}],"fb":"깡충깡충은 뛰는 <b>모양</b>, 깔깔은 웃는 <b>소리</b>를 흉내 냈어요."},{"id":"k1-13","u":1,"n":"13","type":"open","q":"흉내 내는 말을 사용해 그림에 어울리는 문장을 만드세요.","img":"img/bom/kor/1-q13.png","imgCap":"사과가 가득 달린 사과나무","before":"사과나무에 사과가","model":"주렁주렁 열렸습니다. / 빨갛게 주렁주렁 매달렸습니다.","fb":"<b>주렁주렁</b>(열매가 많이 매달린 모양), <b>빨갛게</b> 같은 흉내 내는 말을 넣어 문장을 만들면 돼요."},{"id":"k1-14","u":1,"n":"14","type":"short","p":"폴짝! 나만 뜀틀에 올랐어. 친구들 모두 날 부러워해. ㉠내 마음이 반짝반짝, 보석처럼 반짝반짝!","q":"이 글에서 흉내 내는 말을 두 가지 찾아 쓰세요.","parts":[{"label":"첫 번째","ans":["폴짝"]},{"label":"두 번째","ans":["반짝반짝"]}],"fb":"<b>폴짝</b>(뛰어오르는 모양)과 <b>반짝반짝</b>(빛나는 모양)이에요."},{"id":"k1-15","u":1,"n":"15","type":"short","p":"폴짝! 나만 뜀틀에 올랐어. 친구들 모두 날 부러워해.","q":"친구들이 모두 ‘나’를 부러워한 까닭에 알맞게 빈칸을 채우세요.","parts":[{"label":"‘나’만 ( 　 )에 올랐기 때문이다.","ans":["뜀틀"]}],"fb":"‘나’만 <b>뜀틀</b>에 올랐기 때문이에요."},{"id":"k1-16","u":1,"n":"16","type":"choice","p":"㉠내 마음이 반짝반짝, 보석처럼 반짝반짝!","q":"㉠에 나타난 ‘나’의 기분을 표현하기에 알맞지 <b>않은</b> 말은?","opts":["신난다.","기쁘다.","뿌듯하다.","행복하다.","속상하다."],"a":4,"fb":"뜀틀에 올라 뿌듯하고 신난 마음이에요. <b>속상하다</b>는 슬프고 답답한 기분이라 어울리지 않아요."},{"id":"k1-17","u":1,"n":"17","type":"choice","q":"주영이가 민지에게 자신의 기분을 말하기 위해 생각할 내용으로 알맞지 <b>않은</b> 것에 ×표를 하려고 해요. ×표 할 것은?","img":"img/bom/kor/1-q17.png","imgCap":"블록 성이 무너진 교실에서 주영이와 민지","opts":["(1) 있었던 일","(2) 자신의 기분","(3) 듣는 사람의 옷차림"],"a":2,"fb":"기분을 말할 때는 <b>있었던 일</b>과 <b>자신의 기분</b>을 생각해요. 듣는 사람의 옷차림은 상관없어요."},{"id":"k1-18","u":1,"n":"18","type":"choice","q":"이 그림의 상황에서 주영이가 민지를 생각하며 자신의 기분을 알맞게 말한 것을 고르세요.","img":"img/bom/kor/1-q17.png","opts":["㉠ 똑바로 보고 다녀. 정말 짜증 나.","㉡ 너 때문에 내가 만든 성이 무너졌잖아.","㉢ 나는 내가 만든 성이 무너져서 정말 속상해."],"a":2,"fb":"㉢처럼 <b>‘나는’으로 시작해서 있었던 일과 기분</b>을 말하면 듣는 사람의 기분을 상하게 하지 않아요."},{"id":"k1-19","u":1,"n":"19","type":"choice","q":"다음 문장에 어울리는 기분을 나타내는 말을 고르세요. ‘나는 실수로 친구의 그림을 망가뜨려서 정말 ( 　 ).’","opts":["고마웠어요","부러웠어요","미안했어요"],"a":2,"fb":"친구의 그림을 망가뜨렸으니 <b>미안했어요</b>가 알맞아요."},{"id":"k1-20","u":1,"n":"20","type":"open","q":"&lt;보기&gt;처럼 학교에서 있었던 일을 떠올려 자신의 기분이 잘 드러나게 한 문장으로 쓰세요.","ex":"보기: 나는 민지가 함께 놀자고 말해 줘서 기뻤다.","before":"나는","model":"나는 쉬는 시간에 친구와 같이 줄넘기를 해서 즐거웠다. / 나는 발표를 잘해서 뿌듯했다.","fb":"<b>‘나는’ + 있었던 일 + 기분</b> 순서로 쓰면 돼요. 쓴 문장은 소리 내어 읽어 보세요."}]},{"u":2,"title":"2단원 낱말을 정확하게 읽어요","emoji":"🔤","items":[{"id":"k2-1","u":2,"n":"1","type":"short","q":"‘맑다, 얇다, 꿇다, 값’의 받침처럼 서로 다른 두 개의 자음자로 이루어진 받침을 무엇이라고 하는지 쓰세요.","parts":[{"label":"받침의 이름","ans":["겹받침"]}],"fb":"ㄺ, ㄶ, ㄼ, ㅄ처럼 두 자음자가 모인 받침을 <b>겹받침</b>이라고 해요."},{"id":"k2-2","u":2,"n":"2","type":"short","q":"글자 ‘맑’과 ‘꿇’의 짜임을 생각하며 빈칸에 알맞은 자음자와 모음자를 쓰세요.","hint":"자음자·모음자를 차례대로 붙여서 써 보세요. (예: ㄱㅏㄴ)","parts":[{"label":"(1) 맑 →","ans":["ㅁㅏㄺ"]},{"label":"(2) 꿇 →","ans":["ㄲㅜㄶ"]}],"fb":"맑 = <b>ㅁ + ㅏ + ㄺ</b>, 꿇 = <b>ㄲ + ㅜ + ㄶ</b>이에요. 첫소리·가운뎃소리·끝소리로 나누어 봐요."},{"id":"k2-3","u":2,"n":"3","type":"short","q":"이 낱말들 가운데에서 다음 그림에 어울리는 낱말을 찾아 쓰세요.","parts":[{"label":"(1)","img":"img/bom/kor/2-q3a.png","ans":["값"]},{"label":"(2)","img":"img/bom/kor/2-q3b.png","ans":["얇다"]}],"fb":"1000원을 붙인 무는 <b>값</b>(물건의 가격), 얇게 썬 오이는 <b>얇다</b>예요.","bank":["맑다","얇다","꿇다","값"]},{"id":"k2-4","u":2,"n":"4","type":"short","q":"그림에 어울리는 낱말을 &lt;보기&gt;에서 찾아 문장을 완성하세요.","bank":["넓다","없다","긁는다","잃어버렸다"],"parts":[{"label":"(1) 연우는 학교에서 우산을","img":"img/bom/kor/2-q4a.png","after":".","ans":["잃어버렸다"]},{"label":"(2) 바구니에 사과가","img":"img/bom/kor/2-q4b.png","after":".","ans":["없다"]}],"fb":"우산을 잃어버린 생각을 하는 연우 → <b>잃어버렸다</b>, 사과가 텅 빈 바구니 → <b>없다</b>예요."},{"id":"k2-5","u":2,"n":"5","type":"multi","p":"(가) “휴, 간신히 살았네. 하마터면 잡아먹힐 뻔했어.” 참외씨 한 개가 탈출을 했네요! 철이가 쓰윽 입을 닦아요. “아이코! 세상은 무시무시한 곳이구나.”\n(나) “어딜 그리 바삐 가는 게야?” “탈출하는 중이에요. 그런데 할아버지는 누구세요?” “바람 따라 여기저기 떠돌아다니는 먼지란다.” “그럼, 혹시 흙이 어디 있는지 아세요? 제 꿈은 흙 속에 들어가서 달고 맛있는 참외가 되는 거예요.”","q":"이 글에는 누가 등장하는지 모두 고르세요.","opts":["철이","바람","흙덩이","참외씨","먼지 할아버지"],"a":[0,3,4],"fb":"<b>철이</b>, <b>참외씨</b>, <b>먼지 할아버지</b>가 등장해요. 바람은 이야기 속 말로만 나오고, 흙덩이는 나오지 않아요."},{"id":"k2-6","u":2,"n":"6","type":"short","q":"글 (나)에서 참외씨가 흙을 찾는 까닭은 무엇인지 쓰세요.","parts":[{"label":"까닭","ans":["흙 속에 들어가서 달고 맛있는 참외가 되고 싶어서","달고 맛있는 참외가 되고 싶어서","참외가 되고 싶어서","흙 속에서 참외가 되기 위해"],"kw":[["참외","되고"],["참외","되기"]]}],"fb":"“제 꿈은 흙 속에 들어가서 달고 맛있는 참외가 되는 거예요.”라고 했어요. <b>참외가 되고 싶은 꿈</b> 때문이에요.","p":"(나) “어딜 그리 바삐 가는 게야?” “탈출하는 중이에요. 그런데 할아버지는 누구세요?” “바람 따라 여기저기 떠돌아다니는 먼지란다.” “그럼, 혹시 흙이 어디 있는지 아세요? 제 꿈은 흙 속에 들어가서 달고 맛있는 참외가 되는 거예요.”"},{"id":"k2-7","u":2,"n":"7","type":"match","q":"㉠~㉢의 낱말 뜻을 알맞게 이어 보세요.","pairs":[{"l":"㉠ 간신히","r":"겨우. 매우 힘들게."},{"l":"㉡ 하마터면","r":"조금만 잘못했더라면."},{"l":"㉢ 무시무시한","r":"아주 많이 무서운."}],"fb":"간신히 = <b>겨우</b>, 하마터면 = <b>조금만 잘못했더라면</b>, 무시무시한 = <b>아주 많이 무서운</b>이에요."},{"id":"k2-8","u":2,"n":"8","type":"choice","q":"‘흙 속에’의 ‘흙’을 알맞게 발음한 것은 무엇입니까?","opts":["[흑소에]","[흑소게]","[흑쏘게]","[흘소게]","[흘쏘게]"],"a":1,"fb":"겹받침 ㄺ은 뒤에 자음이 오면 앞의 <b>ㄱ</b> 소리로 내요. 흙 → [흑], 그리고 ‘속에’는 [소게]로 이어 읽어 <b>[흑소게]</b>예요."},{"id":"k2-9","u":2,"n":"9","type":"choice","p":"“잠깐만요.” 하고 다니엘이 산체스 부인에게 물어요. “어떤 날이 멋진 날이에요?” 산체스 부인이 대답해요. “하늘이 이렇게 맑아서 페인트칠하기 좋은 날이란다.” “어떤 날이 멋진 날이야?” 다니엘은 연을 들고 공원으로 가는 에마 누나에게 물어요. “바람이 씽씽 불어서 연 날리기 좋은 날!”","q":"다니엘이 이 글에 나오는 인물들에게 궁금해한 것은 무엇입니까?","opts":["잘하는 일이 무엇인지 궁금했다.","왜 멋진 날이 좋은지가 궁금했다.","어떤 날이 멋진 날인지가 궁금했다.","멋진 날에 무엇을 하는지가 궁금했다.","멋진 날을 누구와 보내는지가 궁금했다."],"a":2,"fb":"“어떤 날이 멋진 날이에요?”라고 두 번 물었어요. <b>어떤 날이 멋진 날인지</b>가 궁금했어요."},{"id":"k2-10","u":2,"n":"10","type":"short","q":"다음은 멋진 날에 대한 어떤 인물의 생각인지 이 글에서 인물을 찾아 쓰세요.","parts":[{"label":"(1) 하늘이 맑아서 페인트칠하기 좋은 날이 멋진 날이다.","ans":["산체스 부인"]},{"label":"(2) 바람이 씽씽 불어서 연 날리기 좋은 날이 멋진 날이다.","ans":["에마 누나","에마"]}],"fb":"(1)은 <b>산체스 부인</b>, (2)는 <b>에마 누나</b>의 생각이에요."},{"id":"k2-11","u":2,"n":"11","type":"short","q":"&lt;보기&gt;에서 다음 낱말을 알맞게 찾아 쓰세요.","bank":["뛰다","짧다","썩다","낚다"],"parts":[{"label":"(1) 쌍받침이 있는 낱말","ans":["썩다낚다","낚다썩다","썩다, 낚다"],"kw":[["썩다","낚다"]]},{"label":"(2) 겹받침이 있는 낱말","ans":["짧다"]}],"fb":"쌍받침(ㄲ)이 있는 낱말은 <b>썩다, 낚다</b>이고, 겹받침(ㄹㅂ)이 있는 낱말은 <b>짧다</b>예요. 뛰다의 ㄸ은 첫소리예요."},{"id":"k2-12","u":2,"n":"12","type":"choice","q":"그림에 알맞은 문장을 바르게 쓴 것을 고르세요.","img":"img/bom/kor/2-q12.png","imgCap":"약국 봉투와 2000원","opts":["약값이 싸다.","약갑이 싸다.","약갑시 싸다."],"a":0,"fb":"값은 소리 나는 대로 적지 않고 <b>‘값’</b>으로 적어요. 그래서 <b>약값이 싸다.</b>가 맞아요."},{"id":"k2-13","u":2,"n":"13","type":"choice","q":"‘마○다, 구○다, 이○다’에 공통으로 들어갈 알맞은 받침은 무엇입니까? (맑다 · 굵다 · 읽다)","opts":["ㄶ","ㄺ","ㄼ","ㅀ","ㅄ"],"a":1,"fb":"맑다, 굵다, 읽다에는 모두 겹받침 <b>ㄺ</b>이 들어 있어요."},{"id":"k2-14","u":2,"n":"14","type":"short","q":"문장에서 잘못 쓴 낱말을 바르게 고쳐 쓰세요. ‘연필심이 달았다.’","img":"img/bom/kor/2-q14.png","imgCap":"뾰족하게 깎인 연필","parts":[{"label":"바르게 고친 낱말","ans":["닳았다"]}],"fb":"연필심이 ‘달다’가 아니라 <b>닳았다</b>가 맞아요. 소리는 [다라따]로 같지만 뜻이 달라요."},{"id":"k2-15","u":2,"n":"15","type":"short","p":"참외씨는 달리기 시작했어요. “어딜 그리 바삐 가는 게야?” “탈출하는 중이에요. 그런데 할아버지는 누구세요?” “바람 따라 여기저기 떠돌아다니는 먼지란다.”","q":"참외씨는 탈출하는 중에 누구를 만났는지 쓰세요.","parts":[{"label":"만난 사람","ans":["먼지 할아버지"]}],"fb":"바람 따라 떠돌아다니는 <b>먼지 할아버지</b>를 만났어요."},{"id":"k2-16","u":2,"n":"16","type":"short","q":"참외씨의 꿈은 무엇인지 빈칸에 알맞게 쓰세요.","parts":[{"label":"달고 맛있는 ( 　 )이/가 되는 것이다.","ans":["참외"]}],"fb":"달고 맛있는 <b>참외</b>가 되는 것이 참외씨의 꿈이에요.","p":"(나) “어딜 그리 바삐 가는 게야?” “탈출하는 중이에요. 그런데 할아버지는 누구세요?” “바람 따라 여기저기 떠돌아다니는 먼지란다.” “그럼, 혹시 흙이 어디 있는지 아세요? 제 꿈은 흙 속에 들어가서 달고 맛있는 참외가 되는 거예요.”"},{"id":"k2-17","u":2,"n":"17","type":"choice","q":"‘넓고’와 ‘흙은’을 읽을 때 받침은 모두 어떤 소리로 발음해야 하는지 고르세요.","opts":["[ㄱ]","[ㄹ]","[ㅂ]","[ㅇ]"],"a":1,"fb":"넓고 → [널꼬], 흙은 → [흘근]처럼 겹받침 ㄼ·ㄺ이 모두 <b>[ㄹ]</b>로 소리 나요."},{"id":"k2-18","u":2,"n":"18","type":"short","p":"사용한 물건을 제자리에 두자 (1학년 김서연)\n나는 물건을 쓰고 나서 제자리에 둡니다. 하지만 내 동생은 풀이나 가위와 같은 물건을 쓰고 나서 아무 데나 둡니다.","q":"글쓴이와 습관이 다른 사람은 누구인지 쓰세요.","parts":[{"label":"누구","ans":["동생"]}],"fb":"글쓴이는 제자리에 두지만 <b>동생</b>은 아무 데나 두어요."},{"id":"k2-19","u":2,"n":"19","type":"short","q":"글쓴이는 물건을 쓰고 아무 데나 두면 어떤 일이 일어난다고 생각하는지 쓰세요.","parts":[{"label":"일어나는 일","ans":["다음에 쓰려면 한참을 찾아야 합니다","한참을 찾아야 합니다","찾기 힘들다","찾기 어렵다","물건을 빨리 찾을 수 없다"],"kw":[["찾","한참"],["찾","오래"],["찾","어렵"],["찾","힘들"]]}],"fb":"“다음에 쓰려면 한참을 찾아야 합니다.”라고 했어요. 물건을 <b>찾느라 시간이 오래 걸린다</b>는 뜻이에요.","p":"사용한 물건을 제자리에 두자 (1학년 김서연)\n나는 물건을 쓰고 나서 제자리에 둡니다. 그렇게 하면 다음에 그 물건을 쓰려고 할 때 빨리 찾을 수 있습니다. 하지만 내 동생은 풀이나 가위와 같은 물건을 쓰고 나서 아무 데나 둡니다. 그래서 다음에 쓰려면 한참을 찾아야 합니다. 물건을 쓰고 나서 제자리에 둡시다. 그렇게 해야 물건을 쉽고 빠르게 찾을 수 있습니다."},{"id":"k2-20","u":2,"n":"20","type":"choice","q":"글쓴이가 하고 싶은 말을 고르세요.","opts":["동생과 사이좋게 지내자.","물건을 함부로 쓰지 말고 아끼자.","물건을 쓰고 나서 제자리에 두자."],"a":2,"fb":"글쓴이는 “물건을 쓰고 나서 제자리에 둡시다.”라고 말하고 있어요.","p":"사용한 물건을 제자리에 두자 (1학년 김서연)\n나는 물건을 쓰고 나서 제자리에 둡니다. 그렇게 하면 다음에 그 물건을 쓰려고 할 때 빨리 찾을 수 있습니다. 하지만 내 동생은 풀이나 가위와 같은 물건을 쓰고 나서 아무 데나 둡니다. 그래서 다음에 쓰려면 한참을 찾아야 합니다. 물건을 쓰고 나서 제자리에 둡시다. 그렇게 해야 물건을 쉽고 빠르게 찾을 수 있습니다."}]},{"u":3,"title":"3단원 그림일기를 써요","emoji":"📔","items":[{"id":"k3-1","u":3,"n":"1","type":"choice","q":"그림 ➊에서 현우는 무엇을 하고 있는지 고르세요.","img":"img/bom/kor/3-q1a.png","imgCap":"➊ “제 꿈은 탐험가입니다.”","opts":["꿈에 대한 일기를 쓰고 있다.","발표할 내용을 조사하고 있다.","자신의 꿈에 대해 발표하고 있다."],"a":2,"fb":"현우가 친구들 앞에서 “제 꿈은 탐험가입니다.”라고 <b>발표</b>하고 있어요."},{"id":"k3-2","u":3,"n":"2","type":"short","q":"그림 ➋를 살펴보고 현우의 말하는 자세를 알맞게 칭찬한 친구를 찾아 이름을 쓰세요.","img":"img/bom/kor/3-q1b.png","imgCap":"➋ 유정: 바른 자세로 앉아서 말하고 있구나. / 민석: 잘 알아듣게 조용히 말하고 있구나. / 도영: 듣는 사람을 바라보며 말하고 있구나.","parts":[{"label":"칭찬한 친구","ans":["도영"]}],"fb":"현우는 듣는 친구들을 <b>바라보며</b> 말하고 있으니 도영이의 칭찬이 알맞아요."},{"id":"k3-3","u":3,"n":"3","type":"choice","q":"(가)~(다)의 친구 가운데에서 선생님 말씀을 바른 자세로 듣고 있는 친구를 고르세요.","img":"img/bom/kor/3-q3.png","imgCap":"(가) 안경 쓴 여자아이 · (나) 엎드린 남자아이 · (다) 옆을 보는 여자아이","opts":["(가)","(나)","(다)"],"a":0,"fb":"책상에 바르게 앉아 선생님을 바라보는 <b>(가)</b>가 바른 자세예요. (나)는 엎드려 있고, (다)는 다른 곳을 보고 있어요."},{"id":"k3-4","u":3,"n":"4","type":"short","q":"선생님의 말씀을 잘 들은 친구라면 현장 체험 학습 준비물로 무엇을 챙겨야 할까요? 두 가지를 쓰세요.","ex":"봉지를 빼고 먹을 만큼만 과자를 담은 통 / ( 　 ) / ( 　 )","parts":[{"label":"준비물 1","ans":["돗자리"]},{"label":"준비물 2","ans":["물"]}],"fb":"선생님이 <b>돗자리</b>와 <b>물</b>도 준비해 오라고 하셨어요."},{"id":"k3-5","u":3,"n":"5","type":"open","q":"(가)~(다)의 친구 가운데에서 듣는 자세가 바르지 못한 친구들에게 해 주고 싶은 말을 한 가지 쓰세요.","ex":"• 바른 자세로 앉아서 들어야 해. • ( 　 )","model":"친구가 말할 때는 다른 곳을 보지 말고 바라보며 들어야 해. / 엎드리지 말고 선생님을 바라보며 들어야 해.","fb":"듣는 사람을 바라보며, 몸을 바르게 하고 집중해서 듣는 것이 좋아요."},{"id":"k3-6","u":3,"n":"6","type":"choice","q":"아침에 있었던 일 가운데에서 발표할 내용을 정하고 정리할 때 생각하지 <b>않아도</b> 되는 것은 무엇입니까?","opts":["누구와 함께 했는지 생각한다.","무슨 일이 있었는지 생각한다.","재미있게 상상했는지 생각한다.","어디에서 있었던 일인지 생각한다.","그 일로 어떻게 되었는지 생각한다."],"a":2,"fb":"누가·무엇을·어디서·어떻게 되었는지가 발표할 내용이에요. <b>재미있게 상상했는지</b>는 필요 없어요."},{"id":"k3-7","u":3,"n":"7","type":"short","q":"다음은 어떤 글에 들어가는 내용을 설명한 것인지 쓰세요. • 날짜와 요일, 날씨를 쓴다. • 경험한 일을 표현하는 그림을 그린다. • 기억에 남는 일과 그 일에 대한 생각이나 느낌을 쓴다.","parts":[{"label":"글의 이름","ans":["그림일기"]}],"fb":"날짜·날씨와 그림, 생각이나 느낌이 들어가는 글은 <b>그림일기</b>예요."},{"id":"k3-8","u":3,"n":"8","type":"short","q":"찬호는 동생과 무엇을 했는지 빈칸에 알맞게 쓰세요.","img":"img/bom/kor/3-q8.png","imgCap":"찬호의 그림일기 (➋ 글: 과수원을 하시는 할머니 댁에 놀러 갔다. 나와 동생은 빨갛게 익은 사과를 땄다.)","parts":[{"label":"과수원에서 ( 　 )을/를 땄다.","ans":["사과"]}],"fb":"“나와 동생은 빨갛게 익은 <b>사과</b>를 땄다.”라고 썼어요."},{"id":"k3-9","u":3,"n":"9","type":"choice","q":"➊의 그림이 이 그림일기에 어울리는 까닭으로 알맞은 것을 고르세요.","img":"img/bom/kor/3-q8.png","opts":["날마다 하는 일을 표현해서","여러 가지 경험을 한꺼번에 표현해서","경험한 일이 그림에 잘 드러나 있어서"],"a":2,"fb":"그림에 사과를 따는 경험이 그대로 드러나 있어서 그림일기와 잘 어울려요."},{"id":"k3-10","u":3,"n":"10","type":"choice","q":"이 그림일기를 점검했을 때 ➋의 글에서 부족한 내용은 무엇인지 고르세요.","opts":["㉮ 끝인사와 쓴 사람","㉯ 일기를 쓴 시간과 장소","㉰ 경험한 일에 대한 생각이나 느낌"],"a":2,"fb":"무엇을 했는지만 쓰고 <b>생각이나 느낌</b>이 없어요. ‘정말 재미있었다.’ 같은 느낌을 더 써야 해요."},{"id":"k3-11","u":3,"n":"11","type":"choice","q":"이 그림의 여자아이처럼 발표하면 어떻게 될지 고르세요. ‘듣는 사람이 알아듣기 ( 　 ).’","img":"img/bom/kor/3-q11.png","imgCap":"아주 작은 목소리로 발표하는 여자아이","opts":["쉽다","어렵다"],"a":1,"fb":"목소리가 너무 작으면 듣는 사람이 알아듣기 <b>어렵다</b>고 했어요."},{"id":"k3-12","u":3,"n":"12","type":"multi","q":"발표할 때 여자아이에게 필요한 자세는 무엇인지 두 가지 고르세요.","opts":["움츠린 자세","긴장한 표정","허리를 편 자세","기죽은 목소리","알맞은 크기의 목소리"],"a":[2,4],"fb":"<b>허리를 편 자세</b>와 <b>알맞은 크기의 목소리</b>가 필요해요."},{"id":"k3-13","u":3,"n":"13","type":"choice","q":"우리가 바른 자세로 들어야 할 때는 언제인지 고르세요.","opts":["㉠ 수업 시간에 친구가 발표할 때","㉡ 그날 경험한 일을 일기에 쓸 때","㉢ 도서관에서 여러 사람이 책을 읽을 때"],"a":0,"fb":"<b>수업 시간에 친구가 발표할 때</b>는 바른 자세로 들어야 해요."},{"id":"k3-14","u":3,"n":"14","type":"multi","q":"➊~➎의 친구 가운데에서 말하는 사람을 바라보며 듣고 있는 친구를 모두 고르세요.","img":"img/bom/kor/3-q14.png","imgCap":"➋가 “어제 말이야……” 하고 말하고 있어요.","opts":["➊","➋","➌","➍","➎"],"a":[2],"fb":"말하는 ➋를 바라보며 턱을 괴고 듣는 <b>➌</b>이 바른 자세예요. ➍는 딴 생각을 하고 있어요."},{"id":"k3-15","u":3,"n":"15","type":"choice","q":"➊~➎의 친구 가운데에서 “궁금한 점을 생각하며 듣고 있구나.”라는 칭찬을 해 줄 친구를 고르세요.","img":"img/bom/kor/3-q14.png","opts":["➊","➋","➌","➍","➎"],"a":2,"fb":"말하는 친구를 보며 무슨 말인지 생각하며 듣는 <b>➌</b>이 어울려요."},{"id":"k3-16","u":3,"n":"16","type":"open","q":"이 그림에서 듣는 자세가 바르지 못한 친구들이 고쳐야 할 점을 한 가지 쓰세요.","model":"말하는 사람을 바라보며 들어야 해요. / 다른 생각을 하지 말고 친구 말에 집중해야 해요.","fb":"듣는 자세가 바르지 못한 친구는 <b>말하는 사람을 바라보며 집중해서 듣기</b>를 연습해요."},{"id":"k3-17","u":3,"n":"17","type":"short","q":"그림일기를 잘 쓰는 방법을 정리한 표에서 ㉠과 ㉡에 들어갈 알맞은 말을 쓰세요.","ex":"㉠: 그날의 연·월·일과 요일을 쓴다. / ‘맑음’, ‘비’처럼 간단히 쓰거나 자세히 쓴다.\n㉡: 경험한 일 가운데에서 가장 중요한 내용을 그린다.","parts":[{"label":"(1) ㉠: 날짜와 요일, ( 　 )","ans":["날씨"]},{"label":"(2) ㉡: ( 　 )","ans":["그림"]}],"fb":"㉠은 <b>날씨</b>, ㉡은 <b>그림</b>이에요."},{"id":"k3-18","u":3,"n":"18","type":"multi","q":"그림일기를 쓸 때에 주의할 점을 생각하며 ㉢에 알맞은 말을 두 가지 고르세요. ‘경험한 일에 대한 ( 　 )을/를 쓴다.’","opts":["느낌","제목","형식","생각","글쓴이"],"a":[0,3],"fb":"경험한 일에 대한 <b>느낌</b>과 <b>생각</b>을 써요."},{"id":"k3-19","u":3,"n":"19","type":"choice","q":"글 (가)와 (나) 가운데에서 누구와 어디에서 무엇을 했는지 경험한 일을 자세히 쓴 것은 무엇인지 고르세요.","ex":"(가) 나는 오늘 아침에 일어나 밥을 먹고 학교에 가서 공부를 했다. 그리고 집에 와서 숙제를 하고 잤다.\n(나) 과수원을 하시는 할머니 댁에 놀러 갔다. 나와 동생은 빨갛게 익은 사과를 땄다. 사과를 직접 따 보니 정말 재미있었다.","opts":["(가)","(나)"],"a":1,"fb":"(나)는 <b>누구와·어디에서·무엇을</b> 했는지 자세히 썼어요."},{"id":"k3-20","u":3,"n":"20","type":"choice","q":"글 (가)와 (나) 가운데에서 늘 하는 일만 쓰고 경험한 일에 대한 생각이나 느낌이 없는 글은 무엇인지 고르세요.","ex":"(가) 나는 오늘 아침에 일어나 밥을 먹고 학교에 가서 공부를 했다. 그리고 집에 와서 숙제를 하고 잤다.\n(나) 과수원을 하시는 할머니 댁에 놀러 갔다. 나와 동생은 빨갛게 익은 사과를 땄다. 사과를 직접 따 보니 정말 재미있었다.","opts":["(가)","(나)"],"a":0,"fb":"(가)는 늘 하는 일만 있고 <b>생각이나 느낌</b>이 없어요."}]},{"u":4,"title":"4단원 감동을 나누어요","emoji":"💗","items":[{"id":"k4-1","u":4,"n":"1","type":"short","q":"자신이 본 만화 영화에서 기억에 남는 장면을 떠올려 말한 친구를 찾아 이름을 쓰세요.","ex":"지현: 뽀로로랑 친구들이 재미있게 놀던 장면이 떠올라.\n은서: 체험 학습 때 민속촌에서 들었던 옛이야기가 재미있었어.\n승욱: 난 도서관에서 읽었던 책에서 세계 여러 나라의 음식 사진이 생각나.","parts":[{"label":"친구 이름","ans":["지현"]}],"fb":"뽀로로는 <b>만화 영화</b>예요. 은서는 옛이야기, 승욱이는 책을 떠올렸어요. 그래서 <b>지현</b>이에요."},{"id":"k4-2","u":4,"n":"2","type":"choice","q":"주원이는 무슨 일 때문에 이 글을 쓴 것인지 고르세요.","p":"오늘 점심시간에 급식 반찬으로 미역무침이 나왔다. 나는 미역을 가장 싫어한다. 하지만 내 친구 서윤이는 미역무침이 맛있다고 했다. “너도 한번 먹어 봐. 새콤달콤한 맛이 얼마나 좋은데.” 나는 눈을 질끈 감고 미역무침을 한번 먹어 보았다. 생각보다 맛이 좋았다. 어느새 미역무침을 모두 다 먹었다.","opts":["친구에게 서운했던 일","좋아하는 음식을 먹었던 일","싫어하던 미역을 먹었던 일"],"a":2,"fb":"싫어하던 <b>미역무침을 용기 내어 먹어 본 일</b>을 썼어요."},{"id":"k4-3","u":4,"n":"3","type":"short","q":"㉠~㉤ 가운데 다음 인물의 말을 나타낸 문장을 각각 찾아 기호를 쓰세요.","ex":"㉠ “너도 한번 먹어 봐. 새콤달콤한 맛이 얼마나 좋은데.”\n㉡ 서윤이는 미역무침을 맛있게 먹었다.\n㉢ ‘그럼 나도 한번 먹어 볼까?’\n㉣ “주원이는 반찬을 골고루 잘 먹는구나.”\n㉤ 선생님께서도 나를 칭찬해 주시며 박수도 쳐 주셨다.","parts":[{"label":"(1) 서윤","ans":["㉠"]},{"label":"(2) 선생님","ans":["㉣"]}],"fb":"(1) 서윤이의 말은 <b>㉠</b>, (2) 선생님의 말은 <b>㉣</b>이에요."},{"id":"k4-4","u":4,"n":"4","type":"match","q":"이 글에서 각 인물이 무엇을 했는지 알맞게 이어 보세요.","pairs":[{"l":"(1) 주원","r":"용기 내어 미역무침을 먹어 보았다."},{"l":"(2) 서윤","r":"주원이에게 미역무침을 먹어 보라고 했다."},{"l":"(3) 선생님","r":"주원이를 칭찬해 주셨다."}],"fb":"주원 = 먹어 보았다, 서윤 = 먹어 보라고 했다, 선생님 = 칭찬해 주셨다.","p":"오늘 점심시간에 급식 반찬으로 미역무침이 나왔다. 나는 미역을 가장 싫어한다. 하지만 내 친구 서윤이는 미역무침이 맛있다고 했다. “너도 한번 먹어 봐. 새콤달콤한 맛이 얼마나 좋은데.” 서윤이는 미역무침을 맛있게 먹었다. 나는 눈을 질끈 감고 미역무침을 한번 먹어 보았다. 생각보다 맛이 좋았다. 어느새 미역무침을 모두 다 먹었다. “주원이는 반찬을 골고루 잘 먹는구나.” 선생님께서도 나를 칭찬해 주시며 박수도 쳐 주셨다."},{"id":"k4-5","u":4,"n":"5","type":"multi","p":"(가) 옛날 옛적에 어느 임금님이 신기한 맷돌을 가지고 있었습니다. “나와라, 밥!” 하면 밥이 나오고, “그쳐라, 밥!” 하면 뚝 그치는 신기한 맷돌이었답니다.\n(나) 도둑은 고약한 마음을 먹었습니다. 저녁이 되자 도둑은 궁궐로 숨어들었습니다.\n(다) 도둑은 배를 타고 바다를 건너다가 맷돌을 돌려 보고 싶어졌습니다. “나와라, 소금!” 그러자 맷돌에서 하얀 소금이 쏟아져 나왔고, 점점 배 안에 쌓여 갔습니다.","q":"신기한 맷돌에 대한 내용으로 알맞은 것을 두 가지 고르세요.","opts":["임금님의 말만 듣는 맷돌이다.","귀한 소금만 나오는 맷돌이다.","나오라고 외친 물건이 계속 나온다.","그치라고 외친 물건은 더 나오지 않는다.","계속 나오는 물건을 그치게 하는 방법이 없다."],"a":[2,3],"fb":"“나와라” 하면 계속 나오고, “그쳐라” 하면 뚝 그쳐요. 그치게 하는 방법이 있으니 ⑤는 틀려요."},{"id":"k4-6","u":4,"n":"6","type":"choice","q":"글 (나)에서 도둑이 마음속으로 한 말에 알맞은 따옴표를 고르세요. ‘( 　 )그 맷돌이 있으면 부자가 될 수 있겠어.( 　 )’","opts":["큰따옴표  “ ”","작은따옴표  ‘ ’"],"a":1,"fb":"소리 내어 한 말은 큰따옴표(“ ”), <b>마음속으로 한 말</b>은 작은따옴표(‘ ’)를 써요."},{"id":"k4-7","u":4,"n":"7","type":"choice","p":"(가) 임금님이 신기한 맷돌을 가지고 있었다. (나) 도둑이 궁궐에서 맷돌을 훔쳐 도망갔다. (다) 도둑은 배를 타고 바다를 건너가고 있다. (라) 맷돌에서 나온 소금이 배 안에 쌓여 갔다. 배가 기우뚱거렸다.","q":"이 글에서 일어난 일 가운데에서 가장 나중에 일어난 일은 무엇입니까?","opts":["도둑이 궁궐에서 맷돌을 훔쳐 도망갔다.","임금님이 신기한 맷돌을 가지고 있었다.","도둑은 배를 타고 바다를 건너가고 있다.","맷돌에서 나온 소금이 배 안에 쌓여 갔다.","도둑이 맷돌에서 소금이 나오라고 외쳤다."],"a":3,"fb":"소금이 나와 <b>배 안에 쌓여 간 일</b>이 가장 나중이에요."},{"id":"k4-8","u":4,"n":"8","type":"choice","q":"아기 거북이 혼자 까투리 가족을 따라 집으로 가게 된 까닭을 고르세요.","img":"img/bom/kor/4-q8a.png","imgCap":"➊ 꽁지가 모래 구덩이에서 거북알을 발견했다.","opts":["혼자 뒤늦게 알에서 깨어나서","까투리 가족이 집으로 초대해서","엄마 거북이 아기 거북을 까투리 가족에게 맡겨서"],"a":0,"fb":"“혼자 뒤늦게 알에서 깨어난 아기 거북이 까투리 가족을 따라 집으로 갔다.”라고 했어요."},{"id":"k4-9","u":4,"n":"9","type":"match","q":"㉠~㉢의 낱말 뜻을 &lt;보기&gt;에서 찾아 이어 보세요.","pairs":[{"l":"㉠ 구덩이","r":"땅이 움푹하게 파인 곳."},{"l":"㉡ 막내","r":"여러 형제, 자매 가운데에서 맨 나중에 난 사람."},{"l":"㉢ 꺼병이","r":"꿩의 어린 새끼."}],"fb":"구덩이 = 땅이 움푹 파인 곳, 막내 = 맨 나중에 난 사람, 꺼병이 = 꿩의 어린 새끼예요."},{"id":"k4-10","u":4,"n":"10","type":"open","q":"「아기 거북이가 숲으로 왔어요!」의 장면을 떠올리며 재미있거나 감동적인 장면을 쓰세요.","img":"img/bom/kor/4-q19_4.png","imgCap":"➍ 바다로 가는 길에 아기 거북이 다시 가족을 만났다.","model":"아기 거북이 다시 가족을 만나는 장면이 감동적이야.","fb":"인우처럼 “아기 거북이 다시 가족을 만나는 장면이 감동적이야.”라고 쓰면 좋아요. 느낌을 함께 쓰면 더 좋아요."},{"id":"k4-11","u":4,"n":"11","type":"choice","q":"글 (가)와 (나) 가운데에서 인물이 직접 한 말을 나타낸 문장이 들어 있는 글의 기호를 고르세요.","ex":"(가) 나는 미역을 가장 싫어한다. “너도 한번 먹어 봐. 새콤달콤한 맛이 얼마나 좋은데.” 서윤이는 미역무침을 맛있게 먹었다.\n(나) ‘그럼 나도 한번 먹어 볼까?’ 나는 눈을 질끈 감고 미역무침을 한번 먹어 보았다.","opts":["(가)","(나)"],"a":0,"fb":"(가)에는 서윤이의 <b>직접 한 말</b>이 큰따옴표 안에 들어 있어요. (나)의 ‘ ’는 마음속으로 한 말이에요."},{"id":"k4-12","u":4,"n":"12","type":"match","q":"글 (가)에서 인물이 한 일을 알맞게 이어 보세요.","pairs":[{"l":"(1) 주원","r":"미역무침을 먹기 싫어했다."},{"l":"(2) 서윤","r":"미역무침을 맛있게 먹었다."}],"fb":"주원이는 먹기 싫어했고, 서윤이는 맛있게 먹었어요.","p":"(가) 나는 미역을 가장 싫어한다. 하지만 내 친구 서윤이는 미역무침이 맛있다고 했다. “너도 한번 먹어 봐.” 서윤이는 미역무침을 맛있게 먹었다. 나는 그 모습을 보고도 먹을 용기가 나지 않아 고개를 절레절레 저었다."},{"id":"k4-13","u":4,"n":"13","type":"short","q":"글 (나)에서 주원이가 먹었던 미역무침의 맛은 어떠했는지 빈칸에 쓰세요. ‘입안에 ( 　 )이/가 가득해지는 맛이었다.’","parts":[{"label":"맛","ans":["새콤함"]}],"fb":"“계속 먹다 보니 입안에 <b>새콤함</b>이 가득해졌다.”라고 했어요.","p":"(나) ‘그럼 나도 한번 먹어 볼까?’ 나는 눈을 질끈 감고 미역무침을 한번 먹어 보았다. 입을 살짝 벌려 조금 먹어 보았더니 생각보다 맛이 좋았다. 계속 먹다 보니 입안에 새콤함이 가득해졌다. 어느새 미역무침을 모두 다 먹었다."},{"id":"k4-14","u":4,"n":"14","type":"choice","q":"이야기에서 누가 무엇을 했는지 알아볼 때 살펴보지 않아도 되는 것은 무엇입니까?","opts":["인물의 말","인물의 생각","인물의 행동","등장하는 인물","흉내 내는 말"],"a":4,"fb":"인물의 말·생각·행동을 살펴야 해요. <b>흉내 내는 말</b>은 상관없어요."},{"id":"k4-15","u":4,"n":"15","type":"choice","p":"도둑은 배를 타고 바다를 건너다가 맷돌을 돌려 보고 싶어졌습니다. 그래서 세상에서 가장 귀한 소금이 나오라고 외쳤습니다. “( ㉠ )” 그러자 맷돌에서 하얀 소금이 쏟아져 나왔고, 점점 배 안에 쌓여 갔습니다. 배가 기우뚱거리기 시작했습니다.","q":"이 글의 내용으로 보아 ㉠에 들어갈 알맞은 말은 무엇입니까?","opts":["나와라, 소금!","나와라, 맷돌!","그쳐라, 소금!","그쳐라, 맷돌!","나와라, 뚝딱!"],"a":0,"fb":"소금이 나오라고 했으니 <b>“나와라, 소금!”</b>이에요."},{"id":"k4-16","u":4,"n":"16","type":"short","q":"다음 그림은 글 (가)~(라) 가운데 어떤 글에서 일어난 일을 나타낸 것인지 글의 기호를 쓰세요.","parts":[{"label":"(1)","img":"img/bom/kor/4-q16a.png","after":"글 ( 　 )","ans":["나","(나)"]},{"label":"(2)","img":"img/bom/kor/4-q16b.png","after":"글 ( 　 )","ans":["라","(라)"]}],"fb":"(1)은 도둑이 맷돌을 훔쳐 달아나는 <b>(나)</b>, (2)는 바닷속에서 맷돌이 계속 도는 <b>(라)</b>예요."},{"id":"k4-17","u":4,"n":"17","type":"short","q":"소금이 나오는 맷돌이 멈추지 않은 까닭을 쓰세요.","parts":[{"label":"까닭","ans":["도둑이 무슨 말을 해야 하는지 잊어버려서","도둑이 그쳐라고 말하지 못해서","도둑이 놀라 무슨 말을 해야 할지 몰라서"],"kw":[["잊어버려"],["못해"],["못"],["몰라"]]}],"fb":"“도둑은 너무 놀라 무슨 말을 해야 하는지 잊어버렸습니다.” 그래서 “그쳐라”를 외치지 못했어요."},{"id":"k4-18","u":4,"n":"18","type":"choice","q":"다음 인물이 소리 내어 한 말에 알맞은 따옴표를 고르세요. ‘( 　 )늑대가 나타났어요! 도와주세요!( 　 )’","opts":["큰따옴표  “ ”","작은따옴표  ‘ ’"],"a":0,"fb":"소리 내어 한 말은 <b>큰따옴표(“ ”)</b>로 나타내요."},{"id":"k4-19","u":4,"n":"19","type":"choice","p":"➊ 꽁지가 바닷가 모래 구덩이에서 거북알을 발견했다. ➋ 혼자 뒤늦게 알에서 깨어난 아기 거북이 까투리 가족을 따라 집으로 갔다. ➌ 아기 거북과 마지, 두리, 세찌, 꽁지는 놀이방에서 미끄럼틀도 타고 공놀이도 하며 재미있게 놀았다. ➍ 엄마를 찾아 주기 위해 바다로 가는 길에 아기 거북이 다시 가족을 만났다.","q":"이 만화 영화의 등장인물이 <b>아닌</b> 것은 누구입니까?","opts":["꽁지","두리","아기 거북","아기 물고기","엄마 까투리"],"a":3,"fb":"아기 물고기는 나오지 않아요. 꽁지·두리·세찌·마지·아기 거북·엄마 깐투리가 등장해요."},{"id":"k4-20","u":4,"n":"20","type":"short","q":"이 만화 영화에서 일어난 일의 차례를 생각하며 ㉠~㉢에 알맞은 말을 &lt;보기&gt;에서 찾아 쓰세요.","bank":["가족","바다","수영","거북알","공놀이"],"ex":"➊ 꽁지가 바닷가 모래 구덩이에서 ( ㉠ )을/를 발견했다.\n➌ 아기 거북과 친구들은 놀이방에서 미끄럼틀도 타고 ( ㉡ )도 하며 놀았다.\n➍ 아기 거북이 다시 ( ㉢ )을/를 만났다.","parts":[{"label":"㉠","ans":["거북알"]},{"label":"㉡","ans":["공놀이"]},{"label":"㉢","ans":["가족"]}],"fb":"㉠ <b>거북알</b>, ㉡ <b>공놀이</b>, ㉢ <b>가족</b>이에요."}]}]};
+const MATH = {"subject":"수학","note":"수학 학습지는 정답지만 있어서, 정답지에 나온 1~3단원 개념과 문제 유형에 맞추어 연습 문제를 새로 만들었어요. (단원·개념은 학습지와 같아요)","units":[{"u":1,"title":"1단원 100까지의 수","emoji":"🔢","items":[{"id":"m1-1","u":1,"n":"1","type":"short","q":"10개씩 묶음이 6개이고 낱개가 4개인 수를 쓰세요.","svg":"bundles:6,4","parts":[{"label":"수","ans":["64"]}],"fb":"10개씩 묶음이 6개면 60, 낱개 4개를 더하면 <b>64</b>예요."},{"id":"m1-2","u":1,"n":"2","type":"short","q":"‘아흔둘’을 숫자로 쓰세요.","parts":[{"label":"숫자","ans":["92"]}],"fb":"아흔은 90, 둘은 2 → <b>92</b>예요. 구십이는 92라고도 읽어요."},{"id":"m1-3","u":1,"n":"3","type":"short","q":"‘여든다섯’을 숫자로 쓰세요.","parts":[{"label":"숫자","ans":["85"]}],"fb":"여든은 80, 다섯은 5 → <b>85</b>예요."},{"id":"m1-4","u":1,"n":"4","type":"short","q":"10개씩 묶음이 7개인 수를 쓰세요.","parts":[{"label":"수","ans":["70"]}],"fb":"10개씩 7묶음은 <b>70</b>이에요."},{"id":"m1-5","u":1,"n":"5","type":"short","q":"75는 10개씩 묶음 몇 개와 낱개 몇 개로 이루어져 있나요?","parts":[{"label":"10개씩 묶음","ans":["7"]},{"label":"낱개","ans":["5"]}],"fb":"75 = 70 + 5 → 10개씩 <b>7</b>묶음과 낱개 <b>5</b>개예요."},{"id":"m1-6","u":1,"n":"6","type":"choice","q":"빈칸에 들어갈 알맞은 기호를 고르세요.  82 ( 　 ) 86","opts":["<",">","="],"a":0,"fb":"82는 86보다 작아요. 작은 수를 앞에 쓸 때는 <b>&lt;</b>를 써요."},{"id":"m1-7","u":1,"n":"7","type":"short","q":"80보다 1만큼 더 작은 수를 쓰세요.","parts":[{"label":"수","ans":["79"]}],"fb":"80에서 1을 빼면 <b>79</b>예요."},{"id":"m1-8","u":1,"n":"8","type":"short","q":"99보다 1만큼 더 큰 수를 쓰세요.","parts":[{"label":"수","ans":["100"]}],"fb":"99 다음 수는 <b>100</b>이에요. 세 자리 수가 처음 나와요."},{"id":"m1-9","u":1,"n":"9","type":"short","q":"십의 자리 숫자가 8, 일의 자리 숫자가 6인 수를 쓰세요.","parts":[{"label":"수","ans":["86"]}],"fb":"십의 자리 8, 일의 자리 6 → <b>86</b>이에요."},{"id":"m1-10","u":1,"n":"10","type":"short","q":"78, 87, 68을 작은 수부터 차례로 쓰세요.","parts":[{"label":"작은 수부터","ans":["68,78,87","68 78 87","68<78<87"]}],"fb":"십의 자리 수를 먼저 보면 6 < 7 < 8 → <b>68, 78, 87</b>이에요."},{"id":"m1-11","u":1,"n":"11","type":"choice","q":"짝수인 것을 고르세요.","opts":["13","25","30","47"],"a":2,"fb":"짝수는 2개씩 묶어 떨어지는 수예요. 30 = 2×15로 나누어떨어져요."},{"id":"m1-12","u":1,"n":"12","type":"choice","q":"홀수인 것을 고르세요.","opts":["12","18","21","40"],"a":2,"fb":"홀수는 2개씩 묶으면 1개가 남는 수예요. 21은 홀수예요."},{"id":"m1-13","u":1,"n":"13","type":"choice","q":"54와 45 중에서 더 큰 수를 고르세요.","opts":["54","45"],"a":0,"fb":"십의 자리 5와 4를 비교하면 5가 더 커요. 그래서 <b>54</b>가 더 커요."},{"id":"m1-14","u":1,"n":"14","type":"short","q":"82보다 크고 86보다 작은 수는 모두 몇 개인가요?","parts":[{"label":"모두 ( 　 )개","ans":["3","3개"]}],"fb":"83, 84, 85 → 모두 <b>3개</b>예요."},{"id":"m1-15","u":1,"n":"15","type":"short","q":"10개씩 묶음이 3개이고 낱개가 7개인 수를 쓰세요.","svg":"bundles:3,7","parts":[{"label":"수","ans":["37"]}],"fb":"30 + 7 = <b>37</b>이에요."}]},{"u":2,"title":"2단원 덧셈과 뺄셈","emoji":"➕","items":[{"id":"m2-1","u":2,"n":"1","type":"short","q":"계산하세요.  3 + 2 + 3 =","parts":[{"label":"답","ans":["8"]}],"fb":"3 + 2 = 5, 5 + 3 = <b>8</b>이에요. 앞에서부터 차례대로 계산해요."},{"id":"m2-2","u":2,"n":"2","type":"short","q":"계산하세요.  4 + 3 + 2 =","parts":[{"label":"답","ans":["9"]}],"fb":"4 + 3 = 7, 7 + 2 = <b>9</b>예요."},{"id":"m2-3","u":2,"n":"3","type":"short","q":"계산하세요.  9 - 2 - 3 =","parts":[{"label":"답","ans":["4"]}],"fb":"9 - 2 = 7, 7 - 3 = <b>4</b>예요."},{"id":"m2-4","u":2,"n":"4","type":"short","q":"계산하세요.  8 - 5 - 2 =","parts":[{"label":"답","ans":["1"]}],"fb":"8 - 5 = 3, 3 - 2 = <b>1</b>이에요."},{"id":"m2-5","u":2,"n":"5","type":"short","q":"계산하세요.  7 - 2 - 3 =","parts":[{"label":"답","ans":["2"]}],"fb":"7 - 2 = 5, 5 - 3 = <b>2</b>예요."},{"id":"m2-6","u":2,"n":"6","type":"short","q":"계산하세요.  10 - 7 =","parts":[{"label":"답","ans":["3"]}],"fb":"10에서 7을 빼면 <b>3</b>이에요."},{"id":"m2-7","u":2,"n":"7","type":"short","q":"계산하세요.  5 + 5 + 7 =","parts":[{"label":"답","ans":["17"]}],"fb":"5 + 5 = 10, 10 + 7 = <b>17</b>이에요."},{"id":"m2-8","u":2,"n":"8","type":"short","q":"계산하세요.  7 + 3 - 5 =","parts":[{"label":"답","ans":["5"]}],"fb":"7 + 3 = 10, 10 - 5 = <b>5</b>예요."},{"id":"m2-9","u":2,"n":"9","type":"short","q":"계산하세요.  10 - 2 - 6 =","parts":[{"label":"답","ans":["2"]}],"fb":"10 - 2 = 8, 8 - 6 = <b>2</b>예요."},{"id":"m2-10","u":2,"n":"10","type":"short","q":"빈칸에 알맞은 수를 쓰세요.  2 + ( 　 ) = 9","parts":[{"label":"( 　 )","ans":["7"]}],"fb":"9 - 2 = <b>7</b>. 2에 7을 더하면 9가 돼요."},{"id":"m2-11","u":2,"n":"11","type":"short","q":"빈칸에 알맞은 수를 쓰세요.  10 - ( 　 ) = 6","parts":[{"label":"( 　 )","ans":["4"]}],"fb":"10 - 6 = <b>4</b>예요."},{"id":"m2-12","u":2,"n":"12","type":"choice","q":"계산 결과가 9가 되는 식을 고르세요.","opts":["4 + 4 + 1","3 + 2 + 3","2 + 3 + 2","5 + 1 + 2"],"a":0,"fb":"4 + 4 + 1 = <b>9</b>예요. 3+2+3=8, 2+3+2=7, 5+1+2=8이에요."},{"id":"m2-13","u":2,"n":"13","type":"short","q":"사탕이 10개 있었어요. 그중 4개를 먹었어요. 남은 사탕은 몇 개일까요?","parts":[{"label":"남은 사탕 ( 　 )개","ans":["6","6개"]}],"fb":"10 - 4 = <b>6</b>개예요."},{"id":"m2-14","u":2,"n":"14","type":"short","q":"유빈이는 구슬을 3개, 하진이는 4개, 지호는 6개 가지고 있어요. 세 사람이 가진 구슬은 모두 몇 개일까요?","parts":[{"label":"모두 ( 　 )개","ans":["13","13개"]}],"fb":"3 + 4 + 6 = <b>13</b>개예요."},{"id":"m2-15","u":2,"n":"15","type":"short","q":"마카롱이 10개 있었어요. 예지가 3개, 연우가 2개를 먹었어요. 남은 마카롱은 몇 개일까요?","parts":[{"label":"남은 마카롱 ( 　 )개","ans":["5","5개"]}],"fb":"먹은 마카롱은 3 + 2 = 5개, 남은 것은 10 - 5 = <b>5</b>개예요."}]},{"u":3,"title":"3단원 모양과 시각","emoji":"🕒","items":[{"id":"m3-1","u":3,"n":"1","type":"choice","q":"뾰족한 부분이 세 군데인 모양을 고르세요.","svg":"shapes:rect,tri,circle","opts":["네모","세모","동그라미"],"a":1,"fb":"뾰족한 부분이 세 군데인 모양은 <b>세모</b>예요."},{"id":"m3-2","u":3,"n":"2","type":"choice","q":"뾰족한 부분이 하나도 없이 둥글게 생긴 모양을 고르세요.","svg":"shapes:tri,circle,rect","opts":["세모","동그라미","네모"],"a":1,"fb":"뾰족한 부분이 없는 모양은 <b>동그라미</b>예요."},{"id":"m3-3","u":3,"n":"3","type":"choice","q":"뾰족한 부분이 네 군데인 모양을 고르세요.","svg":"shapes:tri,rect,circle","opts":["세모","네모","동그라미"],"a":1,"fb":"뾰족한 부분이 네 군데인 모양은 <b>네모</b>예요."},{"id":"m3-4","u":3,"n":"4","type":"short","q":"그림에서 동그라미는 몇 개인가요?","svg":"count:2,1,3","parts":[{"label":"동그라미 ( 　 )개","ans":["3","3개"]}],"fb":"동그라미는 <b>3개</b>예요. (네모 2개, 세모 1개, 동그라미 3개)"},{"id":"m3-5","u":3,"n":"5","type":"short","q":"그림에서 네모는 몇 개인가요?","svg":"count:2,1,3","parts":[{"label":"네모 ( 　 )개","ans":["2","2개"]}],"fb":"네모는 <b>2개</b>예요."},{"id":"m3-6","u":3,"n":"6","type":"short","q":"그림에서 세모는 몇 개인가요?","svg":"count:2,1,3","parts":[{"label":"세모 ( 　 )개","ans":["1","1개"]}],"fb":"세모는 <b>1개</b>예요."},{"id":"m3-7","u":3,"n":"7","type":"short","q":"시계가 나타내는 시각을 쓰세요.","clock":[3,0],"parts":[{"label":"몇 시","ans":["3시","세시","3시00분","3시0분"]}],"fb":"짧은바늘이 3, 긴바늘이 12를 가리키면 <b>3시</b>예요."},{"id":"m3-8","u":3,"n":"8","type":"short","q":"시계가 나타내는 시각을 쓰세요.","clock":[7,0],"parts":[{"label":"몇 시","ans":["7시","일곱시","7시00분","7시0분"]}],"fb":"짧은바늘이 7, 긴바늘이 12 → <b>7시</b>예요."},{"id":"m3-9","u":3,"n":"9","type":"short","q":"시계가 나타내는 시각을 쓰세요.","clock":[1,30],"parts":[{"label":"몇 시 몇 분","ans":["1시30분","한시30분","1시 30분"]}],"fb":"짧은바늘이 1과 2 사이, 긴바늘이 6을 가리키면 <b>1시 30분</b>이에요."},{"id":"m3-10","u":3,"n":"10","type":"short","q":"시계가 나타내는 시각을 쓰세요.","clock":[5,30],"parts":[{"label":"몇 시 몇 분","ans":["5시30분","다섯시30분","5시 30분"]}],"fb":"짧은바늘이 5와 6 사이, 긴바늘이 6 → <b>5시 30분</b>이에요."},{"id":"m3-11","u":3,"n":"11","type":"short","q":"긴바늘이 12를 가리키고 짧은바늘이 4를 가리키면 몇 시인가요?","parts":[{"label":"몇 시","ans":["4시","네시","4시00분"]}],"fb":"긴바늘이 12면 정각, 짧은바늘이 4니까 <b>4시</b>예요."},{"id":"m3-12","u":3,"n":"12","type":"choice","q":"4시 30분일 때 긴바늘은 어느 숫자를 가리키나요?","opts":["12","6","4","3"],"a":1,"fb":"30분이면 긴바늘이 <b>6</b>을 가리켜요. 짧은바늘은 4와 5 사이에 있어요."},{"id":"m3-13","u":3,"n":"13","type":"short","q":"짧은바늘이 1과 2의 가운데를 가리키고 긴바늘이 6을 가리키면 몇 시 몇 분인가요?","clock":[1,30],"parts":[{"label":"몇 시 몇 분","ans":["1시30분","한시30분","1시 30분"]}],"fb":"<b>1시 30분</b>이에요. 30분일 때는 짧은바늘이 두 숫자 사이에 있어요."},{"id":"m3-14","u":3,"n":"14","type":"short","q":"동그라미 모양 2개와 세모 모양 3개를 사용했어요. 모두 몇 개인가요?","parts":[{"label":"모두 ( 　 )개","ans":["5","5개"]}],"fb":"2 + 3 = <b>5</b>개예요."},{"id":"m3-15","u":3,"n":"15","type":"choice","q":"시계에서 ‘몇 시’를 알려 주는 바늘은 어느 것인가요?","opts":["긴바늘","짧은바늘"],"a":1,"fb":"<b>짧은바늘</b>이 몇 시를, 긴바늘이 몇 분을 알려 줘요."}]}]};
+const CARDS = [{"s":"kor","em":"🔊","t":"흉내 내는 말","k":"1단원 · 기분을 말해요","big":"소리를 흉내 내면 ‘소리’,<br>모양을 흉내 내면 ‘모양’","li":["소리: 야옹, 까르르, 깔깔, 째깍째깍, 와장창, 우르릉 쾅쾅","모양: 둥실둥실, 살랑살랑, 주렁주렁, 폴짝, 반짝반짝, 깡충깡충, 활짝","흉내 내는 말을 넣으면 장면이 더 실감 나게 느껴져요."],"tip":"‘귀여운’, ‘가을바람’처럼 모습을 꾸며 주는 말은 흉내 내는 말이 아니에요."},{"s":"kor","em":"💬","t":"기분을 말하는 방법","k":"1단원 · 기분을 말해요","big":"‘나는’ + 있었던 일 + 내 기분","li":["예) 나는 / 동생이 내 장난감을 망가뜨려서 / 속상했어요.","듣는 사람의 옷차림은 생각하지 않아요.","기분 낱말: 신나다 · 기쁘다 · 즐겁다 · 뿌듯하다 · 행복하다","기분 낱말: 슬프다 · 속상하다 · 화나다 · 미안하다 · 부럽다 · 무섭다"],"tip":"“너 때문에 짜증 나!”보다 “나는 ~해서 속상해”가 듣는 사람의 마음을 다치지 않게 해요."},{"s":"kor","em":"🔤","t":"겹받침","k":"2단원 · 낱말을 정확하게 읽어요","big":"서로 다른 두 자음자가 모인 받침","li":["겹받침: ㄳ ㄵ ㄶ ㄺ ㄻ ㄼ ㄽ ㄾ ㄿ ㅀ ㅄ","맑다(ㄺ) · 꿇다(ㄶ) · 얇다(ㄼ) · 값(ㅄ) · 없다(ㅄ)","맑 = ㅁ + ㅏ + ㄺ / 꿇 = ㄲ + ㅜ + ㄶ"],"tip":"겹받침은 글자로는 두 자음자지만, 소리 낼 때는 대부분 한 소리로 나요."},{"s":"kor","em":"✌️","t":"쌍받침","k":"2단원 · 낱말을 정확하게 읽어요","big":"같은 자음자가 두 번 겹친 받침 ㄲ · ㅆ","li":["쌍받침이 있는 낱말: 썩다, 낚다, 있다, 밖, 깎다","‘뛰다’의 ㄸ은 받침이 아니라 첫소리예요."],"tip":"겹받침은 ‘서로 다른’ 두 자음자, 쌍받침은 ‘같은’ 자음자 두 개예요."},{"s":"kor","em":"🗣️","t":"받침의 소리","k":"2단원 · 낱말을 정확하게 읽어요","big":"겹받침은 뒤에 오는 소리에 따라 한 소리로","li":["흙 → [흑]  (ㄺ은 ㄱ으로)","넓고 → [널꼬]  (ㄼ은 ㄹ로)","흙은 → [흘근]  (뒤가 모음이면 ㄹ이 이어져요)","값 → [갑], 없다 → [업따]"],"tip":"소리 내어 세 번 읽어 보고, 입 모양이 어떻게 되는지 확인해요."},{"s":"kor","em":"✏️","t":"헷갈리는 낱말","k":"2단원 · 낱말을 정확하게 읽어요","big":"소리가 같아도 뜻이 다르면 다르게 써요","li":["약값(물건의 가격) · 값을 치르다","연필심이 닳았다 (달았다 X)","쌍받침 낱말: 썩다, 낚다 / 겹받침 낱말: 짧다"],"tip":"뜻을 떠올리며 써 보면 틀리지 않아요."},{"s":"kor","em":"📔","t":"그림일기 쓰는 방법","k":"3단원 · 그림일기를 써요","big":"날짜·날씨 + 그림 + 기억에 남는 일 + 생각·느낌","li":["날짜와 요일, 날씨를 써요. (‘맑음’처럼 간단히, 또는 자세히)","경험한 일 중 가장 중요한 장면을 그림으로 그려요.","가장 기억에 남는 일을 쓰고, 그 일에 대한 생각이나 느낌을 꼭 써요."],"tip":"늘 하는 일만 죽 쓰면 그림일기가 아니에요. ‘정말 재미있었다’ 같은 느낌을 꼭 넣어요."},{"s":"kor","em":"👂","t":"바른 듣기 자세","k":"3단원 · 그림일기를 써요","big":"말하는 사람을 바라보며 듣기","li":["몸을 바르게 하고 앉아요.","말하는 사람을 바라보며 들어요.","다른 생각을 하지 않고 집중해요."],"tip":"엎드리거나 딴 데를 보면 친구의 말을 놓치게 돼요."},{"s":"kor","em":"🎤","t":"바른 발표 자세","k":"3단원 · 그림일기를 써요","big":"허리를 펴고, 알맞은 크기의 목소리로","li":["허리를 편 자세로 서거나 앉아요.","듣는 사람을 바라보며 말해요.","알맞은 크기의 목소리로 또박또박 말해요."],"tip":"움츠린 자세나 기죽은 목소리는 알아듣기 어려워요."},{"s":"kor","em":"❝","t":"따옴표","k":"4단원 · 감동을 나누어요","big":"큰따옴표 “ ” = 소리 내어 한 말<br>작은따옴표 ‘ ’ = 마음속으로 한 말","li":["소리 내어 한 말: 서윤이가 “너도 한번 먹어 봐.”라고 했어요.","마음속으로 한 말: ‘그럼 나도 한번 먹어 볼까?’","인물의 말·생각·행동을 찾으면 이야기를 더 잘 알 수 있어요."],"tip":"따옴표 모양을 보고 소리 내어 한 말인지, 마음속 말인지 구별해요."},{"s":"math","em":"🔟","t":"10개씩 묶음과 낱개","k":"1단원 · 100까지의 수","big":"64 = 10개씩 6묶음 + 낱개 4개","li":["10개씩 묶음이 6개면 60이에요.","낱개 4개를 더하면 64예요.","75 = 10개씩 7묶음 + 낱개 5개"],"tip":"십의 자리 숫자가 10개씩 묶음의 수, 일의 자리 숫자가 낱개의 수예요."},{"s":"math","em":"🔢","t":"100까지의 수 읽기","k":"1단원 · 100까지의 수","big":"92 = 구십이 = 아흔둘<br>85 = 팔십오 = 여든다섯","li":["80 = 여든 = 팔십","90 = 아흔 = 구십","99 다음 수는 100 (세 자리 수)"],"tip":"수를 두 가지로 읽을 수 있어요. 숫자와 낱말을 짝지어 외워 봐요."},{"s":"math","em":"⚖️","t":"수의 크기 비교","k":"1단원 · 100까지의 수","big":"십의 자리부터 비교해요","li":["82 < 86  (작은 수를 앞에 쓰면 <)","54 > 45  (큰 수를 앞에 쓰면 >)","80보다 1 작은 수는 79, 99보다 1 큰 수는 100"],"tip":"십의 자리 수가 같으면 일의 자리 수를 비교해요."},{"s":"math","em":"🧩","t":"짝수와 홀수","k":"1단원 · 100까지의 수","big":"2개씩 묶어 떨어지면 짝수, 1개가 남으면 홀수","li":["짝수: 2, 4, 6, 8, 10, 12 ··· 30, 40","홀수: 1, 3, 5, 7, 9, 11 ··· 21, 47","끝자리가 0·2·4·6·8이면 짝수예요."],"tip":"끝자리만 보면 짝수인지 홀수인지 금방 알 수 있어요."},{"s":"math","em":"➕","t":"세 수의 덧셈과 뺄셈","k":"2단원 · 덧셈과 뺄셈","big":"앞에서부터 차례대로 계산해요","li":["3 + 2 + 3 → 5 + 3 = 8","9 - 2 - 3 → 7 - 3 = 4","7 + 3 - 5 → 10 - 5 = 5","2 + □ = 9 → □ = 9 - 2 = 7"],"tip":"두 수씩 계산한 결과를 꼭 적어 두면 실수하지 않아요."},{"s":"math","em":"🔺","t":"여러 가지 모양","k":"3단원 · 모양과 시각","big":"네모(4군데 뾰족) · 세모(3군데) · 동그라미(0군데)","li":["네모: 뾰족한 부분이 네 군데","세모: 뾰족한 부분이 세 군데","동그라미: 뾰족한 부분이 없이 둥글어요"],"tip":"모양의 개수를 셀 때는 하나씩 표시하며 세요."},{"s":"math","em":"🕐","t":"시각 읽기","k":"3단원 · 모양과 시각","big":"짧은바늘 = 몇 시, 긴바늘 = 몇 분","li":["긴바늘이 12를 가리키면 정각 (3시, 7시)","긴바늘이 6을 가리키면 30분 (1시 30분, 5시 30분)","30분일 때 짧은바늘은 두 숫자 사이에 있어요."],"tip":"4시 30분이면 짧은바늘은 4와 5 사이, 긴바늘은 6을 가리켜요."}];
+
+const SUBJ = {kor:KOR, math:MATH};
+const LSKEY = 'bomStudy_v1';
+
+/* ---------- 저장 ---------- */
+function loadStore(){
+  let s = null;
+  try{ s = JSON.parse(localStorage.getItem(LSKEY)||'null'); }catch(e){}
+  if(!s || typeof s !== 'object') s = {};
+  s.wrong = s.wrong || {kor:[], math:[]};
+  s.seen  = s.seen  || {kor:{}, math:{}};
+  s.subj  = s.subj === 'math' ? 'math' : 'kor';
+  return s;
+}
+function saveStore(){ try{ localStorage.setItem(LSKEY, JSON.stringify(store)); }catch(e){} }
+const store = loadStore();
+
+/* ---------- 상태 ---------- */
+const state = {subj:store.subj, unit:'all', mode:'all', queue:[], idx:0, answered:false, right:0, wrongNow:[], cur:null, sel:[]};
+
+/* ---------- 도우미 ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const stripTags = s => String(s||'').replace(/<[^>]+>/g,'');
+const NUM = ['①','②','③','④','⑤','⑥','⑦'];
+const hasNum = o => /^[①②③④⑤⑥⑦➊➋➌➍➎]/.test(String(o));
+const norm = s => String(s||'').toLowerCase()
+  .replace(/\s+/g,'')
+  .replace(/[.,!?~'"“”‘’·ㆍ()\[\]{}<>《》〈〉\/]/g,'')
+  .trim();
+
+function allItems(subj){
+  const out = [];
+  SUBJ[subj].units.forEach(u => u.items.forEach(it => out.push(Object.assign({unitTitle:u.title, unitEmoji:u.emoji, unitNo:u.u, subject:subj}, it))));
+  return out;
+}
+const ITEMS = {kor:allItems('kor'), math:allItems('math')};
+const BYID = {};
+Object.keys(ITEMS).forEach(s => ITEMS[s].forEach(it => BYID[s+':'+it.id] = it));
+
+function unitOf(subj,u){ return SUBJ[subj].units.filter(x => x.u===u)[0]; }
+function wrongSet(subj){ return new Set(store.wrong[subj]||[]); }
+
+/* ---------- 그림 그리기(수학) ---------- */
+function shapeEl(t, x, y, w){
+  if(t==='rect') return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+w+'" rx="7" fill="#DCFCE7" stroke="#2F6B45" stroke-width="3"/>';
+  if(t==='tri') return '<polygon points="'+x+','+(y+w)+' '+(x+w)+','+(y+w)+' '+(x+w/2)+','+y+'" fill="#FFE2EC" stroke="#A23B67" stroke-width="3" stroke-linejoin="round"/>';
+  return '<circle cx="'+(x+w/2)+'" cy="'+(y+w/2)+'" r="'+(w/2)+'" fill="#FFF2B2" stroke="#8A6A12" stroke-width="3"/>';
+}
+function shapesSVG(list){
+  const gap = 18, w = 76;
+  let html = '';
+  list.forEach((t,i) => { html += shapeEl(t, 10 + i*(w+gap), 14, w); });
+  const tw = 20 + list.length*(w+gap) - gap;
+  return '<svg viewBox="0 0 '+tw+' 104" width="'+Math.min(tw,430)+'" role="img" aria-label="도형 그림">'+html+'</svg>';
+}
+function countSVG(rects, tris, circs){
+  // 섞어서 배치
+  const order = [];
+  for(let i=0;i<rects;i++) order.push('rect');
+  for(let i=0;i<tris;i++) order.push('tri');
+  for(let i=0;i<circs;i++) order.push('circle');
+  // 보기 좋게 번갈아 섞기
+  const mixed = [];
+  while(order.length){ mixed.push(order.splice((mixed.length*3)%order.length,1)[0]); }
+  return shapesSVG(mixed);
+}
+function clockSVG(h, m){
+  const cx=80, cy=80, R=72;
+  let ticks='';
+  for(let i=1;i<=12;i++){
+    const aD = (i/12)*Math.PI*2 - Math.PI/2;
+    const x1 = cx+Math.cos(aD)*(R-7), y1 = cy+Math.sin(aD)*(R-7);
+    const x2 = cx+Math.cos(aD)*(R-14), y2 = cy+Math.sin(aD)*(R-14);
+    const tx = cx+Math.cos(aD)*47, ty = cy+Math.sin(aD)*47+4.5;
+    ticks += '<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="#9A94A0" stroke-width="2.5" stroke-linecap="round"/>';
+    ticks += '<text x="'+tx.toFixed(1)+'" y="'+ty.toFixed(1)+'" font-size="13" font-weight="800" fill="#2D2A32" text-anchor="middle">'+i+'</text>';
+  }
+  const ha = ((h%12) + m/60)/12*Math.PI*2 - Math.PI/2;
+  const ma = (m/60)*Math.PI*2 - Math.PI/2;
+  return '<svg viewBox="0 0 160 160" width="186" height="186" role="img" aria-label="시계">'
+    + '<circle cx="80" cy="80" r="'+R+'" fill="#FFFDF7" stroke="#86EFAC" stroke-width="6"/>'
+    + ticks
+    + '<line x1="80" y1="80" x2="'+(80+Math.cos(ha)*25).toFixed(1)+'" y2="'+(80+Math.sin(ha)*25).toFixed(1)+'" stroke="#2D2A32" stroke-width="8" stroke-linecap="round"/>'
+    + '<line x1="80" y1="80" x2="'+(80+Math.cos(ma)*40).toFixed(1)+'" y2="'+(80+Math.sin(ma)*40).toFixed(1)+'" stroke="#A23B67" stroke-width="5" stroke-linecap="round"/>'
+    + '<circle cx="80" cy="80" r="4.5" fill="#2D2A32"/>'
+    + '</svg>';
+}
+function bundlesSVG(tens, ones){
+  const bw=24, bh=62, gap=10, top=6;
+  let html='';
+  for(let i=0;i<tens;i++){
+    const x = 6 + i*(bw+gap);
+    html += '<rect x="'+x+'" y="'+top+'" width="'+bw+'" height="'+bh+'" rx="5" fill="#F2FCF6" stroke="#2F6B45" stroke-width="2"/>';
+    for(let j=1;j<=9;j++){
+      const lx = x + j*(bw/10);
+      html += '<line x1="'+lx.toFixed(1)+'" y1="'+(top+3)+'" x2="'+lx.toFixed(1)+'" y2="'+(top+bh-3)+'" stroke="#5CB98A" stroke-width="1.7"/>';
+    }
+    html += '<rect x="'+(x-3)+'" y="'+(top+bh/2-7)+'" width="'+(bw+6)+'" height="14" rx="5" fill="none" stroke="#2F6B45" stroke-width="3"/>';
+  }
+  const onesY = top + bh + 18;
+  for(let i=0;i<ones;i++){
+    const x = 16 + i*18;
+    html += '<circle cx="'+x+'" cy="'+(onesY+8)+'" r="7.5" fill="#FFF2B2" stroke="#8A6A12" stroke-width="2"/>';
+  }
+  const w = Math.max(64, 12 + tens*(bw+gap), 24 + ones*18);
+  const h = ones ? onesY + 26 : top + bh + 6;
+  return '<svg viewBox="0 0 '+w+' '+h+'" width="'+Math.min(Math.round(w*2.2),400)+'" role="img" aria-label="10개씩 묶음과 낱개">'+html+'</svg>';
+}
+
+/* ---------- 문제 렌더 ---------- */
+function buildQueue(reset){
+  const subj = state.subj;
+  let list = ITEMS[subj].filter(it => state.unit==='all' || it.u===state.unit);
+  if(state.mode==='miss'){
+    const ws = wrongSet(subj);
+    list = ITEMS[subj].filter(it => ws.has(it.id) && (state.unit==='all' || it.u===state.unit));
+  }
+  if(state.mode==='shuffle'){
+    list = list.slice();
+    for(let i=list.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=list[i]; list[i]=list[j]; list[j]=t; }
+  }
+  state.queue = list.map(it => it.id);
+  if(reset){ state.idx = 0; state.right = 0; state.wrongNow = []; }
+}
+
+function renderChips(){
+  const subj = state.subj;
+  const units = SUBJ[subj].units;
+  let html = '<button class="chip'+(state.unit==='all'?' on':'')+'" data-unit="all" type="button">전체 <span class="n">'+(subj==='kor'?80:45)+'</span></button>';
+  html += units.map(u => '<button class="chip'+(state.unit===u.u?' on':'')+'" data-unit="'+u.u+'" type="button">'+u.emoji+' '+u.u+'단원 <span class="n">'+u.items.length+'</span></button>').join('');
+  $('#unitChips').innerHTML = html;
+  $('#unitChips').querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
+    state.unit = b.dataset.unit === 'all' ? 'all' : +b.dataset.unit;
+    renderChips(); buildQueue(true); renderCard(); updateProg();
+  }));
+  const wn = (store.wrong[subj]||[]).length;
+  const missBtn = $('#modeChips').querySelector('[data-mode="miss"]');
+  missBtn.disabled = wn === 0;
+  $('#modeChips').querySelectorAll('.chip').forEach(b => b.classList.toggle('on', b.dataset.mode===state.mode));
+  $('#subjNote').hidden = subj !== 'math';
+  if(subj==='math') $('#subjNote').textContent = MATH.note;
+  $('#missCnt').textContent = wn;
+}
+
+function updateProg(){
+  const total = state.queue.length;
+  const done = Math.min(state.idx + (state.answered?1:0), total);
+  $('#pnum').textContent = done + ' / ' + total;
+  $('#barFill').style.width = (total ? done/total*100 : 0) + '%';
+}
+
+function qHead(it){
+  const isMath = it.subject==='math';
+  return '<div class="cardhead"><span class="badge'+(isMath?' math':'')+'">'+it.unitEmoji+' '+esc(it.unitTitle)+'</span>'
+    + '<span class="qno">'+esc(it.n)+'번 문제</span></div>';
+}
+
+function mediaHTML(it){
+  let h = '';
+  if(it.p) h += '<div class="passage">'+esc(it.p).replace(/\n/g,'<br>')+'</div>';
+  if(it.ex) h += '<div class="ex">'+esc(it.ex).replace(/\n/g,'<br>')+'</div>';
+  if(it.svg){
+    const v = String(it.svg).split(':');
+    const args = v[1].split(',');
+    if(v[0]==='shapes') h += '<div class="qsvg">'+shapesSVG(args)+'</div>';
+    else if(v[0]==='count') h += '<div class="qsvg">'+countSVG(+args[0], +args[1], +args[2])+'</div>';
+    else if(v[0]==='bundles') h += '<div class="qsvg">'+bundlesSVG(+args[0], +args[1])+'<div class="svgcap">10개씩 묶음 '+args[0]+'개 · 낱개 '+args[1]+'개</div></div>';
+  }
+  if(it.clock) h += '<div class="qsvg">'+clockSVG(it.clock[0], it.clock[1])+'</div>';
+  if(it.img){
+    h += '<figure class="qimg"><img loading="lazy" src="'+esc(it.img)+'" alt="문제 그림" data-zoom="1">'
+      + (it.imgCap?'<figcaption>'+esc(it.imgCap)+'</figcaption>':'')+'</figure>';
+  }
+  if(it.bank){
+    h += '<div class="bank">'+it.bank.map(w => '<span>'+esc(w)+'</span>').join('')+'</div>';
+  }
+  if(it.hint) h += '<p class="hintline">💡 '+esc(it.hint)+'</p>';
+  return h;
+}
+
+function renderCard(){
+  state.answered = false; state.sel = [];
+  const it = BYID[state.subj+':'+state.queue[state.idx]];
+  state.cur = it;
+  if(!it){ renderResult(); return; }
+  const card = $('#card');
+  let body = '';
+  body += '<p class="qtext">'+it.q+'</p>';
+  body += mediaHTML(it);
+
+  const compact = it.opts && it.opts.every(o => String(o).replace(/<[^>]+>/g,'').length <= 6);
+  if(it.type==='choice'){
+    body += '<div class="options'+(compact?' compact':'')+'" id="opts">'+it.opts.map((o,i) =>
+      '<button class="choice" type="button" data-i="'+i+'">'+(hasNum(o)?'':'<span class="idx">'+NUM[i]+'</span>')+'<span>'+o+'</span></button>').join('')+'</div>';
+  } else if(it.type==='multi'){
+    body += '<div class="options'+(compact?' compact':'')+'" id="opts">'+it.opts.map((o,i) =>
+      '<button class="choice" type="button" data-i="'+i+'">'+(hasNum(o)?'':'<span class="idx">'+NUM[i]+'</span>')+'<span>'+o+'</span></button>').join('')+'</div>'
+      + '<div class="actions"><button class="btn primary" id="check" type="button" disabled>정답 확인</button></div>';
+  } else if(it.type==='short'){
+    body += (it.parts||[]).map((p,pi) => {
+      let inner = '';
+      if(p.open){
+        inner = '<div class="field vert"><span class="lab">'+esc(p.label||'')+'</span>'
+          + '<textarea data-part="'+pi+'" placeholder="내가 만든 문장을 써 보세요"></textarea></div>';
+      } else {
+        const vert = !!(p.img || (p.label && p.label.length > 14));
+        inner = '<div class="field'+(vert?' vert':'')+'">'
+          + (p.img?'<span class="partimg"><img loading="lazy" src="'+esc(p.img)+'" alt="문제 그림" data-zoom="1"></span>':'')
+          + (p.label?'<span class="lab">'+esc(p.label)+'</span>':'')
+          + (p.before?'<span class="after">'+esc(p.before)+'</span>':'')
+          + '<input type="text" data-part="'+pi+'" autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text" placeholder="답을 써 보세요">'
+          + (p.after?'<span class="after">'+esc(p.after)+'</span>':'')
+          + '</div>';
+      }
+      return inner;
+    }).join('')
+    + '<div class="actions"><button class="btn primary" id="check" type="button">정답 확인</button></div>';
+  } else if(it.type==='match'){
+    const rights = it.pairs.map(p => p.r);
+    body += it.pairs.map((p,pi) => '<div class="matchrow"><span class="l">'+esc(p.l)+'</span>'
+      + '<select data-mi="'+pi+'"><option value="">— 고르세요 —</option>'
+      + rights.map(r => '<option value="'+esc(r)+'">'+esc(r)+'</option>').join('')+'</select></div>').join('')
+      + '<div class="actions"><button class="btn primary" id="check" type="button" disabled>정답 확인</button></div>';
+  } else if(it.type==='open'){
+    body += (it.before? '<div class="field"><span class="lab">'+esc(it.before)+'</span></div>':'')
+      + '<textarea id="openInput" placeholder="여기에 써 보세요 (써 보기만 해도 돼요)"></textarea>'
+      + '<div class="actions"><button class="btn primary" id="check" type="button">정답 보기</button></div>';
+  }
+
+  body += '<div class="fb" id="fb"></div><div class="actions" id="nextWrap"></div>';
+  card.innerHTML = qHead(it) + body;
+  bindCard(it);
+  updateProg();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function bindCard(it){
+  const card = $('#card');
+  card.querySelectorAll('img[data-zoom]').forEach(img => img.addEventListener('click', () => openLB(img.src)));
+
+  if(it.type==='choice'){
+    card.querySelectorAll('.choice').forEach(btn => btn.addEventListener('click', () => {
+      if(state.answered) return;
+      const i = +btn.dataset.i;
+      state.sel = [i];
+      grade(it);
+    }));
+  }
+  if(it.type==='multi'){
+    card.querySelectorAll('.choice').forEach(btn => btn.addEventListener('click', () => {
+      if(state.answered) return;
+      const i = +btn.dataset.i;
+      const at = state.sel.indexOf(i);
+      if(at>=0) state.sel.splice(at,1); else state.sel.push(i);
+      btn.classList.toggle('sel');
+      $('#check').disabled = state.sel.length === 0;
+    }));
+    $('#check').addEventListener('click', () => grade(it));
+  }
+  if(it.type==='short'){
+    card.querySelectorAll('input[data-part], textarea[data-part]').forEach(inp => {
+      inp.addEventListener('keydown', e => { if(e.key==='Enter' && inp.tagName==='INPUT'){ e.preventDefault(); grade(it); } });
+    });
+    $('#check').addEventListener('click', () => grade(it));
+  }
+  if(it.type==='match'){
+    card.querySelectorAll('select[data-mi]').forEach(sel => sel.addEventListener('change', () => {
+      const all = Array.from(card.querySelectorAll('select[data-mi]'));
+      $('#check').disabled = all.some(s => !s.value);
+    }));
+    $('#check').addEventListener('click', () => grade(it));
+  }
+  if(it.type==='open'){
+    $('#check').addEventListener('click', () => grade(it));
+  }
+}
+
+/* ---------- 채점 ---------- */
+function partCorrect(p, val){
+  if(p.open) return true;
+  const v = norm(val);
+  if(!v) return false;
+  const okList = (p.ans||[]).map(norm);
+  if(okList.indexOf(v) >= 0) return true;
+  if(p.kw && p.kw.length){
+    const raw = String(val).replace(/\s+/g,'');
+    if(p.kw.some(set => set.every(k => raw.indexOf(k) >= 0))) return true;
+  }
+  return false;
+}
+
+function grade(it){
+  if(state.answered) return;
+  state.answered = true;
+  let ok = false;
+  const card = $('#card');
+
+  if(it.type==='choice'){
+    ok = state.sel[0] === it.a;
+    card.querySelectorAll('.choice').forEach((btn,i) => {
+      btn.disabled = true;
+      if(i === it.a) btn.classList.add('ok');
+      else if(i === state.sel[0]) btn.classList.add('no');
+    });
+  } else if(it.type==='multi'){
+    const a = (it.a||[]).slice().sort().join(',');
+    const s = state.sel.slice().sort().join(',');
+    ok = a === s;
+    card.querySelectorAll('.choice').forEach((btn,i) => {
+      btn.disabled = true;
+      const right = it.a.indexOf(i) >= 0, picked = state.sel.indexOf(i) >= 0;
+      if(right) btn.classList.add('ok');
+      else if(picked) btn.classList.add('no');
+    });
+    const chk = $('#check'); if(chk) chk.disabled = true;
+  } else if(it.type==='short'){
+    const parts = it.parts||[];
+    ok = true;
+    parts.forEach((p,pi) => {
+      const el = card.querySelector('[data-part="'+pi+'"]');
+      if(!el || p.open) return;
+      const good = partCorrect(p, el.value);
+      if(!good) ok = false;
+      el.style.borderColor = good ? 'var(--ok)' : 'var(--bad)';
+      el.style.background = good ? 'var(--ok-soft)' : 'var(--bad-soft)';
+    });
+    const chk = $('#check'); if(chk) chk.disabled = true;
+  } else if(it.type==='match'){
+    ok = true;
+    it.pairs.forEach((p,pi) => {
+      const el = card.querySelector('select[data-mi="'+pi+'"]');
+      const good = el.value === p.r;
+      if(!good) ok = false;
+      el.style.borderColor = good ? 'var(--ok)' : 'var(--bad)';
+      el.style.background = good ? 'var(--ok-soft)' : 'var(--bad-soft)';
+    });
+    const chk = $('#check'); if(chk) chk.disabled = true;
+  } else if(it.type==='open'){
+    ok = true;
+    const t = card.querySelector('#openInput');
+    if(t) t.disabled = true;
+  }
+
+  // 저장
+    if(ok){
+      store.seen[state.subj][it.id] = 'ok';
+      const wi = store.wrong[state.subj].indexOf(it.id);
+      if(wi >= 0 && it.type !== 'open') store.wrong[state.subj].splice(wi,1);
+      state.right++;
+    } else {
+      store.seen[state.subj][it.id] = 'no';
+      if(store.wrong[state.subj].indexOf(it.id) < 0) store.wrong[state.subj].push(it.id);
+      state.wrongNow.push(it.id);
+    }
+  saveStore();
+
+  // 피드백
+  const fb = $('#fb');
+  fb.className = 'fb show ' + (ok?'ok':'no');
+  let html = '<div class="head">'+(ok?'🌸 맞았어요! 정말 잘했어요':'🌱 아쉬워요, 같이 살펴봐요')+'</div>';
+  html += '<div class="body">'+it.fb+'</div>';
+  if(it.type==='open' && it.model){
+    html += '<div class="model"><b>이렇게 써 볼 수 있어요</b>'+esc(it.model).replace(/\n/g,'<br>')+'</div>';
+  }
+  if(it.type==='choice' && !ok) html += '<div class="body" style="margin-top:6px">정답은 <b>'+NUM[it.a]+' '+it.opts[it.a]+'</b>이에요.</div>';
+  if(it.type==='multi' && !ok){
+    html += '<div class="body" style="margin-top:6px">정답: <b>'+it.a.map(i => NUM[i]+' '+it.opts[i]).join(', ')+'</b></div>';
+  }
+  fb.innerHTML = html;
+
+  // 다음 버튼
+  const nw = $('#nextWrap');
+  const last = state.idx >= state.queue.length-1;
+  nw.innerHTML = '<button class="btn primary" id="next" type="button">'+(last?'결과 보기 🎉':'다음 문제 →')+'</button>';
+  $('#next').addEventListener('click', () => {
+    if(last){ renderResult(); return; }
+    state.idx++; renderCard();
+  });
+  if(it.type==='open'){
+    const again = document.createElement('button');
+    again.className = 'btn soft'; again.type = 'button'; again.textContent = '다시 볼래요';
+    again.addEventListener('click', () => {
+      store.seen[state.subj][it.id] = 'no';
+      if(store.wrong[state.subj].indexOf(it.id) < 0) store.wrong[state.subj].push(it.id);
+      saveStore(); renderChips();
+    });
+    nw.appendChild(again);
+  }
+  renderChips();
+  updateProg();
+  fb.scrollIntoView({block:'nearest', behavior:'smooth'});
+}
+
+/* ---------- 결과 ---------- */
+function renderResult(){
+  const total = state.queue.length;
+  const right = state.right;
+  const pct = total ? Math.round(right/total*100) : 0;
+  const groups = {};
+  state.queue.forEach(id => {
+    const it = BYID[state.subj+':'+id];
+    const g = it.unitTitle;
+    groups[g] = groups[g] || {ok:0,n:0};
+    groups[g].n++;
+    if(store.seen[state.subj][it.id]==='ok') groups[g].ok++;
+  });
+  const ghtml = Object.keys(groups).map(g => {
+    const d = groups[g], p = Math.round(d.ok/d.n*100);
+    return '<div class="gbar"><span class="name">'+esc(g)+'</span><span class="track"><i style="width:'+p+'%"></i></span><span class="val">'+d.ok+'/'+d.n+'</span></div>';
+  }).join('');
+  const msg = pct>=90 ? '거의 다 맞았어요! 이제 진짜 시험도 문제없어요 🎉'
+            : pct>=70 ? '좋아요! 틀린 문제만 한 번 더 풀면 완벽해요 💪'
+            : pct>=40 ? '절반 넘게 왔어요. 개념 카드를 보고 다시 풀어 봐요 🌱'
+                      : '괜찮아요. 개념 카드부터 천천히 읽고 다시 해 봐요 🐣';
+  $('#card').innerHTML = '<div class="result">'
+    + '<div class="ring" style="--deg:'+(pct*3.6)+'deg"><div><b>'+pct+'<span style="font-size:14px;color:#9A94A0">점</span></b><span>'+right+' / '+total+'</span></div></div>'
+    + '<h3>'+msg+'</h3>'
+    + '<p class="msg">'+(state.wrongNow.length ? '틀린 문제 '+state.wrongNow.length+'개는 ‘다시 볼 문제’에 저장했어요.' : '틀린 문제가 없어요!')+'</p>'
+    + (ghtml ? '<p class="sectitle">단원별</p><div class="gbars">'+ghtml+'</div>' : '')
+    + '<div class="actions" style="margin-top:16px">'
+    + (state.wrongNow.length ? '<button class="btn primary" id="retry" type="button">틀린 문제만 다시 풀기 🔁</button>' : '')
+    + '<button class="btn soft" id="again" type="button">처음부터 다시 풀기</button>'
+    + '</div></div>';
+  const rt = $('#retry');
+  if(rt) rt.addEventListener('click', () => {
+    state.mode = 'miss'; renderChips();
+    buildQueue(true);
+    if(!state.queue.length){ renderResult(); return; }
+    renderCard();
+  });
+  $('#again').addEventListener('click', () => {
+    state.mode = 'all'; renderChips(); buildQueue(true); renderCard();
+  });
+  $('#pnum').textContent = total+' / '+total;
+  $('#barFill').style.width = '100%';
+  renderChips();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ---------- 개념 카드 ---------- */
+function renderCards(){
+  const subs = [['kor','📚 국어 · 핵심 정리'],['math','🔢 수학 · 핵심 정리']];
+  $('#cardsWrap').innerHTML = subs.map(([s,title]) => {
+    const list = CARDS.filter(c => c.s===s);
+    return '<div class="csec"><h2>'+title+'</h2><div class="cgrid">'+list.map((c,i) =>
+      '<article class="ccard" data-s="'+s+'" data-i="'+s+i+'" tabindex="0">'
+      + '<div class="top"><span class="em">'+c.em+'</span><div><div class="t">'+c.t+'</div><div class="k">'+c.k+'</div></div></div>'
+      + '<div class="big">'+c.big+'</div>'
+      + '<div class="more"><ul>'+c.li.map(x => '<li>'+x+'</li>').join('')+'</ul>'
+      + (c.tip?'<div class="tip">💡 '+c.tip+'</div>':'')+'</div>'
+      + '<div class="tap">눌러서 설명 보기 ▾</div>'
+      + '</article>').join('')+'</div></div>';
+  }).join('');
+  $('#cardsWrap').querySelectorAll('.ccard').forEach(el => {
+    const toggle = () => el.classList.toggle('open');
+    el.addEventListener('click', toggle);
+    el.addEventListener('keydown', e => { if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
+  });
+}
+
+/* ---------- 다시 볼 문제 ---------- */
+function renderMiss(){
+  const subj = state.subj;
+  const ids = store.wrong[subj]||[];
+  $('#missCnt').textContent = ids.length;
+  const wrap = $('#missWrap');
+  if(!ids.length){
+    wrap.innerHTML = '<div class="empty"><span class="big">🌷</span>아직 틀린 문제가 없어요!<br>문제를 풀면 틀린 문제가 여기에 모여요.</div>';
+    return;
+  }
+  wrap.innerHTML = '<div class="hstack" style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">'
+    + '<button class="btn primary" id="missGo" type="button">틀린 문제 '+ids.length+'개 다시 풀기 🔁</button>'
+    + '<button class="btn soft" id="missClear" type="button">목록 비우기</button></div>'
+    + ids.map(id => {
+        const it = BYID[subj+':'+id];
+        if(!it) return '';
+        const ansTxt = it.type==='choice' ? NUM[it.a]+' '+it.opts[it.a]
+          : it.type==='multi' ? it.a.map(i => NUM[i]+' '+it.opts[i]).join(', ')
+          : it.type==='match' ? it.pairs.map(p => esc(p.l)+' → '+esc(p.r)).join(' / ')
+          : it.type==='short' ? (it.parts||[]).filter(p => p.ans).map(p => (p.label?esc(p.label)+' ':'')+p.ans[0]).join(' · ')
+          : (it.model ? esc(it.model) : '스스로 확인해요');
+        return '<div class="wcard"><div class="wtop"><span class="wb">'+it.unitEmoji+' '+it.n+'번</span>'
+          + '<span class="wq">'+stripTags(it.q)+'</span></div>'
+          + '<div class="wa">정답: '+ansTxt+'</div>'
+          + '<div class="we">'+stripTags(it.fb)+'</div></div>';
+      }).join('');
+  $('#missGo').addEventListener('click', () => {
+    state.mode = 'miss'; state.unit = 'all';
+    showTab('quiz'); renderChips(); buildQueue(true); renderCard();
+  });
+  $('#missClear').addEventListener('click', () => {
+    store.wrong[subj] = []; saveStore(); renderMiss(); renderChips();
+  });
+}
+
+/* ---------- 탭 ---------- */
+function showTab(which){
+  const quiz = which==='quiz', cards = which==='card', miss = which==='miss';
+  $('#quizView').hidden = !quiz;
+  $('#cardView').hidden = !cards;
+  $('#missView').hidden = !miss;
+  $('#tabQuiz').classList.toggle('on', quiz);
+  $('#tabCard').classList.toggle('on', cards);
+  $('#tabMiss').classList.toggle('on', miss);
+  $('#tabQuiz').setAttribute('aria-selected', quiz?'true':'false');
+  $('#tabCard').setAttribute('aria-selected', cards?'true':'false');
+  $('#tabMiss').setAttribute('aria-selected', miss?'true':'false');
+  if(cards) renderCards();
+  if(miss) renderMiss();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+$('#tabQuiz').addEventListener('click', () => showTab('quiz'));
+$('#tabCard').addEventListener('click', () => showTab('card'));
+$('#tabMiss').addEventListener('click', () => showTab('miss'));
+
+/* ---------- 과목 전환 ---------- */
+document.querySelectorAll('.subj button').forEach(b => b.addEventListener('click', () => {
+  state.subj = b.dataset.subj; store.subj = state.subj; saveStore();
+  document.querySelectorAll('.subj button').forEach(x => {
+    const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-selected', on?'true':'false');
+  });
+  state.unit = 'all'; state.mode = 'all';
+  renderChips(); buildQueue(true); renderCard();
+  if(!$('#missView').hidden) renderMiss();
+}));
+
+/* ---------- 모드 전환 ---------- */
+$('#modeChips').querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
+  if(b.disabled) return;
+  state.mode = b.dataset.mode;
+  renderChips(); buildQueue(true);
+  if(!state.queue.length){
+    $('#card').innerHTML = '<div class="empty"><span class="big">🌱</span>이 단원에는 아직 틀린 문제가 없어요!<br>다른 단원을 골라 보세요.</div>';
+    $('#pnum').textContent = '0 / 0'; $('#barFill').style.width='0%';
+    return;
+  }
+  renderCard();
+}));
+
+/* ---------- 키보드 ---------- */
+document.addEventListener('keydown', e => {
+  if($('#quizView').hidden || !state.cur) return;
+  if(/^[1-5]$/.test(e.key) && (state.cur.type==='choice' || state.cur.type==='multi')){
+    const btns = document.querySelectorAll('.choice');
+    const n = +e.key-1;
+    if(btns[n] && !state.answered) btns[n].click();
+  }
+  if(e.key==='Enter'){
+    const nx = $('#next');
+    if(nx){ e.preventDefault(); nx.click(); }
+  }
+});
+
+/* ---------- 라이트박스 ---------- */
+function openLB(src){ $('#lbImg').src = src; $('#lb').classList.add('on'); }
+$('#lb').addEventListener('click', () => $('#lb').classList.remove('on'));
+document.addEventListener('keydown', e => { if(e.key==='Escape') $('#lb').classList.remove('on'); });
+
+/* ---------- 시작 ---------- */
+document.querySelectorAll('.subj button').forEach(x => {
+  const on = x.dataset.subj === state.subj;
+  x.classList.toggle('on', on); x.setAttribute('aria-selected', on?'true':'false');
+});
+renderChips();
+buildQueue(true);
+renderCard();
+</script>
+</body>
+</html>

@@ -353,6 +353,19 @@ textarea.inp{resize:vertical;min-height:64px;line-height:1.5}
 .hanja-hero .hz-go svg{width:14px;height:14px}
 .hanja-hero:hover .hz-go{background:#403B49}
 
+/* 봄이 학습 바로가기 */
+.study-heroes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.study-heroes > .hanja-hero{margin-bottom:0}
+@media (max-width:1000px){.study-heroes{grid-template-columns:1fr;gap:12px}}
+.bom-hero{background:linear-gradient(118deg,#EDFBF3 0%,#FFF8E6 55%,#FFEFF5 100%);border-color:#D6EFDF}
+.bom-hero:hover{border-color:#AFE3C4}
+.bom-hero .hz-glyph{color:#2F6B45;font-size:26px;font-family:'Apple Color Emoji','Noto Color Emoji',serif}
+.bom-hero .hz-title .new{color:#2F6B45;box-shadow:inset 0 0 0 1px rgba(47,107,69,.2)}
+.bom-hero .hz-go{background:var(--mint-ink)}
+.bom-hero:hover .hz-go{background:#255637}
+.quick-pill.bom-pill{background:linear-gradient(135deg,#E9FAF0,#FFF6DE);border-color:#CFEBD9;color:#2F6B45}
+.quick-pill.bom-pill:hover{background:linear-gradient(135deg,#DEF7E8,#FFF1D2)}
+
 /* home quick links */
 .quick-strip{
   display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:18px;padding:10px 12px;
@@ -1324,7 +1337,8 @@ function renderNav(){
     }).join('') + '<div class="nav-label">도구</div>'
       + '<button class="nav-btn" data-action="open-settings"><span class="ic">'+ic('settings')+'</span><span>설정 · 백업</span></button>'
       + '<div class="nav-label">바로가기</div>'
-      + '<a class="nav-btn" href="hanja-quiz.html"><span class="ic">'+ic('quiz')+'</span><span>아인 한자 퀴즈</span><span class="nav-out">'+ic('chevR')+'</span></a>';
+      + '<a class="nav-btn" href="hanja-quiz.html"><span class="ic">'+ic('quiz')+'</span><span>아인 한자 퀴즈</span><span class="nav-out">'+ic('chevR')+'</span></a>'
+      + '<a class="nav-btn" href="bom-study.html"><span class="ic">'+ic('quiz')+'</span><span>봄이 국어·수학</span><span class="nav-out">'+ic('chevR')+'</span></a>';
   }
   var bn = $('#bottomNav');
   if(bn){
@@ -1868,6 +1882,7 @@ function viewHome(){
     + '<div class="quick-strip">'
       + '<span class="qs-label">바로가기</span>'
       + '<a class="quick-pill" href="hanja-quiz.html"><span class="em">📝</span>아인 한자 퀴즈'+ic('chevR')+'</a>'
+      + '<a class="quick-pill bom-pill" href="bom-study.html"><span class="em">🌸</span>봄이 국어·수학'+ic('chevR')+'</a>'
     + '</div>'
     + '<div class="grid">'+members+'</div>'
     + '<div class="grid" style="margin-top:18px">'
@@ -2047,14 +2062,24 @@ function viewStudy(){
       + memberTabs(kid, 'pick-study-kid', KIDS)
       + '<button class="btn sm soft" data-action="tab" data-tab="allowance" data-kid="'+kid+'">'+ic('wallet')+'용돈 관리</button>'
     + '</div></div>'
-    + '<a class="hanja-hero" href="hanja-quiz.html">'
-      + '<span class="hz-glyph" aria-hidden="true">漢</span>'
-      + '<span class="hz-txt">'
-        + '<span class="hz-title">아인 한자 퀴즈<span class="new">2단계 모의고사</span></span>'
-        + '<span class="hz-sub">정리 노트로 중요 한자를 훑고, OX 없이 객관식 카드로 바로 확인해요</span>'
-      + '</span>'
-      + '<span class="hz-go">퀴즈 열기'+ic('chevR')+'</span>'
-    + '</a>'
+    + '<div class="study-heroes">'
+      + '<a class="hanja-hero" href="hanja-quiz.html">'
+        + '<span class="hz-glyph" aria-hidden="true">漢</span>'
+        + '<span class="hz-txt">'
+          + '<span class="hz-title">아인 한자 퀴즈<span class="new">2단계 모의고사</span></span>'
+          + '<span class="hz-sub">정리 노트로 중요 한자를 훑고, OX 없이 객관식 카드로 바로 확인해요</span>'
+        + '</span>'
+        + '<span class="hz-go">퀴즈 열기'+ic('chevR')+'</span>'
+      + '</a>'
+      + '<a class="hanja-hero bom-hero" href="bom-study.html">'
+        + '<span class="hz-glyph" aria-hidden="true">🌸</span>'
+        + '<span class="hz-txt">'
+          + '<span class="hz-title">봄이 국어·수학<span class="new">2학기 단원평가</span></span>'
+          + '<span class="hz-sub">국어 1~4단원 80문제와 수학 1~3단원 45문제를 카드로 풀고 바로 채점해요</span>'
+        + '</span>'
+        + '<span class="hz-go">학습 열기'+ic('chevR')+'</span>'
+      + '</a>'
+    + '</div>'
     + (!editable ? lockNote(
         M[currentUser()].name + '님으로 접속 중이라 ' + (currentUser() === 'seungeon' ? '공부 기록은 보기만 할 수 있어요' : '본인 공부만 수정할 수 있어요'),
         M[kid].name + '님의 공부는 '+M[kid].name+'님이 직접 체크해요.'
@@ -2620,6 +2645,7 @@ function openDrawer(){
           + '<span class="ic">'+ic(t.icon)+'</span>'+t.label+'</button>';
       }).join('')
     + '<a class="drawer-item wide" href="hanja-quiz.html"><span class="ic">'+ic('quiz')+'</span>아인 한자 퀴즈 열기</a>'
+    + '<a class="drawer-item wide" href="bom-study.html"><span class="ic">'+ic('quiz')+'</span>봄이 국어·수학 열기</a>'
     + '<button class="drawer-item" data-action="open-profile"><span class="ic">'+ic('lock')+'</span>프로필 · 잠금</button>'
     + '<button class="drawer-item" data-action="open-settings"><span class="ic">'+ic('settings')+'</span>설정 · 백업</button>'
     + '</div></div>';
