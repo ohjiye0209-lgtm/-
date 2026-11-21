@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="theme-color" content="#FFFDF7">
-<meta name="description" content="아인의 2단계 한자 경시대회 모의고사 1·2 정리 노트·객관식 카드 테스트·큰 낱말카드.">
+<meta name="description" content="아인의 2단계 한자 경시대회 모의고사 1·2 정리 노트·객관식 카드 테스트·큰 낱말카드. 11/21 시험에서 틀린 것 집중 모드.">
 <title>아인 한자 카드 · 2단계 모의고사 정리</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='25' x='3' font-size='24'%3E%F0%9F%90%A3%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -94,6 +94,22 @@ button{font:inherit; color:inherit; cursor:pointer; border:0; background:none}
 .chip.on .n{color:rgba(255,255,255,.7)}
 .chip:disabled{opacity:.45; cursor:default}
 .chip.miss.on{background:var(--pink-ink); border-color:var(--pink-ink)}
+.chip.today{background:linear-gradient(160deg,#FFF6D9,#FFE8EF); border-color:#F7D98A; color:#8A5A12; font-weight:800}
+.chip.today .n{color:#B08A3A}
+.chip.today.on{background:linear-gradient(160deg,#F6B93B,#F58FA8); border-color:#F0A93A; color:#fff; box-shadow:0 10px 20px -12px rgba(240,169,58,.95)}
+.chip.today.on .n{color:rgba(255,255,255,.85)}
+
+/* ================= 오늘 틀린 것 안내 ================= */
+.todaybar{display:none; gap:4px; flex-direction:column; margin:0 0 12px; padding:13px 15px; border-radius:20px; background:linear-gradient(160deg,#FFF7DA,#FFE9F0); border:1.5px solid #FAD98F; box-shadow:0 10px 22px -18px rgba(200,150,60,.9)}
+.todaybar.on{display:flex}
+.todaybar b{font-size:14.5px; color:#8A5A12; letter-spacing:-.02em}
+.todaybar span{font-size:12.5px; font-weight:600; color:#8A6A4A; line-height:1.5}
+.hintbtn{display:none; margin:10px auto 0; padding:9px 15px; border-radius:999px; font-size:12.5px; font-weight:800; color:#8A6A12; background:#FFF6D9; border:1.5px dashed #EBCB84}
+.hintbtn.on{display:inline-flex}
+.hintbox{display:none; margin:9px 0 0; padding:11px 13px; border-radius:15px; font-size:13px; font-weight:700; line-height:1.6; color:#5A4A1E; background:#FFFBEF; border:1px solid #F3E3BB; letter-spacing:-.02em}
+.hintbox.on{display:block}
+.fbhint{margin-top:9px !important; padding:10px 12px; border-radius:13px; background:rgba(255,255,255,.86); font-size:13px !important; font-weight:700; color:#5A4A1E !important}
+.fbhint .tk{display:inline-block; font-size:11px; font-weight:800; color:#8A6A12; background:#FFF0C9; border-radius:7px; padding:2px 7px; margin-right:6px; vertical-align:1px}
 
 /* ================= progress ================= */
 .prog{display:flex; align-items:center; gap:10px; margin:2px 2px 12px}
@@ -248,6 +264,13 @@ body.flash .tabs{max-width:600px; margin-left:auto; margin-right:auto}
 .fc-mode-btn[data-fcmode="hide"].on{color:#A23B67; box-shadow:0 7px 16px -9px rgba(122,102,80,.55), inset 0 0 0 1.5px #FFD3E4}
 
 .fc-switch{display:grid; grid-template-columns:1fr 1fr; gap:7px; background:#F2EADA; padding:6px; border-radius:22px; margin-bottom:11px; box-shadow:inset 0 1px 3px rgba(122,102,80,.09)}
+.fc-switch.three{grid-template-columns:1.15fr 1fr .8fr; gap:5px; padding:5px}
+.fc-switch.three .fc-tab{font-size:12.5px; min-height:64px; padding:9px 4px; letter-spacing:-.03em}
+.fc-switch.three .fc-tab .sub{font-size:10.5px; font-weight:800; opacity:.6; margin-top:-2px}
+.fc-switch.three .fc-tab[data-set="today"]{font-size:13px}
+.fc-tab[data-set="today"].on{background:linear-gradient(165deg,#FFF8E3,#FFE6EE); color:#8A5A12; box-shadow:0 10px 20px -12px rgba(240,169,58,.95)}
+.fc-tab[data-set="today"].on .n{color:#B0821F}
+.fc-tab[data-set="today"].on::after{border-color:#F7D98A}
 .fc-tab{position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; padding:13px 6px; border-radius:17px; font-size:15px; font-weight:800; color:#6B6673; line-height:1.2; letter-spacing:-.02em; transition:.18s; min-height:68px; background:rgba(255,255,255,.45)}
 .fc-tab .n{font-size:11.5px; font-weight:800; color:var(--faint); font-variant-numeric:tabular-nums}
 .fc-tab.on{background:#fff; color:var(--ink); box-shadow:0 8px 18px -10px rgba(122,102,80,.45)}
@@ -395,14 +418,14 @@ body.spot-open{overflow:hidden}
     <div class="logo">🐣</div>
     <div>
       <h1>아인 한자 카드</h1>
-      <p>2단계 한자 경시대회 · 모의고사 1·2 정리</p>
+      <p>2단계 한자 경시대회 · 11/21 시험 틀린 것 집중</p>
     </div>
     <a class="home-link" href="index.html">← 대시보드</a>
   </header>
 
   <div class="hero">
-    <b>카드를 넘기며 한 문제씩 풀어 보자!</b>
-    <span>정답을 누르면 바로 O·X와 설명이 나와요. 틀린 문제는 자동으로 모아 두었다가 다시 풀 수 있어요.</span>
+    <b>11/21 시험에서 틀린 것만 먼저 풀어 보자!</b>
+    <span>정답을 누르면 바로 O·X와 설명이 나와요. 헷갈리는 카드엔 기억 힌트가 붙어 있어요.</span>
     <button class="hero-go" id="heroCards" type="button">🃏 큰 낱말카드로 보기 →</button>
   </div>
 
@@ -415,10 +438,16 @@ body.spot-open{overflow:hidden}
   <!-- ===== quiz ===== -->
   <section id="quizView">
     <div class="modes">
-      <button class="chip on" data-mode="all">🎯 전체 모드 <span class="n" id="nAll"></span></button>
+      <button class="chip today on" data-mode="today">🎯 오늘 틀린 것 (11/21) <span class="n" id="nToday"></span></button>
       <button class="chip" data-mode="weak">🔥 약점 집중 <span class="n" id="nWeak"></span></button>
-      <button class="chip miss" data-mode="miss">📌 틀린 문제만 <span class="n" id="nMiss"></span></button>
+      <button class="chip miss" data-mode="miss">📌 풀다가 틀린 문제 <span class="n" id="nMiss"></span></button>
+      <button class="chip" data-mode="all">📚 전체 <span class="n" id="nAll"></span></button>
       <button class="chip" id="shuffleBtn" aria-pressed="false">🔀 순서 섞기</button>
+    </div>
+
+    <div class="todaybar on" id="todayBar">
+      <b>🎯 11/21 모의고사 1·2 에서 틀린 것만 모았어요</b>
+      <span>틀린 24개만 나와요. 다 풀고 나서 <b>전체</b>를 누르면 모든 문제를 다시 볼 수 있어요.</span>
     </div>
 
     <div class="prog">
@@ -436,6 +465,8 @@ body.spot-open{overflow:hidden}
       </div>
       <p class="qtext" id="qtext"></p>
       <p class="qsub" id="qsub"></p>
+      <button class="hintbtn" id="hintBtn" type="button">💡 기억 힌트 보기</button>
+      <div class="hintbox" id="hintBox"></div>
       <div class="choices" id="choices"></div>
       <div class="fb" id="fb"></div>
     </article>
@@ -454,9 +485,10 @@ body.spot-open{overflow:hidden}
       <button class="fc-mode-btn" data-fcmode="hide" type="button" aria-pressed="false"><span class="em">🙈</span> 가리고 외우기</button>
     </div>
 
-    <div class="fc-switch" role="tablist" aria-label="낱말카드 범위">
-      <button class="fc-tab on" data-set="tricky" role="tab" aria-selected="true">🔥 틀린·헷갈린 것 <span class="n" id="fcNTricky">0</span></button>
-      <button class="fc-tab" data-set="all" role="tab" aria-selected="false">📚 전체 한자·단어 <span class="n" id="fcNAll">0</span></button>
+    <div class="fc-switch three" role="tablist" aria-label="낱말카드 범위">
+      <button class="fc-tab on" data-set="today" role="tab" aria-selected="true">🎯 오늘 틀린 것<span class="sub">11/21</span><span class="n" id="fcNToday">0</span></button>
+      <button class="fc-tab" data-set="tricky" role="tab" aria-selected="false">🔥 틀린·헷갈린 것 <span class="n" id="fcNTricky">0</span></button>
+      <button class="fc-tab" data-set="all" role="tab" aria-selected="false">📚 전체 <span class="n" id="fcNAll">0</span></button>
     </div>
 
     <div class="fc-prog">
@@ -510,21 +542,21 @@ const Q = [
 /* ---- 독음 (한자어 읽기) ---- */
 {id:'d01',g:'독음',big:'多少',q:'다음 한자어의 독음으로 알맞은 것은?',c:['다행','다소','대소','동서','도서'],a:1,weak:false,
  e:'<span class="h">多</span>(많을 다) + <span class="h">少</span>(적을 소) → <b>다소</b>. "조금", "약간"이라는 뜻이에요.'},
-{id:'d02',g:'독음',big:'山間',q:'다음 한자어의 독음으로 알맞은 것은?',c:['산문','산수','산간','출간','산지'],a:2,weak:false,
+{id:'d02',g:'독음',big:'山間',q:'다음 한자어의 독음으로 알맞은 것은?',c:['산문','산수','산간','출간','산지'],a:2,weak:true,hint:'山(뫼 산) + 間(사이 간) = 산간. “난간” 아님!',
  e:'<span class="h">山</span>(뫼 산) + <span class="h">間</span>(사이 간) → <b>산간</b>. 산과 산 사이, 산이 많은 곳이에요.'},
-{id:'d03',g:'독음',big:'地方',q:'다음 한자어의 독음으로 알맞은 것은?',c:['토지','토방','지역','지지','지방'],a:4,weak:true,
+{id:'d03',g:'독음',big:'地方',q:'다음 한자어의 독음으로 알맞은 것은?',c:['토지','토방','지역','지지','지방'],a:4,weak:true,hint:'方은 여기서 “방”! 地(땅 지) + 方(모 방) = 지방. 地位(지위)와 헷갈리지 않기.',
  e:'<span class="h">地</span>(땅 지) + <span class="h">方</span>(모 방) → <b>지방</b>. "서울 밖의 시골"이나 "어느 한 곳"을 말해요. 地方은 언제나 <b>지방</b>으로 읽어요!'},
-{id:'d04',g:'독음',big:'長短',q:'다음 한자어의 독음으로 알맞은 것은?',c:['장소','시단','장안','장단','단문'],a:3,weak:true,
+{id:'d04',g:'독음',big:'長短',q:'다음 한자어의 독음으로 알맞은 것은?',c:['장소','시단','장안','장단','단문'],a:3,weak:true,hint:'長(길 장) + 短(짧을 단) = 장단. 長男은 장남!',
  e:'<span class="h">長</span>(길 장) + <span class="h">短</span>(짧을 단) → <b>장단</b>. 길고 짧음, 또 소리의 길고 짧음이에요.'},
 {id:'d05',g:'독음',big:'右向',q:'다음 한자어의 독음으로 알맞은 것은?',c:['우향','좌우','좌항','우왕','우면'],a:0,weak:false,
  e:'<span class="h">右</span>(오른쪽 우) + <span class="h">向</span>(향할 향) → <b>우향</b>. 오른쪽을 향함이에요.'},
-{id:'d06',g:'독음',big:'學年',q:'다음 한자어의 독음으로 알맞은 것은?',c:['학교','학생','학년','학자','학사'],a:2,weak:false,
+{id:'d06',g:'독음',big:'學年',q:'다음 한자어의 독음으로 알맞은 것은?',c:['학교','학생','학년','학자','학사'],a:2,weak:true,hint:'學(배울 학) + 年(해 년) = 학년. 校가 붙으면 학교!',
  e:'<span class="h">學</span>(배울 학) + <span class="h">年</span>(해 년) → <b>학년</b>.'},
-{id:'d07',g:'독음',big:'白鳥',q:'다음 한자어의 독음으로 알맞은 것은?',c:['백년','백하','명백','백도','백조'],a:4,weak:false,
+{id:'d07',g:'독음',big:'白鳥',q:'다음 한자어의 독음으로 알맞은 것은?',c:['백년','백하','명백','백도','백조'],a:4,weak:true,hint:'白(흰 백) + 鳥(새 조) = 백조. 새 조(鳥)를 꼭 넣어 읽기!',
  e:'<span class="h">白</span>(흰 백) + <span class="h">鳥</span>(새 조) → <b>백조</b>. 흰 새, 고니예요.'},
 {id:'d08',g:'독음',big:'兄夫',q:'다음 한자어의 독음으로 알맞은 것은?',c:['매형','형부','형제','형수','제부'],a:1,weak:true,
  e:'<span class="h">兄</span>(형 형) + <span class="h">夫</span>(지아비 부) → <b>형부</b>. 언니의 남편이에요. 兄弟(형제)와 헷갈리지 않기!'},
-{id:'d09',g:'독음',big:'四寸',q:'다음 한자어의 독음으로 알맞은 것은?',c:['사제','사부','사촌','삼촌','필촌'],a:2,weak:false,
+{id:'d09',g:'독음',big:'四寸',q:'다음 한자어의 독음으로 알맞은 것은?',c:['사제','사부','사촌','삼촌','필촌'],a:2,weak:true,hint:'四(넉 사) + 寸(마디 촌) = 사촌. 三寸(삼촌)은 三!',
  e:'<span class="h">四</span>(넉 사) + <span class="h">寸</span>(마디 촌) → <b>사촌</b>. 寸은 가족 사이의 촌수를 세는 글자예요.'},
 {id:'d10',g:'독음',big:'兒童',q:'다음 한자어의 독음으로 알맞은 것은?',c:['소아','아명','형동','아동','아부'],a:3,weak:false,
  e:'<span class="h">兒</span>(아이 아) + <span class="h">童</span>(아이 동) → <b>아동</b>. 두 글자 모두 "아이"라는 뜻이에요.'},
@@ -532,7 +564,7 @@ const Q = [
  e:'<span class="h">靑</span>(푸를 청) + <span class="h">天</span>(하늘 천) → <b>청천</b>. 맑게 갠 푸른 하늘이에요.'},
 {id:'d12',g:'독음',big:'本色',q:'다음 한자어의 독음으로 알맞은 것은?',c:['본명','본음','본달','본성','본색'],a:4,weak:false,
  e:'<span class="h">本</span>(근본 본) + <span class="h">色</span>(빛 색) → <b>본색</b>. 본디 타고난 빛깔이나 모습이에요.'},
-{id:'d13',g:'독음',big:'東北',q:'다음 한자어의 독음으로 알맞은 것은?',c:['동남','동북','남북','동대','원북'],a:1,weak:false,
+{id:'d13',g:'독음',big:'東北',q:'다음 한자어의 독음으로 알맞은 것은?',c:['동남','동북','남북','동대','원북'],a:1,weak:true,hint:'東(동녘 동) + 北(북녘 북) = 동북. 南이면 남북!',
  e:'<span class="h">東</span>(동녘 동) + <span class="h">北</span>(북녘 북) → <b>동북</b>.'},
 {id:'d14',g:'독음',big:'河海',q:'다음 한자어의 독음으로 알맞은 것은?',c:['수해','하매','가해','하해','수매'],a:3,weak:false,
  e:'<span class="h">河</span>(물 하) + <span class="h">海</span>(바다 해) → <b>하해</b>. 강과 바다예요.'},
@@ -542,11 +574,11 @@ const Q = [
  e:'<span class="h">花</span>(꽃 화) + <span class="h">草</span>(풀 초) → <b>화초</b>. 꽃과 풀, 또 심어 기르는 풀이에요.'},
 {id:'d17',g:'독음',big:'兄弟',q:'다음 한자어의 독음으로 알맞은 것은?',c:['자제','형수','형기','형제','인내'],a:3,weak:false,
  e:'<span class="h">兄</span>(형 형) + <span class="h">弟</span>(아우 제) → <b>형제</b>.'},
-{id:'d18',g:'독음',big:'前後',q:'다음 한자어의 독음으로 알맞은 것은?',c:['도후','전행','전후','해후','정도'],a:2,weak:true,
+{id:'d18',g:'독음',big:'前後',q:'다음 한자어의 독음으로 알맞은 것은?',c:['도후','전행','전후','해후','정도'],a:2,weak:true,hint:'前(앞 전) + 後(뒤 후) = 전후. 全(온전할 전)과 헷갈리지 않기!',
  e:'<span class="h">前</span>(앞 전) + <span class="h">後</span>(뒤 후) → <b>전후</b>. 앞과 뒤, 또는 "그 무렵"이라는 뜻이에요.'},
 {id:'d19',g:'독음',big:'方向',q:'다음 한자어의 독음으로 알맞은 것은?',c:['방항','반도','방법','모향','방위'],a:0,weak:false,
  e:'<span class="h">方</span>(모 방) + <span class="h">向</span>(향할 향) → <b>방향</b>. 향하는 쪽이에요.'},
-{id:'d20',g:'독음',big:'短身',q:'다음 한자어의 독음으로 알맞은 것은?',c:['직후','장신','직방','좌우','단신'],a:4,weak:false,
+{id:'d20',g:'독음',big:'短身',q:'다음 한자어의 독음으로 알맞은 것은?',c:['직후','장신','직방','좌우','단신'],a:4,weak:true,hint:'短(짧을 단) + 身(몸 신) = 단신. 長이면 장신!',
  e:'<span class="h">短</span>(짧을 단) + <span class="h">身</span>(몸 신) → <b>단신</b>. 키가 작은 몸이에요.'},
 {id:'d21',g:'독음',big:'高手',q:'다음 한자어의 독음으로 알맞은 것은?',c:['다소','청어','명백','고수','육아'],a:3,weak:false,
  e:'<span class="h">高</span>(높을 고) + <span class="h">手</span>(손 수) → <b>고수</b>. 어떤 일에 뛰어난 사람이에요.'},
@@ -558,13 +590,13 @@ const Q = [
  e:'<span class="h">靑</span>(푸를 청) + <span class="h">魚</span>(물고기 어) → <b>청어</b>. 등이 푸른 바닷물고기예요.'},
 {id:'d25',g:'독음',big:'童心',q:'다음 한자어의 독음으로 알맞은 것은?',c:['동화','동심','충심','정신','동시'],a:1,weak:false,
  e:'<span class="h">童</span>(아이 동) + <span class="h">心</span>(마음 심) → <b>동심</b>. 아이 같은 순수한 마음이에요.'},
-{id:'d26',g:'독음',big:'育林',q:'다음 한자어의 독음으로 알맞은 것은?',c:['육림','교육','삼림','조림','육사'],a:0,weak:false,
+{id:'d26',g:'독음',big:'育林',q:'다음 한자어의 독음으로 알맞은 것은?',c:['육림','교육','삼림','조림','육사'],a:0,weak:true,hint:'育(기를 육) + 林(수풀 림) = 육림. 숲을 가꾸는 일!',
  e:'<span class="h">育</span>(기를 육) + <span class="h">林</span>(수풀 림) → <b>육림</b>. 숲을 가꾸는 일이에요.'},
 {id:'d27',g:'독음',big:'南北',q:'다음 한자어의 독음으로 알맞은 것은?',c:['동북','서남','남북','남방','남녘'],a:2,weak:false,
  e:'<span class="h">南</span>(남녘 남) + <span class="h">北</span>(북녘 북) → <b>남북</b>.'},
-{id:'d28',g:'독음',big:'地位',q:'다음 한자어의 독음으로 알맞은 것은?',c:['지방','고저','지위','지가','지대'],a:2,weak:true,
+{id:'d28',g:'독음',big:'地位',q:'다음 한자어의 독음으로 알맞은 것은?',c:['지방','고저','지위','지가','지대'],a:2,weak:true,hint:'地(땅 지) + 位(자리 위) = 지위. 方이면 지방!',
  e:'<span class="h">地</span>(땅 지) + <span class="h">位</span>(자리 위) → <b>지위</b>. 사회에서의 자리나 높낮이예요.'},
-{id:'d29',g:'독음',big:'高低',q:'다음 한자어의 독음으로 알맞은 것은?',c:['음성','고저','가락','고성','고음'],a:1,weak:false,
+{id:'d29',g:'독음',big:'高低',q:'다음 한자어의 독음으로 알맞은 것은?',c:['음성','고저','가락','고성','고음'],a:1,weak:true,hint:'高(높을 고) + 低(낮을 저) = 고저. 음의 높낮이!',
  e:'<span class="h">高</span>(높을 고) + <span class="h">低</span>(낮을 저) → <b>고저</b>. 높고 낮음이에요.'},
 {id:'d30',g:'독음',big:'巨人',q:'다음 한자어의 독음으로 알맞은 것은?',c:['거인','거신','대인','군인','거민'],a:0,weak:false,
  e:'<span class="h">巨</span>(클 거) + <span class="h">人</span>(사람 인) → <b>거인</b>. 아주 큰 사람이에요.'},
@@ -572,9 +604,9 @@ const Q = [
  e:'<span class="h">四</span>(넉 사) + <span class="h">季</span>(계절 계) → <b>사계</b>. 봄·여름·가을·겨울 네 계절이에요.'},
 {id:'d32',g:'독음',big:'春秋',q:'다음 한자어의 독음으로 알맞은 것은?',c:['춘추','춘하','추계','춘계','추수'],a:0,weak:false,
  e:'<span class="h">春</span>(봄 춘) + <span class="h">秋</span>(가을 추) → <b>춘추</b>. "춘추가 70이시다"는 나이를 뜻해요.'},
-{id:'d33',g:'독음',big:'弟子',q:'다음 한자어의 독음으로 알맞은 것은?',c:['자제','제자','제녀','제형','제생'],a:1,weak:false,
+{id:'d33',g:'독음',big:'弟子',q:'다음 한자어의 독음으로 알맞은 것은?',c:['자제','제자','제녀','제형','제생'],a:1,weak:true,hint:'弟(아우 제) + 子(아들 자) = 제자. 스승에게 배우는 사람!',
  e:'<span class="h">弟</span>(아우 제) + <span class="h">子</span>(아들 자) → <b>제자</b>. 스승에게 배우는 사람이에요.'},
-{id:'d34',g:'독음',big:'靑春',q:'다음 한자어의 독음으로 알맞은 것은?',c:['청춘','청년','청림','청산','청음'],a:0,weak:false,
+{id:'d34',g:'독음',big:'靑春',q:'다음 한자어의 독음으로 알맞은 것은?',c:['청춘','청년','청림','청산','청음'],a:0,weak:true,hint:'靑(푸를 청) + 春(봄 춘) = 청춘. 젊은 시절!',
  e:'<span class="h">靑</span>(푸를 청) + <span class="h">春</span>(봄 춘) → <b>청춘</b>. 젊은 시절이에요.'},
 {id:'d35',g:'독음',big:'生育',q:'다음 한자어의 독음으로 알맞은 것은?',c:['생축','생육','생유','상육','양육'],a:1,weak:true,
  e:'<span class="h">生</span>(날 생) + <span class="h">育</span>(기를 육) → <b>생육</b>. 낳아서 기름이에요. <span class="h">畜</span>(짐승 축)은 生畜 = <b>생축</b>! 畜(축)과 育(육)을 꼭 구분해요.'},
@@ -584,13 +616,15 @@ const Q = [
  e:'<span class="h">夏</span>(여름 하) + <span class="h">季</span>(계절 계) → <b>하계</b>. 여름철이에요. 冬季는 <b>동계</b>!'},
 {id:'d38',g:'독음',big:'秋色',q:'다음 한자어의 독음으로 알맞은 것은?',c:['추색','추새','추석','추상','추세'],a:0,weak:true,
  e:'<span class="h">秋</span>(가을 추) + <span class="h">色</span>(빛 색) → <b>추색</b>. 가을의 빛깔이에요. 色은 언제나 "색".'},
-{id:'d39',g:'독음',big:'長男',q:'다음 한자어의 독음으로 알맞은 것은?',c:['장남','장안','어른남','긴남','장손'],a:0,weak:false,
+{id:'d39',g:'독음',big:'長男',q:'다음 한자어의 독음으로 알맞은 것은?',c:['장남','장안','어른남','긴남','장손'],a:0,weak:true,hint:'長(어른 장) + 男(사내 남) = 장남. 맏아들!',
  e:'<span class="h">長</span>(어른 장) + <span class="h">男</span>(사내 남) → <b>장남</b>. 맏아들이에요.'},
 {id:'d40',g:'독음',big:'生畜',q:'다음 한자어의 독음으로 알맞은 것은?',c:['생축','생육','생속','생추','생수'],a:0,weak:true,
  e:'<span class="h">畜</span>(짐승 축) → <b>생축</b>(가축). 育(기를 육)이면 生育(생육)이에요. 畜=축, 育=육!'},
+{id:'d41',g:'독음',big:'冬季',q:'다음 한자어의 독음으로 알맞은 것은?',c:['동계','추계','하게','춘계','동서'],a:0,weak:true,hint:'冬(겨울 동) + 季(계절 계) = 동계. 夏(여름)면 하계!',
+ e:'<span class="h">冬</span>(겨울 동) + <span class="h">季</span>(계절 계) → <b>동계</b>. 여름철 夏季는 <b>하계</b>예요.'},
 
 /* ---- 훈·음 ---- */
-{id:'h01',g:'훈음',big:'後',q:'後의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['뒤 후','달아난 배','마칠 졸','클 거'],a:0,weak:true,
+{id:'h01',g:'훈음',big:'後',q:'後의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['뒤 후','달아난 배','마칠 졸','클 거'],a:0,weak:true,hint:'後는 “뒤 후” 하나. 前(앞 전)과 소리만 비슷!',
  e:'<span class="h">後</span>는 <b>뒤 후</b> 하나예요. "배"로 읽는 글자는 <span class="h">北</span>(달아날 배)이지 後가 아니에요.'},
 {id:'h02',g:'훈음',big:'北',q:'北은 "북녘 북" 말고도 다른 훈·음이 있어요. 무엇일까요?',c:['달아날 배','봄 춘','물 하','마칠 졸'],a:0,weak:true,
  e:'<span class="h">北</span> = <b>북녘 북</b>, 그리고 <b>달아날 배</b>. 두 가지로 읽어요. "등을 돌려 달아나다"에서 北(배)이 나왔어요.'},
@@ -608,11 +642,11 @@ const Q = [
  e:'<span class="h">本</span>은 <b>근본 본</b>. 나무 아래쪽에 표시를 한 모양이에요.'},
 {id:'h09',g:'훈음',big:'左',q:'左의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['왼 좌','오른쪽 우','앞 전','자리 위'],a:0,weak:true,
  e:'<span class="h">左</span>는 <b>왼 좌</b>. 右(오른쪽 우)와 짝이에요.'},
-{id:'h10',g:'훈음',big:'全',q:'全의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['온전할 전','앞 전','마칠 졸','근본 본'],a:0,weak:true,
+{id:'h10',g:'훈음',big:'全',q:'全의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['온전할 전','앞 전','마칠 졸','근본 본'],a:0,weak:true,hint:'사람(入) 아래 임금 왕(王) = 온전할 전!',
  e:'<span class="h">全</span>은 <b>온전할 전</b>. 前(앞 전)과 소리가 같아서 헷갈려요. 뜻이 다르죠!'},
-{id:'h11',g:'훈음',big:'重',q:'重의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['무거울 중','온전할 전','이름 명','붉을 적'],a:0,weak:true,
+{id:'h11',g:'훈음',big:'重',q:'重의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['무거울 중','온전할 전','이름 명','붉을 적'],a:0,weak:true,hint:'重은 “무거울 중”. 里(마을 리) 위아래로!',
  e:'<span class="h">重</span>은 <b>무거울 중</b>.'},
-{id:'h12',g:'훈음',big:'毛',q:'毛의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['터럭 모','손 수','넉 사','마디 촌'],a:0,weak:true,
+{id:'h12',g:'훈음',big:'毛',q:'毛의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['터럭 모','손 수','넉 사','마디 촌'],a:0,weak:true,hint:'毛는 “터럭 모”. 아래 삐침이 길~게 난 털! 手(손 수)는 다섯 손가락!',
  e:'<span class="h">毛</span>는 <b>터럭 모</b>. 털, 또는 아주 작은 것을 말해요. 九牛一毛(구우일모)에 나와요.'},
 {id:'h13',g:'훈음',big:'位',q:'位의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['자리 위','바깥 외','앞 전','모 방'],a:0,weak:true,
  e:'<span class="h">位</span>는 <b>자리 위</b>. 地位(지위)처럼 써요.'},
@@ -636,8 +670,13 @@ const Q = [
  e:'<span class="h">夏</span>는 <b>여름 하</b>. 春夏秋冬(춘하추동)!'},
 {id:'h23',g:'훈음',big:'秋',q:'秋의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['가을 추','봄 춘','여름 하','해 년'],a:0,weak:false,
  e:'<span class="h">秋</span>는 <b>가을 추</b>. 秋色(추색), 春秋(춘추).'},
-{id:'h24',g:'훈음',big:'白',q:'白의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['흰 백','빛 색','붉을 적','푸를 청'],a:0,weak:false,
+{id:'h24',g:'훈음',big:'白',q:'白의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['흰 백','일백 백','빛 색','붉을 적','푸를 청'],a:0,weak:true,hint:'白(흰 백)은 위에 뚜껑이 없어요. 百(일백 백)은 위에 一 뚜껑이 딱!',
  e:'<span class="h">白</span>은 <b>흰 백</b>.'},
+
+{id:'h25',g:'훈음',big:'不',q:'不의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['아닐 불','늙을 로','아이 동','마칠 졸'],a:0,weak:true,hint:'不는 딱 하나, “아닐 불”. 아래가 세 갈래로 뻗어 “아니!” 하는 손사래 모양!',
+ e:'<span class="h">不</span>는 <b>아닐 불</b>. 不安(불안), 不幸(불행)처럼 “아니”라는 뜻을 붙여요.'},
+{id:'h26',g:'훈음',big:'老',q:'老의 훈(뜻)과 음(소리)으로 알맞은 것은?',c:['늙을 로','아닐 불','마칠 졸','해 년'],a:0,weak:true,hint:'老는 “늙을 로”. 위에 터럭(耂)이 길게 난 할아버지 모양!',
+ e:'<span class="h">老</span>는 <b>늙을 로</b>. 老人(노인), 不老長生(불로장생)에 나와요.'},
 
 /* ---- 뜻·음 → 한자 ---- */
 {id:'r01',g:'훈음',big:'뒤 후',wide:true,q:'"뒤 후"에 알맞은 한자는?',c:['後','候','北','全'],a:0,weak:true,
@@ -656,7 +695,7 @@ const Q = [
 /* ---- 문장 속 독음 ---- */
 {id:'s01',g:'문장',big:'童心',q:'좋은 책은 <span class="hl">童心</span>을 아름답게 키웁니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['동화','동심','충심','정신','동시'],a:1,weak:false,
  e:'<span class="h">童</span>(아이 동) + <span class="h">心</span>(마음 심) → <b>동심</b>.'},
-{id:'s02',g:'문장',big:'學校',q:'<span class="hl">學校</span>에서 수련회를 갑니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['교실','학원','학생','학교','사교'],a:3,weak:false,
+{id:'s02',g:'문장',big:'學校',q:'<span class="hl">學校</span>에서 수련회를 갑니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['교실','학원','학생','학교','사교'],a:3,weak:true,hint:'學(배울 학) + 校(학교 교) = 학교. 學生(학생)과 헷갈리지 않기!',
  e:'<span class="h">學</span>(배울 학) + <span class="h">校</span>(학교 교) → <b>학교</b>.'},
 {id:'s03',g:'문장',big:'育林',q:'11월 첫 주 토요일은 <span class="hl">育林</span>의 날입니다.',sub:'빈칸의 독음으로 알맞은 것은?',c:['육림','교육','삼림','조림','육사'],a:0,weak:false,
  e:'<span class="h">育</span>(기를 육) + <span class="h">林</span>(수풀 림) → <b>육림</b>.'},
@@ -746,6 +785,41 @@ const Q = [
  e:'<span class="h">長短</span> = 장단(길 장 + 짧을 단). 長男 = 장남(어른 장).'},
 {id:'p05',g:'헷갈림',big:'後 / 北 / 全 / 前',wide:true,q:'"달아날 배"로 읽는 글자는?',c:['北','後','全','前'],a:0,weak:true,
  e:'<span class="h">北</span> = 북녘 북 / 달아날 배. 後는 뒤 후 하나만 있어요.'}
+];
+
+/* =========================================================
+   2026-11-21 모의고사 1·2 에서 아인이 틀린 것만
+   ========================================================= */
+const TODAY_LABEL='11/21';
+const TODAY_IDS=['d03','d04','d06','d07','d09','s02','d28','d29','h25','h26','d33','d34','d02','d26','d41','d39','h12','h01','h24','h11','h10','d13','d20','d18'];
+const TODAY_Q=TODAY_IDS.map(id=>Q.find(q=>q.id===id)).filter(Boolean);
+
+/* 큰 낱말카드용 — 오늘 틀린 24장 */
+const TODAY_CARDS=[
+  {hj:'地方',hm:'지방',mean:'서울 밖의 시골, 어느 한 곳',tip:'方은 여기서 “방”! 땅 지 + 모 방 = 지방. 地位(지위)와 헷갈리지 않기.'},
+  {hj:'地位',hm:'지위',mean:'사회에서의 자리, 높낮이',tip:'땅 지 + 자리 위 = 지위. 方이 붙으면 지방!'},
+  {hj:'長短',hm:'장단',mean:'길고 짧음 · 소리의 길고 짧음',tip:'길 장 + 짧을 단 = 장단. 長男은 장남!'},
+  {hj:'長男',hm:'장남',mean:'맏아들',tip:'어른 장 + 사내 남 = 장남. 길 장이 아니라 어른 장!'},
+  {hj:'學年',hm:'학년',mean:'한 해의 학업 단계',tip:'배울 학 + 해 년 = 학년. 校가 붙으면 학교!'},
+  {hj:'學校',hm:'학교',mean:'배우는 곳',tip:'배울 학 + 학교 교 = 학교. 學生(학생)과 헷갈리지 않기!'},
+  {hj:'白鳥',hm:'백조',mean:'흰 새, 고니',tip:'흰 백 + 새 조 = 백조. 새 조(鳥)를 꼭 넣어 읽기!'},
+  {hj:'四寸',hm:'사촌',mean:'가족 사이의 촌수',tip:'넉 사 + 마디 촌 = 사촌. 三寸(삼촌)은 三!'},
+  {hj:'弟子',hm:'제자',mean:'스승에게 배우는 사람',tip:'아우 제 + 아들 자 = 제자. “제자”라고 읽어요.'},
+  {hj:'靑春',hm:'청춘',mean:'젊은 시절',tip:'푸를 청 + 봄 춘 = 청춘. 靑天(청천)·靑魚(청어)와 구별!'},
+  {hj:'高低',hm:'고저',mean:'높고 낮음',tip:'높을 고 + 낮을 저 = 고저. 음의 높낮이!'},
+  {hj:'東北',hm:'동북',mean:'동쪽과 북쪽',tip:'동녘 동 + 북녘 북 = 동북. 南이면 남북!'},
+  {hj:'短身',hm:'단신',mean:'키가 작은 몸',tip:'짧을 단 + 몸 신 = 단신. 長이면 장신!'},
+  {hj:'前後',hm:'전후',mean:'앞과 뒤',tip:'앞 전 + 뒤 후 = 전후. 全(온전할 전)과 헷갈리지 않기!'},
+  {hj:'不',hm:'아닐 불',mean:'아니다 · 不安(불안)',tip:'不는 딱 하나, “아닐 불”. 아래 세 갈래는 “아니!” 하는 손사래 모양!'},
+  {hj:'老',hm:'늙을 로',mean:'늙다 · 老人(노인)',tip:'老는 “늙을 로”. 위에 터럭(耂)이 길게 난 할아버지 모양!'},
+  {hj:'山間',hm:'산간',mean:'산과 산 사이',tip:'뫼 산 + 사이 간 = 산간. “난간” 아님! 間은 “사이 간”.'},
+  {hj:'育林',hm:'육림',mean:'숲을 가꾸는 일',tip:'기를 육 + 수풀 림 = 육림. 育兒(육아)와 같은 育!'},
+  {hj:'冬季',hm:'동계',mean:'겨울철',tip:'겨울 동 + 계절 계 = 동계. 夏季는 하계, 秋季는 추계!'},
+  {hj:'毛',hm:'터럭 모',mean:'터럭 · 아주 작은 것',tip:'아래 삐침이 길~게 난 털! 手(손 수)는 다섯 손가락 모양이라 달라요.'},
+  {hj:'白',hm:'흰 백',mean:'희다 · 明白(명백)',tip:'흰 백은 뾰족한 삐침만! 百(일백 백)은 위에 一 뚜껑이 딱!'},
+  {hj:'後',hm:'뒤 후',mean:'뒤 · 前後(전후)',tip:'後는 “뒤 후” 하나. “배”로 읽는 글자는 北(달아날 배)!'},
+  {hj:'重',hm:'무거울 중',mean:'무겁다',tip:'무거울 중. 里(마을 리)가 위아래로 들어 있어요.'},
+  {hj:'全',hm:'온전할 전',mean:'온전하다 · 全部(전부)',tip:'사람(入) 아래 임금 왕(王) = 온전할 전. 소리는 前(앞 전)과 같아요!'}
 ];
 
 /* =========================================================
@@ -846,7 +920,7 @@ const NOTES = [
    ========================================================= */
 const LSKEY='hanjaQuizWrong_v1';
 const $=s=>document.querySelector(s);
-const state={mode:'all',queue:[],idx:0,answered:false,ok:0,wrongNow:[],stats:{},shuffle:false};
+const state={mode:'today',queue:[],idx:0,answered:false,ok:0,wrongNow:[],stats:{},shuffle:false};
 
 function loadMiss(){ try{ const v=JSON.parse(localStorage.getItem(LSKEY)||'[]'); return Array.isArray(v)?v:[]; }catch(e){ return []; } }
 function saveMiss(a){ try{ localStorage.setItem(LSKEY, JSON.stringify([...new Set(a)])); }catch(e){} }
@@ -855,6 +929,7 @@ let missSet=new Set(loadMiss());
 const byId=id=>Q.find(q=>q.id===id);
 
 function counts(){
+  $('#nToday').textContent=TODAY_Q.length;
   $('#nAll').textContent=Q.length;
   $('#nWeak').textContent=Q.filter(q=>q.weak).length;
   const n=[...missSet].filter(id=>byId(id)).length;
@@ -864,7 +939,8 @@ function counts(){
 
 function buildQueue(){
   let list;
-  if(state.mode==='weak') list=Q.filter(q=>q.weak);
+  if(state.mode==='today') list=TODAY_Q.slice();
+  else if(state.mode==='weak') list=Q.filter(q=>q.weak);
   else if(state.mode==='miss') list=[...missSet].map(byId).filter(Boolean);
   else list=Q.slice();
   if(state.shuffle) list=shuffle(list);
@@ -877,6 +953,7 @@ function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.flo
 function setMode(m){
   state.mode=m;
   document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode===m));
+  const tb=$('#todayBar'); if(tb) tb.classList.toggle('on', m==='today');
   buildQueue(); renderCard();
 }
 
@@ -898,6 +975,11 @@ function renderCard(){
   $('#qtext').innerHTML=q.q;
   $('#qsub').textContent=q.sub||'';
   $('#qsub').style.display=q.sub?'':'none';
+  const hb=$('#hintBtn'), hx=$('#hintBox');
+  if(q.hint){
+    hb.classList.add('on'); hb.textContent='💡 기억 힌트 보기';
+    hx.classList.remove('on'); hx.innerHTML='💡 '+q.hint;
+  } else { hb.classList.remove('on'); hx.classList.remove('on'); hx.innerHTML=''; }
 
   const keys=['①','②','③','④','⑤','⑥'];
   const box=$('#choices'); box.innerHTML='';
@@ -941,7 +1023,8 @@ function answer(i){
   fb.className='fb show '+(ok?'ok':'no');
   fb.innerHTML='<h4>'+(ok?'⭕ 정답이에요!':'❌ 아쉬워요!')+'</h4>'+
     (ok?'':'<p style="margin-bottom:8px">정답은 <b>'+q.c[q.a]+'</b> 이에요.</p>')+
-    '<p>'+q.e+'</p>';
+    '<p>'+q.e+'</p>'+
+    (q.hint?'<p class="fbhint"><span class="tk">💡 기억 힌트</span>'+q.hint+'</p>':'');
   const next=document.createElement('button');
   next.className='next'; next.type='button';
   next.innerHTML=(state.idx+1>=state.queue.length)?'결과 보기 ✨':'다음 문제 →';
@@ -979,17 +1062,28 @@ function renderResult(){
       (ghtml?'<p class="sectitle">영역별</p><div class="gbars">'+ghtml+'</div>':'')+
       (state.wrongNow.length?'<p class="sectitle">📌 다시 볼 카드</p><div class="wronglist">'+wrongHtml+'</div>':'')+
       (state.wrongNow.length?'<button class="next" id="retryWrong" type="button">틀린 문제만 다시 풀기 🔁</button>':'')+
-      '<button class="next" id="again" type="button" style="margin-top:8px;background:#F7F1E7;color:#2D2A32;box-shadow:none">전체 모드 처음부터</button>'+
+      '<button class="next" id="againToday" type="button" style="margin-top:8px;background:#FFF6D9;color:#7A4E0A;box-shadow:none">🎯 오늘 틀린 것 처음부터</button>'+
+      '<button class="next" id="again" type="button" style="margin-top:8px;background:#F7F1E7;color:#2D2A32;box-shadow:none">📚 전체 문제 처음부터</button>'+
       '<button class="ghost" id="toNote" type="button">📒 정리 노트 보기</button>'+
     '</div>';
   $('#barFill').style.width='100%';
   $('#pnum').textContent=total+' / '+total;
   const rw=$('#retryWrong');
-  if(rw) rw.addEventListener('click',()=>{ state.mode='miss'; document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode==='miss')); buildQueue(); if(!state.queue.length){ renderResult(); return;} renderCard(); });
-  $('#again').addEventListener('click',()=>{ state.mode='all'; document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode==='all')); buildQueue(); renderCard(); });
+  if(rw) rw.addEventListener('click',()=>{ state.mode='miss'; document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode==='miss')); $('#todayBar').classList.remove('on'); buildQueue(); if(!state.queue.length){ renderResult(); return;} renderCard(); });
+  const at=$('#againToday');
+  if(at) at.addEventListener('click',()=>{ state.mode='today'; document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode==='today')); $('#todayBar').classList.add('on'); buildQueue(); renderCard(); });
+  $('#again').addEventListener('click',()=>{ state.mode='all'; document.querySelectorAll('.chip[data-mode]').forEach(c=>c.classList.toggle('on',c.dataset.mode==='all')); $('#todayBar').classList.remove('on'); buildQueue(); renderCard(); });
   $('#toNote').addEventListener('click',()=>showTab('note'));
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+/* 기억 힌트 펼치기 */
+$('#hintBtn').addEventListener('click',()=>{
+  const b=$('#hintBtn'), x=$('#hintBox');
+  const show=!x.classList.contains('on');
+  x.classList.toggle('on',show);
+  b.textContent=show?'💡 힌트 접기':'💡 기억 힌트 보기';
+});
 
 /* 키보드: 1~6 선택, Enter 다음 */
 document.addEventListener('keydown',e=>{
@@ -1084,19 +1178,21 @@ NOTES.forEach(sec=>sec.items.forEach(it=>{
   ALLCARDS.push({hj,hm,mean:mn||'',cat:sec.t,hot:!!flag,key:hj+'|'+hm,secTip:sec.tip||''});
 }));
 const TRICKYCARDS=TRICKY.map(t=>({hj:t.hj,hm:t.hm,mean:t.mean,cat:'다시 볼 것',hot:true,key:t.hj+'|'+t.hm,tip:t.tip,secTip:''}));
+const TODAYFC=TODAY_CARDS.map(t=>({hj:t.hj,hm:t.hm,mean:t.mean,cat:'오늘 틀린 것',hot:true,key:t.hj+'|'+t.hm,tip:t.tip,secTip:''}));
 
 function fcTip(c){ return c.tip || stripTags(FC_QCARD[c.hj]) || c.secTip || '훈과 음을 소리 내어 세 번 읽어 봐요.'; }
 
 let fcDone=new Set((()=>{try{const v=JSON.parse(localStorage.getItem(FCKEY)||'[]');return Array.isArray(v)?v:[]}catch(e){return[]}})());
 function fcSaveDone(){ try{ localStorage.setItem(FCKEY,JSON.stringify([...fcDone])); }catch(e){} }
 
-const fcState={set:'tricky',cat:'all',hide:false,mode:(()=>{try{return localStorage.getItem('hanjaCardsMode_v1')==='hide'?'hide':'show'}catch(e){return 'show'}})()};
+const fcState={set:'today',cat:'all',hide:false,mode:(()=>{try{return localStorage.getItem('hanjaCardsMode_v1')==='hide'?'hide':'show'}catch(e){return 'show'}})()};
 
 function fcMissCards(){
   const out=[];
   const add=t=>{
     t=t.trim(); if(!t) return;
     if(TRICKYCARDS.some(c=>c.hj===t)) return;
+    if(TODAYFC.some(c=>c.hj===t)) return;
     if(out.some(c=>c.hj===t)) return;
     const c=ALLCARDS.find(x=>x.hj===t);
     if(c){ out.push(Object.assign({},c,{cat:'퀴즈에서 틀림'})); return; }
@@ -1110,7 +1206,14 @@ function fcMissCards(){
   return out;
 }
 function fcBase(){
-  let list = fcState.set==='tricky' ? TRICKYCARDS.concat(fcMissCards()) : ALLCARDS.slice();
+  let list;
+  if(fcState.set==='today') list=TODAYFC.slice();
+  else if(fcState.set==='tricky'){
+    const seen=new Set(), out=[];
+    TRICKYCARDS.concat(TODAYFC,fcMissCards()).forEach(c=>{ if(!seen.has(c.key)){ seen.add(c.key); out.push(c); } });
+    list=out;
+  }
+  else list=ALLCARDS.slice();
   if(fcState.set==='all' && fcState.cat!=='all') list=list.filter(c=>c.cat===fcState.cat);
   return list;
 }
@@ -1157,7 +1260,8 @@ function fcProgress(){
 }
 
 function renderCards(){
-  $('#fcNTricky').textContent=TRICKYCARDS.length+fcMissCards().length;
+  $('#fcNToday').textContent=TODAYFC.length;
+  $('#fcNTricky').textContent=TRICKYCARDS.length+TODAYFC.length+fcMissCards().length;
   $('#fcNAll').textContent=ALLCARDS.length;
   document.querySelectorAll('.fc-tab').forEach(b=>{
     const on=b.dataset.set===fcState.set;
